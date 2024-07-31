@@ -3,12 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>C# Interview Questions & Answers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #5D5C61;
+        }
+        h2 {
+            color: #379683;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 20px;
+        }
+        ul li strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+        pre {
+            background: #e8e8e8;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to Muni Prasad</h1>
-    <p>This is a sample website hosted on GitHub Pages.</p>
-    <script src="scripts.js"></script>
+    <div class="container">
+        <h1>C# Interview Questions & Answers</h1>
+        <ul>
+            <li>
+                <strong>1. What is C#?</strong>
+                <p>C# is a modern, object-oriented programming language developed by Microsoft. It is part of the .NET framework and is used for developing Windows applications, web applications, and web services.</p>
+            </li>
+            <li>
+                <strong>2. What are the main features of C#?</strong>
+                <ul>
+                    <li>Simple and easy to learn</li>
+                    <li>Object-oriented</li>
+                    <li>Component-oriented</li>
+                    <li>Type-safe</li>
+                    <li>Interoperability</li>
+                    <li>Scalable and updatable</li>
+                    <li>Structured language</li>
+                    <li>Rich library</li>
+                    <li>Automatic garbage collection</li>
+                    <li>Indexers and properties</li>
+                </ul>
+            </li>
+            <li>
+                <strong>3. What is the difference between == and Equals() in C#?</strong>
+                <ul>
+                    <li>== operator is used to compare the reference identity and the Equals() method is used to compare the contents.</li>
+                    <li>For value types, == compares values directly.</li>
+                    <li>For reference types, == checks if both references point to the same object in memory, whereas Equals() can be overridden to compare the actual object data.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>4. What is the difference between ref and out keywords?</strong>
+                <ul>
+                    <li>Both ref and out are used to pass arguments by reference.</li>
+                    <li>ref requires that the variable be initialized before being passed.</li>
+                    <li>out does not require the variable to be initialized before being passed, but it must be assigned a value before the method returns.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>5. Explain async and await in C#.</strong>
+                <ul>
+                    <li>async keyword is used to declare a method as asynchronous.</li>
+                    <li>await keyword is used to pause the execution of an async method until the awaited task completes.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>6. What is a delegate in C#?</strong>
+                <p>A delegate is a type that represents references to methods with a particular parameter list and return type. It is similar to function pointers in C/C++, but it is type-safe.</p>
+            </li>
+            <li>
+                <strong>7. What is the difference between Func<>, Action<>, and Predicate<>?</strong>
+                <ul>
+                    <li>Func<> is a delegate that returns a value.</li>
+                    <li>Action<> is a delegate that does not return a value.</li>
+                    <li>Predicate<> is a delegate that returns a boolean value and is used for conditions.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>8. What is LINQ?</strong>
+                <p>Language Integrated Query (LINQ) is a set of methods and syntax in C# that allows querying of collections in a concise and readable way.</p>
+            </li>
+            <li>
+                <strong>9. What are generics in C#?</strong>
+                <p>Generics allow you to define a class, method, delegate, or interface with a placeholder for the type of data it stores or uses. This allows for type safety without compromising performance or code redundancy.</p>
+            </li>
+            <li>
+                <strong>10. Explain the concept of extension methods.</strong>
+                <p>Extension methods allow you to add methods to existing types without modifying the original type, creating a new derived type, or recompiling the original type. They are defined as static methods in a static class but are called as if they were instance methods on the extended type.</p>
+            </li>
+            <!-- Add more questions and answers as needed -->
+        </ul>
+    </div>
 </body>
 </html>
