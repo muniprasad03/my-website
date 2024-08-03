@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 50 Data Structures Interview Questions in C#</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        ol {
+            counter-reset: question-counter;
+        }
+        li {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        li::before {
+            counter-increment: question-counter;
+            content: counter(question-counter) ". ";
+            font-weight: bold;
+        }
+        strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+        p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Top 50 Data Structures Interview Questions in C#</h1>
+    <ol>
+        <li>
+            <strong>What is a data structure?</strong>
+            <p>A data structure is a particular way of organizing and storing data in a computer so that it can be accessed and modified efficiently.</p>
+        </li>
+        <li>
+            <strong>What are the different types of data structures?</strong>
+            <p>Arrays, Linked Lists, Stacks, Queues, Trees, Graphs, Hash Tables, Heaps, and more.</p>
+        </li>
+        <li>
+            <strong>What is an array in C#?</strong>
+            <p>An array is a collection of items stored at contiguous memory locations. The idea is to store multiple items of the same type together.</p>
+        </li>
+        <li>
+            <strong>How do you declare an array in C#?</strong>
+            <p><code>int[] numbers = new int[5];</code></p>
+        </li>
+        <li>
+            <strong>What is a linked list?</strong>
+            <p>A linked list is a linear data structure where each element is a separate object, called a node, which contains a reference (link) to the next node in the sequence.</p>
+        </li>
+        <li>
+            <strong>What are the types of linked lists?</strong>
+            <p>Singly linked list, doubly linked list, and circular linked list.</p>
+        </li>
+        <li>
+            <strong>What is a stack in C#?</strong>
+            <p>A stack is a linear data structure that follows the Last In First Out (LIFO) principle. It can be implemented using arrays or linked lists.</p>
+        </li>
+        <li>
+            <strong>How do you implement a stack in C#?</strong>
+            <p>You can use the <code>Stack&lt;T&gt;</code> class provided by the .NET framework.<br><code>Stack&lt;int&gt; stack = new Stack&lt;int&gt;();</code></p>
+        </li>
+        <li>
+            <strong>What is a queue in C#?</strong>
+            <p>A queue is a linear data structure that follows the First In First Out (FIFO) principle. It can be implemented using arrays or linked lists.</p>
+        </li>
+        <li>
+            <strong>How do you implement a queue in C#?</strong>
+            <p>You can use the <code>Queue&lt;T&gt;</code> class provided by the .NET framework.<br><code>Queue&lt;int&gt; queue = new Queue&lt;int&gt;();</code></p>
+        </li>
+        <li>
+            <strong>What is a binary tree?</strong>
+            <p>A binary tree is a hierarchical data structure in which each node has at most two children, referred to as the left child and the right child.</p>
+        </li>
+        <li>
+            <strong>What is a binary search tree (BST)?</strong>
+            <p>A BST is a binary tree in which each node has a value greater than or equal to the values in all the nodes in its left subtree and less than or equal to the values in all the nodes in its right subtree.</p>
+        </li>
+        <li>
+            <strong>How do you traverse a binary tree in C#?</strong>
+            <p>You can traverse a binary tree using pre-order, in-order, and post-order traversal methods.</p>
+        </li>
+        <li>
+            <strong>What is a graph?</strong>
+            <p>A graph is a data structure that consists of a finite set of nodes (or vertices) and a set of edges connecting the nodes.</p>
+        </li>
+        <li>
+            <strong>What are the types of graphs?</strong>
+            <p>Directed and undirected graphs.</p>
+        </li>
+        <li>
+            <strong>How do you represent a graph in C#?</strong>
+            <p>You can represent a graph using adjacency matrices or adjacency lists.</p>
+        </li>
+        <li>
+            <strong>What is a hash table?</strong>
+            <p>A hash table is a data structure that maps keys to values for highly efficient lookup. It uses a hash function to compute an index into an array of buckets or slots.</p>
+        </li>
+        <li>
+            <strong>How do you handle collisions in a hash table?</strong>
+            <p>Common collision resolution techniques include chaining and open addressing (linear probing, quadratic probing, and double hashing).</p>
+        </li>
+        <li>
+            <strong>What is a heap?</strong>
+            <p>A heap is a special tree-based data structure that satisfies the heap property. It can be a max heap or a min heap.</p>
+        </li>
+        <li>
+            <strong>What are the applications of heaps?</strong>
+            <p>Heaps are used in priority queues, heap sort, and for managing resources in memory.</p>
+        </li>
+        <li>
+            <strong>What is a trie?</strong>
+            <p>A trie is a special type of tree used to store associative data structures. A common application is storing a predictive text or autocomplete dictionary.</p>
+        </li>
+        <li>
+            <strong>What is a deque?</strong>
+            <p>A deque (double-ended queue) is a data structure that allows insertion and deletion of elements from both ends.</p>
+        </li>
+        <li>
+            <strong>What is a priority queue?</strong>
+            <p>A priority queue is a type of queue where each element is associated with a priority and elements are served according to their priority.</p>
+        </li>
+        <li>
+            <strong>How do you implement a priority queue in C#?</strong>
+            <p>You can use a heap to implement a priority queue.</p>
+        </li>
+        <li>
+            <strong>What is a circular buffer?</strong>
+            <p>A circular buffer is a fixed-size buffer that wraps around when the end is reached. It is useful for buffering data streams.</p>
+        </li>
+        <li>
+            <strong>What is a bloom filter?</strong>
+            <p>A bloom filter is a space-efficient probabilistic data structure used to test whether an element is a member of a set. It can have false positives but no false negatives.</p>
+        </li>
+        <li>
+            <strong>What is a skip list?</strong>
+            <p>A skip list is a data structure that allows fast search within an ordered sequence of elements. It uses multiple layers of linked lists.</p>
+        </li>
+        <li>
+            <strong>What are the differences between an array and a linked list?</strong>
+            <p>Arrays have fixed size, provide fast random access, and are efficient for indexed access. Linked lists have dynamic size, provide efficient insertions/deletions, and have no random access.</p>
+        </li>
+        <li>
+            <strong>What are the differences between a stack and a queue?</strong>
+            <p>A stack is LIFO (Last In First Out), whereas a queue is FIFO (First In First Out).</p>
+        </li>
+        <li>
+            <strong>What are the differences between a binary tree and a binary search tree?</strong>
+            <p>A binary tree is a tree data structure with at most two children for each node. A binary search tree is a binary tree with an ordered property where left children are less than the node and right children are greater.</p>
+        </li>
+        <li>
+            <strong>What is the time complexity of searching in a binary search tree?</strong>
+            <p>The average time complexity is O(log n), but in the worst case (unbalanced tree), it can be O(n).</p>
+        </li>
+        <li>
+            <strong>What is the time complexity of inserting an element in a heap?</strong>
+            <p>The time complexity is O(log n).</p>
+        </li>
+        <li>
+            <strong>What is a balanced tree?</strong>
+            <p>A balanced tree
+
+ is a tree structure where the height of the tree is kept as low as possible, ensuring operations such as insertion, deletion, and lookup remain efficient (O(log n)).</p>
+        </li>
+        <li>
+            <strong>What are examples of balanced trees?</strong>
+            <p>AVL trees, Red-Black trees, and B-trees.</p>
+        </li>
+        <li>
+            <strong>What is an AVL tree?</strong>
+            <p>An AVL tree is a self-balancing binary search tree where the difference in heights between the left and right subtrees cannot be more than one for all nodes.</p>
+        </li>
+        <li>
+            <strong>What is a Red-Black tree?</strong>
+            <p>A Red-Black tree is a self-balancing binary search tree where each node has an extra bit for denoting the color of the node, either red or black. This ensures the tree remains balanced during insertions and deletions.</p>
+        </li>
+        <li>
+            <strong>What is a B-tree?</strong>
+            <p>A B-tree is a self-balancing tree data structure that maintains sorted data and allows searches, sequential access, insertions, and deletions in logarithmic time.</p>
+        </li>
+        <li>
+            <strong>What is a segment tree?</strong>
+            <p>A segment tree is a tree data structure used for storing intervals or segments. It allows querying which segments contain a given point.</p>
+        </li>
+        <li>
+            <strong>What is a Fenwick tree (Binary Indexed Tree)?</strong>
+            <p>A Fenwick tree is a data structure that provides efficient methods for cumulative frequency tables or cumulative sum tables.</p>
+        </li>
+        <li>
+            <strong>What is a disjoint-set (union-find) data structure?</strong>
+            <p>A disjoint-set is a data structure that tracks a partition of a set into disjoint (non-overlapping) subsets. It supports union and find operations.</p>
+        </li>
+        <li>
+            <strong>What is the difference between a hash set and a hash table?</strong>
+            <p>A hash set is a collection of unique elements, while a hash table maps keys to values.</p>
+        </li>
+        <li>
+            <strong>What is the time complexity of accessing an element in a hash table?</strong>
+            <p>The average time complexity is O(1), but in the worst case, it can be O(n) due to collisions.</p>
+        </li>
+        <li>
+            <strong>What are the advantages of using a hash table over a tree?</strong>
+            <p>Hash tables provide faster access for lookup, insertion, and deletion on average, while trees maintain sorted order and allow range queries.</p>
+        </li>
+        <li>
+            <strong>What is the difference between a binary heap and a Fibonacci heap?</strong>
+            <p>A binary heap has better constant factors for most operations, while a Fibonacci heap has better amortized time complexity for decrease key and delete operations.</p>
+        </li>
+        <li>
+            <strong>What is a suffix tree?</strong>
+            <p>A suffix tree is a compressed trie of all the suffixes of a given text. It is used for string matching problems.</p>
+        </li>
+        <li>
+            <strong>What is the difference between depth-first search (DFS) and breadth-first search (BFS)?</strong>
+            <p>DFS explores as far down a branch as possible before backtracking, while BFS explores all neighbors at the present depth before moving on to nodes at the next depth level.</p>
+        </li>
+        <li>
+            <strong>What is the purpose of a spanning tree?</strong>
+            <p>A spanning tree of a graph is a tree that includes all the vertices of the graph with the minimum number of edges.</p>
+        </li>
+        <li>
+            <strong>What is a minimum spanning tree (MST)?</strong>
+            <p>An MST is a spanning tree with the minimum total edge weight.</p>
+        </li>
+        <li>
+            <strong>What algorithms are used to find the MST?</strong>
+            <p>Prim's and Kruskal's algorithms are commonly used to find the MST.</p>
+        </li>
+        <li>
+            <strong>What is a topological sort?</strong>
+            <p>A topological sort is a linear ordering of vertices in a directed acyclic graph (DAG) such that for every directed edge uv from vertex u to vertex v, u comes before v in the ordering.</p>
+        </li>
+        <li>
+            <strong>What is the difference between a binary search tree and a balanced binary search tree?</strong>
+            <p>A binary search tree does not guarantee balanced height, while a balanced binary search tree ensures the height is logarithmic.</p>
+        </li>
+    </ol>
+</body>
+</html>

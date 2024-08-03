@@ -1,0 +1,438 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C# Coding Interview Questions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #007BFF;
+        }
+        h2 {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        p {
+            margin: 10px 0;
+        }
+        .question {
+            font-weight: bold;
+            color: #007BFF;
+        }
+        .answer {
+            margin: 0;
+            padding: 10px;
+            border-left: 4px solid #007BFF;
+            background: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>C# Coding Interview Questions</h1>
+
+        <div class="qa">
+            <h2>1. What is the difference between `ref` and `out` parameters in C#?</h2>
+            <p class="answer">`ref` parameters require that the variable be initialized before it is passed. `out` parameters do not require initialization before being passed but must be assigned a value before the method returns.</p>
+        </div>
+
+        <div class="qa">
+            <h2>2. Explain the difference between `IEnumerable` and `IQueryable`.</h2>
+            <p class="answer">`IEnumerable` is used for querying collections in-memory and executes queries in-memory. `IQueryable` is used for querying data from an external source, like a database, and can execute queries on the data source.</p>
+        </div>
+
+        <div class="qa">
+            <h2>3. What is a `delegate` in C#?</h2>
+            <p class="answer">A `delegate` is a type that represents references to methods with a particular parameter list and return type. Delegates are used to pass methods as arguments and define callback methods.</p>
+        </div>
+
+        <div class="qa">
+            <h2>4. How does garbage collection work in C#?</h2>
+            <p class="answer">Garbage collection automatically reclaims memory by removing objects that are no longer in use. It works in generations and uses algorithms like mark-and-sweep to clean up unused objects.</p>
+        </div>
+
+        <div class="qa">
+            <h2>5. What are `async` and `await` used for in C#?</h2>
+            <p class="answer">`async` and `await` are used to simplify asynchronous programming. `async` marks a method as asynchronous, while `await` is used to pause the execution of the method until the awaited task completes.</p>
+        </div>
+
+        <div class="qa">
+            <h2>6. What is the purpose of the `using` statement in C#?</h2>
+            <p class="answer">The `using` statement ensures that objects that implement `IDisposable` are disposed of properly. It provides a convenient syntax for ensuring that resources are cleaned up.</p>
+        </div>
+
+        <div class="qa">
+            <h2>7. What are `abstract` classes and `interfaces` in C#?</h2>
+            <p class="answer">An `abstract` class can provide default implementations and cannot be instantiated. An `interface` only defines method signatures and properties without implementations. Classes that implement an interface must provide the implementations.</p>
+        </div>
+
+        <div class="qa">
+            <h2>8. Explain the concept of `inheritance` in C#.</h2>
+            <p class="answer">Inheritance allows a class to inherit members (fields, methods, properties) from another class. This promotes code reusability and establishes an "is-a" relationship between classes.</p>
+        </div>
+
+        <div class="qa">
+            <h2>9. What is the difference between `override` and `new` keywords in method hiding?</h2>
+            <p class="answer">`override` is used to provide a new implementation of a method inherited from a base class. `new` is used to hide a method inherited from a base class, which does not change the base class method.</p>
+        </div>
+
+        <div class="qa">
+            <h2>10. What is a `constructor` in C#?</h2>
+            <p class="answer">A constructor is a special method that is called when an object is instantiated. It is used to initialize the object and set default values for its fields.</p>
+        </div>
+
+        <div class="qa">
+            <h2>11. Explain the concept of `polymorphism` in C#.</h2>
+            <p class="answer">Polymorphism allows objects to be treated as instances of their base class rather than their actual class. It enables method overriding and dynamic method binding.</p>
+        </div>
+
+        <div class="qa">
+            <h2>12. What is `LINQ` in C#?</h2>
+            <p class="answer">Language Integrated Query (LINQ) is a set of methods that provide a consistent way to query collections, databases, XML, and other data sources using a common syntax.</p>
+        </div>
+
+        <div class="qa">
+            <h2>13. How do you handle exceptions in C#?</h2>
+            <p class="answer">Exceptions are handled using `try`, `catch`, `finally`, and `throw` blocks. `try` contains code that may throw an exception, `catch` handles the exception, and `finally` contains code that executes regardless of whether an exception was thrown.</p>
+        </div>
+
+        <div class="qa">
+            <h2>14. What is the difference between `Task` and `Thread` in C#?</h2>
+            <p class="answer">`Task` represents an asynchronous operation and is part of the Task Parallel Library (TPL). `Thread` is a lower-level construct used to perform tasks concurrently.</p>
+        </div>
+
+        <div class="qa">
+            <h2>15. Explain the `enum` type in C#.</h2>
+            <p class="answer">An `enum` is a distinct value type that defines a set of named constants. It is used to represent a collection of related values.</p>
+        </div>
+
+        <div class="qa">
+            <h2>16. What is the `dynamic` type in C#?</h2>
+            <p class="answer">The `dynamic` type bypasses compile-time type checking and allows for dynamic binding. It defers type checking to runtime.</p>
+        </div>
+
+        <div class="qa">
+            <h2>17. How do you create a custom exception in C#?</h2>
+            <p class="answer">To create a custom exception, inherit from the `Exception` class or one of its derived classes, and optionally add additional properties or methods.</p>
+        </div>
+
+        <div class="qa">
+            <h2>18. What is the `lock` statement used for in C#?</h2>
+            <p class="answer">The `lock` statement is used to ensure that a block of code runs exclusively by only one thread at a time, preventing race conditions in multithreaded applications.</p>
+        </div>
+
+        <div class="qa">
+            <h2>19. What are `properties` in C#?</h2>
+            <p class="answer">Properties are members of a class that provide a mechanism to read, write, or compute the values of private fields through `get` and `set` accessors.</p>
+        </div>
+
+        <div class="qa">
+            <h2>20. What is the purpose of the `readonly` keyword in C#?</h2>
+            <p class="answer">The `readonly` keyword specifies that a field can only be assigned at its declaration or in a constructor of the same class. It ensures that the field’s value remains constant after initialization.</p>
+        </div>
+
+        <div class="qa">
+            <h2>21. How does `string` interning work in C#?</h2>
+            <p class="answer">String interning is a process where identical string literals are stored in a single location in memory to save space and improve performance.</p>
+        </div>
+
+        <div class="qa">
+            <h2>22. What is the difference between `String` and `StringBuilder`?</h2>
+            <p class
+
+="answer">`String` is immutable, meaning any modification creates a new instance. `StringBuilder` is mutable and efficient for scenarios where a string needs to be modified frequently.</p>
+        </div>
+
+        <div class="qa">
+            <h2>23. What is the `nameof` operator in C#?</h2>
+            <p class="answer">The `nameof` operator returns the name of a variable, type, or member as a string. It provides compile-time checking and is used to avoid hardcoding string literals.</p>
+        </div>
+
+        <div class="qa">
+            <h2>24. How do you implement `method overloading` in C#?</h2>
+            <p class="answer">Method overloading allows multiple methods with the same name but different parameter lists within the same class. The correct method is selected based on the arguments provided.</p>
+        </div>
+
+        <div class="qa">
+            <h2>25. Explain `method overriding` in C#.</h2>
+            <p class="answer">Method overriding allows a derived class to provide a specific implementation of a method that is already defined in its base class. It uses the `override` keyword.</p>
+        </div>
+
+        <div class="qa">
+            <h2>26. What is the `volatile` keyword in C#?</h2>
+            <p class="answer">The `volatile` keyword is used to indicate that a field can be accessed by multiple threads and prevents the compiler from applying optimizations that assume the field does not change unexpectedly.</p>
+        </div>
+
+        <div class="qa">
+            <h2>27. What is the purpose of `extension methods` in C#?</h2>
+            <p class="answer">Extension methods allow you to add new methods to existing types without modifying their source code. They are defined in static classes and can be used as if they were instance methods.</p>
+        </div>
+
+        <div class="qa">
+            <h2>28. What is `type casting` and what types of casting exist in C#?</h2>
+            <p class="answer">Type casting is converting a variable from one type to another. Types of casting in C# include implicit casting, explicit casting, the `as` operator, and the `Convert` class.</p>
+        </div>
+
+        <div class="qa">
+            <h2>29. What are `generics` in C#?</h2>
+            <p class="answer">Generics allow you to define classes, methods, and interfaces with a placeholder for the type of data they store or use, providing type safety and reusability.</p>
+        </div>
+
+        <div class="qa">
+            <h2>30. What is `reflection` in C#?</h2>
+            <p class="answer">Reflection allows you to inspect and interact with types and members at runtime, enabling dynamic type creation, method invocation, and accessing metadata.</p>
+        </div>
+
+        <div class="qa">
+            <h2>31. How do you create and use a `delegate` in C#?</h2>
+            <p class="answer">A delegate is a type that represents references to methods with a matching signature. It can be used to pass methods as arguments and define callback methods.</p>
+        </div>
+
+        <div class="qa">
+            <h2>32. What is the difference between `Task.Run` and `Task.Factory.StartNew`?</h2>
+            <p class="answer">`Task.Run` is a simpler method to create and start a task. `Task.Factory.StartNew` offers more control over task creation, including options like task scheduler and cancellation tokens.</p>
+        </div>
+
+        <div class="qa">
+            <h2>33. How do you implement `method chaining` in C#?</h2>
+            <p class="answer">Method chaining allows multiple method calls on the same object in a single statement. It is achieved by having methods return the current object (`this`).</p>
+        </div>
+
+        <div class="qa">
+            <h2>34. What is the `ThreadPool` class and how is it used?</h2>
+            <p class="answer">The `ThreadPool` class provides a pool of worker threads for executing tasks asynchronously. You can queue work items to the pool using `ThreadPool.QueueUserWorkItem`.</p>
+        </div>
+
+        <div class="qa">
+            <h2>35. What is a `memory leak` and how can you avoid it in C#?</h2>
+            <p class="answer">A memory leak occurs when an application fails to release memory that is no longer needed. To avoid memory leaks, ensure proper disposal of resources, use `IDisposable` and `using` statements, and avoid long-lived references to objects.</p>
+        </div>
+
+        <div class="qa">
+            <h2>36. What is `serialization` in C#?</h2>
+            <p class="answer">Serialization is the process of converting an object into a format that can be easily stored or transmitted, such as XML or JSON. In C#, this can be done using classes from `System.Runtime.Serialization`.</p>
+        </div>
+
+        <div class="qa">
+            <h2>37. How does `async` and `await` improve performance in C#?</h2>
+            <p class="answer">`async` and `await` simplify asynchronous programming by allowing non-blocking operations. This keeps applications responsive during I/O-bound operations and improves overall performance.</p>
+        </div>
+
+        <div class="qa">
+            <h2>38. What are `value types` and `reference types` in C#?</h2>
+            <p class="answer">- **Value types** (e.g., `int`, `struct`) store data directly and are copied when assigned to another variable.<br>- **Reference types** (e.g., `class`, `object`) store references to the data, and variables hold references to the memory location of the data.</p>
+        </div>
+
+        <div class="qa">
+            <h2>39. What is the `nameof` operator used for?</h2>
+            <p class="answer">The `nameof` operator is used to obtain the name of a variable, type, or member as a string, providing compile-time checking and avoiding hardcoded string literals.</p>
+        </div>
+
+        <div class="qa">
+            <h2>40. What are `anonymous types` in C#?</h2>
+            <p class="answer">Anonymous types allow you to create objects with read-only properties without having to define a separate class. They are useful for quickly grouping data without creating a dedicated type.</p>
+        </div>
+
+        <div class="qa">
+            <h2>41. How do you implement a `hash table` in C#?</h2>
+            <p class="answer">A hash table can be implemented using the `Dictionary<TKey, TValue>` class in C# to store key-value pairs.</p>
+        </div>
+
+        <div class="qa">
+            <h2>42. What is a `stack` and how is it used in C#?</h2>
+            <p class="answer">A stack is a collection that follows the Last In First Out (LIFO) principle. It can be implemented using the `Stack<T>` class in C#.</p>
+        </div>
+
+        <div class="qa">
+            <h2>43. What is a `queue` and how is it used in C#?</h2>
+            <p class="answer">A queue is a collection that follows the First In First Out (FIFO) principle. It can be implemented using the `Queue<T>` class in C#.</p>
+        </div>
+
+        <div class="qa">
+            <h2>44. What is the purpose of the `Dispose` method in C#?</h2>
+            <p class="answer">The `Dispose` method is used to release unmanaged resources held by an object, typically in classes that use resources like file handles or network connections.</p>
+        </div>
+
+        <div class="qa">
+            <h2>45. What are `generic` types in C#?</h2>
+            <p class="answer">Generics allow you to define classes, methods, and interfaces with a placeholder for the type of data they store or use, providing type safety and reusability.</p>
+        </div>
+
+        <div class="qa">
+            <h2>46. What is `reflection` in C# and how can it be used?</h2>
+            <p class="answer">Reflection allows you to inspect and interact with types and members at runtime. It can be used for dynamic type creation, method invocation, and inspecting assemblies.</p>
+        </div>
+
+        <div class="qa">
+            <h2>47. How do you create and use a `delegate` in C#?</h2>
+            <p class="answer">A delegate is defined using the `delegate` keyword and can be used to reference methods with a matching signature. It allows you to pass methods as arguments and define callback methods.</p>
+        </div>
+
+        <div class="qa">
+            <h2>48. What is `dynamic` binding in C#?</h2>
+            <p class="answer">Dynamic binding allows method calls and property accesses to be resolved at runtime rather than compile time, using the `dynamic` type.</p>
+        </div>
+
+        <div class="qa">
+            <h2>49. How
+
+ do you implement a `singleton` pattern in C#?</h2>
+            <p class="answer">The singleton pattern ensures that a class has only one instance and provides a global point of access to it. This can be implemented using a static field and a private constructor.</p>
+        </div>
+
+        <div class="qa">
+            <h2>50. What is the `lock` statement used for in C#?</h2>
+            <p class="answer">The `lock` statement is used to ensure that a block of code runs exclusively by only one thread at a time, preventing race conditions in multithreaded applications.</p>
+        </div>
+
+        <!-- Add more questions here -->
+
+        <div class="qa">
+            <h2>51. What is the difference between `IEnumerable` and `IEnumerator`?</h2>
+            <p class="answer">`IEnumerable` is an interface that allows for iteration over a collection using `GetEnumerator()`, while `IEnumerator` provides the actual mechanism to iterate through the collection and access its elements.</p>
+        </div>
+
+        <div class="qa">
+            <h2>52. What are `default` and `custom` attributes in C#?</h2>
+            <p class="answer">Default attributes are built-in attributes provided by the .NET Framework, such as `[Serializable]`. Custom attributes are user-defined attributes created by inheriting from the `Attribute` class and are used to add metadata to code elements.</p>
+        </div>
+
+        <div class="qa">
+            <h2>53. How do you implement a `factory method` pattern in C#?</h2>
+            <p class="answer">The factory method pattern defines an interface for creating objects but allows subclasses to alter the type of objects that will be created. This is achieved by creating a base class with a factory method that is overridden by derived classes to create specific objects.</p>
+        </div>
+
+        <div class="qa">
+            <h2>54. What is `event` and how is it different from `delegate`?</h2>
+            <p class="answer">An `event` is a special type of delegate that provides a way to notify subscribers when something happens. It ensures that the delegate can only be invoked by the class that declares the event, while other classes can only subscribe or unsubscribe from it.</p>
+        </div>
+
+        <div class="qa">
+            <h2>55. What are `partial` classes in C#?</h2>
+            <p class="answer">Partial classes allow a class to be split into multiple files, making it easier to manage and organize large classes. All parts of a partial class are combined into a single class at compile time.</p>
+        </div>
+
+        <div class="qa">
+            <h2>56. How does `async`/`await` work with `Task` in C#?</h2>
+            <p class="answer">The `async` keyword marks a method as asynchronous, allowing the use of the `await` keyword inside it. `await` pauses the execution of the method until the `Task` completes, without blocking the calling thread.</p>
+        </div>
+
+        <div class="qa">
+            <h2>57. What is `dependency injection` and how is it used in C#?</h2>
+            <p class="answer">Dependency injection is a design pattern that allows for the injection of dependencies (objects) into a class rather than the class creating them. In C#, it is commonly used with frameworks like ASP.NET Core to achieve loose coupling and improve testability.</p>
+        </div>
+
+        <div class="qa">
+            <h2>58. What are `enumerations` and how are they used in C#?</h2>
+            <p class="answer">Enumerations (enums) define a set of named constants under a single type. They are used to represent a group of related values in a type-safe way. Enums are often used to represent states, options, or categories.</p>
+        </div>
+
+        <div class="qa">
+            <h2>59. What is the `default` keyword used for in C#?</h2>
+            <p class="answer">The `default` keyword is used to get the default value of a type. For value types, it returns zero or equivalent, and for reference types, it returns `null`.</p>
+        </div>
+
+        <div class="qa">
+            <h2>60. How does `exception handling` work in C#?</h2>
+            <p class="answer">Exception handling in C# is done using `try`, `catch`, `finally`, and `throw` keywords. `try` contains code that might throw an exception, `catch` handles the exception, `finally` ensures that code runs regardless of whether an exception occurred, and `throw` is used to explicitly throw exceptions.</p>
+        </div>
+
+        <div class="qa">
+            <h2>61. What is `lambda expression` in C#?</h2>
+            <p class="answer">A lambda expression is a concise way to represent an anonymous method using the `=>` syntax. It can be used to create delegates or expression tree types and is often used with LINQ queries.</p>
+        </div>
+
+        <div class="qa">
+            <h2>62. What are `indexers` in C#?</h2>
+            <p class="answer">Indexers allow objects to be indexed in the same way as arrays. They are defined using the `this` keyword and enable objects to provide a way to access elements using array-like syntax.</p>
+        </div>
+
+        <div class="qa">
+            <h2>63. What is the `params` keyword used for in C#?</h2>
+            <p class="answer">The `params` keyword allows a method to accept a variable number of arguments of a specified type. It must be the last parameter in the method's parameter list and is used to pass an array of values to the method.</p>
+        </div>
+
+        <div class="qa">
+            <h2>64. What are `access modifiers` in C#?</h2>
+            <p class="answer">Access modifiers control the visibility of types and members. The main access modifiers are `public`, `private`, `protected`, `internal`, and `protected internal`, each defining different levels of access control.</p>
+        </div>
+
+        <div class="qa">
+            <h2>65. How do you use `Nullable` types in C#?</h2>
+            <p class="answer">Nullable types allow value types to represent null values. They are defined using the `?` operator (e.g., `int?`) and can be used to handle situations where a value type may not have a value.</p>
+        </div>
+
+        <div class="qa">
+            <h2>66. What is the `nameof` operator in C#?</h2>
+            <p class="answer">The `nameof` operator returns the name of a variable, type, or member as a string. It helps avoid hardcoded strings and provides compile-time checking for member names.</p>
+        </div>
+
+        <div class="qa">
+            <h2>67. What are `attributes` in C#?</h2>
+            <p class="answer">Attributes provide a way to add metadata to code elements. They are defined by creating custom attribute classes and can be used to influence the behavior of code at runtime or compile time.</p>
+        </div>
+
+        <div class="qa">
+            <h2>68. What is `method hiding` in C#?</h2>
+            <p class="answer">Method hiding allows a derived class to define a method with the same name as a method in the base class but with a different implementation. It uses the `new` keyword to indicate that the method hides the base class method.</p>
+        </div>
+
+        <div class="qa">
+            <h2>69. How do you create a `custom collection` in C#?</h2>
+            <p class="answer">To create a custom collection, implement the `IEnumerable<T>` interface and provide the necessary methods for iteration. You may also implement `ICollection<T>` and `IList<T>` for more functionality.</p>
+        </div>
+
+        <div class="qa">
+            <h2>70. What is `dependency inversion` principle in C#?</h2>
+            <p class="answer">The Dependency Inversion Principle is one of the SOLID principles that states high-level modules should not depend on low-level modules, but both should depend on abstractions. Abstractions should not depend on details; details should depend on abstractions.</p>
+        </div>
+
+        <div class="qa">
+            <h2>71. What is `constructor chaining` in C#?</h2>
+            <p class="answer">Constructor chaining is a technique where one constructor calls another constructor in the same class using the `this` keyword. This is useful for code reuse and initializing multiple constructors with common logic.</p>
+        </div>
+
+        <div class="qa">
+            <h2>72. How do you implement `logging` in C#?</h2>
+            <p class="answer">Logging in C# can be implemented using various libraries like `NLog`, `log4net`, or the built-in `ILogger` in ASP.NET Core. These libraries provide functionality to log information, warnings, and errors to various outputs such as files, databases, or consoles.</p>
+        </div>
+
+        <div class="qa">
+            <h2>73. What is the `async` keyword used for?</h2>
+            <p class="answer">The `async` keyword is used to mark a method as asynchronous, allowing it to use the `await` keyword within its body. It enables non-blocking operations and improves responsiveness by allowing other operations to run concurrently.</p>
+        </div>
+
+        <div class="qa">
+            <h2>74. How does `thread synchronization` work in C#?</h2>
+            <p class="answer">Thread synchronization in C# is achieved using synchronization primitives like `lock`, `Monitor`, `Mutex`, `Semaphore`, and `ReaderWriterLock`. These tools help manage concurrent access to shared resources and prevent race conditions.</p>
+        </div>
+
+        <div class="qa">
+            <h2>75. What are `extension methods` and how are they used in C#?</h2>
+            <p class="answer">Extension methods allow you to add new methods to existing types without modifying their source code. They are defined in static classes and can be used to extend functionality for types like `string`, `int`, or custom types.</p>
+        </div>
+
+    </div>
+</body>
+</html>
