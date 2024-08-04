@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 100 ASP.NET MVC Interview Questions and Answers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .question {
+            font-weight: bold;
+            color: #0056b3;
+        }
+        .answer {
+            margin-bottom: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .section-title {
+            background: #f4f4f4;
+            padding: 10px;
+            border-bottom: 2px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Top 100 ASP.NET MVC Interview Questions and Answers</h1>
+        
+        <!-- Example of first few questions -->
+        <div class="section">
+            <div class="section-title">1. What is ASP.NET MVC?</div>
+            <div class="answer">
+                <p>ASP.NET MVC (Model-View-Controller) is a framework for building web applications using a model-view-controller pattern. It provides a way to create web applications that are testable, maintainable, and scalable by separating the concerns of an application.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">2. What are the benefits of using ASP.NET MVC?</div>
+            <div class="answer">
+                <p>Benefits include better separation of concerns, enhanced testability, full control over HTML markup, support for Test-Driven Development (TDD), and more flexible URL routing.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">3. Explain the Model-View-Controller (MVC) pattern.</div>
+            <div class="answer">
+                <p>The MVC pattern divides an application into three interconnected components:
+                    <ul>
+                        <li><strong>Model:</strong> Represents the application's data and business logic.</li>
+                        <li><strong>View:</strong> Represents the UI and presentation layer.</li>
+                        <li><strong>Controller:</strong> Handles user input and interacts with the Model to update the View.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <!-- Additional Questions -->
+        <div class="section">
+            <div class="section-title">4. What is a View in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>A View in ASP.NET MVC is a component that displays the data from the Model to the user. It is responsible for rendering HTML markup and is typically created using Razor syntax or other view engines like ASPX.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">5. What is a Controller in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>A Controller in ASP.NET MVC is responsible for handling user input, interacting with the Model, and selecting a View to render the response. Controllers contain action methods that process requests and return results.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">6. What are Action Methods?</div>
+            <div class="answer">
+                <p>Action Methods are methods within a Controller that handle incoming HTTP requests. They are responsible for processing the request, interacting with the Model, and returning a View or other result.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">7. What is the purpose of the Routing in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>Routing in ASP.NET MVC is used to map URL patterns to specific Controllers and Action Methods. It allows for clean and SEO-friendly URLs and facilitates the handling of incoming requests by directing them to the appropriate Controller and Action Method.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">8. What is the Razor View Engine?</div>
+            <div class="answer">
+                <p>The Razor View Engine is a markup syntax used in ASP.NET MVC to generate HTML dynamically. It allows for concise and readable syntax for embedding C# code within HTML, making it easier to work with dynamic content.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">9. How do you create a new ASP.NET MVC project?</div>
+            <div class="answer">
+                <p>To create a new ASP.NET MVC project, you can use Visual Studio:
+                    <ul>
+                        <li>Open Visual Studio.</li>
+                        <li>Select "Create a new project."</li>
+                        <li>Choose "ASP.NET Core Web Application" and click "Next."</li>
+                        <li>Enter project details and click "Create."</li>
+                        <li>Select "ASP.NET Core MVC" from the template options and click "Create."</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">10. What is Dependency Injection (DI) in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>Dependency Injection (DI) is a design pattern used to manage dependencies between objects. In ASP.NET MVC, DI helps to inject dependencies (like services or repositories) into controllers, enabling better testability, maintainability, and separation of concerns.</p>
+            </div>
+        </div>
+
+        <!-- Continuing with more questions in a similar format -->
+
+        <div class="section">
+            <div class="section-title">11. Explain Model Binding in ASP.NET MVC.</div>
+            <div class="answer">
+                <p>Model Binding in ASP.NET MVC is the process of mapping data from HTTP requests (e.g., form fields, query strings) to action method parameters or model properties. It allows for the automatic population of model properties based on incoming request data.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">12. What is the purpose of the Global.asax file?</div>
+            <div class="answer">
+                <p>The Global.asax file is used to define application-level events and configurations. It contains methods such as Application_Start, Application_End, Application_Error, and Session_Start, which are triggered at various stages of the application's lifecycle.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">13. What are Partial Views?</div>
+            <div class="answer">
+                <p>Partial Views are reusable view components that can be embedded within other views. They allow for the modularization of UI elements, reducing code duplication and enhancing maintainability by allowing portions of HTML to be shared across multiple views.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">14. How does ASP.NET MVC handle Validation?</div>
+            <div class="answer">
+                <p>ASP.NET MVC handles validation using Data Annotations and custom validation attributes. Data Annotations are attributes applied to model properties to enforce validation rules (e.g., [Required], [StringLength]). Validation errors are then displayed in the view using HTML helpers and validation summary.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">15. What is the role of the ViewBag in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>ViewBag is a dynamic property in ASP.NET MVC used to pass data from a Controller to a View. It allows for the transfer of data that doesn't need to be strongly typed and is useful for passing temporary data or metadata.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">16. What is the purpose of the Filter in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>Filters in ASP.NET MVC are used to execute code before or after an action method runs. They are used for cross-cutting concerns such as authentication, authorization, logging, and error handling. Common filter types include Authorization filters, Action filters, Result filters, and Exception filters.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">17. How do you implement custom routing in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>Custom routing in ASP.NET MVC can be implemented by configuring routes in the RouteConfig.cs file within the App_Start folder. You can define custom URL patterns and map them to specific controllers and actions using the RouteCollection object.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">18. What is the difference between TempData and ViewData?</div>
+            <div class="answer">
+                <p>TempData and ViewData are both used to pass data between controllers and views, but they have different lifetimes:
+                    <ul>
+                        <li><strong>TempData:</strong> Data persists only for the duration of the current and next request. It is typically used for passing data between redirects.</li>
+                        <li><strong>ViewData:</strong> Data persists only for the duration of the current request. It is used to pass data from a controller to a view within the same request.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">19. What is the purpose of the [Authorize] attribute in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>The [Authorize] attribute is used to restrict access to controllers or action methods based on the user's authentication or roles. It ensures that only authorized users can access specific resources or perform certain actions.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">20. How do you handle exceptions in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>Exceptions in ASP.NET MVC can be handled using Exception Filters, custom error pages, and the Application_Error method in Global.asax. Exception Filters allow you to define custom logic for handling exceptions, while custom error pages can be configured in web.config to display user-friendly error messages.</p>
+            </div>
+        </div>
+
+        <!-- Continue adding more questions up to 100 following the same format -->
+        
+        <!-- Additional Questions -->
+        <div class="section">
+            <div class="section-title">21. What is the difference between HtmlHelper and Html.RenderPartial?</div>
+            <div class="answer">
+                <p><strong>HtmlHelper:</strong> Used to generate HTML elements and render them to the response. It's used for creating form elements, rendering input fields, and other HTML content.</p>
+                <p><strong>Html.RenderPartial:</strong> Renders a partial view directly to the response stream. It is more efficient than Html.Partial because it does not involve creating a string to hold the HTML output.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">22. What is the use of the ViewStart file?</div>
+            <div class="answer">
+                <p>The _ViewStart.cshtml file is used to define settings and code that are shared across multiple views. It typically contains code for setting a common layout for all views in a folder or application.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">23. Explain the concept of Data Annotations in ASP.NET MVC.</div>
+            <div class="answer">
+                <p>Data Annotations are attributes applied to model properties that specify validation rules, formatting, and display information. Common attributes include [Required], [StringLength], and [Range]. They help enforce data integrity and provide metadata for the model.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">24. How can you use JavaScript and jQuery with ASP.NET MVC?</div>
+            <div class="answer">
+                <p>JavaScript and jQuery can be used in ASP.NET MVC by including them in your views through script tags or bundling and minification. You can use them for client-side interactions, AJAX requests, and DOM manipulation to enhance the user experience.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">25. What is the purpose of the Web API in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>ASP.NET Web API is a framework for building HTTP services that can be accessed from various clients, including browsers, mobile devices, and desktop applications. It allows for creating RESTful services that handle data exchange in JSON or XML formats.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">26. What are Bundles and Minification in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>Bundles are used to group multiple CSS and JavaScript files into a single file to reduce the number of requests to the server. Minification is the process of removing unnecessary characters from these files (like spaces and comments) to reduce file size and improve load times.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">27. What is the difference between ActionResult and ViewResult?</div>
+            <div class="answer">
+                <p><strong>ActionResult:</strong> A base class for all results returned by action methods. It provides a way to return different types of results, such as views, JSON, or files.</p>
+                <p><strong>ViewResult:</strong> A derived class of ActionResult that specifically renders a view. It is used when the action method returns a view to be rendered to the client.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">28. What is the role of the Application_Start method in Global.asax?</div>
+            <div class="answer">
+                <p>The Application_Start method is called when the application starts. It is typically used for configuring application-level settings, such as registering routes, setting up dependency injection, and initializing data or services.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">29. How does ASP.NET MVC handle form submissions?</div>
+            <div class="answer">
+                <p>ASP.NET MVC handles form submissions through model binding. When a form is submitted, the data is mapped to the parameters of the action method based on the names of form fields and the data types of method parameters. The model binding process also validates the data before it is passed to the action method.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">30. Explain the concept of ViewBag and ViewData.</div>
+            <div class="answer">
+                <p><strong>ViewBag:</strong> A dynamic property that allows you to pass data from a Controller to a View. It is typically used for passing simple data without needing a strongly typed model.</p>
+                <p><strong>ViewData:</strong> A dictionary used to pass data from a Controller to a View. It is similar to ViewBag but requires type casting when accessing values.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">31. What are HTML Helpers in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>HTML Helpers are methods that assist in generating HTML markup in Razor views. They are used to create form elements, links, and other HTML elements. Examples include Html.TextBox, Html.DropDownList, and Html.CheckBox.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">32. What is the difference between TempData and Session?</div>
+            <div class="answer">
+                <p><strong>TempData:</strong> Used to pass data from one request to the next. It is ideal for temporary data that is needed for a single request cycle and then discarded.</p>
+                <p><strong>Session:</strong> Used to store user-specific data for the entire session. Data stored in the Session object persists across multiple requests and can be used for longer-term storage.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">33. How do you create a custom attribute in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>To create a custom attribute, inherit from the appropriate base class (e.g., ActionFilterAttribute for action filters) and override the desired methods. Apply the attribute to controllers or actions as needed. For example:</p>
+                <pre><code>public class CustomAttribute : ActionFilterAttribute
+{
+    public override void OnActionExecuting(ActionExecutingContext filterContext)
+    {
+        // Custom logic here
+    }
+}</code></pre>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">34. What is a ViewModel in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>A ViewModel is a class that represents the data and state of a view. It is used to encapsulate the data and behavior needed for a specific view, combining multiple model objects or additional properties to simplify data binding and enhance view logic.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">35. What is the purpose of the Web.config file in an ASP.NET MVC application?</div>
+            <div class="answer">
+                <p>The Web.config file is used to configure various settings for an ASP.NET MVC application, including connection strings, custom errors, authentication settings, and other configuration options. It is an XML file that is read during application startup.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">36. Explain the concept of a Layout in ASP.NET MVC.</div>
+            <div class="answer">
+                <p>A Layout is a common template for the overall structure of web pages in an ASP.NET MVC application. It defines a common layout that can be shared across multiple views, including headers, footers, and other shared elements. Views use the layout to ensure consistency in page structure.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">37. How do you handle authentication and authorization in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>Authentication in ASP.NET MVC is handled through authentication mechanisms like Forms Authentication or ASP.NET Identity. Authorization is managed using attributes such as [Authorize] to restrict access based on user roles or claims. Both can be configured in the Web.config file or through custom logic in controllers.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">38. What is the purpose of the ModelState dictionary?</div>
+            <div class="answer">
+                <p>The ModelState dictionary is used to store the state of the model during model binding and validation. It contains information about whether model binding succeeded, validation errors, and the state of individual fields. It helps in managing and displaying validation messages in the view.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">39. How do you use Ajax in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>Ajax can be used in ASP.NET MVC to make asynchronous requests to the server without refreshing the entire page. You can use jQuery’s $.ajax method or HtmlHelper methods like @Html.BeginForm with the ajax option. Partial views and JSON responses are often used with Ajax to update parts of the page dynamically.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">40. What is the difference between a View and a Partial View?</div>
+            <div class="answer">
+                <p><strong>View:</strong> Represents a complete web page or a user interface. It is a full response that is rendered as a whole.</p>
+                <p><strong>Partial View:</strong> Represents a segment of a page or a reusable component. It is used to render a portion of HTML content within a view or another partial view.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">41. What is a filter in ASP.NET MVC, and how is it used?</div>
+            <div class="answer">
+                <p>A filter is a custom class that provides a way to execute code before or after an action method runs. Filters can be used for cross-cutting concerns such as logging, authorization, error handling, and caching. ASP.NET MVC supports several types of filters, including Authorization, Action, Result, and Exception filters.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">42. What are the different types of Filters in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>ASP.NET MVC supports several types of filters:
+                    <ul>
+                        <li><strong>Authorization Filters:</strong> Used to determine if a user is authorized to access a particular resource.</li>
+                        <li><strong>Action Filters:</strong> Used to run code before or after an action method executes.</li>
+                        <li><strong>Result Filters:</strong> Used to run code before or after the execution of the result (e.g., rendering the view).</li>
+                        <li><strong>Exception Filters:</strong> Used to handle exceptions thrown by action methods.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">43. What is the role of the RouteConfig class?</div>
+            <div class="answer">
+                <p>The RouteConfig class is used to define and configure routes in an ASP.NET MVC application. It is typically found in the App_Start folder and contains a RegisterRoutes method where routes are added to the RouteCollection. This configuration determines how URL patterns map to controllers and actions.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">44. What is the purpose of the _ViewImports.cshtml file?</div>
+            <div class="answer">
+                <p>The _ViewImports.cshtml file is used to import namespaces and add common directives to Razor views. It helps in reducing redundancy by including common using statements, tag helpers, and view components across multiple views within a folder.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">45. How can you use custom HTML helpers in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>Custom HTML Helpers are user-defined methods that generate HTML markup. To create one, define a static class with extension methods for the HtmlHelper class. These methods can be used in views to simplify complex HTML rendering logic. For example:</p>
+                <pre><code>public static class HtmlHelperExtensions
+{
+    public static IHtmlString CustomTextBox(this HtmlHelper htmlHelper, string name, string value)
+    {
+        return new HtmlString($"<input type='text' name='{name}' value='{value}' />");
+    }
+}</code></pre>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">46. What is the purpose of the ViewModel in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>The ViewModel is a class that holds the data and state required by a view. It combines multiple models or additional properties and methods necessary for the view's functionality. It helps in simplifying data binding and separating view-specific logic from the core model.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">47. How does ASP.NET MVC handle session state?</div>
+            <div class="answer">
+                <p>ASP.NET MVC handles session state similarly to ASP.NET Web Forms. Session state is used to store user-specific data across requests. It can be configured to use different modes such as In-Process, State Server, or SQL Server to persist session data.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">48. How can you implement logging in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>Logging in ASP.NET MVC can be implemented using various logging frameworks like log4net, NLog, or Serilog. You can configure these libraries to log information, warnings, and errors. Logging can be integrated into controllers, services, and middleware to capture and monitor application behavior.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">49. What is the role of the Dependency Resolver in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>The Dependency Resolver is responsible for resolving dependencies and managing the lifecycle of services and objects within the application. It allows for dependency injection by providing a way to inject dependencies into controllers, services, and other components.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">50. How can you use asynchronous programming in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>Asynchronous programming in ASP.NET MVC can be achieved using async and await keywords in action methods. It allows for non-blocking operations, such as database calls or web service requests, to improve scalability and performance by freeing up threads while waiting for I/O operations to complete.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">51. What are action filters and how do you use them?</div>
+            <div class="answer">
+                <p>Action filters are used to execute code before or after an action method runs. They can be used for tasks such as logging, authentication, and error handling. You can create custom action filters by inheriting from ActionFilterAttribute and overriding methods like OnActionExecuting and OnActionExecuted.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">52. How can you implement role-based authorization in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>Role-based authorization can be implemented using the [Authorize] attribute with role names specified. For example, [Authorize(Roles = "Admin")] restricts access to users with the "Admin" role. Role-based authorization can also be configured in the Web.config file or through ASP.NET Identity.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">53. Explain how you can use Entity Framework with ASP.NET MVC.</div>
+            <div class="answer">
+                <p>Entity Framework (EF) is an Object-Relational Mapper (ORM) that allows you to work with a database using .NET objects. In ASP.NET MVC, you can use EF to perform CRUD operations by defining DbContext and entity classes. EF supports LINQ queries, lazy loading, and migrations to manage database schema changes.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">54. What is the purpose of the RouteCollection class?</div>
+            <div class="answer">
+                <p>The RouteCollection class is used to store and manage a collection of route definitions in ASP.NET MVC. It is part of the routing system and provides methods to add, remove, or retrieve routes. Routes define URL patterns and map them to controllers and action methods.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">55. How do you create a custom route in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>To create a custom route, you need to define a route pattern and map it to a specific controller and action method. You can do this in the RouteConfig class by using the MapRoute method. For example:</p>
+                <pre><code>routes.MapRoute(
+    name: "CustomRoute",
+    url: "custom/{controller}/{action}/{id}",
+    defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+);</code></pre>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">56. What is the purpose of the Model Binder in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>The Model Binder is responsible for converting HTTP request data into .NET objects. It binds form values, query strings, and route data to action method parameters or model properties. Custom model binders can be created to handle complex data binding scenarios.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">57. How do you use View Components in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>View Components are used to encapsulate reusable chunks of rendering logic in ASP.NET MVC. They are similar to partial views but provide more control over the rendering process. You can create a View Component by inheriting from ViewComponent and calling it from a view or layout using the @Component.InvokeAsync method.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">58. What is the role of the Global.asax file in an ASP.NET MVC application?</div>
+            <div class="answer">
+                <p>The Global.asax file is used to handle application-level events and configure settings for the ASP.NET MVC application. It contains methods like Application_Start, Application_Error, and Application_End, which allow you to execute code during application startup, handle global errors, and manage application lifecycle events.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">59. What is the purpose of the FilterConfig class?</div>
+            <div class="answer">
+                <p>The FilterConfig class is used to register global filters in an ASP.NET MVC application. Filters defined in this class apply to all controllers and action methods within the application. It is typically used to register authentication, authorization, and exception filters.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">60. Explain the use of the ModelState.IsValid property.</div>
+            <div class="answer">
+                <p>The ModelState.IsValid property is used to check if the model binding and validation have succeeded. It returns true if the model is valid and contains no validation errors; otherwise, it returns false. This property is typically used in controller actions to determine if form data is valid before processing it.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">61. What is the purpose of the HttpPost attribute?</div>
+            <div class="answer">
+                <p>The HttpPost attribute is used to specify that an action method should handle HTTP POST requests. It is commonly used for actions that process form submissions or perform data updates, ensuring that the method responds only to POST requests.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">62. How can you manage application settings in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>Application settings in ASP.NET MVC can be managed using the Web.config file, which allows you to define and store configuration settings such as connection strings, app settings, and custom configuration sections. These settings can be accessed programmatically using ConfigurationManager.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">63. What is the purpose of the Web API in an ASP.NET MVC application?</div>
+            <div class="answer">
+                <p>The Web API is used to create HTTP services that can be consumed by various clients, including web browsers, mobile devices, and desktop applications. It allows for building RESTful services that return data in JSON or XML format, facilitating the development of modern, client-centric applications.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">64. How do you implement a custom validation attribute in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>To implement a custom validation attribute, inherit from the ValidationAttribute class and override the IsValid method. Define your custom validation logic inside this method. Apply the custom attribute to model properties to enforce custom validation rules. For example:</p>
+                <pre><code>public class CustomValidationAttribute : ValidationAttribute
+{
+    protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+    {
+        // Custom validation logic here
+        if (/* condition */)
+        {
+            return ValidationResult.Success;
+        }
+        return new ValidationResult("Validation error message.");
+    }
+}</code></pre>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">65. What are some best practices for designing ASP.NET MVC applications?</div>
+            <div class="answer">
+                <p>Some best practices include:
+                    <ul>
+                        <li>Use a layered architecture to separate concerns (e.g., Controllers, Services, Repositories).</li>
+                        <li>Implement proper error handling and logging.</li>
+                        <li>Use dependency injection to manage dependencies.</li>
+                        <li>Follow RESTful principles for designing API endpoints.</li>
+                        <li>Optimize performance with caching, bundling, and minification.</li>
+                        <li>Write unit tests and integration tests to ensure code quality.</li>
+                        <li>Follow security best practices such as input validation and protection against CSRF/XSS attacks.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">66. How can you secure an ASP.NET MVC application?</div>
+            <div class="answer">
+                <p>Securing an ASP.NET MVC application involves:
+                    <ul>
+                        <li>Implementing authentication and authorization.</li>
+                        <li>Using HTTPS to encrypt data transmitted between the client and server.</li>
+                        <li>Validating and sanitizing user input to prevent injection attacks.</li>
+                        <li>Enabling anti-forgery tokens to protect against CSRF attacks.</li>
+                        <li>Configuring security headers to enhance protection.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">67. What is the difference between a synchronous and asynchronous action method?</div>
+            <div class="answer">
+                <p><strong>Synchronous action method:</strong> Executes the entire process in a blocking manner, holding up the thread until the action method completes.</p>
+                <p><strong>Asynchronous action method:</strong> Allows the action method to execute without blocking the thread, enabling better scalability and responsiveness. It uses async and await keywords to perform asynchronous operations.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">68. How can you perform model validation in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>Model validation in ASP.NET MVC can be performed using Data Annotations or custom validation attributes. Data Annotations are applied directly to model properties and provide validation rules like [Required], [StringLength], and [Range]. Custom validation attributes can be created by inheriting from ValidationAttribute and overriding the IsValid method.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">69. How do you handle large file uploads in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>Handling large file uploads can be achieved by:
+                    <ul>
+                        <li>Increasing the maximum allowed request size in the Web.config file.</li>
+                        <li>Using streaming to process files in chunks rather than loading them into memory.</li>
+                        <li>Implementing progress indicators and handling large files asynchronously to improve user experience.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">70. What is the role of the Entity Framework in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>Entity Framework (EF) is an ORM that provides an abstraction layer for database operations. It allows developers to work with database data using .NET objects, facilitating CRUD operations, complex queries, and database schema management without having to write raw SQL queries. EF supports both Code-First and Database-First approaches for data modeling.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">71. How can you use dependency injection in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>Dependency Injection (DI) in ASP.NET MVC can be implemented using built-in DI containers or third-party libraries like Autofac, Ninject, or Unity. You register services and dependencies in the application's startup configuration and inject them into controllers or other components through constructor injection or property injection.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">72. How do you handle errors and exceptions in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>Error handling in ASP.NET MVC can be managed using:
+                    <ul>
+                        <li><strong>Exception filters:</strong> Custom filters that handle exceptions globally.</li>
+                        <li><strong>Custom error pages:</strong> Configured in Web.config to display user-friendly error messages.</li>
+                        <li><strong>Try-catch blocks:</strong> Used within action methods to catch and handle exceptions.</li>
+                        <li><strong>Application_Error event:</strong> Handled in Global.asax for global exception handling.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">73. What is the purpose of the Web.config file in an ASP.NET MVC application?</div>
+            <div class="answer">
+                <p>The Web.config file is used to configure application settings and behaviors in ASP.NET MVC. It includes settings for authentication, authorization, connection strings, custom configuration sections, and application-level settings. It helps in managing the application's configuration and environment settings.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">74. What is the purpose of the App_Start folder in an ASP.NET MVC application?</div>
+            <div class="answer">
+                <p>The App_Start folder contains configuration files and classes that are executed during the application startup. Commonly included files are RouteConfig.cs, FilterConfig.cs, and BundleConfig.cs, which are used to configure routing, filters, and bundling/minification of scripts and styles.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">75. What is the purpose of the BundleConfig class?</div>
+            <div class="answer">
+                <p>The BundleConfig class is used to configure bundling and minification of CSS and JavaScript files. Bundling combines multiple files into a single bundle, and minification removes unnecessary characters from files to reduce their size. This improves page load times and overall performance.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">76. How can you implement caching in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>Caching in ASP.NET MVC can be implemented using several techniques:
+                    <ul>
+                        <li><strong>Output Caching:</strong> Caches the rendered HTML of a view to improve performance. Can be configured using the [OutputCache] attribute.</li>
+                        <li><strong>Data Caching:</strong> Caches data retrieved from a database or other sources using cache providers like MemoryCache or distributed caches.</li>
+                        <li><strong>Partial View Caching:</strong> Caches the output of partial views to avoid re-rendering them on every request.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">77. How do you configure custom routes in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>Custom routes are configured in the RouteConfig class by using the RouteCollection's MapRoute method. You define route patterns and map them to specific controllers and action methods. Custom routes can be added before the default route to ensure proper route matching.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">78. What is the role of the HttpContext class in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>The HttpContext class provides access to HTTP-specific information about an individual request. It includes properties such as Request, Response, Session, and Server. HttpContext is used to interact with the current HTTP request and response, manage session state, and handle other request-specific data.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">79. What are Razor Pages and how do they differ from MVC Views?</div>
+            <div class="answer">
+                <p>Razor Pages are a feature in ASP.NET Core that provides a more page-centric approach to web development compared to MVC Views. Each Razor Page consists of a .cshtml file with embedded C# code and a PageModel class that handles the page’s logic. Unlike MVC Views, which are tightly coupled with controllers and action methods, Razor Pages are self-contained and better suited for scenarios with simple pages and CRUD operations.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">80. How do you implement localization and globalization in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>Localization and globalization in ASP.NET MVC involve:
+                    <ul>
+                        <li><strong>Resource Files:</strong> Use .resx files to store localized strings and access them using the ResourceManager.</li>
+                        <li><strong>Culture and UI Culture:</strong> Set culture and UI culture settings to format dates, numbers, and other culture-specific data.</li>
+                        <li><strong>Globalization Settings:</strong> Configure culture settings in Web.config or use middleware to set culture dynamically based on user preferences.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">81. What is the purpose of the TempData dictionary?</div>
+            <div class="answer">
+                <p>The TempData dictionary is used to pass data between action methods or between redirects. It is designed to store data temporarily that is needed for the next request only. Unlike ViewData and ViewBag, which are meant for the current request, TempData persists data across a redirect.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">82. How can you create a custom HTML helper in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>To create a custom HTML helper, define a static class with extension methods for HtmlHelper. Implement the HTML generation logic in these methods. For example:</p>
+                <pre><code>public static class HtmlHelperExtensions
+{
+    public static IHtmlString CustomLabel(this HtmlHelper htmlHelper, string text)
+    {
+        return new HtmlString($"<label>{text}</label>");
+    }
+}</code></pre>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">83. What is the purpose of the Controller in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>The Controller in ASP.NET MVC is responsible for handling user input, interacting with the model, and returning a response to the user. It processes incoming requests, performs actions based on user input, and selects the appropriate view to render the response. Controllers are the central component in the MVC pattern, acting as the intermediary between the model and the view.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">84. How do you use the [ValidateAntiForgeryToken] attribute in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>The [ValidateAntiForgeryToken] attribute is used to protect against Cross-Site Request Forgery (CSRF) attacks. It ensures that the request comes from a valid user by checking for a token in the request that matches a token sent with the form. The token is generated using the @Html.AntiForgeryToken() helper method and should be included in forms to enable validation.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">85. How can you use the [AllowAnonymous] attribute in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>The [AllowAnonymous] attribute is used to override authorization requirements for specific actions or controllers. It allows unauthenticated users to access an action method or controller even if the global authorization policy restricts access. This is useful for public-facing pages or actions that do not require authentication.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">86. What is the role of the HtmlHelper class in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>The HtmlHelper class provides methods for generating HTML markup in views. It simplifies the creation of HTML elements such as form inputs, links, and validation messages. HtmlHelper methods help to reduce repetitive HTML code and provide a consistent way to render HTML elements within Razor views.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">87. How do you configure custom error handling in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>Custom error handling can be configured in ASP.NET MVC using:
+                    <ul>
+                        <li><strong>Web.config:</strong> Define custom error pages and status codes in the <system.web> section.</li>
+                        <li><strong>Exception Filters:</strong> Create custom filters to handle exceptions and provide user-friendly error messages.</li>
+                        <li><strong>Application_Error:</strong> Use the Application_Error method in Global.asax to handle unhandled exceptions and redirect to custom error pages.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">88. What is the difference between ViewData and ViewBag in ASP.NET MVC?</div>
+            <div class="answer">
+                <p><strong>ViewData:</strong> A dictionary-based storage for passing data from a controller to a view. It requires type casting when retrieving values.</p>
+                <p><strong>ViewBag:</strong> A dynamic wrapper around ViewData that provides a more flexible way to pass data without type casting. It uses dynamic properties to access data.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">89. How can you implement logging in an ASP.NET MVC application?</div>
+            <div class="answer">
+                <p>Logging in an ASP.NET MVC application can be implemented using various logging frameworks such as NLog, Serilog, or log4net. Integrate the chosen logging library into the application, configure it to log messages, and use it to record log entries for debugging, error tracking, and monitoring application behavior.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">90. How do you use attribute routing in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>Attribute routing allows you to define routes directly on action methods and controllers using route attributes. This approach provides more control and flexibility over routing. To use attribute routing, enable it in the RouteConfig class by calling RouteConfig.RegisterRoutes(RouteTable.Routes) and use the [Route] attribute on your controllers and actions. For example:</p>
+                <pre><code>[Route("products/{id}")]
+public ActionResult Details(int id)
+{
+    // Action method logic
+}</code></pre>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">91. What is the purpose of the IActionFilter interface?</div>
+            <div class="answer">
+                <p>The IActionFilter interface allows you to create custom filters that execute before or after an action method is called. It provides methods like OnActionExecuting and OnActionExecuted that you can override to implement custom logic before and after action method execution. This is useful for tasks like logging, validation, and modifying action parameters or results.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">92. How do you use the [HttpGet] attribute in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>The [HttpGet] attribute specifies that an action method should handle HTTP GET requests. It is used to indicate that the method should respond to GET requests only, which is commonly used for retrieving data or displaying a form. It helps to ensure that the action method is invoked only for the specified HTTP verb.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">93. What is the purpose of the [HttpPost] attribute in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>The [HttpPost] attribute specifies that an action method should handle HTTP POST requests. It is used for methods that process data submitted from a form, such as creating or updating resources. This attribute ensures that the method responds only to POST requests and not to GET or other HTTP verbs.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">94. How can you implement asynchronous programming in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>Asynchronous programming in ASP.NET MVC can be implemented using async and await keywords in action methods. By marking action methods as async and using await for asynchronous operations, you can improve scalability and responsiveness. For example:</p>
+                <pre><code>public async Task<ActionResult> Index()
+{
+    var data = await GetDataAsync();
+    return View(data);
+}</code></pre>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">95. How do you implement authorization in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>Authorization in ASP.NET MVC can be implemented using:
+                    <ul>
+                        <li><strong>Role-based Authorization:</strong> Control access based on user roles using attributes like [Authorize(Roles = "Admin")].</li>
+                        <li><strong>Claims-based Authorization:</strong> Implement more granular access control using claims-based policies.</li>
+                        <li><strong>Custom Authorization:</strong> Create custom authorization attributes to define specific access rules.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">96. What is the purpose of the [Authorize] attribute in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>The [Authorize] attribute restricts access to controllers or action methods based on user authentication and authorization. It can be used to enforce role-based or claims-based access control, ensuring that only authorized users can access certain parts of the application. You can specify roles or policies within the attribute to define the required permissions.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">97. How do you handle form validation in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>Form validation in ASP.NET MVC can be handled using Data Annotations and client-side validation. Data Annotations provide attributes like [Required], [StringLength], and [Range] that define validation rules on model properties. Client-side validation is supported by including the jQuery validation library and unobtrusive validation scripts. Validation messages can be displayed using Html.ValidationMessageFor or similar helper methods.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">98. How do you implement a custom model binder in ASP.NET MVC?</div>
+            <div class="answer">
+                <p>To implement a custom model binder, inherit from the IModelBinder interface and implement the BindModel method. Register the custom model binder in the Global.asax file or RouteConfig class. For example:</p>
+                <pre><code>public class CustomModelBinder : IModelBinder
+{
+    public object BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
+    {
+        // Custom binding logic here
+    }
+}</code></pre>
+                <p>Register the custom model binder:</p>
+                <pre><code>ModelBinders.Binders.Add(typeof(MyModel), new CustomModelBinder());</code></pre>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">99. What is the difference between Html.BeginForm and Html.Form in ASP.NET MVC?</div>
+            <div class="answer">
+                <p><strong>Html.BeginForm:</strong> Begins a form tag and allows you to specify form attributes such as action, method, and HTML attributes. It is used in conjunction with a using block, which automatically closes the form tag at the end of the block.</p>
+                <p><strong>Html.Form:</strong> Does not exist in ASP.NET MVC. The correct method is Html.BeginForm, which is designed to simplify form creation and management.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">100. What are some common performance optimization techniques for ASP.NET MVC applications?</div>
+            <div class="answer">
+                <p>Common performance optimization techniques include:
+                    <ul>
+                        <li><strong>Caching:</strong> Use output caching, data caching, and partial view caching to reduce server load and improve response times.</li>
+                        <li><strong>Bundling and Minification:</strong> Combine and minify CSS and JavaScript files to reduce the number of requests and file sizes.</li>
+                        <li><strong>Asynchronous Programming:</strong> Use async and await to perform non-blocking operations and improve scalability.</li>
+                        <li><strong>Database Optimization:</strong> Optimize database queries and use appropriate indexing to improve data access performance.</li>
+                        <li><strong>Lazy Loading:</strong> Load data only when it is needed to improve initial page load times.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+    
+</body>
+</html>

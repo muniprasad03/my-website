@@ -3,521 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>C# Interview Questions & Answers</title>
+    <title>Modern Landing Page</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-        }
-        h1, h2 {
-            color: #2c3e50;
-        }
-        .question {
-            font-weight: bold;
-            color: #2980b9;
-        }
-        .answer {
-            margin-bottom: 20px;
-        }
-        ul {
             margin: 0;
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            background-color: #f0f4f8;
+            overflow-x: hidden;
+        }
+        .header {
+            background: linear-gradient(90deg, #0056b3, #003d7a);
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 0 20px;
+        }
+        .header .logo {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .header nav ul li {
+            margin-left: 20px;
+        }
+        .header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .header nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #e0e0e0;
+        }
+        .hero {
+            background: url('https://via.placeholder.com/1920x800') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 120px 20px 80px;
+            position: relative;
+            z-index: 0;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+        .hero h1 {
+            font-size: 60px;
+            margin: 0;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .hero p {
+            font-size: 22px;
+            margin: 20px 0;
+            font-weight: 300;
+        }
+        .hero .cta-button {
+            background-color: #ff6f61;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 25px;
+            transition: background-color 0.3s, transform 0.3s;
+            font-weight: 600;
+        }
+        .hero .cta-button:hover {
+            background-color: #e55b49;
+            transform: scale(1.05);
+        }
+        .section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .section h2 {
+            font-size: 36px;
+            margin: 0 0 20px;
+            font-weight: 700;
+        }
+        .section p {
+            font-size: 18px;
+            margin: 0 0 40px;
+            color: #555;
+            line-height: 1.6;
+        }
+        .footer {
+            background: linear-gradient(90deg, #0056b3, #003d7a);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+        .footer p {
+            margin: 0;
+            font-size: 16px;
         }
     </style>
 </head>
 <body>
-    <h1>C# Interview Questions & Answers</h1>
-
-    <div class="qa">
-        <p class="question">1. What is C#?</p>
-        <p class="answer">C# is a modern, object-oriented programming language developed by Microsoft. It is part of the .NET framework and is used for developing Windows applications, web applications, and web services.</p>
-
-        <p class="question">2. What are the main features of C#?</p>
-        <p class="answer">
-            <ul>
-                <li>Simple and easy to learn</li>
-                <li>Object-oriented</li>
-                <li>Component-oriented</li>
-                <li>Type-safe</li>
-                <li>Interoperability</li>
-                <li>Scalable and updatable</li>
-                <li>Structured language</li>
-                <li>Rich library</li>
-                <li>Automatic garbage collection</li>
-                <li>Indexers and properties</li>
-            </ul>
-        </p>
-
-        <p class="question">3. What is the difference between == and Equals() in C#?</p>
-        <p class="answer">
-            <ul>
-                <li>== operator is used to compare the reference identity and the Equals() method is used to compare the contents.</li>
-                <li>For value types, == compares values directly.</li>
-                <li>For reference types, == checks if both references point to the same object in memory, whereas Equals() can be overridden to compare the actual object data.</li>
-            </ul>
-        </p>
-
-        <p class="question">4. What is the difference between ref and out keywords?</p>
-        <p class="answer">
-            <ul>
-                <li>Both ref and out are used to pass arguments by reference.</li>
-                <li>ref requires that the variable be initialized before being passed.</li>
-                <li>out does not require the variable to be initialized before being passed, but it must be assigned a value before the method returns.</li>
-            </ul>
-        </p>
-
-        <p class="question">5. Explain async and await in C#.</p>
-        <p class="answer">
-            <ul>
-                <li>async keyword is used to declare a method as asynchronous.</li>
-                <li>await keyword is used to pause the execution of an async method until the awaited task completes.</li>
-            </ul>
-        </p>
-
-        <p class="question">6. What is a delegate in C#?</p>
-        <p class="answer">A delegate is a type that represents references to methods with a particular parameter list and return type. It is similar to function pointers in C/C++, but it is type-safe.</p>
-
-        <p class="question">7. What is the difference between Func<>, Action<>, and Predicate<>?</p>
-        <p class="answer">
-            <ul>
-                <li>Func<> is a delegate that returns a value.</li>
-                <li>Action<> is a delegate that does not return a value.</li>
-                <li>Predicate<> is a delegate that returns a boolean value and is used for conditions.</li>
-            </ul>
-        </p>
-
-        <p class="question">8. What is LINQ?</p>
-        <p class="answer">Language Integrated Query (LINQ) is a set of methods and syntax in C# that allows querying of collections in a concise and readable way.</p>
-
-        <p class="question">9. What are generics in C#?</p>
-        <p class="answer">Generics allow you to define a class, method, delegate, or interface with a placeholder for the type of data it stores or uses. This allows for type safety without compromising performance or code redundancy.</p>
-
-        <p class="question">10. Explain the concept of extension methods.</p>
-        <p class="answer">Extension methods allow you to add methods to existing types without modifying the original type, creating a new derived type, or recompiling the original type. They are defined as static methods in a static class but are called as if they were instance methods on the extended type.</p>
-
-        <p class="question">11. What is the difference between IEnumerable<T> and IQueryable<T>?</p>
-        <p class="answer">
-            <ul>
-                <li>IEnumerable<T> is used for in-memory collections and performs the query on the client side.</li>
-                <li>IQueryable<T> is used for out-of-memory collections (like databases) and performs the query on the server side.</li>
-            </ul>
-        </p>
-
-        <p class="question">12. What is the difference between Array and List<> in C#?</p>
-        <p class="answer">
-            <ul>
-                <li>Array has a fixed size and cannot be resized.</li>
-                <li>List<> is a dynamic array that can grow and shrink in size.</li>
-            </ul>
-        </p>
-
-        <p class="question">13. What is the purpose of using statement in C#?</p>
-        <p class="answer">The using statement is used to ensure that IDisposable objects are disposed of properly. It provides a way to manage resources such as file handles and database connections more efficiently.</p>
-
-        <p class="question">14. What is a nullable type in C#?</p>
-        <p class="answer">A nullable type can represent all the values of its underlying type plus an additional null value. Nullable types are instances of the System.Nullable<T> struct.</p>
-
-        <p class="question">15. Explain the concept of boxing and unboxing in C#.</p>
-        <p class="answer">
-            <ul>
-                <li>Boxing is the process of converting a value type to a reference type, specifically to a type object or to any interface type implemented by this value type.</li>
-                <li>Unboxing is the process of converting the reference type back to the value type.</li>
-            </ul>
-        </p>
-
-        <p class="question">16. What is polymorphism in C#?</p>
-        <p class="answer">Polymorphism is a fundamental concept in object-oriented programming that allows methods to do different things based on the object it is acting upon. In C#, polymorphism can be achieved through method overriding and method overloading.</p>
-
-        <p class="question">17. What are abstract classes in C#?</p>
-        <p class="answer">An abstract class is a class that cannot be instantiated and is intended to be inherited by other classes. It can contain abstract methods, which are methods without implementation.</p>
-
-        <p class="question">18. What is an interface in C#?</p>
-        <p class="answer">An interface defines a contract that implementing classes must adhere to. It can contain method, property, event, and indexer declarations, but no implementations.</p>
-
-        <p class="question">19. Explain the difference between throw and throw ex in C#.</p>
-        <p class="answer">
-            <ul>
-                <li>throw preserves the original stack trace of the exception.</li>
-                <li>throw ex resets the stack trace, which can make it harder to debug.</li>
-            </ul>
-        </p>
-
-        <p class="question">20. What is dependency injection?</p>
-        <p class="answer">Dependency injection is a design pattern used to implement IoC (Inversion of Control), where the creation and binding of dependencies are managed by an external entity (like a container), rather than by the dependent class itself.</p>
-
-        <p class="question">21. What is the difference between Task and Thread in C#?</p>
-        <p class="answer">
-            <ul>
-                <li>Task represents an asynchronous operation and is part of the Task Parallel Library (TPL). It is higher-level and more lightweight.</li>
-                <li>Thread is a lower-level representation of a concurrent execution path.</li>
-            </ul>
-        </p>
-
-        <p class="question">22. What is the yield keyword used for in C#?</p>
-        <p class="answer">The yield keyword is used to return each element one at a time, allowing the calling code to iterate through the elements of a collection without creating a temporary collection.</p>
-
-        <p class="question">23. What is the difference between const and readonly?</p>
-        <p class="answer">
-            <ul>
-                <li>const is a compile-time constant and must be initialized at the time of declaration.</li>
-                <li>readonly is a runtime constant and can be initialized in the
-
- declaration or in a constructor.</li>
-            </ul>
-        </p>
-
-        <p class="question">24. What is the purpose of the lock statement in C#?</p>
-        <p class="answer">The lock statement is used to ensure that a block of code runs to completion without being interrupted by other threads. It is used to manage concurrency and prevent race conditions.</p>
-
-        <p class="question">25. What is reflection in C#?</p>
-        <p class="answer">Reflection is the ability of a program to inspect and interact with its own metadata at runtime. It allows for dynamic type discovery and invocation of methods, among other things.</p>
-
-        <p class="question">26. What is the difference between method overriding and method overloading?</p>
-        <p class="answer">
-            <ul>
-                <li>Method overriding is used to provide a specific implementation of a method defined in a base class in a derived class.</li>
-                <li>Method overloading is the ability to create multiple methods with the same name but with different signatures (parameters).</li>
-            </ul>
-        </p>
-
-        <p class="question">27. What is a property in C#?</p>
-        <p class="answer">A property is a member that provides a flexible mechanism to read, write, or compute the value of a private field. Properties can be used as if they are public data members, but they actually use special methods called accessors.</p>
-
-        <p class="question">28. Explain the difference between encapsulation and abstraction in C#.</p>
-        <p class="answer">
-            <ul>
-                <li>Encapsulation is the bundling of data and methods that operate on that data within a single unit or class. It restricts direct access to some of an object's components.</li>
-                <li>Abstraction is the concept of hiding the complex implementation details and showing only the essential features of the object. It simplifies the complexity by allowing the programmer to focus on interactions at a higher level.</li>
-            </ul>
-        </p>
-
-        <p class="question">29. What is the difference between synchronous and asynchronous methods in C#?</p>
-        <p class="answer">
-            <ul>
-                <li>Synchronous methods block the calling thread until the method completes.</li>
-                <li>Asynchronous methods allow the calling thread to continue execution while the method runs in the background.</li>
-            </ul>
-        </p>
-
-        <p class="question">30. What is an event in C#?</p>
-        <p class="answer">An event is a message sent by an object to signal the occurrence of an action. Events are declared using delegates and can be used to implement custom event-handling functionality.</p>
-
-        <p class="question">31. Explain the difference between early binding and late binding in C#.</p>
-        <p class="answer">
-            <ul>
-                <li>Early binding refers to compile-time binding where the method and property names are checked during compilation.</li>
-                <li>Late binding refers to runtime binding where method and property names are resolved at runtime, typically using reflection.</li>
-            </ul>
-        </p>
-
-        <p class="question">32. What is the difference between a value type and a reference type in C#?</p>
-        <p class="answer">
-            <ul>
-                <li>Value types are stored in the stack and contain the actual data.</li>
-                <li>Reference types are stored in the heap and contain a reference to the actual data.</li>
-            </ul>
-        </p>
-
-        <p class="question">33. What is the IDisposable interface used for in C#?</p>
-        <p class="answer">The IDisposable interface is used to release unmanaged resources such as file handles, database connections, etc. It contains a single method, Dispose(), which is called to perform the necessary cleanup.</p>
-
-        <p class="question">34. What are partial classes in C#?</p>
-        <p class="answer">Partial classes allow the definition of a class to be split across multiple files. This is useful for managing large classes or for separating automatically generated code from manually written code.</p>
-
-        <p class="question">35. What is the difference between an abstract class and an interface?</p>
-        <p class="answer">
-            <ul>
-                <li>An abstract class can have implementations for some of its members, while an interface cannot have any implementations.</li>
-                <li>A class can implement multiple interfaces, but it can inherit from only one abstract class.</li>
-            </ul>
-        </p>
-
-        <p class="question">36. What is a sealed class in C#?</p>
-        <p class="answer">A sealed class is a class that cannot be inherited. It is used to prevent other classes from inheriting from it and overriding its behavior.</p>
-
-        <p class="question">37. Explain the concept of covariance and contravariance in C#.</p>
-        <p class="answer">
-            <ul>
-                <li>Covariance allows you to use a more derived type than originally specified.</li>
-                <li>Contravariance allows you to use a less derived type than originally specified.</li>
-                <li>Covariance and contravariance are typically used with generics and delegates.</li>
-            </ul>
-        </p>
-
-        <p class="question">38. What is a lambda expression in C#?</p>
-        <p class="answer">A lambda expression is a concise way to represent an anonymous method. It is often used to create delegates or expression tree types.</p>
-
-        <p class="question">39. What is the purpose of the dynamic keyword in C#?</p>
-        <p class="answer">The dynamic keyword bypasses compile-time type checking. It allows for the resolution of method calls and member accesses at runtime, providing a form of late binding.</p>
-
-        <p class="question">40. What is the difference between a stack and a heap in C#?</p>
-        <p class="answer">
-            <ul>
-                <li>Stack is used for static memory allocation and stores value types and reference pointers.</li>
-                <li>Heap is used for dynamic memory allocation and stores objects and reference types.</li>
-            </ul>
-        </p>
-
-        <p class="question">41. Explain the difference between Thread.Sleep and Task.Delay in C#.</p>
-        <p class="answer">
-            <ul>
-                <li>Thread.Sleep blocks the current thread for a specified amount of time.</li>
-                <li>Task.Delay creates a task that completes after a specified amount of time, allowing the thread to remain available for other tasks in the meantime.</li>
-            </ul>
-        </p>
-
-        <p class="question">42. What is the purpose of the GC.Collect() method in C#?</p>
-        <p class="answer">The GC.Collect() method forces an immediate garbage collection of all generations. It is generally recommended to let the garbage collector manage memory automatically, but GC.Collect() can be used in specific scenarios where immediate cleanup is necessary.</p>
-
-        <p class="question">43. What is an iterator in C#?</p>
-        <p class="answer">An iterator is a method that uses the yield return statement to return each element of a collection one at a time. Iterators provide a way to iterate through a collection without exposing its underlying structure.</p>
-
-        <p class="question">44. What is the difference between abstract method and virtual method?</p>
-        <p class="answer">
-            <ul>
-                <li>An abstract method has no implementation and must be overridden in derived classes.</li>
-                <li>A virtual method has an implementation, but can be overridden in derived classes.</li>
-            </ul>
-        </p>
-
-        <p class="question">45. What is a static constructor in C#?</p>
-        <p class="answer">A static constructor is used to initialize static members of a class. It is called automatically before the first instance is created or any static members are accessed.</p>
-
-        <p class="question">46. What is the difference between a struct and a class in C#?</p>
-        <p class="answer">
-            <ul>
-                <li>Structs are value types and are stored on the stack, whereas classes are reference types and are stored on the heap.</li>
-                <li>Structs are typically used for small data structures that contain primarily data and no complex behavior.</li>
-            </ul>
-        </p>
-
-        <p class="question">47. Explain the purpose of the volatile keyword in C#.</p>
-        <p class="answer">The volatile keyword indicates that a field can be modified by multiple threads that are executing simultaneously. It prevents the compiler from applying certain optimizations that assume single-threaded access.</p>
-
-        <p class="question">48. What is a destructor in C#?</p>
-        <p class="answer">A destructor is used to perform cleanup operations on unmanaged resources held by an object. It is called automatically by the garbage collector before the object is reclaimed.</p>
-
-        <p class="question">49. What is a namespace in C#?</p>
-        <p class="answer">A namespace is a way to organize and group related classes, interfaces, enums, and other types. It helps to avoid name collisions and to structure code in a logical manner.</p>
-
-        <p class="question">50. What is the difference between a public, private, and protected constructor in C#?</p>
-        <p class="answer">
-            <ul>
-                <li>A public constructor can be called from any other code.</li>
-                <li>A private constructor cannot be called from outside the class and is often used in singleton patterns.</li>
-                <li>A protected constructor can be called from within the class or by derived classes.</li>
-            </ul>
-        </p>
-
-        <p class="question">51. What is an anonymous type in C#?</p>
-        <p class="answer">An anonymous type is a type that does not have a name and is used to encapsulate a set of read-only properties. It is often used in LINQ queries to create objects with properties based on query results.</p>
-
-        <p class="question">52. What is a Tuple in C#?</p>
-        <p class="answer">A Tuple is a data structure that can hold a fixed number of items of different types. It is used to return multiple values from a method in a single object.</p>
-
-        <p class="question">53. What is the purpose of the default keyword in C#?</p>
-        <p class="answer">The default keyword is used to specify the default value of a type parameter or to initialize a variable with the default value of its type.</p>
-
-        <p class="question">54. What is the purpose of the params keyword in C#?</p>
-        <p class="answer">The params keyword allows a method to accept a variable number of arguments. It is used to create methods that can handle different numbers of arguments without requiring overloads.</p>
-
-        <p class="question">55. What is a dynamic object in C#?</p>
-        <p class="answer">A dynamic object is an object whose type is determined at runtime rather than compile time. The dynamic keyword is used to declare such objects and allows for operations to be resolved dynamically.</p>
-
-        <p class="question">56. What is the difference between deep copy and shallow copy?</p>
-        <p class="answer">
-            <ul>
-                <li>A shallow copy creates a new object but does not create copies of objects that the original object references.</li>
-                <li>A deep copy creates a new object and also recursively copies all objects referenced by the original object.</li>
-            </ul>
-        </p>
-
-        <p class="question">57. What is a method group in C#?</p>
-        <p class="answer">A method group is a collection of methods with the same name but different signatures. It allows for methods to be referenced and invoked using a single name, and is often used in conjunction with delegates.</p>
-
-        <p class="question">58. What is a reference type in C#?</p>
-        <p class="answer">A reference type is a type that stores a reference to its data rather than the data itself. Examples include classes, arrays, and delegates.</p>
-
-        <p class="question">59. What is a value type in C#?</p>
-        <p class="answer">A value type is a type that directly contains its data. Examples include integers, floats, and structs.</p>
-
-        <p class="question">60. What is the purpose of the virtual keyword in C#?</p>
-        <p class="answer">The virtual keyword is used to indicate that a method or property can be overridden in a derived class. It allows for runtime polymorphism by enabling derived classes to provide a specific implementation.</p>
-
-        <p class="question">61. What is the difference between an interface and an abstract class in C#?</p>
-        <p class="answer">
-            <ul>
-                <li>Interfaces cannot contain any implementation, whereas abstract classes can contain both abstract and concrete methods.</li>
-                <li>Interfaces are implemented using the `: interface` syntax, whereas abstract classes are inherited using the `: base` syntax.</li>
-            </ul>
-        </p>
-
-        <p class="question">62. What is the purpose of the new keyword in C#?</p>
-        <p class="answer">
-            <ul>
-                <li>The new keyword is used to create new instances of types.</li>
-                <li>It can also be used to hide a member inherited from a base class by creating a new member with the same name.</li>
-            </ul>
-        </p>
-
-        <p class="question">63. What is a constructor in C#?</p>
-        <p class="answer">A constructor is a special method that is called when an object is instantiated. It is used to initialize the object's state and can be overloaded to provide multiple ways to initialize an object.</p>
-
-        <p class="question">64. What is an indexer in C#?</p>
-        <p class="answer">An indexer allows an object to be indexed like an array. It is defined using the `this` keyword and provides a way to access the object's elements using an index.</p>
-
-        <p class="question">65. What is a delegate in C#?</p>
-        <p class="answer">A delegate is a type that represents references to methods with a particular parameter list and return type. It is used to pass methods as arguments, define event handlers, and implement callback methods.</p>
-
-        <p class="question">66. What is the purpose of the yield keyword in C#?</p>
-        <p class="answer">The yield keyword is used to simplify the creation of enumerators. It allows methods to return an IEnumerable<T> or IEnumerator<T> without having to create a separate class for the enumerator.</p>
-
-        <p class="question">67. What is the difference between a class and a struct in C#?</p>
-        <p class="answer">
-            <ul>
-                <li>Classes are reference types, while structs are value types.</li>
-                <li>Classes are stored on the heap, while structs are stored on the stack (if they are local variables).</li>
-                <li>Classes can have inheritance, whereas structs cannot.</li>
-            </ul>
-        </p>
-
-        <p class="question">68. What is an enumeration in C#?</p>
-        <p class="answer">An enumeration (enum) is a distinct value type that defines a set of named constants. It is used to represent a collection of related constants in a type-safe manner.</p>
-
-        <p class="question">69. What is the difference between a static class and a singleton pattern?</p>
-        <p class="answer">
-            <ul>
-                <li>A static class cannot be instantiated and all its members are static.</li>
-                <li>A singleton pattern ensures that a class has only one instance and provides a global point of access to it.</li>
-            </ul>
-        </p>
-
-        <p class="question">70. What is the purpose of the override keyword in C#?</p>
-        <p class="answer">The override keyword is used to provide a new implementation for a virtual or abstract method defined in a base class. It allows derived classes to change the behavior of inherited methods.</p>
-
-        <p class="question">71. What is the difference between a constructor and a factory method?</p>
-        <p class="answer">
-            <ul>
-                <li>A constructor is used to initialize an object when it is created, while a factory method is a method that creates and returns an instance of a class.</li>
-                <li>Factory methods can have additional logic for object creation, while constructors are limited to initialization.</li>
-            </ul>
-        </p>
-
-        <p class="question">72. What is the purpose of the internalsVisibleTo attribute in C#?</p>
-        <p class="answer">The internalsVisibleTo attribute is used to specify that another assembly can access the internal members of the assembly where it is defined. It is useful for unit testing and other scenarios where you need to expose internal members for specific purposes.</p>
-
-        <p class="question">73. What is a method signature in C#?</p>
-        <p class="answer">A method signature includes the method's name, return type, and parameter types. It is used to uniquely identify a method and distinguish it from other methods with the same name but different parameters.</p>
-        <p class="question">74. What is the difference between an implicit and an explicit conversion in C#?</p>
-        <p class="answer">
-            <ul>
-                <li>Implicit conversion is performed automatically by the compiler when converting from a smaller to a larger type or between compatible types.</li>
-                <li>Explicit conversion requires a cast operator to convert between incompatible types or when the conversion might result in data loss.</li>
-            </ul>
-        </p>
-
-        <p class="question">75. What is the purpose of the using statement in C#?</p>
-        <p class="answer">The using statement ensures that resources are disposed of properly. It is used to automatically call the `Dispose` method on an object when it goes out of scope, which is especially useful for managing unmanaged resources.</p>
-
-        <p class="question">76. What is the difference between an abstract class and an interface in C#?</p>
-        <p class="answer">
-            <ul>
-                <li>An abstract class can provide default implementation for some methods, while an interface cannot.</li>
-                <li>A class can implement multiple interfaces but can inherit from only one abstract class.</li>
-            </ul>
-        </p>
-
-        <p class="question">77. What is the purpose of the sealed keyword in C#?</p>
-        <p class="answer">The sealed keyword is used to prevent a class from being inherited. It is used to ensure that no other class can derive from the sealed class, providing a way to prevent further extension or modification.</p>
-
-        <p class="question">78. What is the difference between `==` and `Equals` method in C#?</p>
-        <p class="answer">
-            <ul>
-                <li>`==` is an operator used for comparing references or values, depending on the context. For reference types, it compares object references.</li>
-                <li>`Equals` is a method defined in the `Object` class and can be overridden to provide custom equality comparison logic.</li>
-            </ul>
-        </p>
-
-        <p class="question">79. What is a partial class in C#?</p>
-        <p class="answer">A partial class allows a class to be split across multiple files. Each part of the partial class is compiled into a single class, allowing developers to work on different aspects of the class in separate files.</p>
-
-        <p class="question">80. What is the difference between `String` and `StringBuilder` in C#?</p>
-        <p class="answer">
-            <ul>
-                <li>`String` is immutable, meaning any modification creates a new string object.</li>
-                <li>`StringBuilder` is mutable and is used for scenarios where strings are frequently modified, as it provides better performance for such operations.</li>
-            </ul>
-        </p>
-
-        <p class="question">81. What is the purpose of the `async` and `await` keywords in C#?</p>
-        <p class="answer">The `async` keyword is used to mark a method as asynchronous, allowing it to use the `await` keyword. The `await` keyword is used to pause the execution of the method until the awaited task completes, allowing other operations to run concurrently.</p>
-
-        <p class="question">82. What is a lambda expression in C#?</p>
-        <p class="answer">A lambda expression is a concise way to represent an anonymous method. It uses the `=>` syntax and can be used to create inline delegates or expression trees.</p>
-
-        <p class="question">83. What is a collection in C#?</p>
-        <p class="answer">A collection is a group of objects stored and managed as a single unit. Common types of collections in C# include arrays, lists, dictionaries, and queues.</p>
-
-        <p class="question">84. What is dependency injection in C#?</p>
-        <p class="answer">Dependency injection is a design pattern used to achieve inversion of control by injecting dependencies into a class rather than the class creating them. This improves modularity and makes the code easier to test.</p>
-
-        <p class="question">85. What is the purpose of the `override` keyword in C#?</p>
-        <p class="answer">The `override` keyword is used to provide a new implementation for a virtual or abstract method defined in a base class. It allows derived classes to change the behavior of inherited methods.</p>
-
-        <p class="question">86. What is an event in C#?</p>
-        <p class="answer">An event is a special type of delegate used to provide notifications. It allows objects to notify other objects when something of interest occurs, following the observer pattern.</p>
-
-        <p class="question">87. What is the purpose of the `lock` keyword in C#?</p>
-        <p class="answer">The `lock` keyword is used to ensure that only one thread can access a critical section of code at a time. It is used to prevent race conditions and ensure thread safety when accessing shared resources.</p>
-
-        <p class="question">88. What is a `try-catch` block in C#?</p>
-        <p class="answer">A `try-catch` block is used for exception handling. The `try` block contains code that might throw an exception, and the `catch` block contains code to handle the exception if one is thrown.</p>
-
-        <p class="question">89. What is the difference between `throw` and `throw ex` in C#?</p>
-        <p class="answer">
-            <ul>
-                <li>`throw` is used to rethrow the current exception while preserving its original stack trace.</li>
-                <li>`throw ex` is used to throw a new exception or rethrow the caught exception, but it loses the original stack trace, which can make debugging more difficult.</li>
-            </ul>
-        </p>
-
-        <p class="question">90. What is a `using` directive in C#?</p>
-        <p class="answer">The `using` directive is used to include namespaces in the file, allowing the code to use types defined in those namespaces without needing to fully qualify their names.</p>
-
-        <p class="question">91. What is a `static` class in C#?</p>
-        <p class="answer">A `static` class is a class that cannot be instantiated. It is used to group related methods and properties that do not require an object instance and can be accessed directly via the class name.</p>
-
-        <p class="question">92. What is a `namespace` in C#?</p>
-        <p class="answer">A `namespace` is a container that holds related classes, interfaces, structs, and enums. It is used to organize code and avoid naming conflicts by grouping related types together.</p>
-
-        <p class="question">93. What is the `default` keyword in C#?</p>
-        <p class="answer">The `default` keyword is used to specify the default value of a type parameter or to initialize variables of value types with their default values. For reference types, it returns `null`.</p>
-
-        <p class="question">94. What is a `getter` and `setter` in C#?</p>
-        <p class="answer">A `getter` is a method that retrieves the value of a property, while a `setter` is a method that sets the value of a property. They are used to encapsulate access to the data of an object.</p>
-
-        <p class="question">95. What is a `constructor chaining` in C#?</p>
-        <p class="answer">Constructor chaining refers to the practice of calling one constructor from another within the same class. This is achieved using the `this` keyword and allows for code reuse and simplified initialization logic.</p>
-
-        <p class="question">96. What is a `finalize` method in C#?</p>
-        <p class="answer">The `Finalize` method, defined by the `Object` class, is called by the garbage collector before an object is reclaimed. It is used to release unmanaged resources held by the object.</p>
-
-        <p class="question">97. What is the `gc` in C#?</p>
-        <p class="answer">`GC` stands for Garbage Collector, which is responsible for automatically managing memory by reclaiming memory occupied by objects that are no longer in use.</p>
-        <p class="question">98. What is the `partial` keyword in C#?</p>
-        <p class="answer">The `partial` keyword allows the definition of a class, struct, or interface to be split into multiple files. This can be useful for separating code into different files for better organization or for working with auto-generated code.</p>
-
-        <p class="question">99. What is the `dynamic` keyword in C#?</p>
-        <p class="answer">The `dynamic` keyword is used to declare a type whose operations are resolved at runtime rather than compile time. This allows for more flexible and dynamic interactions with objects but may result in runtime errors if operations are invalid.</p>
-
-        <p class="question">100. What is the difference between `IEnumerable` and `IEnumerator` in C#?</p>
-        <p class="answer">
-            <ul>
-                <li>`IEnumerable` is an interface that defines a method `GetEnumerator()` which returns an `IEnumerator`. It is used to provide a way to iterate over a collection.</li>
-                <li>`IEnumerator` is an interface that defines methods for iterating through a collection, including `MoveNext()`, `Reset()`, and a property `Current`. It is used by the `foreach` loop to traverse through the collection.</li>
-            </ul>
-        </p>
-    </div>
+    <header class="header">
+        <div class="container">
+            <div class="logo">Dot Net Interview Questions</div>
+            <nav>
+                <ul>
+                    <li><a href="cSharp.html">C#</a></li>
+                    <li><a href="interview-questions.html">Coding</a></li>
+                    <li><a href="aspnet-mvc-interview-questions.html">MVC</a></li>
+                    <li><a href="sql.html">SQL</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>Discover the Future with Us</h1>
+        <p>Join us on a journey of innovation and excellence. Explore our solutions and see what we can achieve together.</p>
+        <a href="#cta" class="cta-button">Get Started</a>
+    </section>
+
+    <section class="section" id="about">
+        <h2>About Us</h2>
+        <p>We are a leading company in our industry, committed to providing innovative solutions and exceptional service. Our team of experts is dedicated to helping you achieve your goals with cutting-edge technology and unparalleled expertise.</p>
+    </section>
+
+    <section class="section" id="services">
+        <h2>Our Services</h2>
+        <p>Explore our wide range of services designed to meet your needs. From advanced technology solutions to personalized consulting, we offer everything you need to succeed in a competitive market.</p>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 CodeWithMuni. All rights reserved.</p>
+    </footer>
 </body>
 </html>
