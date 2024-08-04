@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 200 Angular Interview Questions and Answers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            border-bottom: 3px solid #444;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            background: #444;
+        }
+        nav ul li {
+            margin: 0;
+        }
+        nav ul li a {
+            display: block;
+            padding: 10px 20px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        nav ul li a:hover {
+            background: #555;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .section {
+            margin: 20px 0;
+        }
+        .section h2 {
+            color: #333;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+        }
+        .question {
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        .answer {
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 2px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Top 200 Angular Interview Questions and Answers</h1>
+        <nav>
+            <ul>
+                <li><a href="#basics">Basics</a></li>
+                <li><a href="#components">Components</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#routing">Routing</a></li>
+                <li><a href="#advanced">Advanced</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div id="basics" class="section">
+            <h2>Basics</h2>
+
+            <div class="question">1. What is Angular?</div>
+            <div class="answer">Angular is a platform and framework for building single-page client applications using HTML and TypeScript. It is maintained by Google and provides a comprehensive set of tools and libraries for developing web applications.</div>
+
+            <div class="question">2. What are the key features of Angular?</div>
+            <div class="answer">Key features of Angular include a component-based architecture, dependency injection, a powerful template language, routing capabilities, and an integrated development environment (IDE) for building scalable and maintainable applications.</div>
+
+            <div class="question">3. What is a component in Angular?</div>
+            <div class="answer">A component in Angular is a building block of the application that encapsulates a view (HTML), data (TypeScript), and behavior (CSS). It consists of a class that defines the component's logic and a template that defines its view.</div>
+
+            <div class="question">4. What is a module in Angular?</div>
+            <div class="answer">A module in Angular is a container for a group of related components, services, directives, and pipes. It helps organize an application into cohesive blocks of functionality. The root module is called `AppModule`, and other modules can be feature modules or shared modules.</div>
+
+            <div class="question">5. What is data binding in Angular?</div>
+            <div class="answer">Data binding in Angular is a mechanism for synchronizing data between the model (component class) and the view (template). Angular supports two-way data binding, which allows changes in the model to be reflected in the view and vice versa.</div>
+
+            <div class="question">6. What are Angular directives?</div>
+            <div class="answer">Angular directives are special markers in the DOM that tell the Angular compiler to do something with a DOM element or component. There are three types of directives: components, structural directives (e.g., `*ngIf`, `*ngFor`), and attribute directives.</div>
+
+            <div class="question">7. What is the purpose of `ngOnInit` lifecycle hook?</div>
+            <div class="answer">The `ngOnInit` lifecycle hook is used for initialization logic in a component. It is called once, after the first `ngOnChanges`, and is used to perform any additional setup that is needed for the component after Angular has initialized the component's inputs.</div>
+
+            <div class="question">8. What is the difference between `ngOnChanges` and `ngOnInit`?</div>
+            <div class="answer">`ngOnChanges` is called when any data-bound input properties change, while `ngOnInit` is called once, after the component's inputs have been initialized. `ngOnChanges` is useful for reacting to changes in input properties, whereas `ngOnInit` is used for component initialization.</div>
+
+            <div class="question">9. What is Angular CLI?</div>
+            <div class="answer">Angular CLI (Command Line Interface) is a command-line tool that helps to create, manage, and build Angular applications. It provides commands for scaffolding components, services, modules, and other Angular artifacts, as well as running tests and building the application for deployment.</div>
+
+            <div class="question">10. How do you create a new Angular project using Angular CLI?</div>
+            <div class="answer">To create a new Angular project using Angular CLI, run the command `ng new project-name`. This will generate a new Angular project with the specified name, along with the default configuration and directory structure.</div>
+
+            <div class="question">11. What is the purpose of the `@NgModule` decorator?</div>
+            <div class="answer">The `@NgModule` decorator is used to define an Angular module. It provides metadata about the module, including declarations, imports, exports, providers, and bootstrap components, which Angular uses to organize and manage application components and services.</div>
+
+            <div class="question">12. What is the role of `bootstrap` in Angular modules?</div>
+            <div class="answer">The `bootstrap` array in an Angular module specifies the root component(s) that Angular should bootstrap when the application starts. This is the entry point for the application and the component that Angular will use to start rendering the application.</div>
+
+            <div class="question">13. How do you pass data from a parent component to a child component?</div>
+            <div class="answer">Data can be passed from a parent component to a child component using `@Input` properties. The parent component binds a value to the child's `@Input` property, allowing the child component to access and use the passed data.</div>
+
+            <div class="question">14. What is `@Output` and how is it used?</div>
+            <div class="answer">The `@Output` decorator is used to define an event that a component can emit to its parent component. It is typically used with `EventEmitter` to send custom events from the child component to the parent component.</div>
+
+            <div class="question">15. What are pipes in Angular?</div>
+            <div class="answer">Pipes in Angular are used to transform data in templates. They allow you to format data before displaying it to the user. Angular provides several built-in pipes, such as `DatePipe`, `CurrencyPipe`, and `DecimalPipe`, and you can also create custom pipes.</div>
+
+            <div class="question">16. What is the purpose of `ngIf` and `ngFor` directives?</div>
+            <div class="answer">The `ngIf` directive conditionally includes or excludes a template from the DOM based on an expression. The `ngFor` directive iterates over a collection and renders the template for each item in the collection. Both directives are used for dynamic rendering of content.</div>
+
+            <div class="question">17. How do you handle form validation in Angular?</div>
+            <div class="answer">Form validation in Angular can be handled using either template-driven forms or reactive forms. Template-driven forms use Angular's built-in directives in the template to manage validation, while reactive forms use `FormControl`, `FormGroup`, and `FormBuilder` to handle validation programmatically.</div>
+
+            <div class="question">18. What is a `FormGroup` in Angular?</div>
+            <div class="answer">A `FormGroup` is a collection of `FormControl` instances in Angular's reactive forms. It represents a group of related form controls, allowing you to manage and validate the entire group of controls together.</div>
+
+            <div class="question">19. What is the `ngModel` directive used for?</div>
+            <div class="answer">The `ngModel` directive is used for two-way data binding in Angular forms. It binds the value of an input, select, or textarea element to a property in the component's class, and updates the property when the user changes the input.</div>
+
+            <div class="question">20. What are Angular forms?</div>
+            <div class="answer">Angular forms are used to handle user input and validation in Angular applications. They can be either template-driven or reactive. Template-driven forms rely on Angular's built-in directives in the template, while reactive forms provide a more flexible and programmatic approach.</div>
+        </div>
+
+        <div id="components" class="section">
+            <h2>Components</h2>
+
+            <div class="question">21. What is the role of the `@Component` decorator?</div>
+            <div class="answer">The `@Component` decorator is used to define a class as an Angular component. It provides metadata about the component, such as its selector, template, and style, which Angular uses to create and manage the component.</div>
+
+            <div class="question">22. How do you create a component in Angular?</div>
+            <div class="answer">To create a component in Angular, use the Angular CLI command `ng generate component component-name` or `ng g c component-name`. This generates a component class, template, stylesheet, and test files in a directory with the specified name.</div>
+
+            <div class="question">23. What is the purpose of `@Input` and `@Output` decorators?</div>
+            <div class="answer">The `@Input` decorator allows a component to receive data from its parent component. The `@Output` decorator allows a component to emit events to its parent component. These decorators are used for component communication and data sharing.</div>
+
+            <div class="question">24. How do you handle user input in Angular components?</div>
+            <div class="answer">User input in Angular components can be handled using template-driven forms or reactive forms. Template-driven forms use directives in the template to manage input, while reactive forms use `FormControl`, `FormGroup`, and `FormBuilder` to handle form data programmatically.</div>
+
+            <div class="question">25. What is a service in Angular?</div>
+            <div class="answer">A service in Angular is a class that provides specific functionality and is typically used to share data or logic across multiple components. Services are injected into components or other services using Angular's dependency injection system.</div>
+
+            <div class="question">26. How do you provide a service at the root level?</div>
+            <div class="answer">To provide a service at the root level, use the `@Injectable` decorator with the `providedIn: 'root'` option. This makes the service a singleton and ensures that only one instance of the service is created and shared across the entire application.</div>
+
+            <div class="question">27. What is the `ngOnDestroy` lifecycle hook used for?</div>
+            <div class="answer">The `ngOnDestroy` lifecycle hook is used to perform cleanup logic when a component or service is destroyed. It is typically used to unsubscribe from observables, release resources, or perform other cleanup tasks to avoid memory leaks.</div>
+
+            <div class="question">28. What is the difference between a component and a directive?</div>
+            <div class="answer">A component is a directive with a view (template) and can be used to create reusable UI elements. A directive, on the other hand, is used to manipulate the DOM or add behavior to existing elements without creating a new view. Components are a type of directive with a template.</div>
+
+            <div class="question">29. What are Angular modules and why are they important?</div>
+            <div class="answer">Angular modules are a way to organize an Angular application into cohesive blocks of functionality. They help in grouping related components, services, directives, and pipes. Modules are important for maintaining a modular and maintainable codebase and for managing dependencies and lazy loading.</div>
+
+            <div class="question">30. How do you use `ngIf` and `ngFor` in Angular templates?</div>
+            <div class="answer">`ngIf` is used to conditionally include or exclude elements in the DOM based on an expression. `ngFor` is used to iterate over a collection and create an instance of the template for each item in the collection. Both directives are useful for dynamic rendering of content in templates.</div>
+
+            <div class="question">31. What is the purpose of Angular's dependency injection system?</div>
+            <div class="answer">Angular's dependency injection (DI) system is used to manage the creation and injection of services and other dependencies into components and services. It helps to decouple the components from their dependencies, making the application more modular and testable.</div>
+
+            <div class="question">32. What is the `@Injectable` decorator used for?</div>
+            <div class="answer">The `@Injectable` decorator is used to define a class as an injectable service. It allows Angular to create instances of the service and inject it into components or other services. The decorator also provides metadata about how the service should be provided.</div>
+
+            <div class="question">33. How do you handle HTTP requests in Angular?</div>
+            <div class="answer">HTTP requests in Angular are handled using the `HttpClient` service from `@angular/common/http`. It provides methods for making HTTP requests such as `get`, `post`, `put`, and `delete`. It also supports features like request interceptors, response handling, and error handling.</div>
+
+            <div class="question">34. What is the purpose of the `HttpInterceptor`?</div>
+            <div class="answer">`HttpInterceptor` is used to intercept and modify HTTP requests and responses in Angular applications. It allows you to add custom headers, handle authentication, log requests, or modify responses globally before they reach the application.</div>
+
+            <div class="question">35. What are Angular guards and how are they used?</div>
+            <div class="answer">Angular guards are used to control access to routes in an application. They can prevent navigation to certain routes or redirect users based on specific conditions. Common types of guards include `CanActivate`, `CanDeactivate`, `Resolve`, and `CanLoad`.</div>
+
+            <div class="question">36. What is the difference between `CanActivate` and `CanDeactivate` guards?</div>
+            <div class="answer">`CanActivate` guard determines whether a route can be activated based on certain conditions, while `CanDeactivate` guard determines whether the user can navigate away from a route, often used for unsaved changes or warnings before leaving the page.</div>
+
+            <div class="question">37. What is lazy loading in Angular?</div>
+            <div class="answer">Lazy loading is a technique used to load modules only when they are needed, rather than loading them at the application's startup. This improves application performance and reduces the initial load time. Angular supports lazy loading through feature modules and routing.</div>
+
+            <div class="question">38. How do you implement lazy loading in Angular?</div>
+            <div class="answer">To implement lazy loading in Angular, use the `loadChildren` property in the routing configuration. It specifies the path to the module that should be loaded lazily. For example: `{ path: 'feature', loadChildren: () => import('./feature/feature.module').then(m => m.FeatureModule) }`.</div>
+
+            <div class="question">39. What is Angular's change detection mechanism?</div>
+            <div class="answer">Angular's change detection mechanism is responsible for tracking changes in the application and updating the view accordingly. It uses a strategy called change detection to check for changes in data-bound properties and propagate those changes to the view.</div>
+
+            <div class="question">40. How do you optimize change detection in Angular?</div>
+            <div class="answer">To optimize change detection in Angular, use the `ChangeDetectionStrategy` property in the component decorator. Set it to `OnPush` to reduce the number of checks Angular performs. Additionally, use `trackBy` function in `ngFor` to optimize list rendering and avoid unnecessary DOM updates.</div>
+        </div>
+
+        <div id="services" class="section">
+            <h2>Services</h2>
+
+            <div class="question">41. How do you create a service in Angular?</div>
+            <div class="answer">To create a service in Angular, use the Angular CLI command `ng generate service service-name` or `ng g s service-name`. This generates a service class with the `@Injectable` decorator, which is used for dependency injection.</div>
+
+            <div class="question">42. What is dependency injection in Angular?</div>
+            <div class="answer">Dependency injection (DI) in Angular is a design pattern that allows components and services to be injected with dependencies (such as services) rather than creating them directly. Angular's DI system manages the lifecycle and sharing of these dependencies.</div>
+
+            <div class="question">43. What are injectable services?</div>
+            <div class="answer">Injectable services are services marked with the `@Injectable` decorator. This decorator tells Angular that the service can be injected into other components or services. It is a key part of Angular's dependency injection system.</div>
+
+            <div class="question">44. How do you provide a service at the component level?</div>
+            <div class="answer">To provide a service at the component level, use the `providers` array in the component decorator. This creates a new instance of the service for the component and its children, isolating it from other components that may use the same service.</div>
+
+            <div class="question">45. What is the purpose of the `HttpClient` service?</div>
+            <div class="answer">The `HttpClient` service is used to make HTTP requests and handle responses in Angular applications. It provides methods such as `get`, `post`, `put`, and `delete` to interact with backend APIs and handle data retrieval and submission.</div>
+
+            <div class="question">46. How do you handle errors in HTTP requests?</div>
+            <div class="answer">Errors in HTTP requests can be handled using RxJS operators such as `catchError` and `retry`. You can catch and handle errors in an observable chain and provide user-friendly error messages or perform other actions based on the error.</div>
+
+            <div class="question">47. What are Angular interceptors and how are they used?</div>
+            <div class="answer">Angular interceptors are used to intercept and modify HTTP requests and responses globally. They can be used for tasks such as adding authorization headers, logging requests, or handling errors. Interceptors are implemented using the `HttpInterceptor` interface.</div>
+
+            <div class="question">48. How do you use an `HttpInterceptor` to add authentication headers?</div>
+            <div class="answer">To use an `HttpInterceptor` to add authentication headers, implement the `HttpInterceptor` interface and override the `intercept` method. In the `intercept` method, modify the request to include the authentication headers and pass the modified request to the next handler.</div>
+
+            <div class="question">49. What is the role of `NgModule` in Angular services?</div>
+            <div class="answer">`NgModule` is used to organize Angular services into cohesive blocks of functionality. Services can be provided in the root module or feature modules using the `providers` array. `NgModule` helps in managing the scope and availability of services within different parts of the application.</div>
+
+            <div class="question">50. How do you test Angular services?</div>
+            <div class="answer">Angular services can be tested using Angular's testing utilities and the Jasmine framework. You can use the `TestBed` to configure the testing module, inject the service, and verify its behavior using assertions and spies to mock dependencies.</div>
+
+            <!-- Add more questions here -->
+        </div>
+
+        <div id="routing" class="section">
+            <h2>Routing</h2>
+
+            <div class="question">51. What is Angular routing?</div>
+            <div class="answer">Angular routing is the mechanism for navigating between different views or pages in a single-page application (SPA). It allows you to define routes and configure navigation within the application using the Angular Router.</div>
+
+            <div class="question">52. How do you configure routes in Angular?</div>
+            <div class="answer">Routes in Angular are configured using the `RouterModule.forRoot` method in the application's root module. You define an array of route objects, where each object maps a path to a component. Routes are then registered with the router.</div>
+
+            <div class="question">53. What is a route guard?</div>
+            <div class="answer">A route guard is a feature in Angular that allows you to control access to routes based on specific conditions. Route guards implement interfaces like `CanActivate`, `CanDeactivate`, `Resolve`, and `CanLoad` to protect routes and manage navigation.</div>
+
+            <div class="question">54. How do you implement lazy loading in Angular routing?</div>
+            <div class="answer">To implement lazy loading in Angular routing, use the `loadChildren` property in the route configuration. This property specifies a function that returns a promise for the module to be loaded lazily. For example: `{ path: 'feature', loadChildren: () => import('./feature/feature.module').then(m => m.FeatureModule) }`.</div>
+
+            <div class="question">55. What is the purpose of `RouterModule`?</div>
+            <div class="answer">`RouterModule` is an Angular module that provides the services and directives necessary for routing in Angular applications. It includes features for configuring routes, navigating between views, and handling route parameters and guards.</div>
+
+            <div class="question">56. How do you handle route parameters?</div>
+            <div class="answer">Route parameters are handled using the `ActivatedRoute` service. You can inject this service into your component and use its `params` observable to access and respond to route parameters in the URL.</div>
+
+            <div class="question">57. What is the purpose of `RouterLink` directive?</div>
+            <div class="answer">The `RouterLink` directive is used to navigate to a different route within an Angular application. It binds a route path to an element, allowing users to navigate to the specified route when they interact with the element.</div>
+
+            <div class="question">58. How do you handle navigation between routes programmatically?</div>
+            <div class="answer">To handle navigation programmatically, use the `Router` service's `navigate` or `navigateByUrl` methods. These methods allow you to navigate to a different route based on route paths or URL strings.</div>
+
+            <div class="question">59. What is a route resolver?</div>
+            <div class="answer">A route resolver is used to retrieve data before a route is activated. It implements the `Resolve` interface and provides a way to fetch data that is needed for the route before the component is instantiated.</div>
+
+            <div class="question">60. How do you implement route guards in Angular?</div>
+            <div class="answer">To implement route guards, create a service that implements one of the route guard interfaces (e.g., `CanActivate`, `CanDeactivate`). Then, configure the route to use the guard service by adding it to the `canActivate` or `canDeactivate` properties in the route configuration.</div>
+
+            <!-- Add more questions here -->
+        </div>
+
+        <div id="advanced" class="section">
+            <h2>Advanced</h2>
+
+            <div class="question">61. What is Angular's Ahead-of-Time (AOT) compilation?</div>
+            <div class="answer">Ahead-of-Time (AOT) compilation is a process that compiles Angular templates and components at build time rather than runtime. This results in faster rendering and smaller bundle sizes, as the application is compiled to JavaScript code before it is served to the client.</div>
+
+            <div class="question">62. What is Angular's Just-in-Time (JIT) compilation?</div>
+            <div class="answer">Just-in-Time (JIT) compilation is a process where Angular templates and components are compiled at runtime in the browser. It allows for faster development iterations as changes are immediately reflected, but it can result in larger bundle sizes and slower rendering compared to AOT.</div>
+
+            <div class="question">63. How do you use Angular's dynamic component loader?</div>
+            <div class="answer">To use Angular's dynamic component loader, you can use the `ComponentFactoryResolver` service to create and inject components dynamically into a view. You obtain a `ComponentFactory` from the resolver and use it to create an instance of the component and attach it to the DOM.</div>
+
+            <div class="question">64. What is Angular Universal?</div>
+            <div class="answer">Angular Universal is a tool for server-side rendering (SSR) of Angular applications. It allows you to render Angular applications on the server before sending them to the client, improving performance and search engine optimization (SEO).</div>
+
+            <div class="question">65. How do you implement server-side rendering with Angular Universal?</div>
+            <div class="answer">To implement server-side rendering with Angular Universal, you need to set up a server-side application using the `@nguniversal/express-engine` package. This involves creating server-side modules, configuring Angular Universal with Express, and rendering the application on the server before sending it to the client.</div>
+
+            <div class="question">66. What is Angular's ChangeDetectionStrategy and how does it affect performance?</div>
+            <div class="answer">`ChangeDetectionStrategy` is a property that determines how Angular performs change detection in a component. The default strategy, `Default`, checks all components in the application for changes. The `OnPush` strategy improves performance by only checking the component when its inputs change or when an event occurs within the component.</div>
+
+            <div class="question">67. What is Angular's `ng-content` used for?</div>
+            <div class="answer">`ng-content` is used for content projection in Angular. It allows you to insert and display content in a component's template from the parent component. This is useful for creating reusable components with customizable content.</div>
+
+            <div class="question">68. How do you handle asynchronous operations in Angular?</div>
+            <div class="answer">Asynchronous operations in Angular can be handled using RxJS observables, promises, or async/await syntax. Observables are commonly used for handling streams of data, while promises and async/await are used for single asynchronous operations.</div>
+
+            <div class="question">69. What are Angular decorators and how are they used?</div>
+            <div class="answer">Angular decorators are special annotations that add metadata to classes and their members. Common decorators include `@Component`, `@NgModule`, `@Injectable`, and `@Directive`. They are used to define and configure Angular constructs such as components, modules, services, and directives.</div>
+
+            <div class="question">70. What is the purpose of Angular's `Renderer2` service?</div>
+            <div class="answer">The `Renderer2` service is used to manipulate the DOM in a platform-independent way. It provides methods for creating, updating, and deleting DOM elements, allowing Angular applications to work across different platforms and environments.</div>
+
+            <div class="question">71. What is Angular's `ngOnChanges` lifecycle hook used for?</div>
+            <div class="answer">The `ngOnChanges` lifecycle hook is used to respond to changes in input properties of a component. It is called whenever Angular detects changes to the bound input properties, allowing you to take actions based on the updated values.</div>
+
+            <div class="question">72. How do you handle lazy loading in Angular modules?</div>
+            <div class="answer">Lazy loading in Angular modules is handled by using the `loadChildren` property in route configuration. This property dynamically loads the module only when the route is accessed, improving application performance by reducing the initial load time.</div>
+
+            <div class="question">73. What is Angular's `ViewChild` and `ContentChild` decorators used for?</div>
+            <div class="answer">`@ViewChild` and `@ContentChild` decorators are used to access child components, directives, or elements within the component's view or content. `@ViewChild` is used for querying elements from the component's template, while `@ContentChild` is used for querying projected content.</div>
+
+            <div class="question">74. How do you use Angular's `ChangeDetectorRef` service?</div>
+            <div class="answer">The `ChangeDetectorRef` service is used to manually trigger change detection in Angular. You can use it to explicitly mark components for checking or to detach and reattach change detection when working with asynchronous operations or performance optimizations.</div>
+
+            <div class="question">75. What is Angular's `Renderer2` service and how is it used?</div>
+            <div class="answer">The `Renderer2` service is used to perform DOM manipulations in a platform-independent manner. It provides methods for creating, updating, and destroying DOM elements and attributes, allowing Angular applications to run across different platforms.</div>
+
+            <div class="question">76. What are Angular modules and how do they help in organizing an application?</div>
+            <div class="answer">Angular modules, defined using the `@NgModule` decorator, help organize an application by grouping related components, directives, pipes, and services. Modules allow you to manage dependencies, lazy load features, and maintain a modular and scalable application structure.</div>
+
+            <div class="question">77. What is the `RouterOutlet` directive used for?</div>
+            <div class="answer">The `RouterOutlet` directive is used as a placeholder in the component template where routed components will be displayed. It acts as the target location for the components associated with routes in the Angular Router configuration.</div>
+
+            <div class="question">78. How do you manage state in an Angular application?</div>
+            <div class="answer">State management in Angular applications can be handled using services or state management libraries such as NgRx, Akita, or NGXS. These libraries provide patterns and tools for managing application state, handling actions, and synchronizing state changes across components.</div>
+
+            <div class="question">79. What is Angular's `HttpClient` module and how is it used?</div>
+            <div class="answer">The `HttpClient` module, part of `@angular/common/http`, is used for making HTTP requests to a server and handling responses. It provides methods like `get`, `post`, `put`, and `delete` to interact with APIs and supports features such as interceptors and request/response transformations.</div>
+
+            <div class="question">80. What is Angular's `NgModule` and how does it contribute to modular architecture?</div>
+            <div class="answer">`NgModule` is a fundamental concept in Angular that defines a module of related components, directives, pipes, and services. It helps organize code into functional units, manage dependencies, and configure providers, enabling modular and scalable application architecture.</div>
+
+            <div class="question">81. How does Angular handle animations?</div>
+            <div class="answer">Angular handles animations using the `@angular/animations` module. It provides APIs and tools for defining and controlling animations within Angular applications, including animations for component transitions, state changes, and triggering animations based on user interactions.</div>
+
+            <div class="question">82. What is the purpose of the `ngOnInit` lifecycle hook?</div>
+            <div class="answer">The `ngOnInit` lifecycle hook is called after Angular has initialized all data-bound properties of a component. It is commonly used for component initialization logic, such as fetching data from services or setting up component state.</div>
+
+            <div class="question">83. How do you handle routing and navigation in Angular?</div>
+            <div class="answer">Routing and navigation in Angular are managed using the Angular Router. You configure routes using the `RouterModule` and define paths, components, and route guards. Navigation is handled using directives like `RouterLink` and services like `Router` to programmatically navigate between routes.</div>
+
+            <div class="question">84. What are Angular's structural directives and how do they work?</div>
+            <div class="answer">Angular's structural directives, such as `*ngIf` and `*ngFor`, are used to dynamically change the DOM structure. They work by adding or removing elements from the DOM based on certain conditions or iterating over collections, allowing for dynamic rendering of content.</div>
+
+            <div class="question">85. What is Angular's `Pipe` and how is it used?</div>
+            <div class="answer">A `Pipe` in Angular is used to transform data in the template. Pipes can be used to format data, such as dates or currency, or to perform custom transformations. Built-in pipes include `date`, `currency`, and `json`, and you can create custom pipes by implementing the `PipeTransform` interface.</div>
+
+            <div class="question">86. What is Angular's `FormBuilder` and how is it used?</div>
+            <div class="answer">`FormBuilder` is a service in Angular that simplifies the creation of reactive forms. It provides methods for creating form controls, form groups, and form arrays, allowing you to build complex forms with validation and custom logic in a more concise and manageable way.</div>
+
+            <div class="question">87. How do you perform validation in Angular forms?</div>
+            <div class="answer">Validation in Angular forms can be performed using built-in validators, custom validators, and asynchronous validators. Validators can be applied to form controls, form groups, or form arrays to enforce rules such as required fields, minimum length, or custom validation logic.</div>
+
+            <div class="question">88. What are Angular's lifecycle hooks and how are they used?</div>
+            <div class="answer">Angular's lifecycle hooks are methods that allow you to tap into the different stages of a component's lifecycle. Common hooks include `ngOnInit`, `ngOnChanges`, `ngOnDestroy`, and `ngAfterViewInit`. They are used to perform initialization, cleanup, and other tasks at specific points in the component's lifecycle.</div>
+
+            <div class="question">89. How do you use Angular's `ngFor` directive?</div>
+            <div class="answer">The `ngFor` directive is used to iterate over a collection and render a template for each item. It is commonly used to create lists or tables by looping through an array or collection and generating elements dynamically based on the data.</div>
+
+            <div class="question">90. What is Angular's `ngStyle` directive used for?</div>
+            <div class="answer">The `ngStyle` directive is used to dynamically apply CSS styles to an element based on an expression. It allows you to set multiple style properties and values conditionally, making it easy to apply styles based on component state or data.</div>
+
+            <div class="question">91. What is Angular's `ngClass` directive and how is it used?</div>
+            <div class="answer">The `ngClass` directive is used to conditionally add or remove CSS classes to an element based on an expression. It can take a string, array, or object to define the classes, allowing for dynamic styling based on component state or data.</div>
+
+            <div class="question">92. How do you implement custom directives in Angular?</div>
+            <div class="answer">Custom directives in Angular are implemented by creating a class decorated with `@Directive`. You can define custom behavior or manipulation of the DOM in the directive's class and apply it to elements using the directive's selector.</div>
+
+            <div class="question">93. What is Angular's `@Injectable` decorator used for?</div>
+            <div class="answer">The `@Injectable` decorator is used to define a class as an injectable service. It provides metadata about how the service should be provided and allows Angular to create instances of the service and inject it into components or other services.</div>
+
+            <div class="question">94. How do you use Angular's `ng-container`?</div>
+            <div class="answer">The `ng-container` directive is used to group elements in the template without adding extra DOM elements. It serves as a placeholder for structural directives such as `*ngIf` and `*ngFor`, allowing you to conditionally or repeatedly render content without affecting the DOM structure.</div>
+
+            <div class="question">95. What are Angular's `rxjs` operators and how are they used?</div>
+            <div class="answer">`rxjs` operators are functions that allow you to manipulate and work with observables. Common operators include `map`, `filter`, `mergeMap`, and `catchError`. They are used to transform, filter, and handle data streams in a reactive programming paradigm.</div>
+
+            <div class="question">96. How do you handle asynchronous data with Angular's `HttpClient`?</div>
+            <div class="answer">Asynchronous data with Angular's `HttpClient` is handled using observables. You can use methods like `get`, `post`, `put`, and `delete` to make HTTP requests and subscribe to the returned observables to process the data or handle errors.</div>
+
+            <div class="question">97. What is the purpose of Angular's `async` pipe?</div>
+            <div class="answer">The `async` pipe is used to subscribe to observables or promises directly in the template and automatically handle the subscription and unsubscription. It simplifies working with asynchronous data by updating the view when new data arrives.</div>
+
+            <div class="question">98. What is Angular's `ChangeDetectionStrategy.OnPush` and when should it be used?</div>
+            <div class="answer">`ChangeDetectionStrategy.OnPush` is a change detection strategy that tells Angular to check for changes only when the component's input properties change, or when an event occurs within the component. It should be used to improve performance by reducing the frequency of change detection checks.</div>
+
+            <div class="question">99. How do you use Angular's `@Input` and `@Output` decorators?</div>
+            <div class="answer">`@Input` and `@Output` decorators are used to pass data between parent and child components. `@Input` allows a parent component to bind data to a child component's property, while `@Output` allows a child component to emit events that the parent component can listen to and respond to.</div>
+
+            <div class="question">100. How do you handle error handling in Angular applications?</div>
+            <div class="answer">Error handling in Angular applications is done using error handling strategies such as `HttpInterceptor` for HTTP errors, global error handling with `ErrorHandler`, and try-catch blocks for synchronous code. Custom error messages and handling logic can be implemented to provide a better user experience and improve application stability.</div>
+        </div>
+
+    </div>
+    <div class="container">
+    <div id="basics" class="section">
+        <h2>Basics</h2>
+        <div class="question">101. What is Angular and why is it used?</div>
+        <div class="answer">Angular is a platform and framework for building single-page client applications using HTML and TypeScript. It provides a robust set of tools and features for developing dynamic web applications, including data binding, dependency injection, and routing.</div>
+
+        <div class="question">102. What are Angular modules?</div>
+        <div class="answer">Angular modules, defined using the `@NgModule` decorator, help organize an application into functional blocks. They can contain components, services, directives, and pipes, and provide a way to group and manage related code.</div>
+
+        <div class="question">103. What is the purpose of the `@NgModule` decorator?</div>
+        <div class="answer">The `@NgModule` decorator defines an Angular module. It provides metadata about the module, including declarations (components, directives, pipes), imports (other modules), providers (services), and bootstrap (root component).</div>
+
+        <div class="question">104. What are Angular directives?</div>
+        <div class="answer">Angular directives are classes that add behavior to elements in your Angular applications. There are three types of directives: components, structural directives (e.g., `*ngIf`, `*ngFor`), and attribute directives (e.g., `ngClass`, `ngStyle`).</div>
+
+        <div class="question">105. How do you create a new Angular component?</div>
+        <div class="answer">To create a new Angular component, use the Angular CLI command `ng generate component component-name` or `ng g c component-name`. This command generates a new component with a TypeScript class, an HTML template, a CSS file, and a test file.</div>
+
+        <div class="question">106. What is data binding in Angular?</div>
+        <div class="answer">Data binding in Angular is a mechanism for coordinating parts of a template with parts of a component. It can be one-way (from component to view or view to component) or two-way (using `[(ngModel)]`). It allows for dynamic updates and interaction between the component and the view.</div>
+
+        <div class="question">107. What is dependency injection in Angular?</div>
+        <div class="answer">Dependency injection (DI) is a design pattern in Angular where a class's dependencies are provided to it rather than being created by the class itself. Angular uses a hierarchical dependency injection system to provide services and manage their lifecycle.</div>
+
+        <div class="question">108. What are Angular pipes and how are they used?</div>
+        <div class="answer">Angular pipes are used to transform data in the template. They can be used to format dates, numbers, currencies, and more. Built-in pipes include `date`, `currency`, `json`, and `slice`. Custom pipes can also be created to perform specific transformations.</div>
+
+        <div class="question">109. What is Angular CLI and how is it used?</div>
+        <div class="answer">Angular CLI (Command Line Interface) is a tool that helps in scaffolding, developing, and managing Angular applications. It provides commands for generating components, services, and other artifacts, running tests, building the application, and more.</div>
+
+        <div class="question">110. What is Angular's change detection mechanism?</div>
+        <div class="answer">Angular's change detection mechanism is responsible for updating the view when the model changes. It works by checking for changes in component data and updating the DOM accordingly. Angular uses a strategy called "dirty checking" to detect changes and update the view.</div>
+    </div>
+
+    <div id="components" class="section">
+        <h2>Components</h2>
+        <div class="question">111. What is a component in Angular?</div>
+        <div class="answer">A component in Angular is a building block of the application that encapsulates a part of the user interface. It consists of a TypeScript class, an HTML template, and a CSS stylesheet. Components control a part of the view and can communicate with other components through inputs and outputs.</div>
+
+        <div class="question">112. How do you pass data to a component?</div>
+        <div class="answer">Data can be passed to a component using input properties. The parent component binds data to the child component's input properties using property binding syntax, such as `<app-child [data]="parentData"></app-child>`.</div>
+
+        <div class="question">113. What are Angular lifecycle hooks?</div>
+        <div class="answer">Angular lifecycle hooks are methods that allow you to tap into key moments in a component's lifecycle. Common hooks include `ngOnInit` (called after component initialization), `ngOnChanges` (called when input properties change), and `ngOnDestroy` (called before component destruction).</div>
+
+        <div class="question">114. How do you communicate between components in Angular?</div>
+        <div class="answer">Communication between components can be achieved using various methods: input properties and output events for parent-child communication, services for sibling and cross-component communication, and Angular's `EventEmitter` to emit custom events.</div>
+
+        <div class="question">115. What is the purpose of `@Output` decorator?</div>
+        <div class="answer">The `@Output` decorator is used to define an event that a component can emit to its parent component. It is often used in conjunction with `EventEmitter` to create custom events and communicate between components.</div>
+
+        <div class="question">116. How do you use `@ViewChild` decorator in Angular?</div>
+        <div class="answer">The `@ViewChild` decorator is used to get a reference to a child component, directive, or DOM element within the component's template. It allows you to interact with and manipulate the child element programmatically.</div>
+
+        <div class="question">117. What is the `ng-content` directive used for?</div>
+        <div class="answer">The `ng-content` directive is used for content projection in Angular. It allows you to project content from the parent component into the child component's template, enabling flexible and reusable component designs.</div>
+
+        <div class="question">118. How do you handle events in Angular components?</div>
+        <div class="answer">Events in Angular components can be handled using event binding syntax. You can bind event handlers to DOM events using parentheses, such as `(click)="handleClick()"`, and define the corresponding method in the component class to handle the event.</div>
+
+        <div class="question">119. What is Angular's `Renderer2` and how is it used?</div>
+        <div class="answer">The `Renderer2` service is used to manipulate the DOM in a platform-independent manner. It provides methods for creating, updating, and removing DOM elements and attributes, allowing Angular applications to work across different environments.</div>
+
+        <div class="question">120. How do you apply styles dynamically in Angular?</div>
+        <div class="answer">Styles can be applied dynamically in Angular using the `ngStyle` directive for inline styles and the `ngClass` directive for conditional class application. You can bind styles or classes to component properties and update them based on component logic.</div>
+    </div>
+
+    <div id="services" class="section">
+        <h2>Services</h2>
+        <div class="question">121. What is a service in Angular?</div>
+        <div class="answer">A service in Angular is a class that provides a specific functionality or business logic. Services are used to share data and logic across components and can be injected into components and other services using Angular's dependency injection system.</div>
+
+        <div class="question">122. How do you create and use a service in Angular?</div>
+        <div class="answer">To create a service in Angular, use the Angular CLI command `ng generate service service-name` or `ng g s service-name`. Then, define the service class and its methods. To use the service, inject it into the constructor of the component or another service using Angular's dependency injection system.</div>
+
+        <div class="question">123. What is dependency injection in Angular?</div>
+        <div class="answer">Dependency injection (DI) in Angular is a design pattern where services or other dependencies are provided to a class rather than the class creating them. Angular's DI system allows you to manage and inject dependencies into components and services.</div>
+
+        <div class="question">124. How do you register a service with Angular's dependency injection system?</div>
+        <div class="answer">To register a service with Angular's dependency injection system, you provide it in an `NgModule`'s `providers` array or use the `providedIn` property in the `@Injectable` decorator. The `providedIn` property can be set to `'root'` to make the service available application-wide.</div>
+
+        <div class="question">125. What is the purpose of Angular's `HttpClient` service?</div>
+        <div class="answer">The `HttpClient` service in Angular is used to make HTTP requests to a server. It provides methods such as `get`, `post`, `put`, and `delete` for interacting with APIs and handling responses, including support for request and response transformations and interceptors.</div>
+
+        <div class="question">126. How do you handle HTTP errors in Angular?</div>
+        <div class="answer">HTTP errors in Angular can be handled using the `catchError` operator from `rxjs` within `HttpClient` requests. You can also use HTTP interceptors to globally handle errors and provide consistent error handling and user feedback across the application.</div>
+
+        <div class="question">127. What is Angular's `HttpInterceptor` and how is it used?</div>
+        <div class="answer">`HttpInterceptor` is an interface in Angular that allows you to intercept and modify HTTP requests and responses. You can use it to add authentication headers, handle global error responses, or modify request and response data before reaching the components.</div>
+
+        <div class="question">128. How do you create and use an HTTP interceptor in Angular?</div>
+        <div class="answer">To create an HTTP interceptor, implement the `HttpInterceptor` interface and override the `intercept` method. Then, provide the interceptor in the `providers` array of an `NgModule`, using the `HTTP_INTERCEPTORS` token to register it as a provider.</div>
+
+        <div class="question">129. What is the purpose of Angular's `@Injectable` decorator?</div>
+        <div class="answer">The `@Injectable` decorator is used to define a class as a service or dependency that can be injected into other components or services. It provides metadata about how the service should be provided and used by Angular's dependency injection system.</div>
+
+        <div class="question">130. How do you use Angular's `Injector` service?</div>
+        <div class="answer">The `Injector` service in Angular allows you to manually retrieve instances of services or other dependencies. It provides methods for resolving and injecting dependencies at runtime, giving you more control over how services are instantiated and used.</div>
+    </div>
+
+    <div id="routing" class="section">
+        <h2>Routing</h2>
+        <div class="question">131. What is Angular's router and what is it used for?</div>
+        <div class="answer">Angular's router is a module that enables navigation and routing within an Angular application. It allows you to define routes, manage navigation, and handle route parameters, enabling users to navigate between different views and components in a single-page application.</div>
+
+        <div class="question">132. How do you define routes in an Angular application?</div>
+        <div class="answer">Routes in an Angular application are defined using the `RouterModule` and its `forRoot` or `forChild` methods. Routes are specified as an array of route objects, each containing a path and a component to display. Route configurations are provided in the `imports` array of an `NgModule`.</div>
+
+        <div class="question">133. What is the purpose of the `RouterLink` directive?</div>
+        <div class="answer">The `RouterLink` directive is used to create navigation links to different routes within an Angular application. It binds to a route path and allows users to navigate between different views by clicking on the link.</div>
+
+        <div class="question">134. How do you navigate programmatically in Angular?</div>
+        <div class="answer">To navigate programmatically in Angular, you use the `Router` service's `navigate` or `navigateByUrl` methods. You can inject the `Router` service into a component or service and call these methods to change the application's route based on user actions or application logic.</div>
+
+        <div class="question">135. What are route guards and how are they used?</div>
+        <div class="answer">Route guards are services that control access to routes based on certain conditions. They can be used to protect routes from unauthorized access or to perform pre-navigation tasks. Common guards include `CanActivate`, `CanDeactivate`, `Resolve`, and `CanLoad`.</div>
+
+        <div class="question">136. How do you implement a route guard in Angular?</div>
+        <div class="answer">To implement a route guard, create a service that implements one of the route guard interfaces (`CanActivate`, `CanDeactivate`, etc.) and define the logic for allowing or denying access. Then, provide the guard service in the `providers` array of an `NgModule` and add it to the route configuration.</div>
+
+        <div class="question">137. What is the `ActivatedRoute` service used for?</div>
+        <div class="answer">The `ActivatedRoute` service provides access to information about the current route, including route parameters, query parameters, and route data. It allows you to access and use data related to the active route in a component.</div>
+
+        <div class="question">138. How do you pass data between routes in Angular?</div>
+        <div class="answer">Data can be passed between routes using route parameters, query parameters, or route data. Route parameters are defined in the route path and accessed via `ActivatedRoute`, while query parameters are appended to the URL and accessed via `ActivatedRoute.queryParams`. Route data can be configured in the route definition and accessed via `ActivatedRoute.data`.</div>
+
+        <div class="question">139. What is the purpose of `RouterModule` in Angular?</div>
+        <div class="answer">`RouterModule` is an Angular module that provides the router functionality for the application. It includes services, directives, and components needed for routing and navigation, and is imported into an `NgModule` to enable routing features.</div>
+
+        <div class="question">140. How do you handle route parameters in Angular?</div>
+        <div class="answer">Route parameters are handled using the `ActivatedRoute` service. You can access route parameters via `ActivatedRoute.params` or `ActivatedRoute.snapshot.params`. Parameters are defined in the route path and can be used to dynamically load or display data based on the parameter values.</div>
+    </div>
+
+    <div id="advanced" class="section">
+        <h2>Advanced</h2>
+        <div class="question">141. What is Angular's `ChangeDetectionStrategy`?</div>
+        <div class="answer">`ChangeDetectionStrategy` is a setting that determines how and when Angular's change detection mechanism checks for changes in the component's data. The default strategy is `ChangeDetectionStrategy.Default`, but you can use `ChangeDetectionStrategy.OnPush` to optimize performance by checking changes only when input properties change or when certain events occur.</div>
+
+        <div class="question">142. How do you create a custom Angular decorator?</div>
+        <div class="answer">To create a custom Angular decorator, define a function that takes metadata and returns a decorator function. The decorator function can then be used to annotate classes, methods, or properties. Custom decorators can be used to add metadata or modify behavior in Angular applications.</div>
+
+        <div class="question">143. What is Angular's `Renderer2` and how is it used?</div>
+        <div class="answer">`Renderer2` is a service that provides an abstraction for performing DOM manipulations in a platform-independent manner. It allows you to create, update, and remove DOM elements and attributes, enabling consistent behavior across different platforms.</div>
+
+        <div class="question">144. How do you implement custom validation in Angular forms?</div>
+        <div class="answer">Custom validation in Angular forms can be implemented by creating a custom validator function that returns validation errors or null. The function can then be used with `FormControl` or `FormGroup` to apply validation rules. The custom validator function is registered in the form control or group and used to validate user input.</div>
+
+        <div class="question">145. What are Angular's `@HostListener` and `@HostBinding` decorators used for?</div>
+        <div class="answer">`@HostListener` is used to listen to events on the host element of a directive or component, allowing you to handle DOM events. `@HostBinding` is used to bind properties of the host element to properties of the directive or component, allowing you to set or get values from the host element's attributes.</div>
+
+        <div class="question">146. How do you optimize performance in Angular applications?</div>
+        <div class="answer">Performance in Angular applications can be optimized by using techniques such as lazy loading of modules, change detection strategies (`OnPush`), trackBy functions in `*ngFor`, reducing the size of the bundle with code splitting, using Angular's built-in performance tools, and optimizing HTTP requests and responses.</div>
+
+        <div class="question">147. What is Angular's `ChangeDetectorRef` and how is it used?</div>
+        <div class="answer">`ChangeDetectorRef` is a service that allows you to manually control change detection in a component. It provides methods like `markForCheck`, `detectChanges`, and `detach` to interact with the change detection mechanism and optimize performance or handle specific change detection scenarios.</div>
+
+        <div class="question">148. What is Angular's `ngZone` and how does it work?</div>
+        <div class="answer">`ngZone` is a service that helps Angular manage asynchronous operations and update the view accordingly. It provides methods for running code inside or outside of Angular's change detection context. It is used to optimize performance and avoid unnecessary change detection cycles.</div>
+
+        <div class="question">149. How do you implement server-side rendering (SSR) in Angular?</div>
+        <div class="answer">Server-side rendering (SSR) in Angular can be implemented using Angular Universal. Angular Universal is a tool that allows you to render Angular applications on the server, providing faster initial load times and improved SEO. It involves setting up server-side rendering support and using a Node.js server to render the application on the server.</div>
+
+        <div class="question">150. What are Angular elements and how are they used?</div>
+        <div class="answer">Angular elements are Angular components packaged as custom elements (web components). They allow Angular components to be used in non-Angular applications or with other frameworks. Angular elements are created using the `@angular/elements` package and can be used to build reusable UI components that can be inserted into any web application.</div>
+    </div>
+
+    <div id="state-management" class="section">
+        <h2>State Management</h2>
+        <div class="question">151. What is state management in Angular?</div>
+        <div class="answer">State management in Angular refers to managing and handling the application's state across different components and services. It involves keeping track of data, ensuring consistency, and providing mechanisms to update and retrieve state as needed.</div>
+
+        <div class="question">152. What is NgRx and how is it used for state management?</div>
+        <div class="answer">NgRx is a popular library for managing state in Angular applications using the Redux pattern. It provides a store for state management, actions for dispatching state changes, reducers for updating the state, and selectors for querying state. NgRx enables predictable state management and improves maintainability in complex applications.</div>
+
+        <div class="question">153. How do you create a store in NgRx?</div>
+        <div class="answer">To create a store in NgRx, define state interfaces, actions, reducers, and effects. Use the `StoreModule.forRoot` method to register the root store in the `NgModule`, and use `Store` service to interact with the store in components and services.</div>
+
+        <div class="question">154. What is the purpose of actions in NgRx?</div>
+        <div class="answer">Actions in NgRx represent events or operations that trigger state changes. They are dispatched to the store and processed by reducers or effects to update the state or perform side effects. Actions are defined using the `createAction` function and are used to communicate state changes within the application.</div>
+
+        <div class="question">155. How do you implement reducers in NgRx?</div>
+        <div class="answer">Reducers in NgRx are pure functions that handle state transitions based on actions. They are implemented using the `createReducer` function and handle specific actions to update the state. Reducers are registered in the `StoreModule` and used to manage the application's state.</div>
+
+        <div class="question">156. What are effects in NgRx and how are they used?</div>
+        <div class="answer">Effects in NgRx are used to handle side effects such as HTTP requests or navigation. They listen to actions dispatched to the store and perform asynchronous operations or interact with external services. Effects are implemented using the `createEffect` function and registered in the `EffectsModule`.</div>
+
+        <div class="question">157. How do you use selectors in NgRx?</div>
+        <div class="answer">Selectors in NgRx are functions used to query and retrieve specific slices of state from the store. They are created using the `createSelector` function and can be used to derive data, filter results, or compute values based on the state. Selectors help optimize performance and reduce redundancy in state access.</div>
+
+        <div class="question">158. What is the purpose of `@ngrx/store-devtools`?</div>
+        <div class="answer">`@ngrx/store-devtools` is a library that provides debugging and development tools for NgRx applications. It allows you to inspect and replay actions, view the state, and time-travel through state changes, helping to debug and analyze the application's state management.</div>
+
+        <div class="question">159. How do you implement state management with services in Angular?</div>
+        <div class="answer">State management with services in Angular involves using services to manage and share state between components. Services can hold state properties, provide methods for updating and accessing state, and use observables to notify components of state changes.</div>
+
+        <div class="question">160. What is the `BehaviorSubject` and how is it used in state management?</div>
+        <div class="answer">`BehaviorSubject` is a type of observable in RxJS that holds the current value and emits it to new subscribers. It is commonly used in state management to maintain and share the current state across different parts of the application, allowing components to subscribe and react to state changes.</div>
+    </div>
+
+    <div id="testing" class="section">
+        <h2>Testing</h2>
+        <div class="question">161. What is the purpose of testing in Angular applications?</div>
+        <div class="answer">Testing in Angular applications ensures that components, services, and other parts of the application work correctly and meet requirements. It helps identify and fix issues, validate functionality, and improve code quality and reliability.</div>
+
+        <div class="question">162. What are the different types of tests in Angular?</div>
+        <div class="answer">The different types of tests in Angular include unit tests (testing individual components, services, or functions), integration tests (testing interactions between components or services), and end-to-end tests (testing the application as a whole, including user interactions).</div>
+
+        <div class="question">163. How do you write unit tests for Angular components?</div>
+        <div class="answer">To write unit tests for Angular components, use the Angular testing utilities such as `TestBed` to configure and create an instance of the component. Write test cases to verify component behavior, interactions, and output. Use testing frameworks like Jasmine and tools like Karma to run and manage tests.</div>
+
+        <div class="question">164. What is the purpose of the `TestBed` in Angular testing?</div>
+        <div class="answer">`TestBed` is a testing utility provided by Angular that allows you to configure and create instances of components, services, and other dependencies for testing. It provides methods to set up the testing environment, configure providers, and compile components.</div>
+
+        <div class="question">165. How do you test Angular services?</div>
+        <div class="answer">To test Angular services, use the `TestBed` to configure the service and its dependencies. Write test cases to verify the service's methods and behavior. You can use mocking frameworks or spies to simulate and control dependencies for isolated testing.</div>
+
+        <div class="question">166. What is end-to-end testing and how is it implemented in Angular?</div>
+        <div class="answer">End-to-end (E2E) testing involves testing the entire application flow, including user interactions and integration between components. In Angular, E2E testing is typically implemented using tools like Protractor or Cypress, which allow you to simulate user interactions and verify the application's behavior.</div>
+
+        <div class="question">167. How do you write tests for Angular directives?</div>
+        <div class="answer">To write tests for Angular directives, configure the testing module with the directive and any necessary dependencies. Create a test component to use the directive and verify its behavior. Use the `DebugElement` to query and interact with the DOM elements affected by the directive.</div>
+
+        <div class="question">168. What is the role of mocks and spies in Angular testing?</div>
+        <div class="answer">Mocks and spies are used in Angular testing to simulate and control dependencies. Mocks are fake implementations of services or components used to isolate tests. Spies are used to monitor method calls and interactions, allowing you to verify that methods were called with specific arguments or verify their behavior.</div>
+
+        <div class="question">169. What is the purpose of the `async` function in Angular testing?</div>
+        <div class="answer">The `async` function is used in Angular testing to handle asynchronous operations. It ensures that asynchronous code, such as promises or observables, completes before running assertions. The `async` function wraps the test code and allows Angular's testing utilities to properly handle asynchronous operations.</div>
+
+        <div class="question">170. How do you use fixtures in Angular testing?</div>
+        <div class="answer">Fixtures in Angular testing refer to the test environment created by `TestBed`. They provide access to the component instance and the DOM elements. You use fixtures to interact with the component and its elements, perform actions, and verify the expected behavior.</div>
+    </div>
+</div>
+</body>
+</html>

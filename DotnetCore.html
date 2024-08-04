@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 100 .NET Core Interview Questions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #007acc;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            margin-top: 0;
+        }
+        .question {
+            margin: 20px 0 10px;
+            font-weight: bold;
+        }
+        .answer {
+            margin: 0 0 20px;
+            padding: 10px;
+            background-color: white;
+            border-left: 4px solid #007acc;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Top 100 .NET Core Interview Questions and Answers</h1>
+    </header>
+    <div class="container">
+        <div class="question">1. What is .NET Core?</div>
+        <div class="answer">.NET Core is an open-source, cross-platform framework for building modern, cloud-based, and internet-connected applications. It is a runtime for running applications developed with .NET technologies, and it is the foundation for .NET 5 and later versions.</div>
+
+        <div class="question">2. What are the main differences between .NET Core and .NET Framework?</div>
+        <div class="answer">.NET Core is cross-platform, meaning it can run on Windows, macOS, and Linux. .NET Framework is limited to Windows. .NET Core is modular and can be updated more frequently, while .NET Framework is more monolithic and has a slower update cycle.</div>
+
+        <div class="question">3. What is the purpose of the `Startup` class in .NET Core?</div>
+        <div class="answer">The `Startup` class is used to configure the services and the application's request pipeline. It contains methods such as `ConfigureServices` to add services to the DI container and `Configure` to define the request handling pipeline.</div>
+
+        <div class="question">4. What is Dependency Injection (DI) and how is it used in .NET Core?</div>
+        <div class="answer">Dependency Injection is a design pattern used to implement Inversion of Control (IoC), where the container is responsible for providing the dependencies of a class. In .NET Core, DI is built into the framework and is configured in the `Startup` class.</div>
+
+        <div class="question">5. What is Middleware in .NET Core?</div>
+        <div class="answer">Middleware is software that is assembled into an application pipeline to handle requests and responses. Each component in the pipeline can perform operations before and after the next component in the pipeline. Middleware components are added in the `Configure` method of the `Startup` class.</div>
+
+        <div class="question">6. Explain the concept of Entity Framework Core.</div>
+        <div class="answer">Entity Framework Core (EF Core) is an Object-Relational Mapper (ORM) for .NET Core that allows developers to interact with a database using .NET objects. It supports LINQ queries, change tracking, and database migrations.</div>
+
+        <div class="question">7. What are some common ways to handle configuration in .NET Core?</div>
+        <div class="answer">Configuration in .NET Core is typically handled using the `IConfiguration` interface, which can read configuration settings from various sources, including JSON files, environment variables, and command-line arguments. The `appsettings.json` file is commonly used for configuration.</div>
+
+        <div class="question">8. What is Kestrel?</div>
+        <div class="answer">Kestrel is the cross-platform web server used by default in .NET Core applications. It is a lightweight, high-performance server that is optimized for serving ASP.NET Core applications.</div>
+
+        <div class="question">9. How do you create a web API in .NET Core?</div>
+        <div class="answer">To create a web API in .NET Core, you can use the ASP.NET Core Web API template. Define controllers that inherit from `ControllerBase`, and use attributes like `[HttpGet]`, `[HttpPost]`, etc., to define API endpoints. The `Startup` class configures routing and middleware for the API.</div>
+
+        <div class="question">10. What is the role of the `appsettings.json` file?</div>
+        <div class="answer">The `appsettings.json` file is used to store configuration settings for an application. It is commonly used to define settings such as connection strings, application-specific settings, and environment-specific configurations.</div>
+
+        <!-- Continue with additional questions -->
+
+        <div class="question">11. How do you implement logging in .NET Core?</div>
+        <div class="answer">Logging in .NET Core is implemented using the built-in `ILogger` interface, which can be injected into services and controllers. The logging framework supports various providers, such as console, debug, and file, and can be configured in the `Startup` class.</div>
+
+        <div class="question">12. What is the difference between `IServiceCollection` and `IServiceProvider`?</div>
+        <div class="answer">`IServiceCollection` is used to register services and configure the dependency injection container, while `IServiceProvider` is used to resolve services from the container. `IServiceProvider` provides an interface for obtaining service instances.</div>
+
+        <div class="question">13. Explain the purpose of the `Configure` method in the `Startup` class.</div>
+        <div class="answer">The `Configure` method in the `Startup` class is used to define the middleware pipeline for handling HTTP requests and responses. It sets up middleware components that process requests, handle routing, and generate responses.</div>
+
+        <div class="question">14. What are Razor Pages?</div>
+        <div class="answer">Razor Pages is a page-based programming model in ASP.NET Core for building web applications. It is a simpler alternative to MVC for scenarios where the application consists primarily of pages rather than a complex set of controllers and views.</div>
+
+        <div class="question">15. How does .NET Core handle cross-origin requests?</div>
+        <div class="answer">Cross-Origin Resource Sharing (CORS) in .NET Core is handled using the `Microsoft.AspNetCore.Cors` middleware. CORS policies are defined in the `Startup` class and control which origins, headers, and methods are allowed for cross-origin requests.</div>
+
+        <!-- Continue with more questions -->
+
+        <div class="question">16. What are the different types of filters in ASP.NET Core?</div>
+        <div class="answer">In ASP.NET Core, filters are used to execute code before or after an action method runs. The types of filters include Authorization filters, Resource filters, Action filters, Exception filters, and Result filters.</div>
+
+        <div class="question">17. How do you handle errors and exceptions in .NET Core?</div>
+        <div class="answer">Errors and exceptions in .NET Core can be handled using exception handling middleware, custom exception filters, or try-catch blocks. The `UseExceptionHandler` middleware in the `Startup` class can be used to handle exceptions globally and provide custom error pages.</div>
+
+        <div class="question">18. What is the purpose of the `ConfigureServices` method in the `Startup` class?</div>
+        <div class="answer">The `ConfigureServices` method in the `Startup` class is used to add services to the dependency injection container. Services registered in this method can be injected into controllers, middleware, and other components throughout the application.</div>
+
+        <div class="question">19. What is the `IHostingEnvironment` interface used for?</div>
+        <div class="answer">The `IHostingEnvironment` interface provides information about the web hosting environment, such as the application's content root path and environment name (Development, Staging, Production). It is commonly used to configure services and settings based on the environment.</div>
+
+        <div class="question">20. What are .NET Core global tools?</div>
+        <div class="answer">Global tools are .NET Core command-line tools that are installed and run globally on a system. They are designed to be used across multiple projects and can be installed via the .NET CLI using the `dotnet tool install` command.</div>
+
+        <!-- Continue with additional questions up to 100 -->
+ <!-- Continuing with more questions -->
+
+ <div class="question">21. What is the `IApplicationBuilder` interface?</div>
+ <div class="answer">The `IApplicationBuilder` interface is used to configure the application's request pipeline. It provides methods for adding middleware components to the pipeline.</div>
+
+ <div class="question">22. Explain the concept of `Service Lifetime` in .NET Core.</div>
+ <div class="answer">In .NET Core, service lifetime determines how long a service instance is kept alive. The three main lifetimes are:
+     <ul>
+         <li><strong>Transient</strong>: A new instance is created each time it is requested.</li>
+         <li><strong>Scoped</strong>: A new instance is created once per request (or per scope).</li>
+         <li><strong>Singleton</strong>: A single instance is created and shared throughout the application's lifetime.</li>
+     </ul>
+ </div>
+
+ <div class="question">23. How do you use `IOptions<T>` for configuration in .NET Core?</div>
+ <div class="answer">`IOptions<T>` is used to represent a configured instance of a class. You can bind configuration settings to a POCO class and inject it using `IOptions<T>`. This allows you to manage and access configuration settings in a strongly-typed manner.</div>
+
+ <div class="question">24. What is `Configuration` in .NET Core and how is it used?</div>
+ <div class="answer">`Configuration` in .NET Core is used to access configuration settings for an application. It can be populated from various sources such as JSON files, environment variables, and command-line arguments. Configuration settings can be accessed using the `IConfiguration` interface.</div>
+
+ <div class="question">25. What is the `UseMvc` method in .NET Core?</div>
+ <div class="answer">The `UseMvc` method is used to configure the MVC middleware in the application's request pipeline. It sets up routing, controllers, and views. In ASP.NET Core 3.0 and later, `UseMvc` has been replaced by `UseEndpoints` for endpoint routing.</div>
+
+ <div class="question">26. How does .NET Core handle authentication and authorization?</div>
+ <div class="answer">Authentication and authorization in .NET Core are handled using middleware and services. Authentication verifies the user's identity, while authorization determines if the user has permission to access a resource. ASP.NET Core supports various authentication schemes, including cookies, JWT, and OAuth.</div>
+
+ <div class="question">27. What is `IActionResult`?</div>
+ <div class="answer">`IActionResult` is an interface in ASP.NET Core that represents the result of an action method. It allows for various types of responses, such as views, JSON data, or redirects. Controllers can return `IActionResult` from action methods to specify the response type.</div>
+
+ <div class="question">28. How do you configure HTTPS in .NET Core?</div>
+ <div class="answer">HTTPS can be configured in .NET Core by enabling it in the `Startup` class. You can use the `UseHttpsRedirection` middleware to redirect HTTP requests to HTTPS. Additionally, configure HTTPS settings in `appsettings.json` or use a development certificate.</div>
+
+ <div class="question">29. What is the `WebHost` class?</div>
+ <div class="answer">The `WebHost` class is used to configure and run an ASP.NET Core application. It provides methods for setting up the server, configuring the `Startup` class, and handling requests. In ASP.NET Core 3.0 and later, `WebHost` is replaced by `Host` class.</div>
+
+ <div class="question">30. How do you handle static files in .NET Core?</div>
+ <div class="answer">Static files in .NET Core are handled using the `UseStaticFiles` middleware. This middleware enables the serving of static files from the `wwwroot` directory or other directories configured in the application.</div>
+
+ <div class="question">31. What is a `DbContext` in Entity Framework Core?</div>
+ <div class="answer">`DbContext` is a class in Entity Framework Core that manages the entity objects during runtime, including querying and saving data to the database. It represents a session with the database and is used to interact with entities and perform CRUD operations.</div>
+
+ <div class="question">32. How do you use Entity Framework Core migrations?</div>
+ <div class="answer">Entity Framework Core migrations are used to update the database schema. You can use the `dotnet ef migrations add` command to create a migration and `dotnet ef database update` to apply it to the database. Migrations help keep the database schema in sync with the model classes.</div>
+
+ <div class="question">33. What is the `IServiceScopeFactory` interface?</div>
+ <div class="answer">`IServiceScopeFactory` is an interface used to create scopes for resolving services with a scoped lifetime. It provides methods to create `IServiceScope`, which can be used to manage the lifetime of scoped services.</div>
+
+ <div class="question">34. What is the purpose of `IApplicationBuilder`?</div>
+ <div class="answer">`IApplicationBuilder` is used to configure the application's request pipeline. It provides methods for adding middleware components to the pipeline, which handle HTTP requests and responses.</div>
+
+ <div class="question">35. How do you implement custom middleware in .NET Core?</div>
+ <div class="answer">Custom middleware can be implemented by creating a class with an `Invoke` or `InvokeAsync` method that processes HTTP requests. Register the middleware in the `Configure` method of the `Startup` class using `app.UseMiddleware<YourMiddleware>();`.</div>
+
+ <div class="question">36. What is `IHttpContextAccessor` used for?</div>
+ <div class="answer">`IHttpContextAccessor` provides access to the `HttpContext` from services and other parts of the application where it is not directly available. It allows you to retrieve information about the current HTTP request and response.</div>
+
+ <div class="question">37. Explain the concept of `Asynchronous Programming` in .NET Core.</div>
+ <div class="answer">Asynchronous programming in .NET Core allows for non-blocking operations, improving application scalability and responsiveness. It is typically implemented using the `async` and `await` keywords, which help manage tasks and asynchronous operations.</div>
+
+ <div class="question">38. What are `Value Objects` and how are they used in .NET Core?</div>
+ <div class="answer">Value objects are objects that represent a descriptive aspect of the domain with no identity. They are used to encapsulate and validate data values, and are immutable. In .NET Core, value objects are often used in Domain-Driven Design (DDD) to model domain concepts.</div>
+
+ <div class="question">39. What is `Model Binding` in ASP.NET Core?</div>
+ <div class="answer">Model binding in ASP.NET Core is the process of mapping data from HTTP requests to action method parameters. It automatically binds data from form fields, query strings, route data, and JSON payloads to model objects or parameters in the action method.</div>
+
+ <div class="question">40. How do you configure environment-specific settings in .NET Core?</div>
+ <div class="answer">Environment-specific settings can be configured using multiple configuration files like `appsettings.Development.json`, `appsettings.Production.json`, etc. The settings are automatically loaded based on the environment specified in the `ASPNETCORE_ENVIRONMENT` environment variable.</div>
+
+ <div class="question">41. What is the `UseEndpoints` method used for?</div>
+ <div class="answer">The `UseEndpoints` method is used to configure endpoint routing in ASP.NET Core. It is used to map routes to controllers, Razor Pages, or other endpoints and is typically used in ASP.NET Core 3.0 and later versions for routing configuration.</div>
+
+ <div class="question">42. Explain the `IWebHostBuilder` interface.</div>
+ <div class="answer">The `IWebHostBuilder` interface is used to configure and build a web host for an ASP.NET Core application. It provides methods for configuring the server, setting up the `Startup` class, and configuring services.</div>
+
+ <div class="question">43. What is the `IWebHost` interface used for?</div>
+ <div class="answer">The `IWebHost` interface represents a web host that is responsible for starting and running an ASP.NET Core application. It provides methods for starting the host and managing the application's lifecycle.</div>
+
+ <div class="question">44. What is `Dependency Inversion Principle` and how is it applied in .NET Core?</div>
+ <div class="answer">The Dependency Inversion Principle is a design principle that states high-level modules should not depend on low-level modules but rather on abstractions. In .NET Core, this principle is applied using dependency injection, where services are registered with interfaces rather than concrete implementations.</div>
+
+ <div class="question">45. How do you use `HttpClient` in .NET Core?</div>
+ <div class="answer">`HttpClient` is used to send HTTP requests and receive responses from a web service. It should be instantiated once and reused throughout the application's lifetime to avoid socket exhaustion. In .NET Core, it can be registered and injected using dependency injection.</div>
+
+ <div class="question">46. What is the `IFileProvider` interface used for?</div>
+ <div class="answer">The `IFileProvider` interface provides access to files and directories in a way that is abstracted from the physical file system. It is used to access static files, content root files, and other file-based resources in a flexible manner.</div>
+
+ <div class="question">47. Explain the `IApplicationLifetime` interface.</div>
+ <div class="answer">The `IApplicationLifetime` interface provides events and methods for managing the application's lifecycle. It includes events such as `ApplicationStarted`, `ApplicationStopping`, and `ApplicationStopped`, which can be used to execute code during different stages of the application's lifecycle.</div>
+
+ <div class="question">48. What is the `Configure` method used for in ASP.NET Core?</div>
+ <div class="answer">The `Configure` method in ASP.NET Core is used to define the middleware pipeline that handles HTTP requests and responses. It configures how the application responds to incoming requests by setting up middleware components.</div>
+
+ <div class="question">49. How do you configure routing in ASP.NET Core?</div>
+ <div class="answer">Routing in ASP.NET Core is configured using the `UseRouting` and `UseEndpoints` middleware. Routes can be defined using endpoint routing, which maps requests to controllers, Razor Pages, or other endpoints based on route patterns.</div>
+
+ <div class="question">50. What is the purpose of the `Startup` class?</div>
+ <div class="answer">The `Startup` class is used to configure services and the application's request pipeline. It contains methods such as `ConfigureServices` for setting up services and `Configure` for defining middleware and request processing.</div>
+
+ <div class="question">51. What is `appsettings.json` and how is it used?</div>
+ <div class="answer">`appsettings.json` is a configuration file used to store application settings in a JSON format. It is commonly used to define settings such as connection strings, application-specific configurations, and environment-specific settings.</div>
+
+ <div class="question">52. How do you implement custom exceptions in .NET Core?</div>
+ <div class="answer">Custom exceptions in .NET Core can be implemented by creating a class that inherits from the `Exception` class. You can define custom properties and methods to provide additional information about the error.</div>
+
+ <div class="question">53. What is `IOptionsSnapshot<T>`?</div>
+ <div class="answer">`IOptionsSnapshot<T>` is an interface used to access configuration settings that are reloaded when the configuration changes. It is typically used in applications where settings need to be updated dynamically without restarting the application.</div>
+
+ <div class="question">54. Explain `UseAuthentication` and `UseAuthorization` middleware.</div>
+ <div class="answer">`UseAuthentication` middleware is used to authenticate users and set up the `HttpContext.User` property with the authenticated user's identity. `UseAuthorization` middleware is used to enforce authorization policies and restrict access to resources based on user roles and claims.</div>
+
+ <div class="question">55. How do you handle caching in .NET Core?</div>
+ <div class="answer">Caching in .NET Core can be handled using in-memory caching, distributed caching, or response caching. The `IMemoryCache` interface provides in-memory caching, while `IDistributedCache` supports distributed cache providers like Redis and SQL Server. Response caching middleware is used to cache HTTP responses.</div>
+
+ <div class="question">56. What is the `IServiceCollection` interface?</div>
+ <div class="answer">The `IServiceCollection` interface is used to register services for dependency injection. It provides methods for adding services with different lifetimes (transient, scoped, singleton) and configuring services for use throughout the application.</div>
+
+ <div class="question">57. What is the `IServiceProvider` interface?</div>
+ <div class="answer">The `IServiceProvider` interface is used to resolve services from the dependency injection container. It provides methods for obtaining instances of registered services, typically through constructor injection.</div>
+
+ <div class="question">58. What are `Health Checks` in .NET Core?</div>
+ <div class="answer">Health checks in .NET Core provide a way to monitor the health of an application or service. They can be used to check the status of various components like databases, APIs, and services. The `Microsoft.Extensions.Diagnostics.HealthChecks` package provides support for implementing health checks.</div>
+
+ <div class="question">59. What is `IWebHostEnvironment`?</div>
+ <div class="answer">`IWebHostEnvironment` provides information about the hosting environment of the application, such as the environment name (Development, Staging, Production) and the content root path. It is used to configure environment-specific settings and behaviors.</div>
+
+ <div class="question">60. How do you perform dependency injection in .NET Core?</div>
+ <div class="answer">Dependency injection in .NET Core is performed by registering services in the `ConfigureServices` method of the `Startup` class using `IServiceCollection`. Services can be registered with different lifetimes and then injected into classes through constructor parameters.</div>
+
+ <div class="question">61. What is `IActionFilter` and how is it used?</div>
+ <div class="answer">`IActionFilter` is an interface used to define custom action filters that can run code before or after an action method executes. It is used to implement logic that needs to be executed at the action level, such as logging or validation.</div>
+
+ <div class="question">62. Explain `Authorization` in ASP.NET Core.</div>
+ <div class="answer">Authorization in ASP.NET Core is the process of determining whether a user has permission to access a resource. It is managed using policies and roles defined in the `Startup` class and is enforced using `UseAuthorization` middleware and attributes like `[Authorize]`.</div>
+
+ <div class="question">63. How do you use `IFileProvider` in .NET Core?</div>
+ <div class="answer">`IFileProvider` is used to abstract file access in .NET Core. It can be used to access files and directories in a cross-platform way, including accessing files in the application's content root or other file systems.</div>
+
+ <div class="question">64. What is `UseEndpoints` in ASP.NET Core?</div>
+ <div class="answer">`UseEndpoints` is a method used to configure endpoint routing in ASP.NET Core. It maps requests to endpoints such as controllers, Razor Pages, or other custom endpoints. It is used in place of `UseMvc` in ASP.NET Core 3.0 and later versions.</div>
+
+ <div class="question">65. How does .NET Core handle session state?</div>
+ <div class="answer">Session state in .NET Core is managed using the `ISession` interface, which provides methods for storing and retrieving data across HTTP requests. Sessions can be configured to use in-memory or distributed storage, such as SQL Server or Redis.</div>
+
+ <div class="question">66. What are `Request Delegates` in .NET Core?</div>
+ <div class="answer">Request delegates are functions that process HTTP requests and generate responses. They are used in custom middleware to handle requests and responses in a flexible and reusable way.</div>
+
+ <div class="question">67. How do you implement custom validation in .NET Core?</div>
+ <div class="answer">Custom validation can be implemented by creating a custom validation attribute that inherits from `ValidationAttribute`. The attribute can then be used on model properties to perform custom validation logic and provide error messages.</div>
+
+ <div class="question">68. What is the `IConfigurationRoot` interface?</div>
+ <div class="answer">`IConfigurationRoot` is an interface that represents the root of the configuration hierarchy. It provides methods for accessing configuration settings and supports configuration binding to POCO classes.</div>
+
+ <div class="question">69. Explain `ActionResult` in ASP.NET Core.</div>
+ <div class="answer">`ActionResult` is a base class for action results in ASP.NET Core MVC. It represents the result of an action method and can return various types of responses, such as views, JSON, or redirects.</div>
+
+ <div class="question">70. What is the `IWebHostBuilder` used for?</div>
+ <div class="answer">`IWebHostBuilder` is used to configure and build a web host for an ASP.NET Core application. It provides methods to set up the server, configure services, and specify the `Startup` class.</div>
+
+ <div class="question">71. How do you handle cookies in .NET Core?</div>
+ <div class="answer">Cookies in .NET Core are handled using the `HttpContext` class, which provides methods for setting and retrieving cookies. The `CookieOptions` class allows for configuring cookie properties such as expiration and path.</div>
+
+ <div class="question">72. What is the `Configure` method in the `Startup` class used for?</div>
+ <div class="answer">The `Configure` method in the `Startup` class is used to define the middleware pipeline that processes HTTP requests and responses. It sets up middleware components such as authentication, routing, and exception handling.</div>
+
+ <div class="question">73. How do you use `IServiceScope` in .NET Core?</div>
+ <div class="answer">`IServiceScope` is used to create a scope for resolving scoped services. It is obtained from `IServiceScopeFactory` and is used to manage the lifetime of scoped services, ensuring that they are disposed of properly when the scope ends.</div>
+
+ <div class="question">74. What is `IHostBuilder`?</div>
+ <div class="answer">`IHostBuilder` is used to configure and build a host for a .NET Core application. It provides methods for setting up services, configuring the application, and specifying the `Startup` class.</div>
+
+ <div class="question">75. How do you implement logging in .NET Core?</div>
+ <div class="answer">Logging in .NET Core is implemented using the `ILogger` interface, which provides methods for writing log messages. Logging providers, such as console, file, and application insights, can be configured in the `ConfigureServices` method of the `Startup` class.</div>
+
+ <div class="question">76. What is the `IMemoryCache` interface used for?</div>
+ <div class="answer">`IMemoryCache` is used to store and retrieve data in memory for quick access. It is typically used to cache frequently accessed data or computation results to improve application performance.</div>
+
+ <div class="question">77. How do you perform model validation in ASP.NET Core?</div>
+ <div class="answer">Model validation in ASP.NET Core is performed using data annotations and custom validation attributes. Validation occurs automatically when model binding takes place, and validation errors can be accessed through the `ModelState` property in controllers.</div>
+
+ <div class="question">78. What is `IServiceCollection` and how is it used?</div>
+ <div class="answer">`IServiceCollection` is an interface used to register services for dependency injection. It provides methods for adding services with various lifetimes (transient, scoped, singleton) and is used in the `ConfigureServices` method of the `Startup` class.</div>
+
+ <div class="question">79. How do you configure JSON serialization options in .NET Core?</div>
+ <div class="answer">JSON serialization options can be configured using `JsonSerializerOptions` in .NET Core. These options can be set globally in the `ConfigureServices` method of the `Startup` class or locally for specific scenarios using the `System.Text.Json` library.</div>
+
+ <div class="question">80. What is `IActionFilter` and how is it used?</div>
+ <div class="answer">`IActionFilter` is an interface that allows you to create custom action filters in ASP.NET Core. Action filters are used to execute code before or after an action method is called, allowing for logic such as logging or validation.</div>
+
+ <div class="question">81. What is `IContentRootFileProvider`?</div>
+ <div class="answer">`IContentRootFileProvider` is an interface that provides access to the application's content root directory. It is used to access files located in the root directory of the application.</div>
+
+ <div class="question">82. How do you use `IOptions<T>` for settings management?</div>
+ <div class="answer">`IOptions<T>` is used for accessing configuration settings in a strongly-typed manner. You define a POCO class that represents your settings, configure it in `ConfigureServices`, and inject `IOptions<T>` into your classes to access these settings.</div>
+
+ <div class="question">83. What is the `IWebHostEnvironment` interface used for?</div>
+ <div class="answer">`IWebHostEnvironment` provides information about the hosting environment, such as the environment name (Development, Staging, Production) and the content root path. It is used to configure environment-specific behavior in an application.</div>
+
+ <div class="question">84. How do you use `IConfiguration` to access configuration settings?</div>
+ <div class="answer">`IConfiguration` is used to access configuration settings from various sources such as JSON files, environment variables, and command-line arguments. It provides methods for retrieving configuration values and binding them to POCO classes.</div>
+
+ <div class="question">85. What is the purpose of the `UseRouting` middleware?</div>
+ <div class="answer">The `UseRouting` middleware is used to set up routing in ASP.NET Core applications. It enables endpoint routing, allowing requests to be matched to endpoints like controllers or Razor Pages based on route patterns.</div>
+
+ <div class="question">86. What is `IApplicationBuilder` and how is it used?</div>
+ <div class="answer">`IApplicationBuilder` is used to configure the application's request pipeline. It provides methods for adding middleware components to handle HTTP requests and responses. It is typically used in the `Configure` method of the `Startup` class.</div>
+
+ <div class="question">87. What is `IServiceScopeFactory` used for?</div>
+ <div class="answer">`IServiceScopeFactory` is used to create scopes for resolving services with a scoped lifetime. It provides a way to create `IServiceScope` instances, which manage the lifetime of scoped services.</div>
+
+ <div class="question">88. How do you perform asynchronous operations in ASP.NET Core?</div>
+ <div class="answer">Asynchronous operations in ASP.NET Core are performed using the `async` and `await` keywords. They enable non-blocking operations and improve scalability by allowing the application to handle multiple requests concurrently.</div>
+
+ <div class="question">89. What is `IOptionsMonitor<T>`?</div>
+ <div class="answer">`IOptionsMonitor<T>` is an interface that provides a way to monitor and react to changes in configuration settings. It allows for getting current values of configuration and subscribing to change notifications.</div>
+
+ <div class="question">90. What is the purpose of the `UseExceptionHandler` middleware?</div>
+ <div class="answer">The `UseExceptionHandler` middleware is used to handle exceptions that occur during request processing. It provides a way to specify a custom error handling route or page to display error information to the user.</div>
+
+ <div class="question">91. What is the `IApplicationLifetime` interface used for?</div>
+ <div class="answer">The `IApplicationLifetime` interface provides events and methods for managing the application's lifecycle. It allows you to handle events such as application start, stopping, and stop, enabling custom logic at different stages of the application's lifetime.</div>
+
+ <div class="question">92. How do you use `IOptions` for configuration in .NET Core?</div>
+ <div class="answer">`IOptions<T>` is used to access configuration settings in a strongly-typed manner. You define a POCO class that represents the configuration section, configure it in the `ConfigureServices` method, and inject `IOptions<T>` to access these settings throughout the application.</div>
+
+ <div class="question">93. What is the `UseHttpsRedirection` middleware used for?</div>
+ <div class="answer">The `UseHttpsRedirection` middleware is used to automatically redirect HTTP requests to HTTPS. It ensures that all communication between the client and server is encrypted and secure.</div>
+
+ <div class="question">94. What is `IWebHost` and how is it used?</div>
+ <div class="answer">`IWebHost` is an interface that represents a web host in ASP.NET Core. It manages the application’s request processing pipeline and is responsible for starting and running the application. It is typically configured using `IWebHostBuilder`.</div>
+
+ <div class="question">95. How do you implement dependency injection in .NET Core?</div>
+ <div class="answer">Dependency injection in .NET Core is implemented by registering services in the `ConfigureServices` method of the `Startup` class using `IServiceCollection`. Services can be registered with different lifetimes (transient, scoped, singleton) and are then injected into classes via constructor injection.</div>
+
+ <div class="question">96. What is the `UseStaticFiles` middleware used for?</div>
+ <div class="answer">The `UseStaticFiles` middleware is used to serve static files, such as images, CSS, and JavaScript, from the `wwwroot` directory or other specified locations. It allows the application to handle requests for static resources efficiently.</div>
+
+ <div class="question">97. What is `IOptions<T>` and how is it used?</div>
+ <div class="answer">`IOptions<T>` is an interface used to access configuration settings in a strongly-typed manner. It allows you to bind configuration settings to a POCO class and inject it into services or components to access configuration values.</div>
+
+ <div class="question">98. What is `IConfiguration` and how is it used?</div>
+ <div class="answer">`IConfiguration` is an interface used to access configuration settings from various sources like JSON files, environment variables, and command-line arguments. It allows you to retrieve configuration values and bind them to strongly-typed objects.</div>
+
+ <div class="question">99. How do you configure error handling in .NET Core?</div>
+ <div class="answer">Error handling in .NET Core can be configured using middleware such as `UseExceptionHandler`, which allows you to specify a custom error handling page or route. Additionally, you can use exception filters and logging to manage and report errors.</div>
+
+ <div class="question">100. What is `IServiceProvider` and how is it used?</div>
+ <div class="answer">`IServiceProvider` is an interface used to resolve services from the dependency injection container. It provides methods for obtaining instances of registered services and is typically used for service resolution in classes that are not directly injected.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 200 Interview Questions on Entity Framework, LINQ, and Dapper</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            background: #444;
+        }
+        nav ul li {
+            margin: 0;
+        }
+        nav ul li a {
+            display: block;
+            padding: 10px 20px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        nav ul li a:hover {
+            background: #555;
+        }
+        .section {
+            margin: 20px 0;
+        }
+        .section h2 {
+            color: #333;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+        }
+        .question {
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        .answer {
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 2px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Top 200 Interview Questions on Entity Framework, LINQ, and Dapper</h1>
+        <nav>
+            <ul>
+                <li><a href="#entityframework">Entity Framework</a></li>
+                <li><a href="#linq">LINQ</a></li>
+                <li><a href="#dapper">Dapper</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div id="entityframework" class="section">
+            <h2>Entity Framework</h2>
+
+            <div class="question">1. What is Entity Framework?</div>
+            <div class="answer">Entity Framework (EF) is an open-source object-relational mapper (ORM) framework for .NET applications. It allows developers to work with a database using .NET objects, eliminating the need for most of the data-access code.</div>
+
+            <div class="question">2. What is the difference between Entity Framework and ADO.NET?</div>
+            <div class="answer">Entity Framework is an ORM that provides a higher-level abstraction for database access compared to ADO.NET, which is a lower-level data access technology. EF handles object-relational mapping, change tracking, and more, while ADO.NET focuses on raw data operations.</div>
+
+            <!-- Add more questions and answers here -->
+
+            <div class="question">50. What is lazy loading in Entity Framework?</div>
+            <div class="answer">Lazy loading is a technique where related data is not loaded until it is specifically requested. In Entity Framework, lazy loading is enabled by default for navigation properties if you use virtual navigation properties and proxies.</div>
+        </div>
+
+        <div id="linq" class="section">
+            <h2>LINQ</h2>
+
+            <div class="question">51. What is LINQ?</div>
+            <div class="answer">Language Integrated Query (LINQ) is a set of methods and operators in .NET that allows you to query collections of data in a consistent manner. It provides a query syntax that integrates with C# and VB.NET, allowing you to write queries directly in your code.</div>
+
+            <div class="question">52. What are the different types of LINQ queries?</div>
+            <div class="answer">LINQ queries can be categorized into three types: LINQ to Objects (queries on in-memory collections), LINQ to SQL (queries on SQL databases), and LINQ to Entities (queries on Entity Framework entities).</div>
+
+            <!-- Add more questions and answers here -->
+
+            <div class="question">100. How does LINQ handle deferred execution?</div>
+            <div class="answer">LINQ supports deferred execution, meaning that the query is not executed until its results are iterated over. This allows for building up complex queries and executing them efficiently, but also means that the data can change between query construction and execution.</div>
+        </div>
+
+        <div id="dapper" class="section">
+            <h2>Dapper</h2>
+
+            <div class="question">101. What is Dapper?</div>
+            <div class="answer">Dapper is a lightweight, high-performance micro ORM for .NET. It is used to map query results to objects and execute SQL queries directly, providing a balance between raw ADO.NET and full ORM frameworks like Entity Framework.</div>
+
+            <div class="question">102. How does Dapper differ from Entity Framework?</div>
+            <div class="answer">Dapper is designed to be simpler and faster than Entity Framework. It does not provide all the features of a full ORM like EF, such as change tracking and complex relationship management, but offers better performance and simplicity for basic data access needs.</div>
+
+            <!-- Add more questions and answers here -->
+
+            <div class="question">150. How do you handle transactions in Dapper?</div>
+            <div class="answer">Transactions in Dapper are handled using the `IDbTransaction` interface from ADO.NET. You start a transaction by calling `BeginTransaction` on an `IDbConnection` object, and then pass the transaction object to Dapper's query methods.</div>
+        </div>
+    </div>
+</body>
+</html>

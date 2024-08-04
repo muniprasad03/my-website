@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C# OOP Interview Questions and Answers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 90%;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .section {
+            margin: 20px 0;
+        }
+        .section h2 {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .question {
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .answer {
+            margin: 0 0 10px 20px;
+        }
+        pre {
+            background: #f8f8f8;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        code {
+            background: #eaeaea;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>C# OOP Interview Questions and Answers</h1>
+
+        <div class="section">
+            <h2>1. What is Object-Oriented Programming (OOP)?</h2>
+            <div class="answer">Object-Oriented Programming (OOP) is a programming paradigm based on the concept of "objects," which can contain data in the form of fields and code in the form of procedures. OOP focuses on the organization of software design around data, or objects, rather than functions and logic. It aims to increase the modularity and reusability of code.</div>
+        </div>
+
+        <div class="section">
+            <h2>2. What are the main principles of OOP?</h2>
+            <div class="answer">The main principles of OOP are:</div>
+            <ul>
+                <li><strong>Encapsulation:</strong> Bundling the data with the methods that operate on that data.</li>
+                <li><strong>Abstraction:</strong> Hiding complex implementation details and showing only the necessary features of an object.</li>
+                <li><strong>Inheritance:</strong> Creating a new class based on an existing class, inheriting its members and behaviors.</li>
+                <li><strong>Polymorphism:</strong> Allowing objects to be treated as instances of their parent class rather than their actual class, enabling methods to do different things based on the object it is acting upon.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>3. What is encapsulation in C#?</h2>
+            <div class="answer">Encapsulation is the practice of hiding the internal state and requiring all interaction to be performed through an object's methods. It is achieved by using access modifiers to restrict direct access to some of an object's components.</div>
+            <pre><code class="language-csharp">public class Person
+{
+    // Private field
+    private string name;
+
+    // Public property
+    public string Name
+    {
+        get { return name; }
+        set { name = value; }
+    }
+
+    // Method to display the name
+    public void Display()
+    {
+        Console.WriteLine($"Name: {Name}");
+    }
+}
+</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>4. How is encapsulation implemented in C#?</h2>
+            <div class="answer">Encapsulation in C# is implemented using access modifiers. By using keywords like `private`, `protected`, and `public`, you can control the visibility and accessibility of class members. Here is an example:</div>
+            <pre><code class="language-csharp">public class BankAccount
+{
+    // Private field
+    private decimal balance;
+
+    // Public method to deposit money
+    public void Deposit(decimal amount)
+    {
+        if (amount > 0)
+        {
+            balance += amount;
+        }
+    }
+
+    // Public method to get the balance
+    public decimal GetBalance()
+    {
+        return balance;
+    }
+}
+</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>5. What is abstraction in C#?</h2>
+            <div class="answer">Abstraction is the concept of hiding the complex implementation details and showing only the essential features of an object. In C#, abstraction is achieved using abstract classes and interfaces.</div>
+        </div>
+
+        <div class="section">
+            <h2>6. How do you create an abstract class in C#?</h2>
+            <div class="answer">An abstract class is a class that cannot be instantiated on its own and must be inherited by other classes. It can contain abstract methods (methods without implementation) that must be implemented by derived classes. Here is an example:</div>
+            <pre><code class="language-csharp">public abstract class Shape
+{
+    public abstract double GetArea();
+}
+
+public class Rectangle : Shape
+{
+    public double Width { get; set; }
+    public double Height { get; set; }
+
+    public override double GetArea()
+    {
+        return Width * Height;
+    }
+}
+</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>7. What is the difference between an abstract class and an interface in C#?</h2>
+            <div class="answer">An abstract class can provide default behavior and state, while an interface can only define method signatures and properties without implementation. A class can implement multiple interfaces but can inherit only one abstract class. Abstract classes are used for providing common base functionality, whereas interfaces are used for defining contracts that multiple classes can adhere to.</div>
+        </div>
+
+        <div class="section">
+            <h2>8. How do you implement inheritance in C#?</h2>
+            <div class="answer">Inheritance is implemented in C# using the `:` symbol. The derived class inherits from the base class and can override or add new members. Here is an example:</div>
+            <pre><code class="language-csharp">public class Animal
+{
+    public void Eat()
+    {
+        Console.WriteLine("Eating...");
+    }
+}
+
+public class Dog : Animal
+{
+    public void Bark()
+    {
+        Console.WriteLine("Woof!");
+    }
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        Dog myDog = new Dog();
+        myDog.Eat(); // Inherited method
+        myDog.Bark(); // Derived class method
+    }
+}
+</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>9. What is polymorphism in C#?</h2>
+            <div class="answer">Polymorphism allows objects to be treated as instances of their base class rather than their actual class. It enables methods to have different behaviors based on the object that is calling them. There are two types of polymorphism in C#: compile-time (method overloading) and runtime (method overriding).</div>
+        </div>
+
+        <div class="section">
+            <h2>10. How do you achieve polymorphism through method overriding in C#?</h2>
+            <div class="answer">Polymorphism through method overriding is achieved using the `virtual` keyword in the base class and the `override` keyword in the derived class. Here is an example:</div>
+            <pre><code class="language-csharp">public class Animal
+{
+    public virtual void MakeSound()
+    {
+        Console.WriteLine("Some sound...");
+    }
+}
+
+public class Dog : Animal
+{
+    public override void MakeSound()
+    {
+        Console.WriteLine("Woof!");
+    }
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        Animal myAnimal = new Dog();
+        myAnimal.MakeSound(); // Outputs: Woof!
+    }
+}
+</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>11. What is an interface in C#?</h2>
+            <div class="answer">An interface in C# is a contract that defines a set of methods and properties without providing implementation. Classes and structs that implement the interface must provide implementations for all of its members. Interfaces are used to achieve abstraction and multiple inheritance.</div>
+        </div>
+
+        <div class="section">
+            <h2>12. How do you define and implement an interface in C#?</h2>
+            <div class="answer">An interface is defined using the `interface` keyword. Classes or structs that implement the interface use the `:` symbol and must provide concrete implementations for the interface's members. Here is an example:</div>
+            <pre><code class="language-csharp">public interface IAnimal
+{
+    void Eat();
+    void MakeSound();
+}
+
+public class Dog : IAnimal
+{
+    public void Eat()
+    {
+        Console.WriteLine("Eating...");
+    }
+
+    public void MakeSound()
+    {
+        Console.WriteLine("Woof!");
+    }
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        IAnimal myDog = new Dog();
+        myDog.Eat();
+        myDog.MakeSound();
+    }
+}
+</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>13. Can an interface have properties in C#?</h2>
+            <div class="answer">Yes, an interface can have properties. The properties defined in an interface only include the property signature (i.e., the name, type, and accessors) but do not include implementation. Classes that implement the interface must provide an implementation for these properties.</div>
+            <pre><code class="language-csharp">public interface IShape
+{
+    double Area { get; }
+}
+
+public class Circle : IShape
+{
+    public double Radius { get; set; }
+
+    public double Area
+    {
+        get { return Math.PI * Radius * Radius; }
+    }
+}
+</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>14. What is a virtual method in C#?</h2>
+            <div class="answer">A virtual method in C# is a method defined in a base class that can be overridden in derived classes. The base class provides a default implementation, but derived classes can provide a specific implementation using the `override` keyword.</div>
+            <pre><code class="language-csharp">public class BaseClass
+{
+    public virtual void Display()
+    {
+        Console.WriteLine("Base class display method.");
+    }
+}
+
+public class DerivedClass : BaseClass
+{
+    public override void Display()
+    {
+        Console.WriteLine("Derived class display method.");
+    }
+}
+</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>15. What is method overloading in C#?</h2>
+            <div class="answer">Method overloading is a feature in C# that allows a class to have more than one method with the same name, but with different parameters (different type or number of parameters). It is a form of compile-time polymorphism.</div>
+            <pre><code class="language-csharp">public class Calculator
+{
+    public int Add(int a, int b)
+    {
+        return a + b;
+    }
+
+    public double Add(double a, double b)
+    {
+        return a + b;
+    }
+
+    public int Add(int a, int b, int c)
+    {
+        return a + b + c;
+    }
+}
+</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>16. What is method overriding in C#?</h2>
+            <div class="answer">Method overriding is a feature in C# that allows a derived class to provide a specific implementation of a method that is already defined in its base class. This is achieved using the `override` keyword in the derived class and the `virtual` keyword in the base class.</div>
+            <pre><code class="language-csharp">public class Animal
+{
+    public virtual void MakeSound()
+    {
+        Console.WriteLine("Animal sound");
+    }
+}
+
+public class Cat : Animal
+{
+    public override void MakeSound()
+    {
+        Console.WriteLine("Meow");
+    }
+}
+</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>17. What is constructor overloading in C#?</h2>
+            <div class="answer">Constructor overloading in C# is a concept where multiple constructors can be defined within a class, each with a different parameter list. This allows objects of the class to be initialized in different ways.</div>
+            <pre><code class="language-csharp">public class Person
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+
+    public Person()
+    {
+    }
+
+    public Person(string name)
+    {
+        Name = name;
+    }
+
+    public Person(string name, int age)
+    {
+        Name = name;
+        Age = age;
+    }
+}
+</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>18. What is a static class in C#?</h2>
+            <div class="answer">A static class in C# is a class that cannot be instantiated and can only contain static members. It is used to group related methods and properties that do not require an instance of the class. Static classes are commonly used for utility or helper methods.</div>
+            <pre><code class="language-csharp">public static class MathUtils
+{
+    public static int Add(int a, int b)
+    {
+        return a + b;
+    }
+
+    public static double Multiply(double a, double b)
+    {
+        return a * b;
+    }
+}
+</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>19. What is the difference between a class and a struct in C#?</h2>
+            <div class="answer">In C#, classes are reference types and are allocated on the heap, while structs are value types and are allocated on the stack. Classes support inheritance, whereas structs do not. Classes can be instantiated with or without the `new` keyword, whereas structs are always instantiated with `new`.</div>
+            <pre><code class="language-csharp">public class MyClass
+{
+    public int Value { get; set; }
+}
+
+public struct MyStruct
+{
+    public int Value { get; set; }
+}
+</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>20. What is an abstract method in C#?</h2>
+            <div class="answer">An abstract method is a method defined in an abstract class that does not have an implementation in the base class. Derived classes must provide an implementation for this method. It is declared using the `abstract` keyword.</div>
+            <pre><code class="language-csharp">public abstract class Shape
+{
+    public abstract double CalculateArea();
+}
+
+public class Circle : Shape
+{
+    public double Radius { get; set; }
+
+    public override double CalculateArea()
+    {
+        return Math.PI * Radius * Radius;
+    }
+}
+</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>21. What is a virtual property in C#?</h2>
+            <div class="answer">A virtual property in C# is a property that can be overridden in derived classes. It is defined using the `virtual` keyword in the base class and the `override` keyword in the derived class.</div>
+            <pre><code class="language-csharp">public class BaseClass
+{
+    public virtual string Description
+    {
+        get { return "Base class description"; }
+    }
+}
+
+public class DerivedClass : BaseClass
+{
+    public override string Description
+    {
+        get { return "Derived class description"; }
+    }
+}
+</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>22. Can you inherit from multiple classes in C#?</h2>
+            <div class="answer">No, C# does not support multiple inheritance of classes. A class can inherit from only one base class. However, a class can implement multiple interfaces, which allows it to achieve a form of multiple inheritance.</div>
+        </div>
+
+        <div class="section">
+            <h2>23. What is the use of the `base` keyword in C#?</h2>
+            <div class="answer">The `base` keyword in C# is used to access members of the base class from within a derived class. It can be used to call base class methods, constructors, and properties.</div>
+            <pre><code class="language-csharp">public class Animal
+{
+    public void Eat()
+    {
+        Console.WriteLine("Animal eating...");
+    }
+}
+
+public class Dog : Animal
+{
+    public void Display()
+    {
+        base.Eat(); // Calls the Eat method from Animal class
+    }
+}
+</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>24. What is method hiding in C#?</h2>
+            <div class="answer">Method hiding occurs when a derived class defines a method with the same name as a method in the base class, but without using the `override` keyword. This hides the base class method. Method hiding is achieved using the `new` keyword.</div>
+            <pre><code class="language-csharp">public class BaseClass
+{
+    public void Display()
+    {
+        Console.WriteLine("Base class display");
+    }
+}
+
+public class DerivedClass : BaseClass
+{
+    public new void Display()
+    {
+        Console.WriteLine("Derived class display");
+    }
+}
+</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>25. What is the purpose of the `sealed` keyword in C#?</h2>
+            <div class="answer">The `sealed` keyword is used to prevent a class from being inherited. When a class is marked as `sealed`, it cannot be used as a base class for other classes.</div>
+            <pre><code class="language-csharp">public sealed class FinalClass
+{
+    // Class implementation
+}
+</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>26. How do you prevent a method from being overridden in C#?</h2>
+            <div class="answer">To prevent a method from being overridden, you can mark it with the `sealed` keyword in a derived class. The method must be marked as `override` in the derived class to be sealed. The base class method should be marked as `virtual`.</div>
+            <pre><code class="language-csharp">public class BaseClass
+{
+    public virtual void Display()
+    {
+        Console.WriteLine("Base class display");
+    }
+}
+
+public class DerivedClass : BaseClass
+{
+    public override sealed void Display()
+    {
+        Console.WriteLine("Derived class display");
+    }
+}
+</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>27. What is an indexer in C#?</h2>
+            <div class="answer">An indexer allows an object to be indexed like an array. It is defined using the `this` keyword and provides access to elements in an object using array-like syntax.</div>
+            <pre><code class="language-csharp">public class MyCollection
+{
+    private int[] items = new int[10];
+
+    public int this[int index]
+    {
+        get { return items[index]; }
+        set { items[index] = value; }
+    }
+}
+</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>28. What is the difference between `public`, `private`, `protected`, and `internal` access modifiers?</h2>
+            <div class="answer">The `public` access modifier allows access from any code. The `private` modifier restricts access to the containing class. The `protected` modifier allows access from derived classes. The `internal` modifier restricts access to the same assembly. The `protected internal` modifier allows access from derived classes and the same assembly.</div>
+        </div>
+
+        <div class="section">
+            <h2>29. What is the `new` keyword used for in C#?</h2>
+            <div class="answer">The `new` keyword in C# is used to create instances of objects and to hide base class members. It can be used to instantiate a class or to create a new member in a derived class that hides a member in the base class.</div>
+        </div>
+
+        <div class="section">
+            <h2>30. How do you implement an interface in a class in C#?</h2>
+            <div class="answer">To implement an interface in a class, use the `:` symbol followed by the interface name. The class must provide implementations for all methods and properties defined in the interface.</div>
+            <pre><code class="language-csharp">public interface IReadable
+{
+    void Read();
+}
+
+public class Book : IReadable
+{
+    public void Read()
+    {
+        Console.WriteLine("Reading the book...");
+    }
+}
+</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>31. What is a destructor in C#?</h2>
+            <div class="answer">A destructor is a special method that is called when an object is being destroyed. It is used to clean up unmanaged resources before the object is removed from memory. In C#, destructors are defined using a tilde (~) before the class name.</div>
+            <pre><code class="language-csharp">public class MyClass
+{
+    ~MyClass()
+    {
+        // Cleanup code
+    }
+}
+</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>32. What is the `static` keyword used for in C#?</h2>
+            <div class="answer">The `static` keyword is used to declare members that belong to the type itself rather than to a specific instance. Static members can be accessed directly through the class name and do not require an instance of the class.</div>
+        </div>
+
+        <div class="section">
+            <h2>33. What is the difference between `const` and `readonly` in C#?</h2>
+            <div class="answer">`const` is used to declare compile-time constants, while `readonly` is used to declare runtime constants that can only be assigned in the constructor. `const` values must be initialized at the time of declaration, whereas `readonly` values can be assigned in the constructor or during declaration.</div>
+        </div>
+
+        <div class="section">
+            <h2>34. What is the purpose of the `this` keyword in C#?</h2>
+            <div class="answer">The `this` keyword refers to the current instance of the class. It is used to access members (fields, methods, and properties) of the current object, and to distinguish between instance members and parameters with the same name.</div>
+            <pre><code class="language-csharp">public class Car
+{
+    private string model;
+
+    public Car(string model)
+    {
+        this.model = model; // Uses 'this' to refer to the instance field
+    }
+}
+</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>35. What is the difference between `override` and `new` in C#?</h2>
+            <div class="answer">The `override` keyword is used to provide a new implementation of a virtual method inherited from a base class. The `new` keyword is used to hide a base class member with a new member in the derived class. `override` maintains polymorphic behavior, while `new` does not.</div>
+        </div>
+
+        <div class="section">
+            <h2>36. How does exception handling work in C#?</h2>
+            <div class="answer">Exception handling in C# is achieved using the `try`, `catch`, `finally`, and `throw` keywords. Code that might throw an exception is placed inside a `try` block, exceptions are caught in `catch` blocks, and any cleanup code is placed in the `finally` block. Exceptions can be thrown using the `throw` keyword.</div>
+            <pre><code class="language-csharp">try
+{
+    // Code that may throw an exception
+}
+catch (Exception ex)
+{
+    // Code to handle the exception
+}
+finally
+{
+    // Code that always executes, regardless of an exception
+}
+</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>37. What is the purpose of the `using` statement in C#?</h2>
+            <div class="answer">The `using` statement is used to ensure that resources are properly disposed of after use. It is commonly used with objects that implement the `IDisposable` interface. When the `using` block is exited, the `Dispose` method is automatically called to release resources.</div>
+            <pre><code class="language-csharp">using (var stream = new FileStream("file.txt", FileMode.Open))
+{
+    // Use the stream
+}
+// The stream is automatically disposed of here
+</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>38. What is the difference between `IEnumerable` and `IQueryable` in C#?</h2>
+            <div class="answer">`IEnumerable` is used for querying collections in memory and is executed in-memory. `IQueryable` is used for querying data sources that support LINQ (e.g., databases) and is executed in the database or data source. `IQueryable` allows for more efficient queries as it translates queries into the native query language of the data source.</div>
+        </div>
+
+        <div class="section">
+            <h2>39. What is a lambda expression in C#?</h2>
+            <div class="answer">A lambda expression is a concise way to define anonymous methods using the `=>` syntax. It is often used with LINQ queries and delegates. Lambda expressions can have zero or more parameters and a single expression or statement block.</div>
+            <pre><code class="language-csharp">Func<int, int> square = x => x * x;
+int result = square(5); // result is 25
+</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>40. What is the purpose of the `params` keyword in C#?</h2>
+            <div class="answer">The `params` keyword allows a method to accept a variable number of arguments. It can be used with arrays, enabling the caller to pass a comma-separated list of values or an array.</div>
+            <pre><code class="language-csharp">public void PrintNumbers(params int[] numbers)
+{
+    foreach (var number in numbers)
+    {
+        Console.WriteLine(number);
+    }
+}
+
+PrintNumbers(1, 2, 3, 4, 5); // Prints numbers 1 through 5
+</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>41. What is the difference between `ref` and `out` parameters in C#?</h2>
+            <div class="answer">Both `ref` and `out` parameters are used to pass arguments by reference. The `ref` parameter requires that the variable be initialized before being passed, while the `out` parameter does not. `out` parameters must be assigned a value before the method returns.</div>
+        </div>
+
+        <div class="section">
+            <h2>42. What is a constructor in C#?</h2>
+            <div class="answer">A constructor is a special method that is called when an instance of a class is created. It initializes the object's state and can be overloaded to provide different ways of initializing the object.</div>
+            <pre><code class="language-csharp">public class Person
+{
+    public string Name { get; set; }
+
+    public Person(string name)
+    {
+        Name = name;
+    }
+}
+</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>43. What is a destructor in C#?</h2>
+            <div class="answer">A destructor is a method that is automatically called when an object is garbage collected. It is used to perform cleanup operations and is defined using a tilde (~) before the class name. It is less commonly used in C# due to the presence of the `IDisposable` pattern for resource management.</div>
+            <pre><code class="language-csharp">public class MyClass
+{
+    ~MyClass()
+    {
+        // Cleanup code
+    }
+}
+</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>44. What is garbage collection in C#?</h2>
+            <div class="answer">Garbage collection is an automatic memory management feature in C# that reclaims memory occupied by objects that are no longer in use. The garbage collector (GC) periodically checks for objects that are no longer referenced and releases their memory to avoid memory leaks.</div>
+        </div>
+
+        <div class="section">
+            <h2>45. What is the difference between `object` and `dynamic` in C#?</h2>
+            <div class="answer">The `object` type is the base type of all other types in C# and is statically typed, meaning its type is checked at compile time. The `dynamic` type bypasses compile-time type checking and is resolved at runtime, allowing for more flexibility but with potential for runtime errors.</div>
+        </div>
+
+        <div class="section">
+            <h2>46. What is a `delegate` in C#?</h2>
+            <div class="answer">A delegate is a type that represents references to methods with a specific parameter list and return type. Delegates are used to pass methods as arguments and can be used to implement event handling and callback methods.</div>
+            <pre><code class="language-csharp">public delegate void MyDelegate(string message);
+
+public class Program
+{
+    public static void DisplayMessage(string message)
+    {
+        Console.WriteLine(message);
+    }
+
+    public static void Main()
+    {
+        MyDelegate del = DisplayMessage;
+        del("Hello, world!");
+    }
+}
+</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>47. What are events in C#?</h2>
+            <div class="answer">Events in C# are a way to provide notifications when something of interest occurs. They are based on delegates and allow objects to notify other objects when certain actions take place. Events are declared using the `event` keyword.</div>
+            <pre><code class="language-csharp">public class Button
+{
+    public event EventHandler Click;
+
+    protected virtual void OnClick()
+    {
+        Click?.Invoke(this, EventArgs.Empty);
+    }
+}
+</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>48. What is the purpose of the `async` and `await` keywords in C#?</h2>
+            <div class="answer">The `async` keyword is used to declare a method as asynchronous, allowing it to use the `await` keyword. The `await` keyword is used within an `async` method to wait for the completion of a task without blocking the executing thread, facilitating asynchronous programming and improving responsiveness.</div>
+            <pre><code class="language-csharp">public async Task<string> GetDataAsync()
+{
+    await Task.Delay(1000); // Simulate asynchronous operation
+    return "Data retrieved";
+}
+</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>49. What is LINQ in C#?</h2>
+            <div class="answer">LINQ (Language Integrated Query) is a set of features in C# that allows for querying and manipulating data using a syntax integrated into the language. LINQ can be used with various data sources like collections, databases, XML, etc., using query syntax or method syntax.</div>
+            <pre><code class="language-csharp">var numbers = new List<int> { 1, 2, 3, 4, 5 };
+var evenNumbers = from number in numbers
+                   where number % 2 == 0
+                   select number;
+</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>50. What is the difference between `String` and `StringBuilder` in C#?</h2>
+            <div class="answer">`String` is immutable, meaning any modification results in a new string instance being created. `StringBuilder` is mutable and allows for efficient string manipulation by modifying the string in place. `StringBuilder` is preferable when performing many modifications to a string.</div>
+            <pre><code class="language-csharp">StringBuilder sb = new StringBuilder();
+sb.Append("Hello");
+sb.Append(" World");
+string result = sb.ToString(); // "Hello World"
+</code></pre>
+        </div>
+
+    </div>
+</body>
+</html>

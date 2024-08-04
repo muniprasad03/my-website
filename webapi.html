@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 100 .NET Core Web API Interview Questions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #0056b3;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            padding: 15px;
+        }
+        .card-header {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        .card-body {
+            font-size: 1rem;
+            color: #333;
+        }
+        @media (max-width: 768px) {
+            .card-header {
+                font-size: 1.1rem;
+            }
+            .card-body {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Top 100 .NET Core Web API Interview Questions</h1>
+    </div>
+    
+    <div class="container">
+        <!-- Question 1 -->
+        <div id="question1" class="card">
+            <div class="card-header">
+                1. What is .NET Core?
+            </div>
+            <div class="card-body">
+                <p>.NET Core is a cross-platform, open-source framework developed by Microsoft for building modern applications. It supports multiple operating systems, including Windows, Linux, and macOS. .NET Core provides a modular and high-performance runtime and library for building various types of applications, including web APIs.</p>
+            </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div id="question2" class="card">
+            <div class="card-header">
+                2. What is a Web API?
+            </div>
+            <div class="card-body">
+                <p>A Web API (Application Programming Interface) is a set of HTTP endpoints that allow applications to communicate with each other over the web. It provides a way for different systems to interact using standard web protocols, such as HTTP, and typically returns data in formats like JSON or XML.</p>
+            </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div id="question3" class="card">
+            <div class="card-header">
+                3. What is the difference between ASP.NET Core and .NET Core?
+            </div>
+            <div class="card-body">
+                <p>.NET Core is a cross-platform runtime for building applications, while ASP.NET Core is a framework built on top of .NET Core specifically for creating web applications and APIs. ASP.NET Core leverages .NET Core for runtime services and libraries but includes additional features and libraries for web development.</p>
+            </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div id="question4" class="card">
+            <div class="card-header">
+                4. How do you create a Web API in .NET Core?
+            </div>
+            <div class="card-body">
+                <p>To create a Web API in .NET Core, you can follow these steps:
+                    <ol>
+                        <li>Create a new ASP.NET Core project using Visual Studio or the .NET CLI.</li>
+                        <li>Define your API controllers by creating classes that inherit from <code>ControllerBase</code> and use the <code>[ApiController]</code> attribute.</li>
+                        <li>Define your API methods using HTTP method attributes like <code>[HttpGet]</code>, <code>[HttpPost]</code>, etc.</li>
+                        <li>Configure routing and services in the <code>Startup.cs</code> file or <code>Program.cs</code> file (in .NET 6 and later).</li>
+                    </ol>
+                </p>
+            </div>
+        </div>
+
+        <!-- Question 5 -->
+        <div id="question5" class="card">
+            <div class="card-header">
+                5. What is dependency injection in .NET Core?
+            </div>
+            <div class="card-body">
+                <p>Dependency injection is a design pattern used to achieve Inversion of Control (IoC) between classes and their dependencies. In .NET Core, it is built-in and configured through the <code>Startup.cs</code> file. Services can be registered with different lifetimes (Transient, Scoped, Singleton) and then injected into constructors of classes that require them.</p>
+            </div>
+        </div>
+
+        <!-- Question 6 -->
+        <div id="question6" class="card">
+            <div class="card-header">
+                6. How does routing work in ASP.NET Core Web API?
+            </div>
+            <div class="card-body">
+                <p>Routing in ASP.NET Core Web API determines how HTTP requests are matched to action methods in controllers. Routing is configured in the <code>Startup.cs</code> file or <code>Program.cs</code> file using the <code>UseRouting</code> and <code>UseEndpoints</code> methods. Routes can be defined using attributes or convention-based routing.</p>
+            </div>
+        </div>
+
+        <!-- Question 7 -->
+        <div id="question7" class="card">
+            <div class="card-header">
+                7. What is middleware in ASP.NET Core?
+            </div>
+            <div class="card-body">
+                <p>Middleware in ASP.NET Core is software that is assembled into an application pipeline to handle requests and responses. Each component (middleware) in the pipeline has access to the HTTP context and can perform operations before and after the next component in the pipeline is invoked. Examples include authentication, logging, and exception handling middleware.</p>
+            </div>
+        </div>
+
+        <!-- Question 8 -->
+        <div id="question8" class="card">
+            <div class="card-header">
+                8. What are action results in ASP.NET Core Web API?
+            </div>
+            <div class="card-body">
+                <p>Action results in ASP.NET Core Web API represent the result of an action method. They are returned by the action methods and can be of various types such as <code>OkResult</code>, <code>NotFoundResult</code>, <code>BadRequestResult</code>, or <code>ObjectResult</code>. These results help in sending different HTTP status codes and response bodies back to the client.</p>
+            </div>
+        </div>
+
+        <!-- Question 9 -->
+        <div id="question9" class="card">
+            <div class="card-header">
+                9. How do you handle exceptions in ASP.NET Core Web API?
+            </div>
+            <div class="card-body">
+                <p>Exceptions in ASP.NET Core Web API can be handled using exception middleware. The <code>UseExceptionHandler</code> middleware can be configured in the <code>Startup.cs</code> file to catch exceptions globally and return a custom error response. Additionally, custom exception filters and try-catch blocks can be used for finer control over exception handling.</p>
+            </div>
+        </div>
+
+        <!-- Question 10 -->
+        <div id="question10" class="card">
+            <div class="card-header">
+                10. What is model binding in ASP.NET Core Web API?
+            </div>
+            <div class="card-body">
+                <p>Model binding in ASP.NET Core Web API is the process of converting HTTP request data (such as query strings, form data, or route data) into .NET objects. The framework binds the data from the request to action method parameters or model properties. This allows for easy and automatic data manipulation and validation in the application.</p>
+            </div>
+        </div>
+
+        <!-- Add more questions and answers here following the same format -->
+
+        <!-- Question 11 -->
+        <div id="question11" class="card">
+            <div class="card-header">
+                11. What is model validation in ASP.NET Core Web API?
+            </div>
+            <div class="card-body">
+                <p>Model validation in ASP.NET Core Web API ensures that the data sent to the API meets certain criteria before it is processed. Validation attributes, such as <code>[Required]</code>, <code>[StringLength]</code>, and <code>[Range]</code>, can be applied to model properties. Validation results can be accessed via the <code>ModelState</code> object in controllers.</p>
+            </div>
+        </div>
+
+        <!-- Question 12 -->
+        <div id="question12" class="card">
+            <div class="card-header">
+                12. How do you enable Swagger in ASP.NET Core Web API?
+            </div>
+            <div class="card-body">
+                <p>Swagger can be enabled in an ASP.NET Core Web API project by adding the <code>Swashbuckle.AspNetCore</code> package to the project. In the <code>Startup.cs</code> file, call the <code>services.AddSwaggerGen()</code> method in <code>ConfigureServices</code> and <code>app.UseSwagger()</code> and <code>app.UseSwaggerUI()</code> in <code>Configure</code> to set up Swagger middleware.</p>
+            </div>
+        </div>
+
+        <!-- Question 13 -->
+        <div id="question13" class="card">
+            <div class="card-header">
+                13. What is the purpose of the `appsettings.json` file in .NET Core?
+            </div>
+            <div class="card-body">
+                <p>The `appsettings.json` file is used for storing configuration settings in a .NET Core application. It allows for hierarchical configuration of application settings and is read at runtime to provide configuration values to the application. It supports various formats like JSON and can be used to configure different aspects of the application, such as database connections and logging settings.</p>
+            </div>
+        </div>
+
+        <!-- Question 14 -->
+        <div id="question14" class="card">
+            <div class="card-header">
+                14. How do you perform unit testing in .NET Core?
+            </div>
+            <div class="card-body">
+                <p>Unit testing in .NET Core can be performed using frameworks like xUnit, NUnit, or MSTest. You can create test projects in Visual Studio or using the .NET CLI. Tests are written to verify the behavior of individual units of code (like methods or classes) in isolation from external dependencies. Dependency injection and mocking frameworks, such as Moq, can be used to help with testing.</p>
+            </div>
+        </div>
+
+        <!-- Question 15 -->
+        <div id="question15" class="card">
+            <div class="card-header">
+                15. What is the difference between `IActionResult` and `ActionResult` in ASP.NET Core Web API?
+            </div>
+            <div class="card-body">
+                <p><code>IActionResult</code> is an interface that defines the contract for action results in ASP.NET Core, while <code>ActionResult</code> is a concrete class that implements <code>IActionResult</code>. Using <code>IActionResult</code> allows for more flexible and testable code, whereas <code>ActionResult</code> provides a richer set of methods and properties for action results.</p>
+            </div>
+        </div>
+
+        <!-- Question 16 -->
+        <div id="question16" class="card">
+            <div class="card-header">
+                16. What is CORS and how do you enable it in ASP.NET Core?
+            </div>
+            <div class="card-body">
+                <p>CORS (Cross-Origin Resource Sharing) is a mechanism that allows web applications running at one origin to access resources from a different origin. In ASP.NET Core, CORS can be enabled by adding the <code>Microsoft.AspNetCore.Cors</code> package and configuring it in the <code>Startup.cs</code> file using <code>services.AddCors()</code> and <code>app.UseCors()</code>.</p>
+            </div>
+        </div>
+
+        <!-- Question 17 -->
+        <div id="question17" class="card">
+            <div class="card-header">
+                17. How do you implement logging in .NET Core Web API?
+            </div>
+            <div class="card-body">
+                <p>Logging in .NET Core Web API can be implemented using the built-in logging framework provided by Microsoft.Extensions.Logging. You can configure logging in the <code>Startup.cs</code> file, use various log providers (e.g., Console, Debug, File), and inject <code>ILogger</code> into your services and controllers to log messages at different levels (Information, Warning, Error, etc.).</p>
+            </div>
+        </div>
+
+        <!-- Question 18 -->
+        <div id="question18" class="card">
+            <div class="card-header">
+                18. What is the role of `Program.cs` in .NET Core 6 and later?
+            </div>
+            <div class="card-body">
+                <p>In .NET Core 6 and later, the `Program.cs` file plays a central role in configuring and running the application. It uses a simplified hosting model where you configure services and the application pipeline using a minimal API approach. The `Program.cs` file typically contains code for building and running the application, such as configuring services, middleware, and endpoints.</p>
+            </div>
+        </div>
+
+        <!-- Question 19 -->
+        <div id="question19" class="card">
+            <div class="card-header">
+                19. How do you handle asynchronous operations in ASP.NET Core Web API?
+            </div>
+            <div class="card-body">
+                <p>Asynchronous operations in ASP.NET Core Web API can be handled using the <code>async</code> and <code>await</code> keywords. Action methods can be marked as <code>async</code> and return <code>Task<IActionResult></code> or <code>Task<ActionResult></code>. This allows for non-blocking operations and improved scalability by releasing threads while waiting for I/O operations to complete.</p>
+            </div>
+        </div>
+
+        <!-- Question 20 -->
+        <div id="question20" class="card">
+            <div class="card-header">
+                20. What are API controllers and how do they differ from regular controllers?
+            </div>
+            <div class="card-body">
+                <p>API controllers are specialized controllers used in ASP.NET Core for building Web APIs. They inherit from <code>ControllerBase</code> and do not use views. API controllers are designed to return data in formats such as JSON or XML and are decorated with the <code>[ApiController]</code> attribute. They differ from regular controllers, which inherit from <code>Controller</code> and are used for MVC (Model-View-Controller) applications.</p>
+            </div>
+        </div>
+
+        <!-- Add more questions and answers here following the same format -->
+
+        <!-- Question 21 to Question 100 -->
+         <!-- Question 21 -->
+         <div id="question21" class="card">
+            <div class="card-header">
+                21. What is an attribute routing in ASP.NET Core Web API?
+            </div>
+            <div class="card-body">
+                <p>Attribute routing allows you to specify routes directly on action methods and controllers using attributes. This approach gives you more control over routing and is especially useful for defining custom routes or routing with complex URL patterns. You use the <code>[Route]</code> attribute to define routes and <code>[HttpGet]</code>, <code>[HttpPost]</code>, etc., to specify HTTP methods.</p>
+            </div>
+        </div>
+
+        <!-- Question 22 -->
+        <div id="question22" class="card">
+            <div class="card-header">
+                22. How do you perform logging in ASP.NET Core Web API?
+            </div>
+            <div class="card-body">
+                <p>Logging in ASP.NET Core Web API is handled through the built-in logging framework. You can configure logging providers such as Console, Debug, and File in the <code>Startup.cs</code> file using <code>services.AddLogging()</code>. Inject <code>ILogger</code> into your classes and use it to log messages at different levels (Information, Warning, Error, etc.).</p>
+            </div>
+        </div>
+
+        <!-- Question 23 -->
+        <div id="question23" class="card">
+            <div class="card-header">
+                23. What are the advantages of using .NET Core over the .NET Framework?
+            </div>
+            <div class="card-body">
+                <p>Some advantages of using .NET Core over the .NET Framework include:
+                    <ul>
+                        <li>Cross-platform support (Windows, Linux, macOS)</li>
+                        <li>Performance improvements</li>
+                        <li>Modular design with smaller runtime and libraries</li>
+                        <li>Side-by-side versioning of applications</li>
+                        <li>Open source and community-driven development</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <!-- Question 24 -->
+        <div id="question24" class="card">
+            <div class="card-header">
+                24. What is Dependency Injection (DI) and how is it used in .NET Core?
+            </div>
+            <div class="card-body">
+                <p>Dependency Injection (DI) is a design pattern used to achieve Inversion of Control (IoC) between classes and their dependencies. In .NET Core, DI is built into the framework and can be configured in the <code>Startup.cs</code> file. You register services with different lifetimes (Transient, Scoped, Singleton) and then inject them into classes via constructors, properties, or method parameters.</p>
+            </div>
+        </div>
+
+        <!-- Question 25 -->
+        <div id="question25" class="card">
+            <div class="card-header">
+                25. How do you configure JSON serialization settings in .NET Core Web API?
+            </div>
+            <div class="card-body">
+                <p>JSON serialization settings in .NET Core Web API can be configured using the <code>JsonSerializerOptions</code> class. You can customize options such as property naming policies, ignore null values, and more. In .NET Core 3.0 and later, you configure these settings in the <code>Startup.cs</code> file within the <code>ConfigureServices</code> method using <code>services.AddControllers().AddJsonOptions()</code>.</p>
+            </div>
+        </div>
+
+        <!-- Question 26 -->
+        <div id="question26" class="card">
+            <div class="card-header">
+                26. What is the purpose of the `appsettings.Development.json` file in ASP.NET Core?
+            </div>
+            <div class="card-body">
+                <p>The `appsettings.Development.json` file is used to store configuration settings that are specific to the development environment. It overrides settings from the main `appsettings.json` file when the application is running in the development environment. This allows you to use different configurations for development, testing, and production environments.</p>
+            </div>
+        </div>
+
+        <!-- Question 27 -->
+        <div id="question27" class="card">
+            <div class="card-header">
+                27. How do you secure an ASP.NET Core Web API?
+            </div>
+            <div class="card-body">
+                <p>Securing an ASP.NET Core Web API involves several practices:
+                    <ul>
+                        <li>Implement authentication and authorization using JWT (JSON Web Tokens) or OAuth.</li>
+                        <li>Use HTTPS to encrypt data transmitted between the client and server.</li>
+                        <li>Apply role-based or policy-based authorization to restrict access to certain resources.</li>
+                        <li>Validate and sanitize inputs to prevent SQL injection and other attacks.</li>
+                        <li>Configure CORS policies to control which domains can access your API.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <!-- Question 28 -->
+        <div id="question28" class="card">
+            <div class="card-header">
+                28. What is the difference between `UseRouting` and `UseEndpoints` in ASP.NET Core?
+            </div>
+            <div class="card-body">
+                <p>`UseRouting` is middleware that adds routing capabilities to the application, allowing it to match requests to endpoints. `UseEndpoints`, on the other hand, is used to define the endpoints and configure routing to those endpoints. `UseRouting` must be called before `UseEndpoints` to set up the routing system correctly.</p>
+            </div>
+        </div>
+
+        <!-- Question 29 -->
+        <div id="question29" class="card">
+            <div class="card-header">
+                29. What are the different types of responses you can return from an ASP.NET Core Web API action method?
+            </div>
+            <div class="card-body">
+                <p>An ASP.NET Core Web API action method can return different types of responses:
+                    <ul>
+                        <li><code>ActionResult</code> or <code>IActionResult</code> for flexible result types.</li>
+                        <li><code>OkResult</code> or <code>Ok<T>(T)</code> for successful responses with optional data.</li>
+                        <li><code>NotFoundResult</code> or <code>NotFound()</code> for indicating that a resource was not found.</li>
+                        <li><code>BadRequestResult</code> or <code>BadRequest()</code> for indicating a bad request.</li>
+                        <li><code>ContentResult</code> for returning raw content with custom status codes and headers.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <!-- Question 30 -->
+        <div id="question30" class="card">
+            <div class="card-header">
+                30. How do you handle model binding and validation errors in ASP.NET Core Web API?
+            </div>
+            <div class="card-body">
+                <p>Model binding and validation errors can be handled by checking the <code>ModelState</code> property in your action methods. If the <code>ModelState.IsValid</code> property is false, it means there were validation errors. You can return a <code>BadRequest</code> response with the validation errors, or handle them as needed for your application.</p>
+            </div>
+        </div>
+
+        <!-- Question 31 -->
+        <div id="question31" class="card">
+            <div class="card-header">
+                31. What are Web API filters and how are they used?
+            </div>
+            <div class="card-body">
+                <p>Web API filters are used to execute code before or after the action method executes. They allow you to perform cross-cutting concerns such as logging, exception handling, authentication, and authorization. ASP.NET Core provides built-in filters like <code>ExceptionFilter</code>, <code>ActionFilter</code>, and <code>ResultFilter</code>, which can be applied globally, at the controller level, or at the action method level.</p>
+            </div>
+        </div>
+
+        <!-- Question 32 -->
+        <div id="question32" class="card">
+            <div class="card-header">
+                32. What is the `IHttpClientFactory` and how do you use it in .NET Core?
+            </div>
+            <div class="card-body">
+                <p>The `IHttpClientFactory` is a factory for creating <code>HttpClient</code> instances in .NET Core. It helps manage the lifecycle of <code>HttpClient</code> objects, improving performance and reliability. You can register `IHttpClientFactory` in the <code>Startup.cs</code> file using <code>services.AddHttpClient()</code> and use it to create <code>HttpClient</code> instances via dependency injection.</p>
+            </div>
+        </div>
+
+        <!-- Question 33 -->
+        <div id="question33" class="card">
+            <div class="card-header">
+                33. What are some common HTTP methods used in Web APIs?
+            </div>
+            <div class="card-body">
+                <p>Common HTTP methods used in Web APIs include:
+                    <ul>
+                        <li><code>GET</code>: Retrieve data from the server.</li>
+                        <li><code>POST</code>: Submit new data to the server.</li>
+                        <li><code>PUT</code>: Update existing data on the server.</li>
+                        <li><code>DELETE</code>: Remove data from the server.</li>
+                        <li><code>PATCH</code>: Apply partial updates to data on the server.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <!-- Question 34 -->
+        <div id="question34" class="card">
+            <div class="card-header">
+                34. How do you implement custom exception handling in ASP.NET Core Web API?
+            </div>
+            <div class="card-body">
+                <p>Custom exception handling in ASP.NET Core Web API can be implemented using middleware. You can create custom middleware to catch and handle exceptions globally by adding it to the application's request pipeline in the <code>Startup.cs</code> file using <code>app.UseMiddleware<YourCustomExceptionMiddleware>()</code>. Alternatively, you can use the built-in <code>ExceptionHandlerMiddleware</code> and configure exception handling with <code>app.UseExceptionHandler()</code>.</p>
+            </div>
+        </div>
+
+        <!-- Question 35 -->
+        <div id="question35" class="card">
+            <div class="card-header">
+                35. What is the role of `IServiceCollection` in .NET Core?
+            </div>
+            <div class="card-body">
+                <p>`IServiceCollection` is an interface used for configuring dependency injection in .NET Core. It provides methods for registering services with various lifetimes (Transient, Scoped, Singleton). These services are then available for injection into controllers and other components throughout the application.</p>
+            </div>
+        </div>
+
+        <!-- Question 36 -->
+        <div id="question36" class="card">
+            <div class="card-header">
+                36. How do you configure a database connection in .NET Core Web API?
+            </div>
+            <div class="card-body">
+                <p>To configure a database connection in .NET Core Web API, you need to:
+                    <ul>
+                        <li>Add the connection string to the <code>appsettings.json</code> file.</li>
+                        <li>Configure the database context in the <code>Startup.cs</code> file using <code>services.AddDbContext<YourDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")))</code>.</li>
+                        <li>Inject the database context into your services and controllers for use.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <!-- Question 37 -->
+        <div id="question37" class="card">
+            <div class="card-header">
+                37. How do you implement pagination in ASP.NET Core Web API?
+            </div>
+            <div class="card-body">
+                <p>Pagination in ASP.NET Core Web API can be implemented by:
+                    <ul>
+                        <li>Defining parameters for page number and page size in your API methods.</li>
+                        <li>Querying the data source with these parameters to retrieve only the required subset of data.</li>
+                        <li>Returning paginated data along with metadata such as total item count and total pages.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <!-- Question 38 -->
+        <div id="question38" class="card">
+            <div class="card-header">
+                38. What are .NET Core middleware and how are they used?
+            </div>
+            <div class="card-body">
+                <p>Middleware in .NET Core are components that are executed in the request pipeline to handle requests and responses. They can perform tasks such as authentication, logging, exception handling, and more. Middleware components are added to the pipeline in the <code>Startup.cs</code> file using <code>app.UseMiddleware<YourMiddleware>()</code> or built-in methods like <code>app.UseAuthentication()</code> and <code>app.UseAuthorization()</code>.</p>
+            </div>
+        </div>
+
+        <!-- Question 39 -->
+        <div id="question39" class="card">
+            <div class="card-header">
+                39. How do you handle file uploads in .NET Core Web API?
+            </div>
+            <div class="card-body">
+                <p>Handling file uploads in .NET Core Web API involves:
+                    <ul>
+                        <li>Using the <code>IFormFile</code> interface to represent the uploaded file in your API method parameters.</li>
+                        <li>Processing the file stream and saving the file to a desired location or storing it in a database.</li>
+                        <li>Validating the file type and size to ensure it meets your application's requirements.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <!-- Question 40 -->
+        <div id="question40" class="card">
+            <div class="card-header">
+                40. What is the role of `IApplicationBuilder` in .NET Core?
+            </div>
+            <div class="card-body">
+                <p>`IApplicationBuilder` is an interface used to configure the application's request pipeline in .NET Core. It provides methods for adding middleware components to the pipeline, such as routing, authentication, and error handling. The configuration is done in the <code>Configure</code> method of the <code>Startup.cs</code> file.</p>
+            </div>
+        </div>
+
+        <!-- Question 41 -->
+        <div id="question41" class="card">
+            <div class="card-header">
+                41. How do you implement caching in ASP.NET Core Web API?
+            </div>
+            <div class="card-body">
+                <p>Caching in ASP.NET Core Web API can be implemented using:
+                    <ul>
+                        <li>In-memory caching with <code>IMemoryCache</code> to store data in the application's memory.</li>
+                        <li>Distributed caching with <code>IDistributedCache</code> to store data in a distributed cache store like Redis or SQL Server.</li>
+                        <li>Response caching with <code>ResponseCacheAttribute</code> to cache responses for HTTP requests.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <!-- Question 42 -->
+        <div id="question42" class="card">
+            <div class="card-header">
+                42. What is the `Program.cs` file used for in .NET Core 6 and later?
+            </div>
+            <div class="card-body">
+                <p>The `Program.cs` file in .NET Core 6 and later uses a simplified hosting model where it configures and starts the application. It combines the previously separate <code>Program.cs</code> and <code>Startup.cs</code> files into a single file that sets up the host, application services, and request pipeline. It uses a minimal API approach for a more streamlined configuration.</p>
+            </div>
+        </div>
+
+        <!-- Question 43 -->
+        <div id="question43" class="card">
+            <div class="card-header">
+                43. How do you handle dependency injection in .NET Core Web API?
+            </div>
+            <div class="card-body">
+                <p>Dependency injection (DI) in .NET Core Web API is handled by configuring services in the <code>Startup.cs</code> file using the <code>IServiceCollection</code> interface. You register services with different lifetimes (Transient, Scoped, Singleton) and inject them into controllers or other classes using constructor injection or property injection.</p>
+            </div>
+        </div>
+
+        <!-- Question 44 -->
+        <div id="question44" class="card">
+            <div class="card-header">
+                44. How do you configure and use Swagger for API documentation in .NET Core?
+            </div>
+            <div class="card-body">
+                <p>Swagger can be configured in .NET Core by:
+                    <ul>
+                        <li>Adding the <code>Swashbuckle.AspNetCore</code> NuGet package to your project.</li>
+                        <li>Configuring Swagger services in the <code>ConfigureServices</code> method of <code>Startup.cs</code> using <code>services.AddSwaggerGen()</code>.</li>
+                        <li>Enabling Swagger middleware in the <code>Configure</code> method of <code>Startup.cs</code> with <code>app.UseSwagger()</code> and <code>app.UseSwaggerUI()</code>.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <!-- Question 45 -->
+        <div id="question45" class="card">
+            <div class="card-header">
+                45. What are the different ways to return data from an ASP.NET Core Web API?
+            </div>
+            <div class="card-body">
+                <p>Data can be returned from an ASP.NET Core Web API using various methods:
+                    <ul>
+                        <li><code>Ok()</code> or <code>Ok(object)</code> for successful responses with data.</li>
+                        <li><code>NotFound()</code> for indicating a resource was not found.</li>
+                        <li><code>BadRequest()</code> for indicating a bad request.</li>
+                        <li><code>Content()</code> for returning raw content with custom status codes and headers.</li>
+                        <li><code>Redirect()</code> for returning a redirect response.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <!-- Question 46 -->
+        <div id="question46" class="card">
+            <div class="card-header">
+                46. How do you set up Cross-Origin Resource Sharing (CORS) in ASP.NET Core Web API?
+            </div>
+            <div class="card-body">
+                <p>CORS can be set up in ASP.NET Core Web API by:
+                    <ul>
+                        <li>Adding the <code>Microsoft.AspNetCore.Cors</code> package if it's not already included.</li>
+                        <li>Configuring CORS in the <code>ConfigureServices</code> method of <code>Startup.cs</code> using <code>services.AddCors(options => { options.AddPolicy("AllowSpecificOrigin", builder => builder.WithOrigins("http://example.com").AllowAnyMethod().AllowAnyHeader()); });</code>.</li>
+                        <li>Enabling CORS in the <code>Configure</code> method of <code>Startup.cs</code> using <code>app.UseCors("AllowSpecificOrigin");</code>.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <!-- Question 47 -->
+        <div id="question47" class="card">
+            <div class="card-header">
+                47. What is the `HttpContext` and how is it used in ASP.NET Core?
+            </div>
+            <div class="card-body">
+                <p>`HttpContext` represents the context of an HTTP request and response. It provides access to various request and response properties such as headers, cookies, and query strings. `HttpContext` is available in ASP.NET Core middleware, controllers, and services through dependency injection and can be used to get or set request-specific information.</p>
+            </div>
+        </div>
+
+        <!-- Question 48 -->
+        <div id="question48" class="card">
+            <div class="card-header">
+                48. How do you handle asynchronous operations in ASP.NET Core Web API?
+            </div>
+            <div class="card-body">
+                <p>Asynchronous operations in ASP.NET Core Web API can be handled using <code>async</code> and <code>await</code> keywords. You can define asynchronous action methods in controllers by returning <code>Task<IActionResult></code> and use <code>await</code> to perform asynchronous operations such as database queries or HTTP requests. This approach helps improve application scalability and responsiveness.</p>
+            </div>
+        </div>
+
+        <!-- Question 49 -->
+        <div id="question49" class="card">
+            <div class="card-header">
+                49. What is the `IConfiguration` interface and how is it used in .NET Core?
+            </div>
+            <div class="card-body">
+                <p>The `IConfiguration` interface provides a way to access configuration settings in .NET Core. It is used to read configuration values from various sources such as configuration files, environment variables, and command-line arguments. You can inject `IConfiguration` into services and controllers to access configuration settings.</p>
+            </div>
+        </div>
+
+        <!-- Question 50 -->
+        <div id="question50" class="card">
+            <div class="card-header">
+                50. How do you implement custom middleware in ASP.NET Core Web API?
+            </div>
+            <div class="card-body">
+                <p>Custom middleware in ASP.NET Core can be implemented by creating a class with a constructor that takes a <code>RequestDelegate</code> parameter and an <code>Invoke</code> or <code>InvokeAsync</code> method. This method contains the logic for the middleware and calls the next middleware in the pipeline. Register the custom middleware in the <code>Configure</code> method of <code>Startup.cs</code> using <code>app.UseMiddleware<YourMiddleware>();</code>.</p>
+            </div>
+        </div>
+
+        <!-- Question 51 -->
+        <div id="question51" class="card">
+            <div class="card-header">
+                51. What is the `IServiceScope` interface used for in .NET Core?
+            </div>
+            <div class="card-body">
+                <p>`IServiceScope` is used to create a new scope for dependency injection in .NET Core. It is particularly useful for creating and managing scoped services manually. `IServiceScope` is typically used within a scope to ensure that services with a scoped lifetime are disposed of correctly when the scope ends.</p>
+            </div>
+        </div>
+
+        <!-- Question 52 -->
+        <div id="question52" class="card">
+            <div class="card-header">
+                52. How do you use the `MapControllers` method in ASP.NET Core?
+            </div>
+            <div class="card-body">
+                <p>The `MapControllers` method is used to map attribute-routed controllers to endpoints in ASP.NET Core. It is called within the `Configure` method of <code>Startup.cs</code> after `UseRouting` and before `UseEndpoints`. It sets up the routing for controllers based on attribute routing, allowing you to define routes directly on controller actions.</p>
+            </div>
+        </div>
+
+        <!-- Question 53 -->
+        <div id="question53" class="card">
+            <div class="card-header">
+                53. What is the purpose of the `ConfigureServices` method in ASP.NET Core?
+            </div>
+            <div class="card-body">
+                <p>The `ConfigureServices` method in ASP.NET Core is used to register application services with the dependency injection container. This method is called during the application startup process to configure services required by the application, such as database contexts, identity services, and MVC services.</p>
+            </div>
+        </div>
+
+        <!-- Question 54 -->
+        <div id="question54" class="card">
+            <div class="card-header">
+                54. What are some common ways to test ASP.NET Core Web APIs?
+            </div>
+            <div class="card-body">
+                <p>Common ways to test ASP.NET Core Web APIs include:
+                    <ul>
+                        <li>Unit testing with xUnit, NUnit, or MSTest to test individual components and services.</li>
+                        <li>Integration testing using the <code>Microsoft.AspNetCore.TestHost</code> package to test the API as a whole.</li>
+                        <li>Mocking dependencies with libraries like Moq or NSubstitute.</li>
+                        <li>End-to-end testing with tools like Postman or automated testing frameworks.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <!-- Question 55 -->
+        <div id="question55" class="card">
+            <div class="card-header">
+                55. How do you handle versioning in ASP.NET Core Web API?
+            </div>
+            <div class="card-body">
+                <p>Versioning in ASP.NET Core Web API can be handled using URL path, query string, or header-based versioning. You can use packages like <code>Microsoft.AspNetCore.Mvc.Versioning</code> to set up versioning by adding the appropriate versioning strategy in the `ConfigureServices` method of <code>Startup.cs</code> and configuring routes to handle different API versions.</p>
+            </div>
+        </div>
+
+        <!-- Question 56 -->
+        <div id="question56" class="card">
+            <div class="card-header">
+                56. What is the difference between `IActionResult` and `ActionResult<T>` in ASP.NET Core?
+            </div>
+            <div class="card-body">
+                <p>`IActionResult` is a general interface that represents the result of an action method and can return various types of results, such as `Ok()`, `NotFound()`, and `BadRequest()`. `ActionResult<T>`, introduced in ASP.NET Core 2.1, is a generic version that allows returning a specific type along with the action result. It provides more flexibility in returning typed data from action methods.</p>
+            </div>
+        </div>
+
+        <!-- Question 57 -->
+        <div id="question57" class="card">
+            <div class="card-header">
+                57. How do you use `IHostedService` in ASP.NET Core?
+            </div>
+            <div class="card-body">
+                <p>`IHostedService` is an interface used to implement background tasks in ASP.NET Core. You can create a class that implements `IHostedService` and define long-running or periodic tasks in the `StartAsync` method. Register the service in the `ConfigureServices` method of `Startup.cs` using `services.AddHostedService<YourHostedService>();` to run the background tasks as part of the application lifecycle.</p>
+            </div>
+        </div>
+
+        <!-- Question 58 -->
+        <div id="question58" class="card">
+            <div class="card-header">
+                58. What is the role of `IOptions<T>` in .NET Core?
+            </div>
+            <div class="card-body">
+                <p>`IOptions<T>` is used to access configuration settings in a strongly-typed manner. You can bind configuration sections to a POCO class and inject `IOptions<T>` into your services to access the configuration values. This approach helps manage configuration settings in a more organized and type-safe way.</p>
+            </div>
+        </div>
+
+        <!-- Question 59 -->
+        <div id="question59" class="card">
+            <div class="card-header">
+                59. How do you implement logging in ASP.NET Core Web API?
+            </div>
+            <div class="card-body">
+                <p>Logging in ASP.NET Core Web API can be implemented using the built-in logging framework. You can configure logging in the `ConfigureServices` method of `Startup.cs` using `services.AddLogging()`. To log messages, inject `ILogger<T>` into your classes and use methods like `LogInformation()`, `LogWarning()`, and `LogError()` to write log entries.</p>
+            </div>
+        </div>
+
+        <!-- Question 60 -->
+        <div id="question60" class="card">
+            <div class="card-header">
+                60. How do you handle concurrency in ASP.NET Core Web API with Entity Framework Core?
+            </div>
+            <div class="card-body">
+                <p>Concurrency in ASP.NET Core Web API with Entity Framework Core can be managed using optimistic concurrency control. This involves adding a concurrency token, such as a `RowVersion` column, to your entities. EF Core will check the value of the concurrency token during updates to ensure that the data has not been modified by another process. If a conflict is detected, you can handle it by catching the `DbUpdateConcurrencyException` and taking appropriate actions, such as retrying the operation or notifying the user.</p>
+            </div>
+        </div>
+
+        <!-- Question 61 -->
+        <div id="question61" class="card">
+            <div class="card-header">
+                61. How do you handle authentication in ASP.NET Core Web API?
+            </div>
+            <div class="card-body">
+                <p>Authentication in ASP.NET Core Web API can be handled using middleware components such as JWT Bearer Authentication or Cookie Authentication. You can configure authentication services in the <code>ConfigureServices</code> method of <code>Startup.cs</code> using <code>services.AddAuthentication()</code>. You also need to add the appropriate middleware to the request pipeline using <code>app.UseAuthentication()</code> in the <code>Configure</code> method.</p>
+            </div>
+        </div>
+
+        <!-- Question 62 -->
+        <div id="question62" class="card">
+            <div class="card-header">
+                62. What is the purpose of `Configure` method in ASP.NET Core?
+            </div>
+            <div class="card-body">
+                <p>The <code>Configure</code> method in ASP.NET Core is used to define how the application handles HTTP requests. It sets up the middleware pipeline by adding components that process requests and responses, such as routing, authentication, authorization, and error handling. The order of middleware components in the pipeline is significant as it determines the request processing flow.</p>
+            </div>
+        </div>
+
+        <!-- Question 63 -->
+        <div id="question63" class="card">
+            <div class="card-header">
+                63. What are data annotations in ASP.NET Core?
+            </div>
+            <div class="card-body">
+                <p>Data annotations are attributes used to add metadata to model properties in ASP.NET Core. They provide a way to specify validation rules, formatting, and display information for model properties. Common data annotations include <code>[Required]</code>, <code>[StringLength]</code>, <code>[Range]</code>, and <code>[EmailAddress]</code>. They help enforce validation rules and ensure data integrity.</p>
+            </div>
+        </div>
+
+        <!-- Question 64 -->
+        <div id="question64" class="card">
+            <div class="card-header">
+                64. How do you enable HTTPS in ASP.NET Core Web API?
+            </div>
+            <div class="card-body">
+                <p>HTTPS can be enabled in ASP.NET Core Web API by configuring the application to use HTTPS redirection and enforcing HTTPS. You can use the <code>UseHttpsRedirection</code> middleware in the <code>Configure</code> method of <code>Startup.cs</code> to redirect HTTP requests to HTTPS. Additionally, you can configure HTTPS settings in the launch settings and use a valid SSL certificate for secure connections.</p>
+            </div>
+        </div>
+
+        <!-- Question 65 -->
+        <div id="question65" class="card">
+            <div class="card-header">
+                65. How do you perform dependency injection in ASP.NET Core Web API?
+            </div>
+            <div class="card-body">
+                <p>Dependency injection (DI) in ASP.NET Core Web API is achieved by registering services in the <code>ConfigureServices</code> method of <code>Startup.cs</code> using <code>IServiceCollection</code>. You can register services with different lifetimes (Transient, Scoped, Singleton) and then inject them into controllers or other services through constructor injection. ASP.NET Core automatically resolves and provides the dependencies.</p>
+            </div>
+        </div>
+
+        <!-- Question 66 -->
+        <div id="question66" class="card">
+            <div class="card-header">
+                66. How do you create and use a custom action filter in ASP.NET Core Web API?
+            </div>
+            <div class="card-body">
+                <p>To create a custom action filter in ASP.NET Core Web API:
+                    <ul>
+                        <li>Implement the <code>IAActionFilter</code> or <code>ActionFilterAttribute</code> interface.</li>
+                        <li>Override the <code>OnActionExecuting</code> and/or <code>OnActionExecuted</code> methods to include your custom logic.</li>
+                        <li>Register the filter globally or apply it to specific controllers or actions using the <code>[ServiceFilter]</code> or <code>[TypeFilter]</code> attributes.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <!-- Question 67 -->
+        <div id="question67" class="card">
+            <div class="card-header">
+                67. What is middleware in ASP.NET Core and how is it used?
+            </div>
+            <div class="card-body">
+                <p>Middleware in ASP.NET Core is a software component that is used to handle requests and responses in the application. It is added to the request pipeline in the <code>Configure</code> method of <code>Startup.cs</code> using methods like <code>app.UseMiddleware<YourMiddleware>()</code>. Middleware can perform tasks such as logging, authentication, and error handling before passing control to the next middleware component.</p>
+            </div>
+        </div>
+
+        <!-- Question 68 -->
+        <div id="question68" class="card">
+            <div class="card-header">
+                68. How do you handle request and response bodies in ASP.NET Core Web API?
+            </div>
+            <div class="card-body">
+                <p>Request and response bodies in ASP.NET Core Web API are handled using model binding and action results:
+                    <ul>
+                        <li>For request bodies, use model binding to bind data from the request to method parameters. You can use attributes like <code>[FromBody]</code> to specify that data should be read from the request body.</li>
+                        <li>For response bodies, return data from action methods as JSON or XML. ASP.NET Core automatically serializes the return value into the appropriate format based on the request's <code>Accept</code> header.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <!-- Question 69 -->
+        <div id="question69" class="card">
+            <div class="card-header">
+                69. How do you handle cross-site request forgery (CSRF) attacks in ASP.NET Core?
+            </div>
+            <div class="card-body">
+                <p>CSRF attacks can be mitigated in ASP.NET Core by using anti-forgery tokens. You can enable anti-forgery protection in your application by:
+                    <ul>
+                        <li>Adding the <code>[ValidateAntiForgeryToken]</code> attribute to actions that need protection.</li>
+                        <li>Using <code>@Html.AntiForgeryToken()</code> in your views to include the anti-forgery token in forms.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <!-- Question 70 -->
+        <div id="question70" class="card">
+            <div class="card-header">
+                70. What are the benefits of using asynchronous programming in .NET Core Web API?
+            </div>
+            <div class="card-body">
+                <p>Asynchronous programming in .NET Core Web API provides several benefits:
+                    <ul>
+                        <li>Improved scalability and responsiveness by allowing the server to handle more concurrent requests.</li>
+                        <li>Better resource utilization by freeing up threads while waiting for I/O operations to complete.</li>
+                        <li>Enhanced performance for applications with high levels of I/O-bound operations, such as database queries or web service calls.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <!-- Question 71 -->
+        <div id="question71" class="card">
+            <div class="card-header">
+                71. How do you handle API versioning in ASP.NET Core Web API?
+            </div>
+            <div class="card-body">
+                <p>API versioning in ASP.NET Core Web API can be handled using the <code>Microsoft.AspNetCore.Mvc.Versioning</code> package. You can configure versioning in the <code>ConfigureServices</code> method of <code>Startup.cs</code> and set up versioned routes using attributes like <code>[ApiVersion]</code>. This allows you to manage different versions of your API and handle changes over time.</p>
+            </div>
+        </div>
+
+        <!-- Question 72 -->
+        <div id="question72" class="card">
+            <div class="card-header">
+                72. What are the key differences between .NET Core and .NET Framework?
+            </div>
+            <div class="card-body">
+                <p>Key differences between .NET Core and .NET Framework include:
+                    <ul>
+                        <li><strong>Platform:</strong> .NET Core is cross-platform and runs on Windows, macOS, and Linux, while .NET Framework is Windows-only.</li>
+                        <li><strong>Compatibility:</strong> .NET Core is designed to be modular and can run on various environments, while .NET Framework is a full-featured, monolithic framework.</li>
+                        <li><strong>Performance:</strong> .NET Core generally offers better performance and scalability due to its lightweight nature.</li>
+                        <li><strong>Application Types:</strong> .NET Core supports modern app types like ASP.NET Core and microservices, whereas .NET Framework supports traditional Windows applications and legacy technologies.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <!-- Question 73 -->
+        <div id="question73" class="card">
+            <div class="card-header">
+                73. How do you manage configuration settings in ASP.NET Core Web API?
+            </div>
+            <div class="card-body">
+                <p>Configuration settings in ASP.NET Core Web API can be managed using the built-in configuration system. You can use <code>IConfiguration</code> to access settings from various sources, such as configuration files (e.g., <code>appsettings.json</code>), environment variables, and command-line arguments. Configuration settings can be injected into services and controllers, and you can use <code>IOptions</code> for strongly-typed configuration.</p>
+            </div>
+        </div>
+
+        <!-- Question 74 -->
+        <div id="question74" class="card">
+            <div class="card-header">
+                74. What is the purpose of `AddControllers` method in ASP.NET Core?
+            </div>
+            <div class="card-body">
+                <p>The <code>AddControllers</code> method is used to register MVC controllers in the ASP.NET Core dependency injection container. It adds services required for controller-based functionality, including support for model binding, validation, and action execution. This method is typically called in the <code>ConfigureServices</code> method of <code>Startup.cs</code>.</p>
+            </div>
+        </div>
+
+        <!-- Question 75 -->
+        <div id="question75" class="card">
+            <div class="card-header">
+                75. How do you handle exceptions globally in ASP.NET Core Web API?
+            </div>
+            <div class="card-body">
+                <p>Global exception handling in ASP.NET Core Web API can be achieved using middleware. You can create a custom middleware for exception handling and register it in the <code>Configure</code> method of <code>Startup.cs</code> using <code>app.UseExceptionHandler("/Home/Error");</code> or <code>app.UseMiddleware<ExceptionHandlingMiddleware>();</code>. Additionally, ASP.NET Core provides built-in exception handling with <code>UseExceptionHandler</code> and <code>UseStatusCodePages</code> for error responses.</p>
+            </div>
+        </div>
+
+        <!-- Question 76 -->
+        <div id="question76" class="card">
+            <div class="card-header">
+                76. What are the best practices for securing a .NET Core Web API?
+            </div>
+            <div class="card-body">
+                <p>Best practices for securing a .NET Core Web API include:
+                    <ul>
+                        <li>Implementing authentication and authorization using middleware or libraries.</li>
+                        <li>Validating and sanitizing input data to prevent injection attacks.</li>
+                        <li>Using HTTPS to encrypt data transmitted between the client and server.</li>
+                        <li>Configuring proper CORS policies to control which origins can access the API.</li>
+                        <li>Applying security headers and middleware to protect against common web vulnerabilities.</li>
+                        <li>Regularly updating dependencies and libraries to patch known vulnerabilities.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <!-- Question 77 -->
+        <div id="question77" class="card">
+            <div class="card-header">
+                77. How do you manage application state in ASP.NET Core Web API?
+            </div>
+            <div class="card-body">
+                <p>Application state in ASP.NET Core Web API can be managed using:
+                    <ul>
+                        <li>In-memory caching with <code>IMemoryCache</code> for short-term data storage.</li>
+                        <li>Distributed caching with <code>IDistributedCache</code> for data shared across multiple instances.</li>
+                        <li>Session state management using <code>ISession</code> for storing user-specific data between requests.</li>
+                        <li>Persisting state in a database or external storage for long-term data management.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <!-- Question 78 -->
+        <div id="question78" class="card">
+            <div class="card-header">
+                78. What is the role of `IServiceCollection` in ASP.NET Core?
+            </div>
+            <div class="card-body">
+                <p><code>IServiceCollection</code> is used to register services in the ASP.NET Core dependency injection container. It provides methods to add services with different lifetimes (Transient, Scoped, Singleton) and configure services for the application. The <code>ConfigureServices</code> method in <code>Startup.cs</code> utilizes <code>IServiceCollection</code> to set up the services needed for the application.</p>
+            </div>
+        </div>
+
+        <!-- Question 79 -->
+        <div id="question79" class="card">
+            <div class="card-header">
+                79. How do you perform logging in ASP.NET Core Web API?
+            </div>
+            <div class="card-body">
+                <p>Logging in ASP.NET Core Web API can be performed using the built-in logging framework:
+                    <ul>
+                        <li>Configure logging services in the <code>ConfigureServices</code> method of <code>Startup.cs</code> using <code>services.AddLogging()</code>.</li>
+                        <li>Inject <code>ILogger</code> into controllers or services and use methods like <code>LogInformation()</code>, <code>LogWarning()</code>, and <code>LogError()</code> to log messages.</li>
+                        <li>Configure logging providers and settings in the <code>appsettings.json</code> file or through code.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <!-- Question 80 -->
+        <div id="question80" class="card">
+            <div class="card-header">
+                80. How do you implement custom exception handling in ASP.NET Core Web API?
+            </div>
+            <div class="card-body">
+                <p>Custom exception handling in ASP.NET Core Web API can be implemented using middleware:
+                    <ul>
+                        <li>Create a custom middleware class that catches exceptions and returns a user-friendly response.</li>
+                        <li>Register the custom middleware in the <code>Configure</code> method of <code>Startup.cs</code> using <code>app.UseMiddleware<CustomExceptionMiddleware>();</code>.</li>
+                        <li>Alternatively, use the built-in <code>UseExceptionHandler</code> middleware to handle exceptions globally and return a custom error response.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <!-- Question 81 -->
+        <div id="question81" class="card">
+            <div class="card-header">
+                81. How do you implement API rate limiting in ASP.NET Core Web API?
+            </div>
+            <div class="card-body">
+                <p>API rate limiting in ASP.NET Core Web API can be implemented using middleware or third-party packages:
+                    <ul>
+                        <li>Use middleware that tracks request counts and enforces rate limits based on IP address or other criteria.</li>
+                        <li>Install and configure a third-party package like <code>AspNetCoreRateLimit</code> to handle rate limiting rules and policies.</li>
+                        <li>Configure rate limits in the <code>ConfigureServices</code> method and apply them using the appropriate middleware in the <code>Configure</code> method.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <!-- Question 82 -->
+        <div id="question82" class="card">
+            <div class="card-header">
+                82. What is the `DbContext` class in Entity Framework Core?
+            </div>
+            <div class="card-body">
+                <p>The <code>DbContext</code> class in Entity Framework Core represents a session with the database and provides methods for querying and saving data. It is used to interact with the database and manage entities. You define a <code>DbContext</code> class that includes <code>DbSet</code> properties for each entity type and configure it with options such as connection strings and database providers.</p>
+            </div>
+        </div>
+
+        <!-- Question 83 -->
+        <div id="question83" class="card">
+            <div class="card-header">
+                83. How do you implement eager loading in Entity Framework Core?
+            </div>
+            <div class="card-body">
+                <p>Eager loading in Entity Framework Core is implemented using the <code>Include</code> method. You use <code>Include</code> to load related entities along with the primary entity in a single query. For example:
+                    <pre><code>var orders = context.Orders.Include(o => o.Customer).ToList();</code></pre>
+                </p>
+            </div>
+        </div>
+
+        <!-- Question 84 -->
+        <div id="question84" class="card">
+            <div class="card-header">
+                84. How do you handle migrations in Entity Framework Core?
+            </div>
+            <div class="card-body">
+                <p>Migrations in Entity Framework Core are used to manage schema changes in the database. You handle migrations by:
+                    <ul>
+                        <li>Creating a migration using the <code>dotnet ef migrations add MigrationName</code> command.</li>
+                        <li>Applying the migration to the database using <code>dotnet ef database update</code>.</li>
+                        <li>Updating the <code>DbContext</code> class and entity classes to reflect changes in the model.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <!-- Question 85 -->
+        <div id="question85" class="card">
+            <div class="card-header">
+                85. What is the purpose of the `OnModelCreating` method in Entity Framework Core?
+            </div>
+            <div class="card-body">
+                <p>The <code>OnModelCreating</code> method in Entity Framework Core is used to configure the model and define the schema for the database. You override this method in your <code>DbContext</code> class to set up entity configurations, such as defining primary keys, relationships, and table mappings. This method uses the <code>ModelBuilder</code> API to configure the model and apply constraints.</p>
+            </div>
+        </div>
+
+        <!-- Question 86 -->
+        <div id="question86" class="card">
+            <div class="card-header">
+                86. How do you perform a raw SQL query in Entity Framework Core?
+            </div>
+            <div class="card-body">
+                <p>You can perform raw SQL queries in Entity Framework Core using the <code>FromSqlRaw</code> method for querying entities or the <code>ExecuteSqlRaw</code> method for executing commands. For example:
+                    <pre><code>var orders = context.Orders.FromSqlRaw("SELECT * FROM Orders WHERE OrderDate > {0}", date).ToList();</code></pre>
+                </p>
+            </div>
+        </div>
+
+        <!-- Question 87 -->
+        <div id="question87" class="card">
+            <div class="card-header">
+                87. What is the difference between `Select` and `SelectMany` in LINQ?
+            </div>
+            <div class="card-body">
+                <p>The <code>Select</code> method in LINQ projects each element of a sequence into a new form. It returns a sequence where each element is transformed based on the provided selector function. The <code>SelectMany</code> method, on the other hand, projects each element of a sequence to an IEnumerable and flattens the resulting sequences into a single sequence. <code>SelectMany</code> is used for working with nested collections or sequences.</p>
+            </div>
+        </div>
+
+        <!-- Question 88 -->
+        <div id="question88" class="card">
+            <div class="card-header">
+                88. How do you implement pagination using LINQ?
+            </div>
+            <div class="card-body">
+                <p>Pagination in LINQ can be implemented using the <code>Skip</code> and <code>Take</code> methods:
+                    <pre><code>var pagedData = query.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList();</code></pre>
+                    <p>Here, <code>pageNumber</code> is the current page index and <code>pageSize</code> is the number of items per page.</p>
+                </p>
+            </div>
+        </div>
+
+        <!-- Question 89 -->
+        <div id="question89" class="card">
+            <div class="card-header">
+                89. How do you handle null values in LINQ queries?
+            </div>
+            <div class="card-body">
+                <p>Handling null values in LINQ queries can be done using methods like <code>DefaultIfEmpty</code> or conditional operators:
+                    <ul>
+                        <li><code>DefaultIfEmpty</code> provides a default value for sequences that might be empty.</li>
+                        <li>Use conditional operators (e.g., <code>?.</code>) to handle null values when accessing properties or calling methods.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <!-- Question 90 -->
+        <div id="question90" class="card">
+            <div class="card-header">
+                90. What are anonymous types in C# and how are they used?
+            </div>
+            <div class="card-body">
+                <p>Anonymous types in C# are types created on the fly with no explicit class definition. They are useful for storing a set of read-only properties without defining a separate class. They are created using the <code>new { }</code> syntax:
+                    <pre><code>var person = new { Name = "John", Age = 30 };</code></pre>
+                    <p>Anonymous types are commonly used in LINQ queries to project data into a new shape.</p>
+                </p>
+            </div>
+        </div>
+
+        <!-- Question 91 -->
+        <div id="question91" class="card">
+            <div class="card-header">
+                91. What is the purpose of the `IQueryable` interface in LINQ?
+            </div>
+            <div class="card-body">
+                <p>The <code>IQueryable</code> interface in LINQ is used for querying data from various data sources. It provides a mechanism for querying data in a way that can be translated into the appropriate query language (e.g., SQL for databases). <code>IQueryable</code> supports deferred execution, allowing queries to be constructed and executed later. It is typically used with LINQ to Entities or LINQ to SQL.</p>
+            </div>
+        </div>
+
+        <!-- Question 92 -->
+        <div id="question92" class="card">
+            <div class="card-header">
+                92. How do you perform grouping in LINQ?
+            </div>
+            <div class="card-body">
+                <p>Grouping in LINQ is performed using the <code>GroupBy</code> method. It groups elements of a sequence based on a specified key. For example:
+                    <pre><code>var groupedData = query.GroupBy(x => x.Category);</code></pre>
+                    <p>This will group the elements in the sequence by the <code>Category</code> property.</p>
+                </p>
+            </div>
+        </div>
+
+        <!-- Question 93 -->
+        <div id="question93" class="card">
+            <div class="card-header">
+                93. What is the `AsNoTracking` method in Entity Framework Core?
+            </div>
+            <div class="card-body">
+                <p>The <code>AsNoTracking</code> method in Entity Framework Core is used to disable change tracking for a query. This can improve performance when querying data that will not be updated, as EF Core does not need to keep track of changes. It is commonly used for read-only queries:
+                    <pre><code>var products = context.Products.AsNoTracking().ToList();</code></pre>
+                </p>
+            </div>
+        </div>
+
+        <!-- Question 94 -->
+        <div id="question94" class="card">
+            <div class="card-header">
+                94. How do you use LINQ to join two sequences?
+            </div>
+            <div class="card-body">
+                <p>Joining two sequences in LINQ can be done using the <code>Join</code> method. For example:
+                    <pre><code>var joinedData = from o in orders
+                                    join c in customers on o.CustomerId equals c.Id
+                                    select new { o.OrderId, c.CustomerName };</code></pre>
+                    <p>This performs an inner join between the <code>orders</code> and <code>customers</code> sequences based on the <code>CustomerId</code> and <code>Id</code> properties.</p>
+                </p>
+            </div>
+        </div>
+
+        <!-- Question 95 -->
+        <div id="question95" class="card">
+            <div class="card-header">
+                95. How do you implement filtering in LINQ queries?
+            </div>
+            <div class="card-body">
+                <p>Filtering in LINQ queries is performed using the <code>Where</code> method. It applies a predicate to each element of the sequence and returns only those elements that satisfy the condition:
+                    <pre><code>var filteredData = query.Where(x => x.Age > 30).ToList();</code></pre>
+                </p>
+            </div>
+        </div>
+
+        <!-- Question 96 -->
+        <div id="question96" class="card">
+            <div class="card-header">
+                96. What is the `Any` method in LINQ and how is it used?
+            </div>
+            <div class="card-body">
+                <p>The <code>Any</code> method in LINQ is used to determine if any elements in a sequence satisfy a specified condition or if the sequence contains any elements at all. For example:
+                    <pre><code>bool hasProducts = products.Any(p => p.Price > 100);</code></pre>
+                    <p>This checks if there are any products with a price greater than 100.</p>
+                </p>
+            </div>
+        </div>
+
+        <!-- Question 97 -->
+        <div id="question97" class="card">
+            <div class="card-header">
+                97. How do you perform sorting in LINQ queries?
+            </div>
+            <div class="card-body">
+                <p>Sorting in LINQ queries is performed using the <code>OrderBy</code> and <code>OrderByDescending</code> methods. For example:
+                    <pre><code>var sortedData = query.OrderBy(x => x.Name).ToList();</code></pre>
+                    <p>This sorts the sequence by the <code>Name</code> property in ascending order. Use <code>OrderByDescending</code> for descending order.</p>
+                </p>
+            </div>
+        </div>
+
+        <!-- Question 98 -->
+        <div id="question98" class="card">
+            <div class="card-header">
+                98. What is the `Select` method in LINQ and how is it used?
+            </div>
+            <div class="card-body">
+                <p>The <code>Select</code> method in LINQ is used to project each element of a sequence into a new form. It allows you to transform elements based on a provided selector function:
+                    <pre><code>var names = query.Select(x => x.Name).ToList();</code></pre>
+                    <p>This extracts the <code>Name</code> property from each element of the sequence and returns a new sequence of names.</p>
+                </p>
+            </div>
+        </div>
+
+        <!-- Question 99 -->
+        <div id="question99" class="card">
+            <div class="card-header">
+                99. How do you perform a left join in LINQ?
+            </div>
+            <div class="card-body">
+                <p>Performing a left join in LINQ can be done using the <code>DefaultIfEmpty</code> method in combination with <code>GroupJoin</code>:
+                    <pre><code>var leftJoin = from o in orders
+                                  join c in customers on o.CustomerId equals c.Id into gj
+                                  from subc in gj.DefaultIfEmpty()
+                                  select new { o.OrderId, CustomerName = subc?.Name };</code></pre>
+                    <p>This will return all orders, including those that do not have a matching customer.</p>
+                </p>
+            </div>
+        </div>
+
+        <!-- Question 100 -->
+        <div id="question100" class="card">
+            <div class="card-header">
+                100. How do you use the `FirstOrDefault` method in LINQ?
+            </div>
+            <div class="card-body">
+                <p>The <code>FirstOrDefault</code> method in LINQ returns the first element of a sequence that satisfies a specified condition or a default value if no such element is found:
+                    <pre><code>var firstProduct = products.FirstOrDefault(p => p.Id == 1);</code></pre>
+                    <p>This retrieves the first product with an <code>Id</code> of 1 or returns <code>null</code> if no such product exists.</p>
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
