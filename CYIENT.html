@@ -1,0 +1,193 @@
+Here is the HTML representation of the questions and answers:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Questions and Answers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        .question {
+            font-weight: bold;
+        }
+        .answer {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Interview Questions and Answers</h1>
+
+    <div class="answer">
+        <p class="question">1. Do you know Multithreading and have you used multithreading in your Projects?</p>
+        <p>Multithreading allows a program to run multiple threads concurrently, improving performance by doing multiple tasks at once. Examples include performing background tasks like file processing, web requests, or UI updates in desktop applications to keep the UI responsive.</p>
+    </div>
+
+    <div class="answer">
+        <p class="question">2. When you create the following, where does the memory allocation happen.</p>
+        <p>Class: Memory allocation for class methods and static members occurs in the method area.<br>Object: Memory for objects is allocated on the heap.</p>
+    </div>
+
+    <div class="answer">
+        <p class="question">3. Can you Explain what is Object Oriented Programming with Advantages?</p>
+        <p>Object-Oriented Programming (OOP) is a programming paradigm based on the concept of "objects" that contain data and methods. Advantages include code reusability, scalability, ease of maintenance, and abstraction.</p>
+    </div>
+
+    <div class="answer">
+        <p class="question">4. When you store an Object on heap, how is the size of the object calculated.</p>
+        <p>The size of an object includes the size of its instance variables plus any overhead for object management by the runtime.</p>
+    </div>
+
+    <div class="answer">
+        <p class="question">5. When you add a class member in a class, will the size of the object increase.</p>
+        <p>Yes, adding a class member will increase the size of an object because the new member requires additional memory.</p>
+    </div>
+
+    <div class="answer">
+        <p class="question">6. Different types of Constructors in C#</p>
+        <p>Default constructor, Parameterized constructor, Copy constructor, Static constructor, Private constructor.</p>
+    </div>
+
+    <div class="answer">
+        <p class="question">7. Can we have static members in non-static class?</p>
+        <p>Yes, static members can be defined in a non-static class. They belong to the class rather than any instance.</p>
+    </div>
+
+    <div class="answer">
+        <p class="question">8. Consider a class Account, which has class members like int bank balance, string AccountholderName. Where does the memory allocation of these class members take place?</p>
+        <p>Non-static class members (like <code>bankBalance</code> and <code>AccountholderName</code>) are allocated on the heap.</p>
+    </div>
+
+    <div class="answer">
+        <p class="question">9. When memory allocation will happen for static members and non-static members</p>
+        <p>Static members: Allocated when the class is loaded.<br>Non-static members: Allocated when an instance of the class is created.</p>
+    </div>
+
+    <div class="answer">
+        <p class="question">10. Can we restrict a class from creating objects?</p>
+        <p>Yes, use a private constructor to prevent instantiation. This is often used in Singleton patterns.</p>
+    </div>
+
+    <div class="answer">
+        <p class="question">11. Can we call a Constructor explicitly?</p>
+        <p>Constructors cannot be called explicitly like methods. They are called when an object is instantiated.</p>
+    </div>
+
+    <div class="answer">
+        <p class="question">12. Have you used delegates in C#? What are delegates? Why do we use it? Explain with advantages.</p>
+        <p>Delegates are type-safe function pointers used to encapsulate method references. They are used for callback methods, implementing event handling, and designing extensible and flexible applications. Advantages include flexibility, type safety, and encapsulation of method calls.</p>
+    </div>
+
+    <div class="answer">
+        <p class="question">13. Have you created any custom events in your projects?</p>
+        <p>Custom events are created using delegates. They enable classes to notify other classes or objects when something of interest occurs.</p>
+    </div>
+
+    <div class="answer">
+        <p class="question">14. Different Types of classes in C#</p>
+        <p>Abstract class, Sealed class, Static class, Partial class, Nested class.</p>
+    </div>
+
+    <div class="answer">
+        <p class="question">15. If you have used sealed class and Static class in your project, why did you use it. Explain the situation.</p>
+        <p>Sealed class: Used to prevent inheritance, often for security or design reasons.<br>Static class: Used to group related static members, without needing to instantiate the class.</p>
+    </div>
+
+    <div class="answer">
+        <p class="question">16. Disadvantages of using static class?</p>
+        <p>Cannot be instantiated, limited to static members only, and cannot implement interfaces.</p>
+    </div>
+
+    <div class="answer">
+        <p class="question">17. Difference between Encapsulation and abstraction? If possible, explain with real-time Example.</p>
+        <p>Encapsulation: Hiding the internal state and requiring all interaction to be performed through an object's methods.<br>Abstraction: Simplifying complex systems by modeling classes appropriate to the problem, using abstract classes or interfaces.<br>Example: A car (encapsulation hides the engine's complexity; abstraction uses the concept of a Vehicle).</p>
+    </div>
+
+    <div class="answer">
+        <p class="question">18. In my Model, I have a background task running. Once the background task is completed UI should be notified and be updated. How do we achieve it?</p>
+        <p>Use async programming with tasks and callbacks, or event-driven mechanisms to notify the UI thread for updates.</p>
+    </div>
+
+    <div class="answer">
+        <p class="question">19. There are two classes. Class Person contains Name, age, DOB. Class Employee contains DOJ, etc. Can you explain the relationship between the two classes?</p>
+        <p>Employee can inherit from Person (inheritance), or have a Person as a member (composition).</p>
+    </div>
+
+    <div class="answer">
+        <p class="question">20. Purpose of encapsulation?</p>
+        <p>Encapsulation protects the object's integrity by preventing external code from making uncontrolled changes.</p>
+    </div>
+
+    <div class="answer">
+        <p class="question">21. Serialization?</p>
+        <p>Serialization is the process of converting an object into a format that can be stored or transmitted. Formats include XML, JSON, Binary. Usage in WCF enables easy data transmission between client and server.</p>
+    </div>
+
+    <div class="answer">
+        <p class="question">22. Inheritance vs. Composition?</p>
+        <p>Inheritance is an "is-a" relationship, composition is a "has-a" relationship. Composition is often preferred for its flexibility and reducing tight coupling.</p>
+    </div>
+
+    <div class="answer">
+        <p class="question">23. What is unit testing?</p>
+        <p>Unit testing is the testing of individual units or components of a software. It helps ensure that each part of the code works correctly.</p>
+    </div>
+
+    <div class="answer">
+        <p class="question">24. What is composition?</p>
+        <p>Composition is a design principle in object-oriented programming where one class contains an instance of another class. This allows complex types to be built by combining objects of other types, promoting code reuse and flexibility.</p>
+    </div>
+
+    <div class="answer">
+        <p class="question">25. Dependency Inversion Principle (DIP)? Explain with constructor.</p>
+        <p>The Dependency Inversion Principle states that high-level modules should not depend on low-level modules. Both should depend on abstractions. Also, abstractions should not depend on details. Details should depend on abstractions.</p>
+    </div>
+
+    <div class="answer">
+        <p class="question">26. Class A is dependent on class B and an object to call class B – how do you remove dependency from one class to another class – avoid static class?</p>
+        <p>To remove or minimize dependency between classes, you can use Dependency Injection (DI). This involves passing dependencies into a class rather than creating them within the class.</p>
+    </div>
+
+    <div class="answer">
+        <p class="question">27. Inversion of Control (IoC) Principles?</p>
+        <p>Inversion of Control (IoC) refers to a design principle where the
+
+ control of objects or portions of a program is transferred to a container or framework. It often uses dependency injection, service locators, or factory patterns.</p>
+    </div>
+
+    <div class="answer">
+        <p class="question">28. What is a task in terms of TPL?</p>
+        <p>In the Task Parallel Library (TPL), a Task represents an asynchronous operation. It is a higher-level abstraction over threads and provides a way to execute code concurrently.</p>
+    </div>
+
+    <div class="answer">
+        <p class="question">29. Delegate and event differences?</p>
+        <p>Delegates and Events in C# are related but have key differences:
+            <ul>
+                <li>Delegate: A type that represents references to methods with a specific parameter list and return type.</li>
+                <li>Event: A way to provide notifications. Events are based on delegates and are used to publish/subscribe patterns.</li>
+            </ul>
+        </p>
+    </div>
+
+    <div class="answer">
+        <p class="question">30. What is the use of a constructor?</p>
+        <p>A constructor is a special method in a class that is called when an instance of the class is created. It is used to initialize objects.</p>
+    </div>
+
+    <div class="answer">
+        <p class="question">31. Static class – can we create object?</p>
+        <p>Static classes cannot be instantiated. They are used to create utility or helper classes that contain static members.</p>
+    </div>
+
+</body>
+</html>
+```
+
+You can save this HTML code into a file with a `.html` extension and open it in a web browser to view the formatted questions and answers.

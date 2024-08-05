@@ -1,0 +1,401 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C# OOP Coding Interview Questions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .question {
+            font-weight: bold;
+            color: #007BFF;
+        }
+        .answer {
+            margin-bottom: 20px;
+        }
+        code {
+            display: block;
+            background: #e8e8e8;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+            white-space: pre-wrap;
+        }
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>C# OOP Coding Interview Questions</h1>
+
+        <div class="answer">
+            <p class="question">1. What is Object-Oriented Programming (OOP)?</p>
+            <p>Object-Oriented Programming (OOP) is a programming paradigm based on the concept of "objects" that contain data and methods. It promotes principles such as encapsulation, inheritance, polymorphism, and abstraction.</p>
+        </div>
+
+        <div class="answer">
+            <p class="question">2. Explain the four fundamental OOP concepts.</p>
+            <ul>
+                <li>Encapsulation: Hiding the internal state and requiring all interaction to be performed through an object's methods.</li>
+                <li>Inheritance: Allowing a new class to take on the properties and methods of an existing class.</li>
+                <li>Polymorphism: Enabling a single action to behave differently based on the object that it is acting upon.</li>
+                <li>Abstraction: Simplifying complex systems by modeling classes appropriate to the problem.</li>
+            </ul>
+        </div>
+
+        <div class="answer">
+            <p class="question">3. How do you implement inheritance in C#?</p>
+            <p>Inheritance in C# is implemented using the colon (:) symbol. The derived class inherits the members of the base class.</p>
+            <code>
+class Animal
+{
+    public void Eat() { Console.WriteLine("Eating"); }
+}
+
+class Dog : Animal
+{
+    public void Bark() { Console.WriteLine("Barking"); }
+}
+            </code>
+        </div>
+
+        <div class="answer">
+            <p class="question">4. What is an interface in C# and how do you use it?</p>
+            <p>An interface in C# is a contract that defines a set of methods and properties that the implementing class must provide. It is defined using the <code>interface</code> keyword.</p>
+            <code>
+interface IAnimal
+{
+    void Eat();
+}
+
+class Dog : IAnimal
+{
+    public void Eat() { Console.WriteLine("Eating"); }
+}
+            </code>
+        </div>
+
+        <div class="answer">
+            <p class="question">5. Explain polymorphism with an example.</p>
+            <p>Polymorphism allows methods to do different things based on the object it is acting upon, even though they share the same name.</p>
+            <code>
+class Animal
+{
+    public virtual void MakeSound() { Console.WriteLine("Some sound"); }
+}
+
+class Dog : Animal
+{
+    public override void MakeSound() { Console.WriteLine("Bark"); }
+}
+
+class Cat : Animal
+{
+    public override void MakeSound() { Console.WriteLine("Meow"); }
+}
+
+// Usage
+Animal myDog = new Dog();
+Animal myCat = new Cat();
+myDog.MakeSound(); // Outputs: Bark
+myCat.MakeSound(); // Outputs: Meow
+            </code>
+        </div>
+
+        <div class="answer">
+            <p class="question">6. What is the difference between an abstract class and an interface?</p>
+            <ul>
+                <li>Abstract Class: Can have both abstract and concrete methods, can contain fields and constructors, supports access modifiers.</li>
+                <li>Interface: Can only have abstract methods (until C# 8.0), cannot contain fields or constructors, and does not support access modifiers (all members are public by default).</li>
+            </ul>
+        </div>
+
+        <div class="answer">
+            <p class="question">7. How does encapsulation improve the robustness of your code?</p>
+            <p>Encapsulation improves code robustness by hiding the internal state of an object and only allowing modification through well-defined methods. This ensures that the object maintains a valid state and prevents unauthorized access and modifications.</p>
+        </div>
+
+        <div class="answer">
+            <p class="question">8. Can you provide an example of using encapsulation in C#?</p>
+            <code>
+class Person
+{
+    private string name;
+    private int age;
+
+    public string Name
+    {
+        get { return name; }
+        set { name = value; }
+    }
+
+    public int Age
+    {
+        get { return age; }
+        set
+        {
+            if (value >= 0) age = value;
+        }
+    }
+}
+
+// Usage
+Person person = new Person();
+person.Name = "John";
+person.Age = 30;
+            </code>
+        </div>
+
+        <div class="answer">
+            <p class="question">9. What is a constructor and what is its purpose in C#?</p>
+            <p>A constructor is a special method in a class that is called when an instance of the class is created. Its purpose is to initialize the object.</p>
+            <code>
+class Person
+{
+    public string Name { get; private set; }
+
+    public Person(string name)
+    {
+        Name = name;
+    }
+}
+            </code>
+        </div>
+
+        <div class="answer">
+            <p class="question">10. What are static classes in C#? Can we create objects of a static class?</p>
+            <p>Static classes are classes that cannot be instantiated and are used to create utility or helper classes that contain static members. No, you cannot create objects of a static class.</p>
+            <code>
+public static class Utility
+{
+    public static void DoWork() { Console.WriteLine("Doing work."); }
+}
+
+// Usage
+Utility.DoWork(); // Correct
+// Utility util = new Utility(); // Incorrect - This will cause a compilation error.
+            </code>
+        </div>
+
+        <div class="answer">
+            <p class="question">11. What is a sealed class in C#?</p>
+            <p>A sealed class is a class that cannot be inherited. It is used to prevent further derivation of a class, often for security or design reasons.</p>
+            <code>
+sealed class SealedClass
+{
+    public void Display() { Console.WriteLine("Sealed class method"); }
+}
+            </code>
+        </div>
+
+        <div class="answer">
+            <p class="question">12. What is the difference between a field and a property in C#?</p>
+            <ul>
+                <li>Field: A variable that is declared directly in a class.</li>
+                <li>Property: A member that provides a flexible mechanism to read, write, or compute the value of a private field.</li>
+            </ul>
+            <code>
+class Person
+{
+    // Field
+    private string name;
+
+    // Property
+    public string Name
+    {
+        get { return name; }
+        set { name = value; }
+    }
+}
+            </code>
+        </div>
+
+        <div class="answer">
+            <p class="question">13. Explain the concept of method overloading with an example.</p>
+            <p>Method overloading is the ability to define multiple methods with the same name but different signatures in the same class.</p>
+            <code>
+class MathOperations
+{
+    public int Add(int a, int b) { return a + b; }
+    public double Add(double a, double b) { return a + b; }
+}
+
+// Usage
+MathOperations math = new MathOperations();
+int sum1 = math.Add(1, 2);        // Outputs: 3
+double sum2 = math.Add(1.5, 2.5); // Outputs: 4.0
+            </code>
+        </div>
+
+        <div class="answer">
+            <p class="question">14. What is method overriding in C#?</p>
+            <p>Method overriding is the ability of a subclass to provide a specific implementation of a method that is already defined in its base class.</p>
+            <code>
+class BaseClass
+{
+    public virtual void Display() { Console.WriteLine("Base class display method"); }
+}
+
+class DerivedClass : BaseClass
+{
+    public override void Display() { Console.WriteLine
+
+("Derived class display method"); }
+}
+            </code>
+        </div>
+
+        <div class="answer">
+            <p class="question">15. How does the <code>override</code> keyword work in C#?</p>
+            <p>The <code>override</code> keyword is used to extend or modify a virtual/abstract method, property, indexer, or event in a base class into a derived class.</p>
+            <code>
+class BaseClass
+{
+    public virtual void Display() { Console.WriteLine("Base class display method"); }
+}
+
+class DerivedClass : BaseClass
+{
+    public override void Display() { Console.WriteLine("Derived class display method"); }
+}
+            </code>
+        </div>
+
+        <div class="answer">
+            <p class="question">16. What is the purpose of the <code>abstract</code> keyword in C#?</p>
+            <p>The <code>abstract</code> keyword is used to indicate that a class or a member is incomplete and must be implemented in a derived class. Abstract classes cannot be instantiated.</p>
+            <code>
+abstract class Animal
+{
+    public abstract void MakeSound();
+}
+
+class Dog : Animal
+{
+    public override void MakeSound() { Console.WriteLine("Bark"); }
+}
+            </code>
+        </div>
+
+        <div class="answer">
+            <p class="question">17. What is a constructor and what is its purpose in C#?</p>
+            <p>A constructor is a special method in a class that is called when an instance of the class is created. Its purpose is to initialize the object.</p>
+            <code>
+class Person
+{
+    public string Name { get; private set; }
+
+    public Person(string name)
+    {
+        Name = name;
+    }
+}
+            </code>
+        </div>
+
+        <div class="answer">
+            <p class="question">18. Can you explain what composition is in C#?</p>
+            <p>Composition is a design principle where a class is composed of one or more objects from other classes, implying a has-a relationship.</p>
+            <code>
+class Engine
+{
+    public void Start() { Console.WriteLine("Engine started."); }
+}
+
+class Car
+{
+    private Engine engine = new Engine();
+
+    public void Start() { engine.Start(); }
+}
+            </code>
+        </div>
+
+        <div class="answer">
+            <p class="question">19. What is the Dependency Inversion Principle?</p>
+            <p>The Dependency Inversion Principle is a design principle that suggests high-level modules should not depend on low-level modules. Both should depend on abstractions.</p>
+        </div>
+
+        <div class="answer">
+            <p class="question">20. Can you explain dependency injection with an example?</p>
+            <p>Dependency injection is a technique where an object receives its dependencies from an external source rather than creating them itself.</p>
+            <code>
+interface IService
+{
+    void Serve();
+}
+
+class Service : IService
+{
+    public void Serve() { Console.WriteLine("Service called."); }
+}
+
+class Client
+{
+    private readonly IService _service;
+
+    public Client(IService service)
+    {
+        _service = service;
+    }
+
+    public void Start() { _service.Serve(); }
+}
+
+// Usage
+IService service = new Service();
+Client client = new Client(service);
+client.Start();
+            </code>
+        </div>
+
+        <div class="answer">
+            <p class="question">21. What is a task in terms of the Task Parallel Library (TPL)?</p>
+            <p>In the Task Parallel Library (TPL), a Task represents an asynchronous operation. It is a higher-level abstraction over threads and provides a way to execute code concurrently.</p>
+        </div>
+
+        <div class="answer">
+            <p class="question">22. What are the differences between a delegate and an event in C#?</p>
+            <p>Delegates and events in C# are related but have key differences:</p>
+            <ul>
+                <li>Delegate: A type that represents references to methods with a specific parameter list and return type.</li>
+                <li>Event: A way to provide notifications. Events are based on delegates and are used to publish/subscribe patterns.</li>
+            </ul>
+        </div>
+
+        <div class="answer">
+            <p class="question">23. What is the purpose of a constructor?</p>
+            <p>A constructor is a special method in a class that is called when an instance of the class is created. It is used to initialize objects.</p>
+        </div>
+
+        <div class="answer">
+            <p class="question">24. Can we create an object of a static class?</p>
+            <p>No, static classes cannot be instantiated. They are used to create utility or helper classes that contain static members.</p>
+        </div>
+    </div>
+</body>
+</html>
