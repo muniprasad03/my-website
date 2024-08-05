@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C# OOP Principles with Examples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        h2 {
+            color: #007BFF;
+        }
+        .example {
+            background: #e8e8e8;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+            white-space: pre-wrap;
+        }
+        .example code {
+            display: block;
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>C# OOP Principles with Examples</h1>
+
+        <h2>1. Encapsulation</h2>
+        <p>Encapsulation is the concept of wrapping data (fields) and methods (functions) together as a single unit called a class. It also restricts direct access to some of the object's components, which is a means of preventing unintended interference and misuse.</p>
+        <div class="example">
+            <code>
+class Person
+{
+    private string name;
+    private int age;
+
+    public string Name
+    {
+        get { return name; }
+        set { name = value; }
+    }
+
+    public int Age
+    {
+        get { return age; }
+        set
+        {
+            if (value >= 0) age = value;
+        }
+    }
+
+    public void DisplayInfo()
+    {
+        Console.WriteLine($"Name: {name}, Age: {age}");
+    }
+}
+
+// Usage
+Person person = new Person();
+person.Name = "John";
+person.Age = 30;
+person.DisplayInfo();
+            </code>
+        </div>
+
+        <h2>2. Inheritance</h2>
+        <p>Inheritance is a mechanism where a new class inherits the properties and behaviors (methods) of an existing class. This allows for the creation of a new class that has the same characteristics as an existing class.</p>
+        <div class="example">
+            <code>
+class Animal
+{
+    public void Eat() { Console.WriteLine("Eating"); }
+}
+
+class Dog : Animal
+{
+    public void Bark() { Console.WriteLine("Barking"); }
+}
+
+// Usage
+Dog dog = new Dog();
+dog.Eat();  // Inherited method
+dog.Bark(); // Derived method
+            </code>
+        </div>
+
+        <h2>3. Polymorphism</h2>
+        <p>Polymorphism allows methods to do different things based on the object it is acting upon, even though they share the same name. It can be achieved through method overriding and method overloading.</p>
+        <div class="example">
+            <code>
+class Animal
+{
+    public virtual void MakeSound() { Console.WriteLine("Some sound"); }
+}
+
+class Dog : Animal
+{
+    public override void MakeSound() { Console.WriteLine("Bark"); }
+}
+
+class Cat : Animal
+{
+    public override void MakeSound() { Console.WriteLine("Meow"); }
+}
+
+// Usage
+Animal myDog = new Dog();
+Animal myCat = new Cat();
+myDog.MakeSound(); // Outputs: Bark
+myCat.MakeSound(); // Outputs: Meow
+            </code>
+        </div>
+
+        <h2>4. Abstraction</h2>
+        <p>Abstraction is the concept of hiding the complex implementation details and showing only the necessary features of an object. It simplifies interaction with objects by providing a clear interface.</p>
+        <div class="example">
+            <code>
+abstract class Shape
+{
+    public abstract void Draw();
+}
+
+class Circle : Shape
+{
+    public override void Draw() { Console.WriteLine("Drawing a circle"); }
+}
+
+class Square : Shape
+{
+    public override void Draw() { Console.WriteLine("Drawing a square"); }
+}
+
+// Usage
+Shape shape1 = new Circle();
+Shape shape2 = new Square();
+shape1.Draw(); // Outputs: Drawing a circle
+shape2.Draw(); // Outputs: Drawing a square
+            </code>
+        </div>
+    </div>
+</body>
+</html>

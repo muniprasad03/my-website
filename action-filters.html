@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASP.NET MVC Filters with Examples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        h2 {
+            color: #007BFF;
+        }
+        .example {
+            background: #e8e8e8;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+            white-space: pre-wrap;
+        }
+        .example code {
+            display: block;
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ASP.NET MVC Filters with Examples</h1>
+
+        <h2>1. Authorization Filter</h2>
+        <p>Authorization filters are used to determine if a user is authorized to access a specific action or controller. They run before the action method is executed.</p>
+        <div class="example">
+            <code>
+using System.Web.Mvc;
+
+public class CustomAuthorizeAttribute : AuthorizeAttribute
+{
+    protected override bool AuthorizeCore(HttpContextBase httpContext)
+    {
+        // Custom authorization logic here
+        return httpContext.User.Identity.IsAuthenticated;
+    }
+}
+            </code>
+        </div>
+        <p>Usage:</p>
+        <div class="example">
+            <code>
+[CustomAuthorize]
+public class HomeController : Controller
+{
+    public ActionResult Index()
+    {
+        return View();
+    }
+}
+            </code>
+        </div>
+
+        <h2>2. Action Filter</h2>
+        <p>Action filters are used to execute code before or after an action method executes. They are useful for logging, modifying the response, etc.</p>
+        <div class="example">
+            <code>
+using System.Diagnostics;
+using System.Web.Mvc;
+
+public class LogActionFilter : ActionFilterAttribute
+{
+    public override void OnActionExecuting(ActionExecutingContext filterContext)
+    {
+        Debug.WriteLine("Action is executing.");
+    }
+
+    public override void OnActionExecuted(ActionExecutedContext filterContext)
+    {
+        Debug.WriteLine("Action has executed.");
+    }
+}
+            </code>
+        </div>
+        <p>Usage:</p>
+        <div class="example">
+            <code>
+[LogActionFilter]
+public class HomeController : Controller
+{
+    public ActionResult Index()
+    {
+        return View();
+    }
+}
+            </code>
+        </div>
+
+        <h2>3. Result Filter</h2>
+        <p>Result filters are used to execute code before or after the result is executed. They are useful for modifying the response.</p>
+        <div class="example">
+            <code>
+using System.Web.Mvc;
+
+public class CustomResultFilter : ResultFilterAttribute
+{
+    public override void OnResultExecuting(ResultExecutingContext filterContext)
+    {
+        // Code before the result executes
+        filterContext.HttpContext.Response.Write("Before result executes<br/>");
+    }
+
+    public override void OnResultExecuted(ResultExecutedContext filterContext)
+    {
+        // Code after the result executes
+        filterContext.HttpContext.Response.Write("After result executes<br/>");
+    }
+}
+            </code>
+        </div>
+        <p>Usage:</p>
+        <div class="example">
+            <code>
+[CustomResultFilter]
+public class HomeController : Controller
+{
+    public ActionResult Index()
+    {
+        return View();
+    }
+}
+            </code>
+        </div>
+
+        <h2>4. Exception Filter</h2>
+        <p>Exception filters are used to handle exceptions that occur during the execution of an action method. They provide a way to handle errors globally or for specific actions.</p>
+        <div class="example">
+            <code>
+using System.Web.Mvc;
+
+public class CustomExceptionFilter : HandleErrorAttribute
+{
+    public override void OnException(ExceptionContext filterContext)
+    {
+        // Custom error handling logic
+        filterContext.ExceptionHandled = true;
+        filterContext.Result = new ViewResult
+        {
+            ViewName = "Error"
+        };
+    }
+}
+            </code>
+        </div>
+        <p>Usage:</p>
+        <div class="example">
+            <code>
+[CustomExceptionFilter]
+public class HomeController : Controller
+{
+    public ActionResult Divide(int dividend, int divisor)
+    {
+        int result = dividend / divisor;
+        return View(result);
+    }
+}
+            </code>
+        </div>
+
+        <h2>5. Global Filters</h2>
+        <p>Filters can also be applied globally, affecting all controllers and actions in the application. This is done in the <code>FilterConfig</code> class in the <code>App_Start</code> folder:</p>
+        <div class="example">
+            <code>
+public class FilterConfig
+{
+    public static void RegisterGlobalFilters(GlobalFilterCollection filters)
+    {
+        filters.Add(new HandleErrorAttribute()); // Global exception handling
+        filters.Add(new CustomAuthorizeAttribute()); // Global authorization
+    }
+}
+            </code>
+        </div>
+    </div>
+</body>
+</html>
+```
+
+### Overview:
+
+1. **Authorization Filter**: Custom filter for authorizing users.
+2. **Action Filter**: Logs when an action method is executing and after it has executed.
+3. **Result Filter**: Adds content before and after the result is executed.
+4. **Exception Filter**: Custom filter for handling exceptions and displaying an error view.
+5. **Global Filters**: How to register filters globally for all controllers and actions.
+
+Save this HTML code to a file and open it in a web browser to view a well-structured page with examples of different types of filters in ASP.NET MVC.
