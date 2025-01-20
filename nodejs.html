@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Node.js Interview Questions and Answers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .question-answer {
+            background-color: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .question-answer h2 {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .question-answer p {
+            font-size: 1em;
+            color: #555;
+        }
+
+        .question-answer pre {
+            background-color: #f7f7f7;
+            border: 1px solid #ccc;
+            padding: 10px;
+            overflow-x: auto;
+            border-radius: 4px;
+        }
+
+        .question-answer a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .question-answer a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .page-nav {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .page-nav a {
+            margin: 5px 15px;
+            font-size: 1.2em;
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .page-nav a:hover {
+            text-decoration: underline;
+        }
+
+        .question-answer span {
+            font-weight: bold;
+            color: #2d2d2d;
+        }
+
+        .question-answer p code {
+            background-color: #e9ecef;
+            padding: 0 4px;
+            font-size: 1.1em;
+            border-radius: 4px;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Node.js Interview Questions and Answers (Beginner to Advanced)</h1>
+    <p>Prepare for your next Node.js interview with the top 200 questions and answers!</p>
+</header>
+
+<div class="container">
+    <div class="question-answer">
+        <h2>1. What is Node.js?</h2>
+        <p><span>Answer:</span> Node.js is an open-source, cross-platform JavaScript runtime environment that executes JavaScript code outside of a browser. It is based on the V8 JavaScript engine, which is used in Google Chrome.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>2. What are the advantages of Node.js?</h2>
+        <p><span>Answer:</span> Some of the main advantages of Node.js include:</p>
+        <ul>
+            <li>Fast and efficient due to V8 engine.</li>
+            <li>Asynchronous and event-driven architecture.</li>
+            <li>Single-threaded with non-blocking I/O operations.</li>
+            <li>Scalable for building web applications.</li>
+            <li>Large number of modules available in npm.</li>
+        </ul>
+    </div>
+
+    <!-- Question 3 to 200 -->
+    <div class="question-answer">
+        <h2>3. What is the event loop in Node.js?</h2>
+        <p><span>Answer:</span> The event loop is a fundamental concept in Node.js that enables non-blocking, asynchronous operations. Node.js uses the event loop to handle I/O operations, making it highly scalable and efficient.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>4. What is the difference between `process.nextTick()` and `setImmediate()`?</h2>
+        <p><span>Answer:</span> Both `process.nextTick()` and `setImmediate()` schedule a callback to be executed in the next iteration of the event loop, but:</p>
+        <ul>
+            <li><strong>`process.nextTick()`</strong> will execute the callback after the current operation completes but before any event loop operations.</li>
+            <li><strong>`setImmediate()`</strong> will execute the callback after the current event loop phase has completed.</li>
+        </ul>
+    </div>
+
+    <div class="question-answer">
+        <h2>5. What is the use of `require()` in Node.js?</h2>
+        <p><span>Answer:</span> `require()` is a built-in function in Node.js used to import modules, JSON files, and local files into your application. It enables the use of external libraries and APIs.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>6. How do you create a basic HTTP server in Node.js?</h2>
+        <p><span>Answer:</span> You can create a basic HTTP server using the built-in `http` module. Example:</p>
+        <pre><code>const http = require('http');
+
+http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Hello, World!');
+}).listen(8080, () => {
+    console.log('Server is running at http://localhost:8080/');
+});</code></pre>
+    </div>
+
+    <div class="question-answer">
+        <h2>7. What is a callback function in Node.js?</h2>
+        <p><span>Answer:</span> A callback function is a function passed as an argument to another function, to be executed once the operation is complete. Node.js makes extensive use of callbacks for asynchronous operations.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>8. What is the purpose of the `fs` module in Node.js?</h2>
+        <p><span>Answer:</span> The `fs` (file system) module allows you to interact with the file system, enabling reading, writing, and manipulating files and directories.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>9. What is the `Buffer` class in Node.js?</h2>
+        <p><span>Answer:</span> The `Buffer` class in Node.js is used to work with binary data directly. It is mainly used to handle streams of binary data like files, images, etc.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>10. What are streams in Node.js?</h2>
+        <p><span>Answer:</span> Streams are a powerful feature in Node.js that allow you to read data in chunks instead of loading the entire data into memory at once. This helps handle large data efficiently.</p>
+    </div>
+
+    <!-- Add more questions in the same format, from 11 to 200... -->
+
+    <!-- Question 11 to 200 -->
+    <div class="question-answer">
+        <h2>11. What are the different types of streams in Node.js?</h2>
+        <p><span>Answer:</span> In Node.js, there are four types of streams:</p>
+        <ul>
+            <li><strong>Readable Stream</strong> - For reading data from a source (e.g., file, network).</li>
+            <li><strong>Writable Stream</strong> - For writing data to a destination (e.g., file, network).</li>
+            <li><strong>Duplex Stream</strong> - A combination of both readable and writable streams.</li>
+            <li><strong>Transform Stream</strong> - A type of duplex stream that can modify the data while reading or writing.</li>
+        </ul>
+    </div>
+
+    <div class="question-answer">
+        <h2>12. How does Node.js handle asynchronous operations?</h2>
+        <p><span>Answer:</span> Node.js uses an event-driven, non-blocking I/O model to handle asynchronous operations. Asynchronous operations are managed through the event loop, and callbacks or promises are used to handle the result once the operation completes.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>13. What is the `process` object in Node.js?</h2>
+        <p><span>Answer:</span> The `process` object in Node.js is a global object that provides information and control over the current Node.js process. It allows you to interact with the environment, handle exit codes, access arguments passed to the application, and much more.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>14. What are modules in Node.js?</h2>
+        <p><span>Answer:</span> In Node.js, modules are reusable blocks of code that can be included in other programs using the `require()` function. A module can be a built-in module, a third-party module, or a custom module that you create.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>15. What is the difference between `exports` and `module.exports` in Node.js?</h2>
+        <p><span>Answer:</span> In Node.js, both `exports` and `module.exports` are used to export functionality from a module. The difference is that `exports` is a shorthand for `module.exports`. If you want to export an entire object, use `module.exports` directly. Modifying `exports` will not work as expected if you reassign it.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>16. What is the purpose of the `http` module in Node.js?</h2>
+        <p><span>Answer:</span> The `http` module in Node.js allows you to create HTTP servers and clients. It provides methods for handling HTTP requests and responses, making it essential for building web servers and APIs.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>17. How can you handle errors in Node.js?</h2>
+        <p><span>Answer:</span> In Node.js, errors can be handled using:</p>
+        <ul>
+            <li>Try-catch blocks (for synchronous code).</li>
+            <li>Error-first callbacks (for asynchronous code).</li>
+            <li>Event emitters for custom error events.</li>
+            <li>Promises with `catch()` for promise-based error handling.</li>
+        </ul>
+    </div>
+
+    <div class="question-answer">
+        <h2>18. What is the purpose of `npm`?</h2>
+        <p><span>Answer:</span> `npm` (Node Package Manager) is the default package manager for Node.js. It helps manage dependencies for Node.js applications, including installing, updating, and removing libraries and packages from the npm registry.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>19. How do you handle JSON data in Node.js?</h2>
+        <p><span>Answer:</span> In Node.js, you can handle JSON data using the `JSON` object. You can use `JSON.parse()` to convert JSON strings into JavaScript objects, and `JSON.stringify()` to convert JavaScript objects into JSON strings.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>20. What is the `setInterval()` method in Node.js?</h2>
+        <p><span>Answer:</span> The `setInterval()` method in Node.js is used to execute a function repeatedly at specified intervals (in milliseconds). It works similarly to `setInterval()` in the browser.</p>
+    </div>
+
+     <!-- Question 21 to 40 -->
+     <div class="question-answer">
+        <h2>21. What is the use of the `path` module in Node.js?</h2>
+        <p><span>Answer:</span> The `path` module provides utilities for working with file and directory paths. It includes methods like `path.join()`, `path.resolve()`, and `path.basename()` to handle and manipulate file paths.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>22. What is middleware in Express.js?</h2>
+        <p><span>Answer:</span> Middleware in Express.js is a function that processes incoming requests, modifies the request or response, or terminates the request-response cycle. It can be used for tasks like authentication, logging, or request body parsing.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>23. What is the difference between `process.nextTick()` and `setImmediate()`?</h2>
+        <p><span>Answer:</span> `process.nextTick()` schedules a callback to be executed after the current operation completes, but before any I/O events. `setImmediate()` schedules the callback to be executed after the current event loop cycle completes.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>24. How do you handle asynchronous functions with promises in Node.js?</h2>
+        <p><span>Answer:</span> In Node.js, promises allow you to handle asynchronous operations by chaining `.then()` and `.catch()` methods. A promise represents a value that might not be available yet but will be resolved in the future.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>25. What are the different types of streams in Node.js?</h2>
+        <p><span>Answer:</span> There are four types of streams in Node.js:</p>
+        <ul>
+            <li><strong>Readable streams</strong>: For reading data (e.g., from a file).</li>
+            <li><strong>Writable streams</strong>: For writing data (e.g., to a file).</li>
+            <li><strong>Duplex streams</strong>: A combination of both readable and writable streams.</li>
+            <li><strong>Transform streams</strong>: A type of duplex stream that modifies data as it's read or written.</li>
+        </ul>
+    </div>
+
+    <div class="question-answer">
+        <h2>26. What is the role of the `cluster` module in Node.js?</h2>
+        <p><span>Answer:</span> The `cluster` module allows you to create child processes that share the same server port. This helps improve performance by utilizing multiple CPU cores on a machine for handling concurrent requests in a more scalable way.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>27. What is event-driven programming in Node.js?</h2>
+        <p><span>Answer:</span> In Node.js, event-driven programming is a paradigm where the flow of the program is determined by events, such as user input, messages from other programs, or timer events. Node.js uses an event-driven architecture to handle I/O operations asynchronously.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>28. What is a `callback` function in Node.js?</h2>
+        <p><span>Answer:</span> A callback function is a function passed as an argument to another function. It is called when the asynchronous operation completes, allowing you to handle the result or error.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>29. How do you handle errors in Node.js?</h2>
+        <p><span>Answer:</span> In Node.js, errors can be handled using:</p>
+        <ul>
+            <li>Try-catch blocks for synchronous code.</li>
+            <li>Callback functions with error-first conventions.</li>
+            <li>Promises with `.catch()` for handling errors in promise-based code.</li>
+        </ul>
+    </div>
+
+    <div class="question-answer">
+        <h2>30. What is the purpose of the `require()` function in Node.js?</h2>
+        <p><span>Answer:</span> The `require()` function in Node.js is used to include modules, JSON files, or local files into your Node.js application. It enables the use of external libraries and custom modules.</p>
+    </div>
+
+    <!-- Question 31 to 50 -->
+    <div class="question-answer">
+        <h2>31. What is the purpose of the `fs` module in Node.js?</h2>
+        <p><span>Answer:</span> The `fs` (file system) module provides APIs for interacting with the file system, such as reading, writing, updating, and deleting files and directories.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>32. What is `npm` and how is it used in Node.js?</h2>
+        <p><span>Answer:</span> `npm` (Node Package Manager) is a command-line tool that manages dependencies for Node.js applications. It allows developers to install, update, and manage libraries and packages that their application depends on.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>33. How do you handle file uploads in Node.js?</h2>
+        <p><span>Answer:</span> In Node.js, file uploads can be handled using middleware like `multer`, which processes multipart/form-data for file uploads. You can also handle file uploads using streams to efficiently manage large files.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>34. How do you manage sessions in Express.js?</h2>
+        <p><span>Answer:</span> In Express.js, sessions can be managed using middleware like `express-session`. This stores session data on the server and associates it with a session ID sent as a cookie in the user's browser.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>35. What is CORS in Node.js and how can you enable it?</h2>
+        <p><span>Answer:</span> CORS (Cross-Origin Resource Sharing) is a mechanism that allows restricted resources on a web server to be requested from another domain. It can be enabled in a Node.js app using the `cors` package or by manually setting the `Access-Control-Allow-Origin` header.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>36. What is the difference between `console.log()` and `console.error()`?</h2>
+        <p><span>Answer:</span> `console.log()` is used to log normal messages to the console, whereas `console.error()` is used specifically to log error messages. Error messages are often displayed with a different style or in a different color to indicate an issue.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>37. What are Promises in Node.js?</h2>
+        <p><span>Answer:</span> Promises are used to handle asynchronous operations in Node.js. They represent a value that may not be available yet, but will be resolved in the future. Promises can be chained using `.then()` and `.catch()` for success and error handling.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>38. What is the `Buffer` class in Node.js?</h2>
+        <p><span>Answer:</span> The `Buffer` class is used to handle binary data in Node.js. It allows you to read and write binary data (like images, videos, and files) directly from memory, without converting it to strings.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>39. What is the `events` module in Node.js?</h2>
+        <p><span>Answer:</span> The `events` module in Node.js provides the EventEmitter class, which allows objects to emit events and handle event listeners. It is used to create and handle custom events in your applications.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>40. How do you debug a Node.js application?</h2>
+        <p><span>Answer:</span> You can debug a Node.js application using the built-in `debugger` module, Chrome DevTools, or by using external tools like `node-inspect` or `Visual Studio Code`. You can also add `console.log()` statements to inspect variables and flow.</p>
+    </div>
+
+      <!-- Question 41 to 60 -->
+      <div class="question-answer">
+        <h2>41. What is the event loop in Node.js?</h2>
+        <p><span>Answer:</span> The event loop in Node.js is the mechanism that handles asynchronous callbacks. It allows Node.js to perform non-blocking operations by processing events and executing associated callbacks in the event queue. The event loop runs continuously, executing tasks one by one.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>42. What is the difference between synchronous and asynchronous code in Node.js?</h2>
+        <p><span>Answer:</span> Synchronous code executes line by line, blocking the execution until a task is completed. Asynchronous code allows tasks to be executed concurrently, without blocking the execution of other code, enabling non-blocking I/O operations.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>43. How can you prevent memory leaks in Node.js?</h2>
+        <p><span>Answer:</span> To prevent memory leaks in Node.js, you should:</p>
+        <ul>
+            <li>Use proper error handling to avoid unhandled exceptions.</li>
+            <li>Ensure that event listeners are removed when no longer needed.</li>
+            <li>Use `weak` references when possible to avoid preventing garbage collection.</li>
+            <li>Monitor and analyze memory usage with tools like `node --inspect`.</li>
+        </ul>
+    </div>
+
+    <div class="question-answer">
+        <h2>44. What is the `require` function in Node.js?</h2>
+        <p><span>Answer:</span> `require()` is a built-in function in Node.js used to import modules, JSON files, or other files into a Node.js program. It loads and caches the contents of the module so that it can be reused throughout the application.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>45. What is the difference between `__dirname` and `__filename`?</h2>
+        <p><span>Answer:</span> `__dirname` is the absolute path of the directory containing the current file, while `__filename` is the absolute path of the current file, including the file name.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>46. What is `process.env` in Node.js?</h2>
+        <p><span>Answer:</span> `process.env` is an object in Node.js that contains the environment variables for the current process. It can be used to store configuration data such as database credentials, API keys, and other environment-specific values.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>47. What is the difference between `module.exports` and `exports`?</h2>
+        <p><span>Answer:</span> Both `module.exports` and `exports` are used to export modules in Node.js. `module.exports` is the actual object that is returned when the module is required. `exports` is a shorthand for `module.exports`, but if you reassign `exports`, the reference is lost, and `module.exports` will be used.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>48. What are callbacks and how do they work in Node.js?</h2>
+        <p><span>Answer:</span> Callbacks are functions passed as arguments to other functions. They are used to handle asynchronous operations in Node.js. When an asynchronous operation completes, the callback is invoked with the result of the operation or an error.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>49. How do you handle asynchronous operations in Node.js?</h2>
+        <p><span>Answer:</span> Asynchronous operations in Node.js are typically handled using callbacks, promises, or async/await syntax. Callbacks are used in most Node.js APIs, while promises and async/await are more modern approaches for managing asynchronous code in a cleaner and more readable way.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>50. What is `process.exit()` and how is it used in Node.js?</h2>
+        <p><span>Answer:</span> `process.exit()` is a method in Node.js that ends the current process and sets the exit code. It can be used to programmatically terminate a running application. The exit code is typically `0` for success and `1` or higher for failure.</p>
+    </div>
+
+    <!-- Question 51 to 70 -->
+    <div class="question-answer">
+        <h2>51. What is the `os` module in Node.js?</h2>
+        <p><span>Answer:</span> The `os` module provides information about the operating system, including information about the CPU, memory, network interfaces, and other system-related data. It can be used to fetch system-level details programmatically.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>52. What is the purpose of `setTimeout()` in Node.js?</h2>
+        <p><span>Answer:</span> `setTimeout()` is used to execute a function after a specified delay (in milliseconds). It is typically used to schedule asynchronous execution after a certain period of time has passed.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>53. What is the `querystring` module used for?</h2>
+        <p><span>Answer:</span> The `querystring` module is used to parse and format query strings in URL. It can be used to extract data from the URL's query parameters or to build query strings from objects.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>54. What are Streams in Node.js?</h2>
+        <p><span>Answer:</span> Streams are objects in Node.js used to read or write data in a continuous manner. There are four types of streams in Node.js: Readable, Writable, Duplex, and Transform. They are used to handle large data sets efficiently without loading the entire content into memory.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>55. How do you perform file system operations in Node.js?</h2>
+        <p><span>Answer:</span> Node.js provides the `fs` module for interacting with the file system. You can use functions like `fs.readFile()`, `fs.writeFile()`, `fs.appendFile()`, and more for reading and writing files. There are both synchronous and asynchronous versions of these functions.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>56. How do you handle errors in asynchronous functions?</h2>
+        <p><span>Answer:</span> In Node.js, errors in asynchronous functions are typically handled using error-first callback conventions. The first argument of the callback is reserved for an error object, while subsequent arguments hold the result. Promises and async/await also provide error handling through `.catch()` and `try/catch` blocks.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>57. What is the `util` module in Node.js?</h2>
+        <p><span>Answer:</span> The `util` module provides utility functions for various operations such as formatting strings (`util.format()`), inheriting from another class (`util.inherits()`), and inspecting objects (`util.inspect()`). It's often used for debugging and improving code functionality.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>58. What is a `Buffer` in Node.js?</h2>
+        <p><span>Answer:</span> A `Buffer` is a class used to handle binary data directly in Node.js. Buffers allow you to work with raw memory allocations, such as reading and writing binary files or manipulating data from streams.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>59. How does Node.js handle concurrent requests?</h2>
+        <p><span>Answer:</span> Node.js uses a single-threaded event loop to handle concurrent requests. It doesn't create new threads for each request; instead, it delegates I/O tasks to the operating system and handles callbacks asynchronously when the tasks complete.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>60. What is the `cluster` module in Node.js?</h2>
+        <p><span>Answer:</span> The `cluster` module enables Node.js to take advantage of multi-core systems by forking multiple child processes that can share the same server port. This allows Node.js to scale and handle more concurrent requests by distributing them across multiple processes.</p>
+    </div>
+       <!-- Question 61 to 80 -->
+       <div class="question-answer">
+        <h2>61. What are `setImmediate()` and `process.nextTick()`?</h2>
+        <p><span>Answer:</span> `setImmediate()` schedules a callback to be executed after the current event loop cycle, while `process.nextTick()` schedules a callback to be executed immediately after the current operation completes, before any I/O tasks.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>62. How can you handle errors in promises?</h2>
+        <p><span>Answer:</span> In promises, errors are handled using the `.catch()` method. If any promise is rejected, `.catch()` is invoked to handle the error, ensuring that exceptions are caught and managed properly.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>63. What is the difference between `require()` and `import` in Node.js?</h2>
+        <p><span>Answer:</span> `require()` is the older method for importing modules in Node.js, which uses CommonJS module system. `import` is part of ES6 (ECMAScript 2015) syntax, and it is used with ES Modules. Node.js now supports both methods depending on the module system being used.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>64. How do you secure a Node.js application?</h2>
+        <p><span>Answer:</span> To secure a Node.js application, consider the following:</p>
+        <ul>
+            <li>Use HTTPS instead of HTTP for secure communication.</li>
+            <li>Sanitize user inputs to prevent injection attacks.</li>
+            <li>Use Helmet.js to set HTTP headers for security.</li>
+            <li>Ensure proper error handling to avoid information leakage.</li>
+            <li>Use environment variables for sensitive data instead of hardcoding them.</li>
+        </ul>
+    </div>
+
+    <div class="question-answer">
+        <h2>65. How does Node.js handle asynchronous code?</h2>
+        <p><span>Answer:</span> Node.js handles asynchronous code using callbacks, promises, and async/await. By offloading I/O operations to the system kernel, Node.js doesn't block the event loop and can handle multiple asynchronous operations concurrently.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>66. What is a Memory Leak in Node.js, and how do you prevent it?</h2>
+        <p><span>Answer:</span> A memory leak occurs when objects are not properly garbage-collected, leading to increased memory usage. In Node.js, you can prevent memory leaks by properly cleaning up event listeners, using weak references, and monitoring memory usage with tools like `heapdump` and `v8-profiler`.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>67. What is the role of the `console` object in Node.js?</h2>
+        <p><span>Answer:</span> The `console` object is used for outputting information to the terminal or standard output. It provides methods like `console.log()`, `console.error()`, `console.warn()`, and `console.trace()` to display messages, errors, and stack traces.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>68. What are the advantages of using the Express framework in Node.js?</h2>
+        <p><span>Answer:</span> Express is a minimal web framework for Node.js that simplifies routing, middleware integration, and error handling. Some advantages of Express are:</p>
+        <ul>
+            <li>Simplified routing and handling of HTTP requests.</li>
+            <li>Middleware support for functionality like body parsing and session handling.</li>
+            <li>Supports RESTful API creation.</li>
+            <li>Built-in support for templating engines and static files.</li>
+        </ul>
+    </div>
+
+    <div class="question-answer">
+        <h2>69. What is `npm` in Node.js?</h2>
+        <p><span>Answer:</span> `npm` (Node Package Manager) is the default package manager for Node.js. It helps in managing third-party packages and dependencies, allowing developers to easily install, update, and publish packages. It also handles project dependencies via `package.json`.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>70. How do you manage errors in Express.js?</h2>
+        <p><span>Answer:</span> In Express.js, errors are typically managed using middleware. You can define an error-handling middleware function, which accepts four arguments: `err`, `req`, `res`, and `next`. This function is used to handle errors globally in the application.</p>
+    </div>
+
+    <!-- Question 71 to 100 -->
+    <div class="question-answer">
+        <h2>71. What is the purpose of `app.listen()` in Express.js?</h2>
+        <p><span>Answer:</span> `app.listen()` is used to bind and listen to connections on a specified port. It starts the Express.js server and listens for incoming requests on the given port.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>72. What is middleware in Express.js?</h2>
+        <p><span>Answer:</span> Middleware is a function that processes incoming requests in the Express.js pipeline. It can modify the request, perform actions, and even terminate the request-response cycle by sending a response to the client.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>73. What is the difference between `app.use()` and `app.all()` in Express.js?</h2>
+        <p><span>Answer:</span> `app.use()` is used to define middleware functions that are executed for all HTTP methods and routes. `app.all()` is used to define a handler for all HTTP methods for a specific route, regardless of the HTTP verb (GET, POST, etc.).</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>74. What is the `next()` function in Express.js?</h2>
+        <p><span>Answer:</span> The `next()` function is used to pass control to the next middleware function in the stack. It is important for ensuring that the request is processed by all necessary middleware functions before the response is sent.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>75. How can you parse request bodies in Express.js?</h2>
+        <p><span>Answer:</span> You can use the `express.json()` middleware to parse JSON request bodies and `express.urlencoded()` to parse URL-encoded data. These middlewares make the request body available in `req.body`.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>76. What is the purpose of the `express.Router()` method?</h2>
+        <p><span>Answer:</span> `express.Router()` is used to define modular, mountable route handlers. It allows you to create separate routing modules, which can be reused in your application and keep the code organized.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>77. What are HTTP methods in Node.js?</h2>
+        <p><span>Answer:</span> HTTP methods define the actions to be performed on resources. Common HTTP methods include:</p>
+        <ul>
+            <li>GET: Retrieve information from the server.</li>
+            <li>POST: Submit data to the server.</li>
+            <li>PUT: Update data on the server.</li>
+            <li>DELETE: Delete data from the server.</li>
+        </ul>
+    </div>
+
+    <div class="question-answer">
+        <h2>78. What is CORS and how do you handle it in Node.js?</h2>
+        <p><span>Answer:</span> CORS (Cross-Origin Resource Sharing) is a security feature that allows or restricts resources on a web server to be requested from another domain. You can handle CORS in Node.js by using the `cors` package or by setting custom HTTP headers using `Access-Control-Allow-Origin` and other headers.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>79. How can you perform file uploads in Node.js?</h2>
+        <p><span>Answer:</span> You can use middleware like `multer` to handle file uploads in Node.js. Multer parses multipart/form-data, which is commonly used for uploading files in web applications. It allows you to configure the destination, file size limits, and file type restrictions.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>80. How do you define routes in Express.js?</h2>
+        <p><span>Answer:</span> Routes in Express.js can be defined using methods like `app.get()`, `app.post()`, `app.put()`, and `app.delete()`, depending on the HTTP method. These methods map routes to callback functions that process incoming requests and generate responses.</p>
+    </div>
+
+     <!-- Question 81 to 100 -->
+     <div class="question-answer">
+        <h2>81. What is an API in Node.js?</h2>
+        <p><span>Answer:</span> An API (Application Programming Interface) in Node.js refers to a set of functions and protocols that allow communication between different software applications. In the context of Node.js, an API is typically exposed via HTTP routes that can be called by other services or client applications.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>82. What are the different types of streams in Node.js?</h2>
+        <p><span>Answer:</span> In Node.js, streams are divided into four types:</p>
+        <ul>
+            <li>Readable Streams: Streams that allow data to be read (e.g., `fs.createReadStream()`).</li>
+            <li>Writable Streams: Streams that allow data to be written (e.g., `fs.createWriteStream()`).</li>
+            <li>Duplex Streams: Streams that are both readable and writable (e.g., TCP sockets).</li>
+            <li>Transform Streams: Duplex streams that can modify data as it is read and written (e.g., zlib streams).</li>
+        </ul>
+    </div>
+
+    <div class="question-answer">
+        <h2>83. What is `req.params` in Express.js?</h2>
+        <p><span>Answer:</span> In Express.js, `req.params` is an object containing route parameters. These parameters are typically used to capture values from the URL path in dynamic routes (e.g., `/user/:id`), allowing you to access the values directly via `req.params.id`.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>84. What is the difference between `req.query` and `req.body` in Express.js?</h2>
+        <p><span>Answer:</span> `req.query` is used to access query parameters sent in the URL (e.g., `/search?query=term`), whereas `req.body` contains data sent in the request body, typically used with POST or PUT requests to send larger data, like JSON or form submissions.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>85. What is the purpose of the `res.send()` method in Express.js?</h2>
+        <p><span>Answer:</span> The `res.send()` method in Express.js is used to send a response to the client. It automatically sets the correct `Content-Type` based on the data being sent and can handle strings, objects, arrays, or other response types.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>86. What is the role of `res.json()` in Express.js?</h2>
+        <p><span>Answer:</span> The `res.json()` method is used to send a JSON response to the client. It automatically sets the `Content-Type` to `application/json` and converts JavaScript objects into JSON format for easy client consumption.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>87. How do you handle 404 errors in Express.js?</h2>
+        <p><span>Answer:</span> You can handle 404 errors in Express.js by defining a middleware function that catches all requests that don't match existing routes. For example:</p>
+        <pre><code>app.use((req, res, next) => {
+            res.status(404).send('Page not found');
+        });</code></pre>
+    </div>
+
+    <div class="question-answer">
+        <h2>88. How do you redirect a user in Express.js?</h2>
+        <p><span>Answer:</span> In Express.js, you can redirect users using the `res.redirect()` method. You provide the URL to which the user should be redirected. For example:</p>
+        <pre><code>res.redirect('/new-page');</code></pre>
+    </div>
+
+    <div class="question-answer">
+        <h2>89. How do you handle file uploads in Express.js?</h2>
+        <p><span>Answer:</span> You can use middleware like `multer` to handle file uploads in Express.js. Multer parses multipart form data and makes the file data available in `req.file` or `req.files` depending on the configuration.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>90. What are HTTP headers, and how can you set them in Express.js?</h2>
+        <p><span>Answer:</span> HTTP headers are key-value pairs sent by the server along with the response. They provide metadata about the request or response. In Express.js, you can set headers using the `res.set()` method, for example:</p>
+        <pre><code>res.set('Content-Type', 'application/json');</code></pre>
+    </div>
+
+    <!-- Question 91 to 120 -->
+    <div class="question-answer">
+        <h2>91. What is the `path` module in Node.js?</h2>
+        <p><span>Answer:</span> The `path` module provides utilities for working with file and directory paths. It includes methods like `path.join()`, `path.resolve()`, and `path.basename()` to handle file paths in a platform-independent manner.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>92. What is `fs.createReadStream()` in Node.js?</h2>
+        <p><span>Answer:</span> `fs.createReadStream()` is a method in the `fs` module used to create a readable stream from a file. It allows you to read large files in chunks without loading the entire file into memory.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>93. How do you implement logging in a Node.js application?</h2>
+        <p><span>Answer:</span> You can implement logging in a Node.js application using libraries like `winston`, `morgan`, or `bunyan`. These libraries provide robust logging functionality, including different log levels, transports, and output formats for logging messages to files, databases, or consoles.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>94. How do you perform file operations in Node.js?</h2>
+        <p><span>Answer:</span> Node.js provides the `fs` module to handle file operations like reading, writing, and appending files. You can use methods like `fs.readFile()`, `fs.writeFile()`, and `fs.appendFile()` for asynchronous file operations, or their synchronous counterparts.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>95. What is the `child_process` module in Node.js?</h2>
+        <p><span>Answer:</span> The `child_process` module in Node.js allows you to spawn new processes, execute shell commands, and interact with system processes. It provides methods like `exec()`, `spawn()`, and `fork()` for creating and managing child processes.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>96. How do you handle JSON data in Node.js?</h2>
+        <p><span>Answer:</span> In Node.js, you can handle JSON data by using `JSON.parse()` to parse JSON strings into JavaScript objects, and `JSON.stringify()` to convert JavaScript objects into JSON strings for sending data over HTTP or storing it in files.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>97. What are the common status codes in HTTP?</h2>
+        <p><span>Answer:</span> Common HTTP status codes include:</p>
+        <ul>
+            <li>200 OK: The request was successful.</li>
+            <li>201 Created: A resource was successfully created.</li>
+            <li>400 Bad Request: The request was malformed or invalid.</li>
+            <li>404 Not Found: The requested resource could not be found.</li>
+            <li>500 Internal Server Error: A generic error occurred on the server.</li>
+        </ul>
+    </div>
+
+    <div class="question-answer">
+        <h2>98. How do you set up HTTPS in Node.js?</h2>
+        <p><span>Answer:</span> You can set up HTTPS in Node.js using the `https` module. You will need a valid SSL certificate and private key to create an HTTPS server. Example:</p>
+        <pre><code>const https = require('https');
+const fs = require('fs');
+const options = {
+    key: fs.readFileSync('private-key.pem'),
+    cert: fs.readFileSync('certificate.pem')
+};
+https.createServer(options, (req, res) => {
+    res.write('Hello, secure world!');
+    res.end();
+}).listen(443);</code></pre>
+    </div>
+
+    <div class="question-answer">
+        <h2>99. What is the `Buffer` class in Node.js?</h2>
+        <p><span>Answer:</span> The `Buffer` class in Node.js is used to handle raw binary data directly. Buffers are useful when dealing with streams, reading files, or working with data formats that require manipulation of binary data.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>100. What is the `crypto` module in Node.js?</h2>
+        <p><span>Answer:</span> The `crypto` module provides cryptographic functionality, such as hashing, encryption, and decryption. You can use it to perform operations like generating secure hashes, HMACs, and working with RSA or AES encryption.</p>
+    </div>
+
+    <!-- Question 101 to 120 -->
+    <div class="question-answer">
+        <h2>101. What is the `event` module in Node.js?</h2>
+        <p><span>Answer:</span> The `event` module in Node.js provides an API for working with events. It allows you to create event emitters and listen for events using methods like `on()`, `emit()`, and `once()` to manage asynchronous tasks and event-driven programming.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>102. What is an event emitter in Node.js?</h2>
+        <p><span>Answer:</span> An event emitter is an object in Node.js that can emit named events and listen to them. It is part of the `EventEmitter` class, and you can create custom event-driven logic by emitting and listening to events using methods like `on()`, `emit()`, and `once()`.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>103. What is `process.env` in Node.js?</h2>
+        <p><span>Answer:</span> `process.env` is an object in Node.js that stores the environment variables for the current process. It allows you to access configuration settings such as API keys, database URLs, and other environment-specific information in your Node.js application.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>104. What is the role of `process.exit()` in Node.js?</h2>
+        <p><span>Answer:</span> `process.exit()` is used to terminate the current Node.js process. You can provide an optional exit code to indicate the reason for termination (0 for successful termination, or any other number for failure).</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>105. How do you handle uncaught exceptions in Node.js?</h2>
+        <p><span>Answer:</span> You can handle uncaught exceptions in Node.js using the `process.on('uncaughtException')` event. However, it is recommended to handle errors at the application level, and avoid using `uncaughtException` to recover from errors, as it can lead to an unstable state.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>106. What is a promise in Node.js?</h2>
+        <p><span>Answer:</span> A promise is an object in Node.js that represents the eventual completion (or failure) of an asynchronous operation and its resulting value. Promises allow for chaining of asynchronous operations and handling of errors using `.then()` and `.catch()` methods.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>107. What is the difference between `setTimeout()` and `setInterval()` in Node.js?</h2>
+        <p><span>Answer:</span> `setTimeout()` schedules a callback to be executed once after a specified delay, whereas `setInterval()` schedules a callback to be executed repeatedly at regular intervals.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>108. What is the `util` module in Node.js?</h2>
+        <p><span>Answer:</span> The `util` module provides utility functions for working with objects, strings, and debugging in Node.js. Some commonly used methods include `util.promisify()` to convert callback-based functions into promises and `util.inspect()` to inspect objects in a human-readable format.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>109. What is the role of `npm init`?</h2>
+        <p><span>Answer:</span> `npm init` is a command used to create a new `package.json` file for a Node.js project. It prompts the user for project details such as name, version, description, entry point, and dependencies, and generates a configuration file for managing project metadata and dependencies.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>110. What is the difference between `npm install` and `npm install --save`?</h2>
+        <p><span>Answer:</span> `npm install` is used to install a package locally (by default) in your project, while `npm install --save` installs the package and saves it to your `package.json` under the `dependencies` section. From npm version 5 and above, the `--save` flag is no longer required because it's the default behavior.</p>
+    </div>
+
+    <!-- Question 111 to 130 -->
+    <div class="question-answer">
+        <h2>111. What is the `npm run` command?</h2>
+        <p><span>Answer:</span> The `npm run` command is used to execute scripts defined in the `scripts` section of the `package.json` file. You can run custom commands or tasks like building, testing, or deploying your application using `npm run <script-name>`.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>112. What is the purpose of `package-lock.json`?</h2>
+        <p><span>Answer:</span> `package-lock.json` is a file automatically generated when you install or update dependencies. It locks the versions of the installed packages, ensuring consistency across environments. It helps developers avoid issues caused by mismatched package versions and facilitates reproducible builds.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>113. What is the purpose of `npm update`?</h2>
+        <p><span>Answer:</span> `npm update` is used to update the installed dependencies in a Node.js project to the latest versions based on the version ranges specified in the `package.json` file. It updates the `node_modules` folder and `package-lock.json` accordingly.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>114. What is the difference between `npm install` and `npm ci`?</h2>
+        <p><span>Answer:</span> `npm install` installs dependencies based on `package.json`, and it can update the `package-lock.json`. `npm ci` (Continuous Integration) is a faster, more predictable alternative that installs dependencies strictly according to the `package-lock.json`, ensuring a clean and reproducible installation every time.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>115. What are the advantages of using a build tool like Webpack in a Node.js project?</h2>
+        <p><span>Answer:</span> Webpack is a popular build tool for bundling JavaScript files, CSS, images, and other assets for the web. It allows for optimization of code, supports module bundling, and enables features like code splitting, tree shaking, and hot module replacement (HMR) to improve performance and development experience.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>116. What is the `cluster` module in Node.js?</h2>
+        <p><span>Answer:</span> The `cluster` module in Node.js allows you to create multiple child processes (workers) that share the same server port, effectively allowing Node.js to scale across multiple CPU cores. This helps take full advantage of multicore systems and improves the performance of high-traffic applications.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>117. How can you handle multiple requests concurrently in Node.js?</h2>
+        <p><span>Answer:</span> Node.js handles multiple requests concurrently using its non-blocking event loop. While it processes I/O tasks asynchronously, requests that require computation or heavy lifting can be handled by using child processes, worker threads, or clustering to utilize multiple CPU cores.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>118. What is the role of `worker_threads` in Node.js?</h2>
+        <p><span>Answer:</span> The `worker_threads` module in Node.js provides a way to create threads in a Node.js process. It allows you to execute JavaScript code in parallel to avoid blocking the main event loop, enabling better CPU-bound task performance in a single-threaded environment.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>119. How do you perform database operations in Node.js?</h2>
+        <p><span>Answer:</span> You can perform database operations in Node.js by using database drivers or ORMs (Object Relational Mappers). Popular database libraries include `mongoose` for MongoDB, `pg` for PostgreSQL, and `mysql2` for MySQL. These libraries provide methods for querying, updating, and managing database records.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>120. How do you handle pagination in Node.js?</h2>
+        <p><span>Answer:</span> Pagination in Node.js can be handled by querying the database with a limit and an offset, or using a page number. You can pass parameters like `page` and `limit` in the request query and use them to control the results returned from the database.</p>
+    </div>
+
+       <!-- Question 121 to 140 -->
+       <div class="question-answer">
+        <h2>121. What is the `process.nextTick()` method in Node.js?</h2>
+        <p><span>Answer:</span> The `process.nextTick()` method in Node.js is used to schedule a callback function to be executed in the next event loop iteration, after the current operation completes but before any I/O events. It's used for deferring the execution of code to ensure it runs asynchronously.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>122. What is the difference between `process.nextTick()` and `setImmediate()`?</h2>
+        <p><span>Answer:</span> The main difference is that `process.nextTick()` schedules the callback to be executed after the current operation completes but before any I/O tasks, while `setImmediate()` schedules the callback to be executed on the next iteration of the event loop after I/O events have been processed.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>123. What are environment variables, and how do you use them in Node.js?</h2>
+        <p><span>Answer:</span> Environment variables are key-value pairs that provide configuration and environment-specific settings for applications. In Node.js, you can access environment variables using `process.env`. You can set environment variables through the command line or within the `.env` file using packages like `dotenv`.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>124. How do you handle rate limiting in Node.js?</h2>
+        <p><span>Answer:</span> Rate limiting can be handled in Node.js using middleware libraries such as `express-rate-limit`. These libraries allow you to limit the number of requests from a single client within a given time period, helping prevent abuse and ensuring the stability of your application.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>125. How can you prevent SQL injection attacks in Node.js?</h2>
+        <p><span>Answer:</span> To prevent SQL injection attacks, use prepared statements and parameterized queries, which ensure that user input is properly escaped before being used in SQL queries. Many libraries, like `pg` for PostgreSQL or `mysql2` for MySQL, support this approach.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>126. What is the role of middleware in Express.js?</h2>
+        <p><span>Answer:</span> Middleware in Express.js is a function that processes requests before they reach the route handlers. Middleware can perform tasks like logging, authentication, input validation, or modifying request and response objects. You can define middleware using `app.use()` or as specific route handlers.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>127. What are the advantages of using the `async/await` syntax in Node.js?</h2>
+        <p><span>Answer:</span> The `async/await` syntax simplifies asynchronous code by allowing you to write it in a synchronous-like manner, improving readability and making error handling easier using `try/catch` blocks. It avoids the "callback hell" problem and simplifies chaining promises.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>128. What is the `mongoose` library in Node.js?</h2>
+        <p><span>Answer:</span> `mongoose` is an Object Data Modeling (ODM) library for MongoDB and Node.js. It provides a higher-level abstraction to interact with MongoDB, enabling the use of schemas to define data models and simplifying database operations like CRUD operations, validation, and query building.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>129. What is the purpose of `body-parser` middleware in Express.js?</h2>
+        <p><span>Answer:</span> `body-parser` is middleware for parsing incoming request bodies in Express.js. It allows you to handle and extract data from different content types (such as JSON or URL-encoded data) in the request body. It is now built into Express as `express.json()` and `express.urlencoded()`.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>130. What is the difference between `app.use()` and `app.all()` in Express.js?</h2>
+        <p><span>Answer:</span> `app.use()` is used to define middleware that is executed for all HTTP requests to the specified path, regardless of the HTTP method. `app.all()` is used to define a route handler for all HTTP methods (GET, POST, PUT, DELETE, etc.) for the specified path.</p>
+    </div>
+
+    <!-- Question 131 to 150 -->
+    <div class="question-answer">
+        <h2>131. What is the `debug` module in Node.js?</h2>
+        <p><span>Answer:</span> The `debug` module is a popular library for logging debug information in Node.js applications. It allows you to output debug messages to the console with various namespaces, making it easier to filter logs based on the environment and category.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>132. How do you create a custom module in Node.js?</h2>
+        <p><span>Answer:</span> In Node.js, you can create a custom module by defining your functionality in a separate JavaScript file and exporting it using `module.exports`. For example, you could create a `math.js` file and export a function: `module.exports.add = (a, b) => a + b;`.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>133. How does Node.js handle child processes?</h2>
+        <p><span>Answer:</span> Node.js provides the `child_process` module to manage child processes. This module allows you to spawn new processes using methods like `spawn()`, `fork()`, and `exec()`, enabling you to execute external commands or scripts asynchronously without blocking the event loop.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>134. What is the `stream` module in Node.js?</h2>
+        <p><span>Answer:</span> The `stream` module in Node.js provides a way to work with data streams, including readable, writable, and transform streams. Streams allow you to process data efficiently, especially large data sets, without having to load everything into memory at once.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>135. What is the purpose of `fs.createWriteStream()`?</h2>
+        <p><span>Answer:</span> `fs.createWriteStream()` in Node.js is used to create a writable stream to write data to a file. It allows you to write data incrementally to files, which is particularly useful when handling large files or when you need to write data asynchronously.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>136. What is the purpose of `fs.createReadStream()`?</h2>
+        <p><span>Answer:</span> `fs.createReadStream()` in Node.js is used to create a readable stream to read data from a file. It allows you to read large files in chunks, rather than loading the entire file into memory, making it more memory-efficient for large file operations.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>137. How do you handle errors in Node.js?</h2>
+        <p><span>Answer:</span> In Node.js, errors can be handled using `try/catch` blocks for synchronous code and `.catch()` for promise-based errors. Additionally, you can use `process.on('uncaughtException')` to handle uncaught exceptions globally, although it's better to handle errors at the application level.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>138. What is the purpose of `os` module in Node.js?</h2>
+        <p><span>Answer:</span> The `os` module provides a set of operating system-related utility methods, such as retrieving information about the CPU, memory, platform, and network interfaces. It can be useful for gathering system-level data in Node.js applications.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>139. What is the role of the `querystring` module in Node.js?</h2>
+        <p><span>Answer:</span> The `querystring` module in Node.js provides utilities for working with query strings in URLs. It can be used to parse query strings into JavaScript objects and format objects into query string representations. This is especially useful when handling URL parameters in web applications.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>140. How do you perform authentication in Node.js?</h2>
+        <p><span>Answer:</span> Authentication in Node.js can be performed using strategies like sessions, JWT (JSON Web Tokens), or OAuth. Libraries like `passport.js` provide middleware for handling various authentication strategies. For example, JWT is often used in APIs to securely authenticate users by sending tokens in HTTP headers.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>141. What is the `url` module in Node.js?</h2>
+        <p><span>Answer:</span> The `url` module provides utilities for parsing and formatting URLs. It helps you extract components like the protocol, hostname, pathname, and query parameters from URLs. You can use methods like `url.parse()` and `url.format()` for manipulating URLs in Node.js.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>142. How do you handle asynchronous errors in Node.js?</h2>
+        <p><span>Answer:</span> Asynchronous errors in Node.js can be handled using `.catch()` for promises or the `error` event for EventEmitters. For callbacks, you can follow the Node.js convention of returning errors as the first argument to a callback function (e.g., `callback(err, result)`).</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>143. What are the differences between `require()` and `import`?</h2>
+        <p><span>Answer:</span> `require()` is the CommonJS module system used in Node.js to load modules. It is synchronous and used in older versions of Node.js. `import` is the ES6 module syntax used to load modules asynchronously. The `import` syntax is typically used in modern JavaScript and requires support for ES modules (ESM) in Node.js.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>144. How do you handle cross-origin resource sharing (CORS) in Node.js?</h2>
+        <p><span>Answer:</span> CORS in Node.js can be handled by using middleware such as the `cors` package, which allows you to configure the server to accept requests from specific origins. The middleware can be added in Express.js using `app.use(cors())` and configured with various options for allowed methods, headers, and origins.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>145. What is the role of the `path` module in Node.js?</h2>
+        <p><span>Answer:</span> The `path` module in Node.js provides utilities for working with file and directory paths. It helps you to safely join, resolve, and manipulate file paths, ensuring compatibility across different operating systems (Windows, Linux, etc.). Key methods include `path.join()`, `path.resolve()`, and `path.basename()`.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>146. What is the purpose of `process.argv` in Node.js?</h2>
+        <p><span>Answer:</span> `process.argv` is an array that contains the command-line arguments passed when running a Node.js script. The first two elements of the array are the path to the Node.js executable and the path to the script file, with subsequent elements containing any additional arguments passed to the script.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>147. How do you manage versions of Node.js in your development environment?</h2>
+        <p><span>Answer:</span> To manage multiple versions of Node.js, you can use tools like `nvm` (Node Version Manager) or `n`. These tools allow you to install and switch between different versions of Node.js easily, ensuring compatibility with different projects and environments.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>148. What are the advantages of using Express.js over plain Node.js?</h2>
+        <p><span>Answer:</span> Express.js simplifies server-side development by providing a set of robust tools and middleware for handling routing, requests, responses, and more. It abstracts much of the complexity of working with HTTP directly in Node.js, making it easier to build scalable and maintainable web applications.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>149. How do you implement logging in Node.js?</h2>
+        <p><span>Answer:</span> Logging in Node.js can be implemented using libraries like `winston`, `morgan`, or `bunyan`. These libraries provide powerful features such as log rotation, different log levels (e.g., info, warn, error), and the ability to output logs to different destinations like the console, files, or remote servers.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>150. How do you deploy a Node.js application?</h2>
+        <p><span>Answer:</span> To deploy a Node.js application, you can use cloud platforms like AWS, Heroku, or DigitalOcean. The process typically involves setting up a server, installing Node.js, transferring your application code, installing dependencies, and configuring a reverse proxy (e.g., Nginx). You can also set up CI/CD pipelines to automate the deployment process.</p>
+    </div>
+
+     <!-- Question 151 to 200 -->
+     <div class="question-answer">
+        <h2>151. What is the `https` module in Node.js?</h2>
+        <p><span>Answer:</span> The `https` module in Node.js provides utilities for creating HTTPS servers and making HTTPS requests. It is similar to the `http` module but with added security through SSL/TLS encryption. You can create secure web servers and clients by using `https.createServer()` and `https.request()`.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>152. How do you enable SSL in a Node.js application?</h2>
+        <p><span>Answer:</span> SSL can be enabled in a Node.js application by using the `https` module along with SSL certificates. You need to create an `https` server using `https.createServer()`, passing the options object containing your `key` and `cert` properties for the SSL certificate and private key.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>153. What is the `repl` module in Node.js?</h2>
+        <p><span>Answer:</span> The `repl` module in Node.js provides a Read-Eval-Print Loop (REPL) environment, where you can interactively execute JavaScript code. It allows you to run code, see results immediately, and experiment with code snippets, similar to the browser console but in a Node.js environment.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>154. What are Node.js streams, and why are they useful?</h2>
+        <p><span>Answer:</span> Streams in Node.js are objects that allow you to read or write data incrementally, instead of loading everything into memory at once. This is useful for handling large amounts of data efficiently, such as file uploads, downloads, or piping data between processes without consuming excessive memory.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>155. What is the difference between a readable stream and a writable stream in Node.js?</h2>
+        <p><span>Answer:</span> A readable stream is used to read data from a source (e.g., a file or network connection), while a writable stream is used to write data to a destination (e.g., a file or response object). In Node.js, you can use the `stream.Readable` and `stream.Writable` classes to work with these types of streams.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>156. What is the role of the `eventEmitter` class in Node.js?</h2>
+        <p><span>Answer:</span> The `EventEmitter` class is used for managing and handling events in Node.js. It allows objects to emit events and for other objects to listen for those events. This is fundamental to the event-driven, non-blocking nature of Node.js, enabling efficient handling of asynchronous tasks.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>157. How does the event loop work in Node.js?</h2>
+        <p><span>Answer:</span> The event loop in Node.js is the mechanism that allows non-blocking I/O operations. It constantly checks the call stack and the event queue. If the stack is empty, it picks up tasks from the event queue and processes them, ensuring that I/O operations and callbacks are executed asynchronously.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>158. What is a "callback hell" in Node.js?</h2>
+        <p><span>Answer:</span> "Callback hell" refers to a situation where multiple nested callbacks are used, making the code difficult to read and maintain. This often happens with asynchronous operations in Node.js. It can be mitigated by using promises or async/await syntax to handle asynchronous code in a more structured way.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>159. How do you use `setImmediate()` in Node.js?</h2>
+        <p><span>Answer:</span> `setImmediate()` is used to execute a callback after the current event loop iteration completes. It schedules the callback to run after I/O events and before the next event loop cycle, allowing you to defer execution of code asynchronously in a non-blocking manner.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>160. What is `npm audit`?</h2>
+        <p><span>Answer:</span> `npm audit` is a command used to scan your project’s dependencies for known vulnerabilities. It checks for security issues in the packages listed in your `package.json` file and provides recommendations for updating or patching affected dependencies.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>161. What is the purpose of `npm outdated`?</h2>
+        <p><span>Answer:</span> `npm outdated` is a command that checks your installed dependencies against the latest available versions. It provides a summary of which dependencies are outdated, their current versions, and the latest versions, allowing you to keep your packages up-to-date.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>162. How do you handle session management in Node.js?</h2>
+        <p><span>Answer:</span> Session management in Node.js is commonly handled using libraries like `express-session`. This middleware stores session data on the server, associating it with a unique session ID, which is sent to the client as a cookie. It can be used to store user data such as authentication status across requests.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>163. What is the difference between `app.listen()` and `server.listen()` in Express.js?</h2>
+        <p><span>Answer:</span> `app.listen()` is a convenience method in Express.js for starting an HTTP server, while `server.listen()` is a lower-level Node.js method that allows you to start an HTTP or HTTPS server directly. `app.listen()` internally calls `server.listen()`.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>164. How do you enable cross-origin resource sharing (CORS) in Node.js?</h2>
+        <p><span>Answer:</span> CORS in Node.js can be enabled by using the `cors` middleware. You can install it using `npm install cors`, and then use `app.use(cors())` in an Express.js app to allow cross-origin requests from different domains, APIs, or services.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>165. What are environment variables in Node.js?</h2>
+        <p><span>Answer:</span> Environment variables are variables that hold configuration and environment-specific data, such as API keys, database credentials, and settings that change based on the environment (e.g., development, production). In Node.js, they can be accessed via `process.env`.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>166. How do you handle form data in Express.js?</h2>
+        <p><span>Answer:</span> In Express.js, form data can be handled using middleware like `express.urlencoded()` and `express.json()` for parsing URL-encoded and JSON data from requests. For file uploads, the `multer` middleware can be used to handle multipart form data.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>167. What is `multer` in Node.js?</h2>
+        <p><span>Answer:</span> `multer` is a middleware for handling file uploads in Node.js. It processes `multipart/form-data` and saves uploaded files to disk or memory. It can be used in Express.js to handle file uploads in web forms.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>168. How do you use template engines in Node.js?</h2>
+        <p><span>Answer:</span> Template engines in Node.js allow you to dynamically generate HTML content by rendering templates with data. Popular template engines for Express.js include `EJS`, `Pug`, and `Handlebars`. You can use `app.set('view engine', 'ejs')` to configure the template engine in Express.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>169. What are WebSockets in Node.js?</h2>
+        <p><span>Answer:</span> WebSockets provide full-duplex communication channels over a single TCP connection. In Node.js, you can use the `ws` or `socket.io` libraries to implement WebSockets, enabling real-time communication for applications like chat apps, live notifications, and multiplayer games.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>170. What is the `cluster` module in Node.js?</h2>
+        <p><span>Answer:</span> The `cluster` module in Node.js allows you to create child processes (workers) that share the same server port. This enables Node.js applications to scale across multiple CPU cores, improving performance for applications handling a large number of requests.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>171. What is the difference between `req.body`, `req.query`, and `req.params` in Express.js?</h2>
+        <p><span>Answer:</span> In Express.js:
+            <ul>
+                <li>`req.body`: Contains data sent in the body of a POST request (e.g., form data or JSON).</li>
+                <li>`req.query`: Contains query parameters in the URL (e.g., `?name=value`).</li>
+                <li>`req.params`: Contains route parameters (e.g., `/user/:id` where `id` is a parameter).</li>
+            </ul>
+        </p>
+    </div>
+
+    <div class="question-answer">
+        <h2>172. What is `jsonwebtoken` in Node.js?</h2>
+        <p><span>Answer:</span> `jsonwebtoken` is a library used to sign, verify, and decode JSON Web Tokens (JWTs). It is commonly used for implementing stateless authentication, where a user’s authentication status is stored in a token sent with each request.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>173. How do you implement rate limiting in Node.js?</h2>
+        <p><span>Answer:</span> Rate limiting in Node.js can be implemented using libraries like `express-rate-limit`, which allows you to restrict the number of requests from a specific IP within a defined time window. This helps prevent abuse and protects against DoS attacks.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>174. How do you use `async/await` in Node.js?</h2>
+        <p><span>Answer:</span> `async/await` is used in Node.js to handle asynchronous operations in a more readable, synchronous-like manner. You mark a function as `async`, and inside it, use `await` to pause execution until a promise resolves. This avoids callback hell and makes error handling easier with `try/catch`.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>175. How do you protect sensitive data in Node.js?</h2>
+        <p><span>Answer:</span> Sensitive data in Node.js can be protected by using encryption, environment variables, and secure authentication methods. You can use libraries like `bcrypt` for password hashing, `crypto` for encryption, and `dotenv` for managing sensitive environment variables.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>176. How do you use the `buffer` module in Node.js?</h2>
+        <p><span>Answer:</span> The `buffer` module in Node.js is used to handle binary data directly in memory. Buffers are especially useful when working with streams or binary data from files, network requests, or other sources. The `Buffer` class allows you to manipulate raw binary data efficiently.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>177. What is the `http` module in Node.js?</h2>
+        <p><span>Answer:</span> The `http` module in Node.js is used for creating HTTP servers and making HTTP requests. It provides methods like `http.createServer()` to create a server and `http.request()` for making HTTP requests, allowing you to build both server-side and client-side applications in Node.js.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>178. What is the purpose of `npm` in Node.js?</h2>
+        <p><span>Answer:</span> `npm` (Node Package Manager) is the default package manager for Node.js. It is used for managing dependencies, installing packages, and managing project configurations. With `npm`, you can easily install, update, and manage libraries and tools required for your project.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>179. How do you make an HTTP request in Node.js?</h2>
+        <p><span>Answer:</span> In Node.js, you can make HTTP requests using the built-in `http` module or using third-party libraries like `axios` or `node-fetch`. These libraries provide simpler APIs for making GET, POST, PUT, DELETE, etc., requests to external services or APIs.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>180. How do you handle exceptions in Node.js?</h2>
+        <p><span>Answer:</span> Exceptions in Node.js can be handled using `try/catch` blocks for synchronous code and `.catch()` for promises. You can also use `process.on('uncaughtException')` to catch global exceptions. However, it’s recommended to handle errors in the application logic to ensure graceful failure.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>181. What is the `dns` module in Node.js?</h2>
+        <p><span>Answer:</span> The `dns` module provides utilities for resolving domain names into IP addresses and performing reverse DNS lookups. It supports both synchronous and asynchronous methods for DNS queries.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>182. How do you perform background tasks in Node.js?</h2>
+        <p><span>Answer:</span> Background tasks in Node.js can be handled using worker threads, child processes, or external task queues like Redis or RabbitMQ. These methods allow you to perform heavy or long-running tasks asynchronously without blocking the main event loop.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>183. What is the `crypto` module in Node.js?</h2>
+        <p><span>Answer:</span> The `crypto` module in Node.js provides cryptographic functionality such as hashing, encryption, and decryption. It is commonly used for security tasks like password hashing, generating random values, and encrypting sensitive data.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>184. How do you handle timeouts in Node.js?</h2>
+        <p><span>Answer:</span> Timeouts in Node.js can be handled using the `setTimeout()` function for scheduling functions to run after a specified delay, and `clearTimeout()` for canceling scheduled tasks. You can also use the `timeout` property in HTTP requests to set time limits for responses.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>185. How do you handle large data processing in Node.js?</h2>
+        <p><span>Answer:</span> Large data processing in Node.js can be handled using streams to process data incrementally, buffers to handle binary data efficiently, and worker threads or child processes to offload heavy computation from the event loop.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>186. How do you deploy a Node.js application to AWS?</h2>
+        <p><span>Answer:</span> To deploy a Node.js application to AWS, you can use EC2 instances to run your application, configure a web server like Nginx or Apache as a reverse proxy, set up security groups, and deploy your app via Git, FTP, or using CI/CD pipelines.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>187. What is AWS Lambda, and how does it work with Node.js?</h2>
+        <p><span>Answer:</span> AWS Lambda is a serverless compute service that allows you to run Node.js applications without provisioning or managing servers. You write functions that respond to events (such as HTTP requests or file uploads), and AWS Lambda automatically manages the scaling and execution of those functions.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>188. What is the `pm2` tool for Node.js?</h2>
+        <p><span>Answer:</span> `pm2` is a process manager for Node.js applications that helps keep your app running continuously. It can manage multiple application instances, monitor resource usage, and handle automatic restarts. It is particularly useful for production environments.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>189. How do you monitor Node.js applications?</h2>
+        <p><span>Answer:</span> Node.js applications can be monitored using tools like `pm2`, `New Relic`, and `Datadog`. These tools provide insights into application performance, error rates, memory usage, and other key metrics, allowing you to identify bottlenecks and issues in production.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>190. What is the `express-validator` package?</h2>
+        <p><span>Answer:</span> `express-validator` is a library for validating and sanitizing user input in Express.js applications. It provides middleware that can be used to check input fields for validity (e.g., checking if an email is valid) and sanitize inputs before they are processed.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>191. How do you debug a Node.js application?</h2>
+        <p><span>Answer:</span> You can debug a Node.js application using the built-in `debugger` statement, which pauses execution and allows you to inspect variables. You can also use the `node --inspect` flag to start the debugger and connect with Chrome DevTools or Visual Studio Code for interactive debugging.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>192. What is the role of `console` in Node.js?</h2>
+        <p><span>Answer:</span> The `console` module in Node.js provides simple methods for logging to the console. Common methods include `console.log()`, `console.error()`, and `console.warn()`, which are used for outputting information, warnings, and error messages during application execution.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>193. How do you handle concurrency in Node.js?</h2>
+        <p><span>Answer:</span> Concurrency in Node.js is handled through the event-driven, non-blocking model. Asynchronous operations such as I/O tasks (e.g., file reading, database queries) are handled using callbacks, promises, or async/await. For parallel computation, Node.js can use worker threads or child processes.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>194. What are `process.argv` and `process.env` in Node.js?</h2>
+        <p><span>Answer:</span> `process.argv` is an array that contains command-line arguments passed to the Node.js script. `process.env` is an object that contains environment variables for the current process. You can use `process.argv` to accept user inputs and `process.env` to access sensitive configurations.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>195. What is the purpose of `module.exports` in Node.js?</h2>
+        <p><span>Answer:</span> `module.exports` is used in Node.js to export functions, objects, or variables from a module so that they can be imported and used in other modules. It allows you to create reusable and modular code in your applications.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>196. What is the purpose of `require()` in Node.js?</h2>
+        <p><span>Answer:</span> `require()` is a built-in function in Node.js used to import modules, JSON files, or local files into your application. It loads and executes the module and returns its exported content.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>197. How do you handle file uploads in Node.js?</h2>
+        <p><span>Answer:</span> File uploads in Node.js are commonly handled using libraries like `multer`, which processes multipart/form-data requests. The uploaded files are then stored in memory or saved to disk, depending on the configuration.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>198. What are `process.on('exit')` and `process.on('SIGINT')`?</h2>
+        <p><span>Answer:</span> `process.on('exit')` is an event that allows you to execute a function when the Node.js process is about to exit. `process.on('SIGINT')` is triggered by a termination signal (e.g., Ctrl+C), allowing you to gracefully shut down the application before it exits.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>199. How do you manage database connections in Node.js?</h2>
+        <p><span>Answer:</span> Database connections in Node.js can be managed using database libraries like `mongoose` for MongoDB or `pg` for PostgreSQL. Connection pooling is used to maintain a set of reusable database connections, improving performance by reducing the need to constantly establish new connections.</p>
+    </div>
+
+    <div class="question-answer">
+        <h2>200. What is the purpose of `async_hooks` in Node.js?</h2>
+        <p><span>Answer:</span> The `async_hooks` module in Node.js provides an API to track the lifecycle of asynchronous resources. It can be used to monitor the creation, execution, and destruction of asynchronous operations, which is useful for debugging, profiling, and tracing async code execution.</p>
+    </div>
+
+    <!-- Add more questions here -->
+
+    <div class="page-nav">
+        <a href="#">Previous</a>
+        <a href="#">Next</a>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Node.js Interview Guide. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

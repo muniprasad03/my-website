@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.NET Design Pattern Interview Questions and Answers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+        .question {
+            background-color: #e9ecef;
+            padding: 10px;
+            margin: 10px 0;
+            font-weight: bold;
+            border-left: 5px solid #007bff;
+        }
+        .answer {
+            padding: 10px 20px;
+            background-color: #f8f9fa;
+            border-left: 5px solid #28a745;
+            margin-bottom: 20px;
+        }
+        pre {
+            background-color: #f1f1f1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+        .question-answer-container {
+            margin-bottom: 20px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Top 50 .NET Design Pattern Interview Questions and Answers</h1>
+    
+    <!-- Question 1 -->
+    <div class="question-answer-container">
+        <div class="question">1. What are design patterns?</div>
+        <div class="answer">
+            <p>Design patterns are reusable solutions to common problems encountered in software design. They represent best practices that can be applied in various situations to solve particular types of problems. Design patterns are not code but rather templates for solving problems in a specific context.</p>
+        </div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question-answer-container">
+        <div class="question">2. Can you explain the difference between Creational, Structural, and Behavioral design patterns?</div>
+        <div class="answer">
+            <p><strong>Creational Patterns:</strong> Deal with object creation mechanisms, trying to create objects in a manner suitable to the situation. Examples: Singleton, Factory Method, Abstract Factory, Builder, and Prototype.</p>
+            <p><strong>Structural Patterns:</strong> Deal with object composition and typically help to reduce complexity by identifying simple ways to realize relationships between entities. Examples: Adapter, Decorator, Facade, Composite, and Flyweight.</p>
+            <p><strong>Behavioral Patterns:</strong> Concern the communication between objects, focusing on how objects interact and fulfill responsibilities. Examples: Observer, Strategy, Command, State, and Chain of Responsibility.</p>
+        </div>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question-answer-container">
+        <div class="question">3. What is the Singleton pattern in .NET?</div>
+        <div class="answer">
+            <p>The <strong>Singleton</strong> pattern ensures that a class has only one instance and provides a global point of access to that instance. This pattern is useful when you need to control access to shared resources, such as a database connection or configuration settings.</p>
+            <pre>
+public class Singleton
+{
+    private static Singleton instance;
+    private static readonly object lockObj = new object();
+
+    private Singleton() { }
+
+    public static Singleton Instance
+    {
+        get
+        {
+            lock (lockObj)
+            {
+                if (instance == null)
+                {
+                    instance = new Singleton();
+                }
+                return instance;
+            }
+        }
+    }
+}
+            </pre>
+        </div>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question-answer-container">
+        <div class="question">4. What is the Factory Method pattern?</div>
+        <div class="answer">
+            <p>The <strong>Factory Method</strong> pattern defines an interface for creating objects but allows subclasses to alter the type of objects that will be created. It is typically used when a class cannot anticipate the type of objects it needs to create.</p>
+            <pre>
+public abstract class Product
+{
+    public abstract void Use();
+}
+
+public class ConcreteProductA : Product
+{
+    public override void Use() { Console.WriteLine("Using Product A"); }
+}
+
+public class ConcreteProductB : Product
+{
+    public override void Use() { Console.WriteLine("Using Product B"); }
+}
+
+public abstract class Creator
+{
+    public abstract Product FactoryMethod();
+}
+
+public class ConcreteCreatorA : Creator
+{
+    public override Product FactoryMethod() => new ConcreteProductA();
+}
+
+public class ConcreteCreatorB : Creator
+{
+    public override Product FactoryMethod() => new ConcreteProductB();
+}
+            </pre>
+        </div>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question-answer-container">
+        <div class="question">5. What is the Observer pattern?</div>
+        <div class="answer">
+            <p>The <strong>Observer</strong> pattern is a behavioral design pattern where an object (called the <strong>subject</strong>) maintains a list of its dependent observers, and notifies them automatically of any state changes, typically by calling one of their methods.</p>
+            <pre>
+public interface IObserver
+{
+    void Update(string message);
+}
+
+public class ConcreteObserver : IObserver
+{
+    public void Update(string message)
+    {
+        Console.WriteLine("Received message: " + message);
+    }
+}
+
+public class Subject
+{
+    private List<IObserver> observers = new List<IObserver>();
+
+    public void Attach(IObserver observer)
+    {
+        observers.Add(observer);
+    }
+
+    public void Detach(IObserver observer)
+    {
+        observers.Remove(observer);
+    }
+
+    public void Notify(string message)
+    {
+        foreach (var observer in observers)
+        {
+            observer.Update(message);
+        }
+    }
+}
+            </pre>
+        </div>
+    </div>
+
+<!-- Question 6 -->
+<div class="question-answer-container">
+    <div class="question">6. Explain the Strategy pattern.</div>
+    <div class="answer">
+        <p>The <strong>Strategy</strong> pattern is a behavioral design pattern that defines a family of algorithms, encapsulates each one, and makes them interchangeable. The strategy allows a client to choose the algorithm to use at runtime.</p>
+        <pre>
+public interface IStrategy
+{
+    void Execute();
+}
+
+public class ConcreteStrategyA : IStrategy
+{
+    public void Execute() { Console.WriteLine("Executing strategy A"); }
+}
+
+public class ConcreteStrategyB : IStrategy
+{
+    public void Execute() { Console.WriteLine("Executing strategy B"); }
+}
+
+public class Context
+{
+    private IStrategy _strategy;
+
+    public Context(IStrategy strategy)
+    {
+        _strategy = strategy;
+    }
+
+    public void SetStrategy(IStrategy strategy)
+    {
+        _strategy = strategy;
+    }
+
+    public void ExecuteStrategy()
+    {
+        _strategy.Execute();
+    }
+}
+        </pre>
+    </div>
+</div>
+
+<!-- Question 7 -->
+<div class="question-answer-container">
+    <div class="question">7. What is the Adapter pattern in .NET?</div>
+    <div class="answer">
+        <p>The <strong>Adapter</strong> pattern is a structural design pattern that allows incompatible interfaces to work together. It acts as a bridge between two interfaces by converting one interface into another that a client expects.</p>
+        <pre>
+public interface ITarget
+{
+    void Request();
+}
+
+public class Adaptee
+{
+    public void SpecificRequest()
+    {
+        Console.WriteLine("Specific request from adaptee.");
+    }
+}
+
+public class Adapter : ITarget
+{
+    private readonly Adaptee _adaptee;
+
+    public Adapter(Adaptee adaptee)
+    {
+        _adaptee = adaptee;
+    }
+
+    public void Request()
+    {
+        _adaptee.SpecificRequest();
+    }
+}
+        </pre>
+    </div>
+</div>
+
+<!-- Question 8 -->
+<div class="question-answer-container">
+    <div class="question">8. What is the Decorator pattern?</div>
+    <div class="answer">
+        <p>The <strong>Decorator</strong> pattern is a structural pattern that allows for adding new functionality to an object without altering its structure. It is used to extend the behavior of objects in a flexible and reusable way.</p>
+        <pre>
+public interface IComponent
+{
+    void Operation();
+}
+
+public class ConcreteComponent : IComponent
+{
+    public void Operation() { Console.WriteLine("Operation in ConcreteComponent."); }
+}
+
+public class Decorator : IComponent
+{
+    protected IComponent _component;
+
+    public Decorator(IComponent component)
+    {
+        _component = component;
+    }
+
+    public virtual void Operation()
+    {
+        _component.Operation();
+    }
+}
+
+public class ConcreteDecoratorA : Decorator
+{
+    public ConcreteDecoratorA(IComponent component) : base(component) { }
+
+    public override void Operation()
+    {
+        base.Operation();
+        Console.WriteLine("Added behavior in ConcreteDecoratorA.");
+    }
+}
+        </pre>
+    </div>
+</div>
+
+<!-- Question 9 -->
+<div class="question-answer-container">
+    <div class="question">9. What is the Composite pattern?</div>
+    <div class="answer">
+        <p>The <strong>Composite</strong> pattern is a structural pattern that allows you to compose objects into tree-like structures to represent part-whole hierarchies. It enables clients to treat individual objects and compositions of objects uniformly.</p>
+        <pre>
+public interface IComponent
+{
+    void Operation();
+}
+
+public class Leaf : IComponent
+{
+    public void Operation() { Console.WriteLine("Leaf operation."); }
+}
+
+public class Composite : IComponent
+{
+    private List<IComponent> _children = new List<IComponent>();
+
+    public void Add(IComponent component) { _children.Add(component); }
+    public void Remove(IComponent component) { _children.Remove(component); }
+
+    public void Operation()
+    {
+        foreach (var child in _children)
+        {
+            child.Operation();
+        }
+    }
+}
+        </pre>
+    </div>
+</div>
+
+<!-- Question 10 -->
+<div class="question-answer-container">
+    <div class="question">10. What is the Flyweight pattern?</div>
+    <div class="answer">
+        <p>The <strong>Flyweight</strong> pattern is a structural design pattern that is used to reduce the memory usage by sharing as much data as possible with similar objects. It is primarily used to efficiently manage large numbers of small, similar objects.</p>
+        <pre>
+public interface IFlyweight
+{
+    void Operation(string extrinsicState);
+}
+
+public class ConcreteFlyweight : IFlyweight
+{
+    public void Operation(string extrinsicState)
+    {
+        Console.WriteLine("Flyweight operation with state: " + extrinsicState);
+    }
+}
+
+public class FlyweightFactory
+{
+    private Dictionary<string, IFlyweight> _flyweights = new Dictionary<string, IFlyweight>();
+
+    public IFlyweight GetFlyweight(string key)
+    {
+        if (!_flyweights.ContainsKey(key))
+        {
+            _flyweights[key] = new ConcreteFlyweight();
+        }
+        return _flyweights[key];
+    }
+}
+        </pre>
+    </div>
+</div>
+
+<!-- Question 11 -->
+<div class="question-answer-container">
+    <div class="question">11. What is the State pattern?</div>
+    <div class="answer">
+        <p>The <strong>State</strong> pattern is a behavioral pattern that allows an object to alter its behavior when its internal state changes. The object will appear to change its class as it changes states.</p>
+        <pre>
+public interface IState
+{
+    void Handle(Context context);
+}
+
+public class ConcreteStateA : IState
+{
+    public void Handle(Context context)
+    {
+        Console.WriteLine("State A is handling the request.");
+        context.State = new ConcreteStateB();
+    }
+}
+
+public class ConcreteStateB : IState
+{
+    public void Handle(Context context)
+    {
+        Console.WriteLine("State B is handling the request.");
+        context.State = new ConcreteStateA();
+    }
+}
+
+public class Context
+{
+    public IState State { get; set; }
+
+    public Context(IState state)
+    {
+        State = state;
+    }
+
+    public void Request()
+    {
+        State.Handle(this);
+    }
+}
+        </pre>
+    </div>
+</div>
+
+<!-- Question 12 -->
+<div class="question-answer-container">
+    <div class="question">12. What is the Command pattern?</div>
+    <div class="answer">
+        <p>The <strong>Command</strong> pattern is a behavioral design pattern that encapsulates a request as an object, thereby allowing for parameterization of clients with different requests, queuing of requests, and logging of the requests.</p>
+        <pre>
+public interface ICommand
+{
+    void Execute();
+}
+
+public class ConcreteCommand : ICommand
+{
+    private Receiver _receiver;
+
+    public ConcreteCommand(Receiver receiver)
+    {
+        _receiver = receiver;
+    }
+
+    public void Execute()
+    {
+        _receiver.Action();
+    }
+}
+
+public class Receiver
+{
+    public void Action()
+    {
+        Console.WriteLine("Receiver action executed.");
+    }
+}
+
+public class Invoker
+{
+    private ICommand _command;
+
+    public void SetCommand(ICommand command)
+    {
+        _command = command;
+    }
+
+    public void ExecuteCommand()
+    {
+        _command.Execute();
+    }
+}
+        </pre>
+    </div>
+</div>
+
+<!-- Question 13 -->
+<div class="question-answer-container">
+    <div class="question">13. What is the Chain of Responsibility pattern?</div>
+    <div class="answer">
+        <p>The <strong>Chain of Responsibility</strong> pattern is a behavioral design pattern that allows passing a request along a chain of handlers. Each handler decides whether to process the request or pass it to the next handler in the chain.</p>
+        <pre>
+public abstract class Handler
+{
+    protected Handler _nextHandler;
+
+    public void SetNext(Handler handler)
+    {
+        _nextHandler = handler;
+    }
+
+    public abstract void HandleRequest(string request);
+}
+
+public class ConcreteHandlerA : Handler
+{
+    public override void HandleRequest(string request)
+    {
+        if (request == "A")
+        {
+            Console.WriteLine("Handler A processing request.");
+        }
+        else if (_nextHandler != null)
+        {
+            _nextHandler.HandleRequest(request);
+        }
+    }
+}
+
+public class ConcreteHandlerB : Handler
+{
+    public override void HandleRequest(string request)
+    {
+        if (request == "B")
+        {
+            Console.WriteLine("Handler B processing request.");
+        }
+        else if (_nextHandler != null)
+        {
+            _nextHandler.HandleRequest(request);
+        }
+    }
+}
+        </pre>
+    </div>
+</div>
+
+<!-- Question 14 -->
+<div class="question-answer-container">
+    <div class="question">14. What is the Template Method pattern?</div>
+    <div class="answer">
+        <p>The <strong>Template Method</strong> pattern is a behavioral design pattern that defines the skeleton of an algorithm in the base class, allowing subclasses to implement the concrete steps of the algorithm.</p>
+        <pre>
+public abstract class AbstractClass
+{
+    public void TemplateMethod()
+    {
+        Step1();
+        Step2();
+    }
+
+    protected abstract void Step1();
+    protected abstract void Step2();
+}
+
+public class ConcreteClassA : AbstractClass
+{
+    protected override void Step1()
+    {
+        Console.WriteLine("ConcreteClassA Step1");
+    }
+
+    protected override void Step2()
+    {
+        Console.WriteLine("ConcreteClassA Step2");
+    }
+}
+
+public class ConcreteClassB : AbstractClass
+{
+    protected override void Step1()
+    {
+        Console.WriteLine("ConcreteClassB Step1");
+    }
+
+    protected override void Step2()
+    {
+        Console.WriteLine("ConcreteClassB Step2");
+    }
+}
+        </pre>
+    </div>
+</div>
+
+<!-- Question 15 -->
+<div class="question-answer-container">
+    <div class="question">15. What is the Proxy pattern?</div>
+    <div class="answer">
+        <p>The <strong>Proxy</strong> pattern is a structural design pattern that provides an object representing another object. It acts as an intermediary between the client and the real object, allowing additional behavior such as access control or lazy initialization.</p>
+        <pre>
+public interface ISubject
+{
+    void Request();
+}
+
+public class RealSubject : ISubject
+{
+    public void Request() { Console.WriteLine("RealSubject handling request."); }
+}
+
+public class Proxy : ISubject
+{
+    private RealSubject _realSubject;
+
+    public void Request()
+    {
+        if (_realSubject == null)
+        {
+            _realSubject = new RealSubject();
+        }
+        _realSubject.Request();
+    }
+}
+        </pre>
+    </div>
+</div>
+
+<!-- More questions can be added in the same pattern -->
+
+<!-- Question 16 -->
+<div class="question-answer-container">
+    <div class="question">16. What is the Iterator pattern?</div>
+    <div class="answer">
+        <p>The <strong>Iterator</strong> pattern is a behavioral design pattern that provides a way to access elements of a collection sequentially without exposing the underlying representation of the collection.</p>
+        <pre>
+public interface IIterator
+{
+    bool HasNext();
+    object Next();
+}
+
+public class ConcreteIterator : IIterator
+{
+    private List<object> _collection;
+    private int _position = 0;
+
+    public ConcreteIterator(List<object> collection)
+    {
+        _collection = collection;
+    }
+
+    public bool HasNext() => _position < _collection.Count;
+
+    public object Next() => _collection[_position++];
+}
+
+public class Aggregate
+{
+    private List<object> _items = new List<object>();
+
+    public void AddItem(object item) { _items.Add(item); }
+
+    public IIterator CreateIterator() => new ConcreteIterator(_items);
+}
+        </pre>
+    </div>
+</div>
+
+<!-- Question 17 -->
+<div class="question-answer-container">
+    <div class="question">17. What is the Mediator pattern?</div>
+    <div class="answer">
+        <p>The <strong>Mediator</strong> pattern is a behavioral design pattern that defines an object that controls and coordinates communication between a group of objects, promoting loose coupling by preventing objects from referring to each other explicitly.</p>
+        <pre>
+public class Mediator
+{
+    private List<Colleague> _colleagues = new List<Colleague>();
+
+    public void Register(Colleague colleague)
+    {
+        _colleagues.Add(colleague);
+    }
+
+    public void Send(string message, Colleague sender)
+    {
+        foreach (var colleague in _colleagues)
+        {
+            if (colleague != sender)
+            {
+                colleague.Receive(message);
+            }
+        }
+    }
+}
+
+public class Colleague
+{
+    private Mediator _mediator;
+    public string Name { get; set; }
+
+    public Colleague(Mediator mediator, string name)
+    {
+        _mediator = mediator;
+        Name = name;
+        _mediator.Register(this);
+    }
+
+    public void Send(string message)
+    {
+        _mediator.Send(message, this);
+    }
+
+    public void Receive(string message)
+    {
+        Console.WriteLine($"{Name} received: {message}");
+    }
+}
+        </pre>
+    </div>
+</div>
+
+<!-- Question 18 -->
+<div class="question-answer-container">
+    <div class="question">18. What is the Memento pattern?</div>
+    <div class="answer">
+        <p>The <strong>Memento</strong> pattern is a behavioral design pattern that allows you to capture and externalize an object's internal state so that it can be restored to that state later, without violating encapsulation.</p>
+        <pre>
+public class Memento
+{
+    public string State { get; }
+
+    public Memento(string state)
+    {
+        State = state;
+    }
+}
+
+public class Originator
+{
+    public string State { get; set; }
+
+    public Memento SaveState()
+    {
+        return new Memento(State);
+    }
+
+    public void RestoreState(Memento memento)
+    {
+        State = memento.State;
+    }
+}
+
+public class Caretaker
+{
+    private Memento _memento;
+
+    public void SaveState(Originator originator)
+    {
+        _memento = originator.SaveState();
+    }
+
+    public void RestoreState(Originator originator)
+    {
+        originator.RestoreState(_memento);
+    }
+}
+        </pre>
+    </div>
+</div>
+
+<!-- Question 19 -->
+<div class="question-answer-container">
+    <div class="question">19. What is the Abstract Factory pattern?</div>
+    <div class="answer">
+        <p>The <strong>Abstract Factory</strong> pattern is a creational design pattern that provides an interface for creating families of related or dependent objects without specifying their concrete classes.</p>
+        <pre>
+public interface IProductA
+{
+    void FeatureA();
+}
+
+public interface IProductB
+{
+    void FeatureB();
+}
+
+public class ConcreteProductA1 : IProductA
+{
+    public void FeatureA() { Console.WriteLine("Feature A1"); }
+}
+
+public class ConcreteProductB1 : IProductB
+{
+    public void FeatureB() { Console.WriteLine("Feature B1"); }
+}
+
+public class ConcreteFactory1
+{
+    public IProductA CreateProductA() => new ConcreteProductA1();
+    public IProductB CreateProductB() => new ConcreteProductB1();
+}
+        </pre>
+    </div>
+</div>
+
+<!-- Question 20 -->
+<div class="question-answer-container">
+    <div class="question">20. What is the Builder pattern?</div>
+    <div class="answer">
+        <p>The <strong>Builder</strong> pattern is a creational design pattern that allows constructing complex objects step by step. It allows for the creation of different representations of an object using the same construction process.</p>
+        <pre>
+public class Product
+{
+    public string PartA { get; set; }
+    public string PartB { get; set; }
+}
+
+public abstract class Builder
+{
+    public abstract void BuildPartA();
+    public abstract void BuildPartB();
+    public abstract Product GetResult();
+}
+
+public class ConcreteBuilder : Builder
+{
+    private Product _product = new Product();
+
+    public override void BuildPartA() { _product.PartA = "Part A"; }
+    public override void BuildPartB() { _product.PartB = "Part B"; }
+
+    public override Product GetResult() => _product;
+}
+
+public class Director
+{
+    private Builder _builder;
+
+    public Director(Builder builder) { _builder = builder; }
+
+    public void Construct()
+    {
+        _builder.BuildPartA();
+        _builder.BuildPartB();
+    }
+}
+        </pre>
+    </div>
+</div>
+
+<!-- Question 21 -->
+<div class="question-answer-container">
+    <div class="question">21. What is the Proxy pattern?</div>
+    <div class="answer">
+        <p>The <strong>Proxy</strong> pattern is a structural design pattern that provides an object representing another object. It acts as an intermediary between the client and the real object, allowing additional behavior such as access control or lazy initialization.</p>
+        <pre>
+public interface ISubject
+{
+    void Request();
+}
+
+public class RealSubject : ISubject
+{
+    public void Request() { Console.WriteLine("RealSubject handling request."); }
+}
+
+public class Proxy : ISubject
+{
+    private RealSubject _realSubject;
+
+    public void Request()
+    {
+        if (_realSubject == null)
+        {
+            _realSubject = new RealSubject();
+        }
+        _realSubject.Request();
+    }
+}
+        </pre>
+    </div>
+</div>
+
+<!-- Question 22 -->
+<div class="question-answer-container">
+    <div class="question">22. What is the Facade pattern?</div>
+    <div class="answer">
+        <p>The <strong>Facade</strong> pattern is a structural design pattern that provides a simplified interface to a complex subsystem, making it easier to use.</p>
+        <pre>
+public class SubsystemA
+{
+    public void OperationA() { Console.WriteLine("SubsystemA operation."); }
+}
+
+public class SubsystemB
+{
+    public void OperationB() { Console.WriteLine("SubsystemB operation."); }
+}
+
+public class Facade
+{
+    private SubsystemA _subsystemA;
+    private SubsystemB _subsystemB;
+
+    public Facade()
+    {
+        _subsystemA = new SubsystemA();
+        _subsystemB = new SubsystemB();
+    }
+
+    public void Operation()
+    {
+        _subsystemA.OperationA();
+        _subsystemB.OperationB();
+    }
+}
+        </pre>
+    </div>
+</div>
+
+<!-- Question 23 -->
+<div class="question-answer-container">
+    <div class="question">23. What is the Interpreter pattern?</div>
+    <div class="answer">
+        <p>The <strong>Interpreter</strong> pattern is a behavioral design pattern that defines a way to evaluate language grammar or expressions. It is often used to interpret simple sentences or expressions in a programming language.</p>
+        <pre>
+public abstract class Expression
+{
+    public abstract void Interpret(Context context);
+}
+
+public class TerminalExpression : Expression
+{
+    private string _value;
+
+    public TerminalExpression(string value)
+    {
+        _value = value;
+    }
+
+    public override void Interpret(Context context)
+    {
+        Console.WriteLine($"Interpreting terminal expression: {_value}");
+    }
+}
+
+public class Context { }
+
+public class Client
+{
+    public void Execute()
+    {
+        Context context = new Context();
+        Expression expression = new TerminalExpression("Some value");
+        expression.Interpret(context);
+    }
+}
+        </pre>
+    </div>
+</div>
+
+<!-- Question 24 -->
+<div class="question-answer-container">
+    <div class="question">24. What is the Bridge pattern?</div>
+    <div class="answer">
+        <p>The <strong>Bridge</strong> pattern is a structural design pattern that decouples an abstraction from its implementation, allowing them to vary independently.</p>
+        <pre>
+public abstract class Abstraction
+{
+    protected Implementor _implementor;
+
+    public Abstraction(Implementor implementor)
+    {
+        _implementor = implementor;
+    }
+
+    public abstract void Operation();
+}
+
+public class RefinedAbstraction : Abstraction
+{
+    public RefinedAbstraction(Implementor implementor) : base(implementor) { }
+
+    public override void Operation()
+    {
+        _implementor.Operation();
+    }
+}
+
+public interface Implementor
+{
+    void Operation();
+}
+
+public class ConcreteImplementorA : Implementor
+{
+    public void Operation() { Console.WriteLine("ConcreteImplementorA operation"); }
+}
+
+public class ConcreteImplementorB : Implementor
+{
+    public void Operation() { Console.WriteLine("ConcreteImplementorB operation"); }
+}
+        </pre>
+    </div>
+</div>
+
+</div>
+<!-- Continue adding more questions here -->
+
+
+    <!-- Footer -->
+    <footer>
+        <p>Created by OpenAI - All rights reserved. 2024</p>
+    </footer>
+
+</div>
+
+</body>
+</html>
+
+
+
+
