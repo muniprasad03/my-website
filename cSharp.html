@@ -1,32 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>C# Interview Questions & Answers</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-        }
-        h1, h2 {
-            color: #2c3e50;
-        }
-        .question {
-            font-weight: bold;
-            color: #2980b9;
-        }
-        .answer {
-            margin-bottom: 20px;
-        }
-        ul {
-            margin: 0;
-            padding: 0 20px;
-        }
-    </style>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>C# Interview Questions & Answers</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                margin: 20px;
+            }
+            h1, h2 {
+                color: #2c3e50;
+            }
+            .question {
+                font-weight: bold;
+                color: #2980b9;
+            }
+            .top-buttons {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 20px;
+            }
+            .top-buttons a {
+                text-decoration: none;
+                color: white;
+                background-color: #007BFF;
+                padding: 10px 20px;
+                border-radius: 5px;
+            }
+            .top-buttons a:hover {
+                background-color: #0056b3;
+            }
+            .move-to-top {
+                position: fixed;
+                bottom: 20px;
+                left: 20px;
+                text-decoration: none;
+                color: white;
+                background-color: #007BFF;
+                padding: 10px 20px;
+                border-radius: 5px;
+            }
+            .move-to-top:hover {
+                background-color: #0056b3;
+            }
+        </style>
+    </head>
 <body>
+    <div class="top-buttons">
+        <a href="index.html">Home</a>
+      
+    </div>
     <h1>C# Interview Questions & Answers</h1>
 
     <div class="qa">
@@ -519,5 +544,14 @@
             </ul>
         </p>
     </div>
+     <!-- Content goes here -->
+     <a href="#top" class="move-to-top" id="move-to-top">Move to Top</a>
+
+     <script>
+        document.getElementById('move-to-top').addEventListener('click', function(event) {
+            event.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>

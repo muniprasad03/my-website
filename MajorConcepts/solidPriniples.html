@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOLID Principles and C# .NET Interview Questions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #34495e;
+            padding-bottom: 10px;
+        }
+        h3 {
+            color: #2980b9;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .question-answer {
+            margin-left: 20px;
+        }
+        .question {
+            font-weight: bold;
+            color: #27ae60;
+        }
+        .answer {
+            color: #7f8c8d;
+        }
+        .solid {
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>SOLID Principles and C# .NET Interview Questions</h1>
+
+    <!-- SOLID Principles Section -->
+    <div class="solid">
+        <h2>SOLID Principles Theory</h2>
+        <p>SOLID is a set of five design principles that help developers write clean, maintainable, and scalable software. The principles are:</p>
+
+        <ul>
+            <li>
+                <h3>1. Single Responsibility Principle (SRP)</h3>
+                <p>A class should have only one reason to change, meaning that it should only have one job or responsibility. This promotes high cohesion and low coupling in software design.</p>
+            </li>
+            <li>
+                <h3>2. Open/Closed Principle (OCP)</h3>
+                <p>Software entities (classes, modules, functions, etc.) should be open for extension but closed for modification. This means you should be able to add new functionality to a system without changing existing code.</p>
+            </li>
+            <li>
+                <h3>3. Liskov Substitution Principle (LSP)</h3>
+                <p>Objects of a superclass should be replaceable with objects of a subclass without affecting the correctness of the program. In other words, a derived class must be substitutable for its base class.</p>
+            </li>
+            <li>
+                <h3>4. Interface Segregation Principle (ISP)</h3>
+                <p>Clients should not be forced to depend on interfaces they do not use. Instead of having a large interface, create multiple smaller, more specific interfaces that clients can implement as needed.</p>
+            </li>
+            <li>
+                <h3>5. Dependency Inversion Principle (DIP)</h3>
+                <p>High-level modules should not depend on low-level modules. Both should depend on abstractions. Additionally, abstractions should not depend on details; details should depend on abstractions. This encourages the use of dependency injection.</p>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Interview Questions and Answers Section -->
+    <h2>Top 100 C# .NET Interview Questions and Answers</h2>
+    
+    <div class="question-answer">
+        <ul>
+            <li>
+                <div class="question">1. What is the difference between a value type and a reference type in C#?</div>
+                <div class="answer">A value type holds data directly, while a reference type holds a reference (pointer) to the data. Examples of value types are structs and enums, whereas reference types include objects, arrays, and delegates.</div>
+            </li>
+            <li>
+                <div class="question">2. What is the purpose of the "using" statement in C#?</div>
+                <div class="answer">The "using" statement is used to ensure that resources like file streams or database connections are properly disposed of after use. It helps prevent memory leaks.</div>
+            </li>
+            <li>
+                <div class="question">3. Explain the difference between "ref" and "out" parameters in C#.</div>
+                <div class="answer">Both "ref" and "out" are used to pass parameters by reference. However, with "ref", the variable must be initialized before it is passed to the method, while with "out", the variable doesn't need to be initialized before passing it.</div>
+            </li>
+            <li>
+                <div class="question">4. What is the difference between "abstract class" and "interface" in C#?</div>
+                <div class="answer">An abstract class can have both abstract (unimplemented) and non-abstract (implemented) methods, while an interface can only contain method signatures without any implementation. Additionally, a class can implement multiple interfaces but can inherit only one abstract class.</div>
+            </li>
+            <li>
+                <div class="question">5. What is the purpose of the "async" and "await" keywords in C#?</div>
+                <div class="answer">The "async" keyword is used to define an asynchronous method, and "await" is used to pause the execution of the method until the awaited task completes. This allows for non-blocking I/O operations.</div>
+            </li>
+            <li>
+                <div class="question">6. What are delegates in C#?</div>
+                <div class="answer">Delegates are type-safe function pointers in C#. They hold references to methods and allow you to invoke those methods indirectly. Delegates are commonly used in event handling and callback mechanisms.</div>
+            </li>
+            <li>
+                <div class="question">7. Explain the concept of "Garbage Collection" in .NET.</div>
+                <div class="answer">Garbage collection in .NET is the automatic memory management process where the runtime reclaims memory used by objects that are no longer in use by the application. This prevents memory leaks and helps manage memory efficiently.</div>
+            </li>
+            <li>
+                <div class="question">8. What is the difference between "String" and "StringBuilder" in C#?</div>
+                <div class="answer">The "String" class is immutable, meaning once a string object is created, it cannot be changed. "StringBuilder", on the other hand, is mutable and is used when you need to modify a string repeatedly, such as in loops, to avoid performance issues with string concatenation.</div>
+            </li>
+            <li>
+                <div class="question">9. What is the use of the "lock" statement in C#?</div>
+                <div class="answer">The "lock" statement is used to ensure that only one thread can access a particular section of code at a time, preventing race conditions and ensuring thread safety.</div>
+            </li>
+            <li>
+                <div class="question">10. What is the difference between "Array" and "ArrayList" in C#?</div>
+                <div class="answer">An "Array" has a fixed size, and elements are of the same data type. An "ArrayList" is dynamic, can grow in size, and can hold elements of different data types.</div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="question-answer">
+        <!-- Repeat similar structure for more questions (11 to 100) -->
+        <ul>
+            <li>
+                <div class="question">11. What is an event in C#?</div>
+                <div class="answer">An event in C# is a way to provide notifications to other classes or objects about changes or actions. It is typically used in the publisher-subscriber model, where one object raises an event and other objects listen for it.</div>
+            </li>
+            <li>
+                <div class="question">12. What is the difference between "IEnumerable" and "IEnumerator" in C#?</div>
+                <div class="answer">"IEnumerable" provides the ability to iterate over a collection, and it has a method "GetEnumerator" that returns an IEnumerator. "IEnumerator" is responsible for the actual iteration and contains methods like "MoveNext" and "Current" to traverse the collection.</div>
+            </li>
+            <!-- Continue with other questions up to 100 -->
+        </ul>
+        <ul>
+            <li>
+                <div class="question">13. What is a "namespace" in C#?</div>
+                <div class="answer">A namespace is a container for classes, structs, enums, and interfaces, providing a way to organize code and avoid name conflicts between classes or other types with the same name.</div>
+            </li>
+            <li>
+                <div class="question">14. What is a "constructor" in C#?</div>
+                <div class="answer">A constructor is a special method that is called when an object of a class is instantiated. It is used to initialize the object's properties and allocate resources.</div>
+            </li>
+            <li>
+                <div class="question">15. What is the difference between "const" and "readonly" in C#?</div>
+                <div class="answer">A "const" field is evaluated at compile-time and cannot be changed after compilation. A "readonly" field can be assigned a value either during declaration or in the constructor, and its value can be set only once during object initialization.</div>
+            </li>
+            <li>
+                <div class="question">16. What is "boxing" and "unboxing" in C#?</div>
+                <div class="answer">Boxing is the process of converting a value type to a reference type (e.g., converting an integer to an object). Unboxing is the reverse process of converting a reference type back to a value type.</div>
+            </li>
+            <li>
+                <div class="question">17. What is a "delegate" in C#?</div>
+                <div class="answer">A delegate is a type that represents references to methods with a particular parameter list and return type. It allows methods to be passed as parameters or used as callbacks.</div>
+            </li>
+            <li>
+                <div class="question">18. What is "lambda expression" in C#?</div>
+                <div class="answer">A lambda expression is a shorthand way of writing an anonymous function or method. It can be used to create delegate instances or implement LINQ queries more concisely.</div>
+            </li>
+            <li>
+                <div class="question">19. Explain the difference between "String" and "StringBuilder".</div>
+                <div class="answer">The "String" class in C# is immutable, meaning once a string object is created, it cannot be changed. "StringBuilder" is mutable, allowing for efficient modification of strings, particularly useful when concatenating in loops.</div>
+            </li>
+            <li>
+                <div class="question">20. What are "Extension Methods" in C#?</div>
+                <div class="answer">Extension methods allow you to add new functionality to existing types (classes, interfaces, etc.) without modifying their source code. They are defined as static methods in static classes but are called as if they were instance methods.</div>
+            </li>
+            <li>
+                <div class="question">21. What is the purpose of the "virtual" keyword in C#?</div>
+                <div class="answer">The "virtual" keyword is used to declare a method or property that can be overridden in derived classes. It allows method overriding for polymorphism.</div>
+            </li>
+            <li>
+                <div class="question">22. What is the difference between "public", "private", "protected", and "internal" access modifiers?</div>
+                <div class="answer">"public" allows access from any class, "private" restricts access to the containing class, "protected" allows access from the containing class or derived classes, and "internal" allows access within the same assembly.</div>
+            </li>
+            <li>
+                <div class="question">23. What is "method overloading" and "method overriding" in C#?</div>
+                <div class="answer">Method overloading allows you to define multiple methods with the same name but with different parameters. Method overriding involves redefining a base class method in a derived class with the same signature to provide specific behavior.</div>
+            </li>
+            <li>
+                <div class="question">24. What are "generics" in C#?</div>
+                <div class="answer">Generics allow you to define classes, methods, and interfaces with a placeholder for the data type. They provide type safety and performance improvements by allowing for reusability without compromising on type-specific functionality.</div>
+            </li>
+            <li>
+                <div class="question">25. What is the difference between "IEnumerable" and "ICollection" in C#?</div>
+                <div class="answer">"IEnumerable" is a basic interface for collections that allows iteration over the collection, while "ICollection" is a more advanced interface that includes methods for adding, removing, and checking items in the collection, in addition to iteration.</div>
+            </li>
+            <li>
+                <div class="question">26. What is "Lazy Initialization" in C#?</div>
+                <div class="answer">Lazy initialization refers to deferring the creation of an object or the execution of an operation until it is actually needed. It is often used with the "Lazy<T>" class in C# to improve performance.</div>
+            </li>
+            <li>
+                <div class="question">27. What is the use of the "async" keyword in C#?</div>
+                <div class="answer">The "async" keyword is used to define a method that will run asynchronously. It allows the method to execute without blocking the calling thread, making the application more responsive.</div>
+            </li>
+            <li>
+                <div class="question">28. What is "dependency injection" in C#?</div>
+                <div class="answer">Dependency Injection is a design pattern that deals with how objects are created and injected into classes. It allows for loose coupling by passing dependencies from the outside, rather than having the class create them itself.</div>
+            </li>
+            <li>
+                <div class="question">29. What is the difference between "abstract class" and "interface"?</div>
+                <div class="answer">An abstract class can have both implemented and unimplemented methods, while an interface can only define method signatures. A class can inherit from only one abstract class but can implement multiple interfaces.</div>
+            </li>
+            <li>
+                <div class="question">30. What are "events" in C#?</div>
+                <div class="answer">Events in C# are used to notify other classes or objects when something happens. They follow a publisher-subscriber model and are often used with delegates to allow subscribers to handle events when they occur.</div>
+            </li>
+            <li>
+                <div class="question">31. What is the "new" keyword used for in C#?</div>
+                <div class="answer">The "new" keyword in C# is used for creating instances of types (like classes or arrays) and for hiding members of the base class that are being overridden in the derived class.</div>
+            </li>
+            <li>
+                <div class="question">32. Explain the difference between "continue" and "break" statements in C#.</div>
+                <div class="answer">The "continue" statement skips the current iteration of a loop and moves to the next one, while the "break" statement terminates the loop entirely.</div>
+            </li>
+            <li>
+                <div class="question">33. What are "tuples" in C#?</div>
+                <div class="answer">Tuples are lightweight data structures in C# that allow you to group multiple values of different types into a single object. They can hold up to eight elements and are commonly used to return multiple values from a method.</div>
+            </li>
+            <li>
+                <div class="question">34. What is the use of "yield" in C#?</div>
+                <div class="answer">The "yield" keyword is used to define an iterator block, enabling a method to return a sequence of values one at a time, without having to build the entire collection in memory at once. It simplifies the code for working with collections lazily.</div>
+            </li>
+            <li>
+                <div class="question">35. What is "dynamic" typing in C#?</div>
+                <div class="answer">"dynamic" is a keyword in C# used to define a type that is resolved at runtime instead of compile-time. It allows for more flexibility in working with objects whose types are not known until execution.</div>
+            </li>
+            <li>
+                <div class="question">36. What are "anonymous methods" in C#?</div>
+                <div class="answer">Anonymous methods in C# are methods that do not have a name. They are often used for short-lived event handlers or delegate assignments.</div>
+            </li>
+            <li>
+                <div class="question">37. How do you handle exceptions in C#?</div>
+                <div class="answer">Exceptions in C# are handled using try-catch blocks. The "try" block contains the code that may throw an exception, and the "catch" block handles the exception. Optionally, a "finally" block can be used to execute code regardless of whether an exception was thrown.</div>
+            </li>
+            <li>
+                <div class="question">38. What is the difference between "Array" and "List" in C#?</div>
+                <div class="answer">An "Array" has a fixed size and its elements must be of the same type, while a "List" is dynamic, allowing elements to be added or removed, and can grow in size as needed.</div>
+            </li>
+            <!-- Continue up to 100 -->
+        </ul>
+        <ul>
+            <li>
+                <div class="question">39. What is the difference between "abstract" and "concrete" classes?</div>
+                <div class="answer">An abstract class cannot be instantiated directly and may contain abstract methods (methods without implementation). A concrete class can be instantiated and has implementations for all its methods.</div>
+            </li>
+            <li>
+                <div class="question">40. What is the "foreach" loop in C#?</div>
+                <div class="answer">The "foreach" loop is used to iterate through collections like arrays or lists. It automatically handles the iteration process without needing to use an index.</div>
+            </li>
+            <li>
+                <div class="question">41. What is the difference between "String" and "Char" in C#?</div>
+                <div class="answer">"String" is a sequence of characters (a collection of characters), while "Char" represents a single character. Strings are immutable, while characters are value types.</div>
+            </li>
+            <li>
+                <div class="question">42. What is the use of the "default" keyword in C#?</div>
+                <div class="answer">The "default" keyword returns the default value of a type. For example, the default value of a reference type is null, and for value types like int, it’s 0.</div>
+            </li>
+            <li>
+                <div class="question">43. What is "event handling" in C#?</div>
+                <div class="answer">Event handling in C# involves using delegates to trigger actions when events occur. Event handlers are methods that respond to those events when they are raised.</div>
+            </li>
+            <li>
+                <div class="question">44. What is the difference between "override" and "new" keywords?</div>
+                <div class="answer">The "override" keyword is used to override a base class method in a derived class, while "new" hides the base class method and creates a new implementation in the derived class. The "new" method does not participate in polymorphism.</div>
+            </li>
+            <li>
+                <div class="question">45. What is the "volatile" keyword in C#?</div>
+                <div class="answer">The "volatile" keyword indicates that a field can be modified by multiple threads and prevents the compiler from caching the value of the field, ensuring the most recent value is always used.</div>
+            </li>
+            <li>
+                <div class="question">46. What are "attributes" in C#?</div>
+                <div class="answer">Attributes in C# are used to add metadata to classes, methods, properties, and other code elements. They can provide additional information or influence code behavior at runtime (e.g., marking methods for serialization).</div>
+            </li>
+            <li>
+                <div class="question">47. What is the "in" keyword in C#?</div>
+                <div class="answer">The "in" keyword is used to pass parameters by reference, ensuring that the parameter cannot be modified in the method. It’s often used for read-only reference parameters, improving performance for large data types.</div>
+            </li>
+            <li>
+                <div class="question">48. What is the difference between "String.Concat()" and "StringBuilder.Append()?"</div>
+                <div class="answer">"String.Concat()" creates a new string object and concatenates the provided strings, while "StringBuilder.Append()" appends to an existing StringBuilder object and is more efficient for repeated modifications of strings.</div>
+            </li>
+            <li>
+                <div class="question">49. What is the difference between "Task" and "Thread" in C#?</div>
+                <div class="answer">A "Task" is a unit of work that runs asynchronously, managed by the Task Parallel Library (TPL), while a "Thread" is a lower-level concept that represents an operating system thread. "Task" is often preferred for high-level concurrency.</div>
+            </li>
+            <li>
+                <div class="question">50. What is the "nameof" operator in C#?</div>
+                <div class="answer">The "nameof" operator is used to get the name of a variable, type, or member as a string. It is commonly used in logging or for refactoring purposes, ensuring you don't hardcode strings for member names.</div>
+            </li>
+            <li>
+                <div class="question">51. What is the "async" and "await" pattern in C#?</div>
+                <div class="answer">The "async" keyword is used to define methods that run asynchronously, and the "await" keyword is used to wait for asynchronous operations to complete. This enables non-blocking I/O operations.</div>
+            </li>
+            <li>
+                <div class="question">52. What is the difference between "throw" and "throws" in C#?</div>
+                <div class="answer">"throw" is used in C# to throw an exception, whereas "throws" is not a C# keyword. However, "throws" is used in Java to declare the exceptions a method might throw.</div>
+            </li>
+            <li>
+                <div class="question">53. What is the "is" keyword in C#?</div>
+                <div class="answer">The "is" keyword is used to check if an object is of a specific type or derives from that type. It returns true if the object is of the specified type or a subclass of it.</div>
+            </li>
+            <li>
+                <div class="question">54. What is the purpose of the "try-catch" block in C#?</div>
+                <div class="answer">The "try-catch" block is used for handling exceptions. Code that may throw an exception is placed inside the "try" block, and the "catch" block handles the exception if one occurs, allowing the program to continue executing.</div>
+            </li>
+            <li>
+                <div class="question">55. What is the difference between "interface" and "abstract class"?</div>
+                <div class="answer">An interface defines a contract of methods without any implementation, while an abstract class can contain both abstract methods and concrete methods. A class can implement multiple interfaces but can inherit from only one abstract class.</div>
+            </li>
+            <li>
+                <div class="question">56. What is the "params" keyword in C#?</div>
+                <div class="answer">The "params" keyword allows a method to accept a variable number of arguments, which are passed as an array. This enables you to pass an arbitrary number of parameters to a method.</div>
+            </li>
+            <li>
+                <div class="question">57. What is "TypeCasting" in C#?</div>
+                <div class="answer">Type casting refers to the process of converting one data type into another. In C#, it can be done explicitly using casting operators or implicitly when converting between compatible types.</div>
+            </li>
+            <li>
+                <div class="question">58. What is "sealed" keyword in C#?</div>
+                <div class="answer">The "sealed" keyword is used to prevent a class from being inherited or to prevent a method from being overridden in a derived class. It provides control over the inheritance hierarchy.</div>
+            </li>
+            <li>
+                <div class="question">59. What is the difference between "Array" and "List"?</div>
+                <div class="answer">Arrays have a fixed size and type, whereas Lists are dynamic and can grow in size as needed. Lists also provide more built-in methods for adding, removing, and manipulating elements.</div>
+            </li>
+            <li>
+                <div class="question">60. How do you handle memory leaks in C#?</div>
+                <div class="answer">Memory leaks in C# are primarily prevented by the Garbage Collector (GC), which automatically cleans up unreferenced objects. However, you should be mindful of disposing of unmanaged resources and use "using" statements or implement "IDisposable" when necessary.</div>
+            </li>
+            <li>
+                <div class="question">61. What is "reflection" in C#?</div>
+                <div class="answer">Reflection in C# allows you to inspect and interact with metadata about assemblies, modules, and types at runtime. It can be used to discover the properties, methods, and attributes of objects.</div>
+            </li>
+            <li>
+                <div class="question">62. What is the difference between "String.Format()" and "StringInterpolation" in C#?</div>
+                <div class="answer">"String.Format()" uses placeholders and arguments to format strings, while "StringInterpolation" (introduced in C# 6) embeds expressions directly in the string using curly braces, making it more concise and readable.</div>
+            </li>
+            <li>
+                <div class="question">63. What is the difference between "continue" and "break" in loops?</div>
+                <div class="answer">The "continue" statement skips the current iteration of the loop and proceeds to the next one, while "break" terminates the loop entirely.</div>
+            </li>
+            <li>
+                <div class="question">64. What is the purpose of the "delegate" in C#?</div>
+                <div class="answer">A delegate is a type that holds references to methods with a particular parameter list and return type. It allows methods to be passed as parameters and is commonly used for event handling and callbacks.</div>
+            </li>
+            <li>
+                <div class="question">65. What is the use of "lock" keyword in C#?</div>
+                <div class="answer">The "lock" keyword is used to ensure that only one thread can access a particular section of code at a time. It helps in preventing race conditions when multiple threads are working with shared data.</div>
+            </li>
+            <!-- Continue up to 100 -->
+        </ul>
+        <ul>
+            <li>
+                <div class="question">66. What is the difference between "IEnumerable" and "IQueryable"?</div>
+                <div class="answer">"IEnumerable" is used for in-memory collections and executes queries locally, while "IQueryable" is used for querying remote data sources (e.g., databases) and allows for deferred execution, letting queries be executed on the server side.</div>
+            </li>
+            <li>
+                <div class="question">67. What is the purpose of the "using" statement in C#?</div>
+                <div class="answer">The "using" statement is used to define a scope at the end of which an object will be disposed. It is commonly used with types that implement the "IDisposable" interface, ensuring resources are released properly when no longer needed.</div>
+            </li>
+            <li>
+                <div class="question">68. What is the difference between "shallow copy" and "deep copy" in C#?</div>
+                <div class="answer">A "shallow copy" copies the object itself but does not create copies of objects it references. A "deep copy" creates copies of the object and all objects it references, ensuring no references are shared between the original and copied objects.</div>
+            </li>
+            <li>
+                <div class="question">69. What is the "var" keyword in C#?</div>
+                <div class="answer">The "var" keyword is used for implicit typing. The compiler determines the type of the variable at compile time based on the assigned value. It can only be used when the type is clear from the context and must be initialized at declaration.</div>
+            </li>
+            <li>
+                <div class="question">70. What is the "null-coalescing" operator in C#?</div>
+                <div class="answer">The "null-coalescing" operator (??) is used to provide a default value when a nullable type or reference type is null. For example, `var result = myVar ?? "default";` will assign "default" if `myVar` is null.</div>
+            </li>
+            <li>
+                <div class="question">71. What is the "try-catch-finally" block used for?</div>
+                <div class="answer">The "try-catch-finally" block is used to handle exceptions. Code that might throw an exception is placed in the "try" block, exceptions are handled in the "catch" block, and the "finally" block runs code regardless of whether an exception was thrown (typically used for cleanup).</div>
+            </li>
+            <li>
+                <div class="question">72. What is the purpose of the "GAC" (Global Assembly Cache)?</div>
+                <div class="answer">The Global Assembly Cache (GAC) is a central repository in the .NET Framework for storing assemblies that are shared across multiple applications. Assemblies in the GAC are uniquely identified by version, culture, and public key token.</div>
+            </li>
+            <li>
+                <div class="question">73. What is the "appdomain" in .NET?</div>
+                <div class="answer">An appdomain provides an isolated environment where .NET applications can run. It allows for separation of memory, thread, and resources, and is used to improve security, reliability, and performance in multi-application scenarios.</div>
+            </li>
+            <li>
+                <div class="question">74. What is "serialization" in C#?</div>
+                <div class="answer">Serialization is the process of converting an object into a format that can be easily stored or transmitted (e.g., JSON, XML). In C#, classes can implement the "ISerializable" interface or use attributes like `[Serializable]` to allow serialization.</div>
+            </li>
+            <li>
+                <div class="question">75. What is "deserialization" in C#?</div>
+                <div class="answer">Deserialization is the reverse of serialization, where data (e.g., JSON or XML) is converted back into an object. In C#, the "Deserialize" methods in libraries like "JsonConvert" or "XmlSerializer" are used for this process.</div>
+            </li>
+            <li>
+                <div class="question">76. What is the "ThreadPool" in C#?</div>
+                <div class="answer">The "ThreadPool" is a collection of threads provided by .NET that are reused for multiple tasks. It helps reduce the overhead of creating and destroying threads for short-lived tasks by using a pool of reusable threads.</div>
+            </li>
+            <li>
+                <div class="question">77. What is "multithreading" in C#?</div>
+                <div class="answer">Multithreading allows a program to execute multiple threads concurrently, which improves performance by utilizing multiple CPU cores. In C#, you can create and manage threads using the "Thread" class or higher-level abstractions like "Task" or "Parallel."</div>
+            </li>
+            <li>
+                <div class="question">78. What is the "async/await" pattern for multithreading in C#?</div>
+                <div class="answer">The "async/await" pattern allows asynchronous execution of methods without blocking the main thread. The "async" keyword marks a method as asynchronous, while "await" is used to wait for the asynchronous task to complete, enabling responsive UIs and scalable web applications.</div>
+            </li>
+            <li>
+                <div class="question">79. What are "nullable types" in C#?</div>
+                <div class="answer">Nullable types allow value types (like int, float, etc.) to hold a null value. They are defined using a "?" after the type (e.g., `int?`), making them useful for cases where a value is optional or missing.</div>
+            </li>
+            <li>
+                <div class="question">80. What is the "StringBuilder" class used for in C#?</div>
+                <div class="answer">The "StringBuilder" class is used to efficiently build and modify strings in C#. Unlike "String," which is immutable, "StringBuilder" allows for efficient in-place modifications of a string, which is especially useful when performing numerous string concatenations.</div>
+            </li>
+            <li>
+                <div class="question">81. What is a "singleton" pattern in C#?</div>
+                <div class="answer">The Singleton pattern ensures that a class has only one instance and provides a global access point to that instance. It is often used to control access to shared resources or services in a program.</div>
+            </li>
+            <li>
+                <div class="question">82. What are "value types" and "reference types" in C#?</div>
+                <div class="answer">Value types directly contain data and are stored on the stack (e.g., int, char, struct). Reference types store references to their data and are stored on the heap (e.g., classes, arrays, delegates).</div>
+            </li>
+            <li>
+                <div class="question">83. What is the "IDisposable" interface in C#?</div>
+                <div class="answer">The "IDisposable" interface defines the "Dispose" method, which is used to release unmanaged resources like file handles or database connections. It is commonly used in classes that manage resources that need explicit cleanup.</div>
+            </li>
+            <li>
+                <div class="question">84. What is a "struct" in C#?</div>
+                <div class="answer">A "struct" is a value type that can contain methods, fields, properties, and events. Unlike classes, structs are typically used to represent small, lightweight objects that do not require inheritance or reference-type behavior.</div>
+            </li>
+            <li>
+                <div class="question">85. What is the difference between "ref" and "out" parameters in C#?</div>
+                <div class="answer">Both "ref" and "out" allow passing parameters by reference, but "ref" requires the variable to be initialized before being passed, while "out" does not require initialization, but the method must assign a value to it before returning.</div>
+            </li>
+            <li>
+                <div class="question">86. What are "extension methods" in C#?</div>
+                <div class="answer">Extension methods allow adding new functionality to existing types without modifying their source code. They are defined as static methods in static classes, and the compiler treats them as if they were instance methods.</div>
+            </li>
+            <li>
+                <div class="question">87. What is the difference between "throw" and "throw ex" in C#?</div>
+                <div class="answer">"throw" rethrows the current exception while preserving the original stack trace, while "throw ex" creates a new exception, losing the original stack trace information.</div>
+            </li>
+            <li>
+                <div class="question">88. What is the "event-driven" programming model in C#?</div>
+                <div class="answer">Event-driven programming in C# involves writing code that responds to user or system-generated events. Events are typically handled using delegates and event handlers to trigger actions when certain conditions or inputs occur.</div>
+            </li>
+            <li>
+                <div class="question">89. What is "boxing" and "unboxing" in C#?</div>
+                <div class="answer">"Boxing" is the process of converting a value type to a reference type (e.g., converting an int to an object). "Unboxing" is the reverse process of extracting the value from the reference type back into the original value type.</div>
+            </li>
+            <li>
+                <div class="question">90. What is "LINQ" in C#?</div>
+                <div class="answer">Language Integrated Query (LINQ) is a set of methods in C# that allows querying collections of data (e.g., arrays, lists, or databases) in a declarative way. It simplifies working with data by using SQL-like syntax in C#.</div>
+            </li>
+            <li>
+                <div class="question">91. What is the difference between "Select" and "Where" in LINQ?</div>
+                <div class="answer">"Select" is used to project or transform data, whereas "Where" is used to filter data based on a condition. "Select" changes the shape of the result, while "Where" narrows down the result set.</div>
+            </li>
+            <li>
+                <div class="question">92. What is a "delegate" in C#?</div>
+                <div class="answer">A delegate is a type that references methods with a specific signature. It allows methods to be passed as parameters and supports events and callback mechanisms.</div>
+            </li>
+            <li>
+                <div class="question">93. What is "dependency injection" in C#?</div>
+                <div class="answer">Dependency injection is a design pattern used to implement Inversion of Control (IoC). It allows objects to be provided with their dependencies instead of creating them internally, promoting loose coupling and testability.</div>
+            </li>
+            <li>
+                <div class="question">94. What is the "new" keyword used for in C#?</div>
+                <div class="answer">The "new" keyword is used to create new instances of objects, hide members of the base class, and create a new instance of a collection or delegate.</div>
+            </li>
+            <li>
+                <div class="question">95. What is "garbage collection" in C#?</div>
+                <div class="answer">Garbage collection is an automatic memory management feature in C# that reclaims memory used by objects that are no longer referenced. It helps prevent memory leaks and reduces the need for manual memory management.</div>
+            </li>
+            <li>
+                <div class="question">96. What is the difference between "StringBuilder" and "String.Concat()?"</div>
+                <div class="answer">"StringBuilder" is used to efficiently modify strings, while "String.Concat()" is used for combining multiple strings into one. "StringBuilder" is more efficient for repeated string modifications.</div>
+            </li>
+            <li>
+                <div class="question">97. What is "EventArgs" in C#?</div>
+                <div class="answer">"EventArgs" is a base class used to pass additional data during events. It is typically used with event handlers to send event-specific information to the subscribed methods.</div>
+            </li>
+            <li>
+                <div class="question">98. What is the "Thread.Sleep" method used for?</div>
+                <div class="answer">The "Thread.Sleep" method is used to pause the execution of the current thread for a specified period. It is often used to simulate a delay or to yield control in multithreaded applications.</div>
+            </li>
+            <li>
+                <div class="question">99. What is "IQueryable" used for in LINQ?</div>
+                <div class="answer">"IQueryable" represents a collection of data that can be queried using LINQ. It allows for deferred execution, meaning queries are executed on the server side rather than in memory, which is ideal for querying large datasets like databases.</div>
+            </li>
+            <li>
+                <div class="question">100. What is the "async" and "await" pattern in C# used for?</div>
+                <div class="answer">The "async" and "await" pattern is used for asynchronous programming, allowing code to run without blocking the main thread. "async" marks a method as asynchronous, while "await" waits for the completion of an asynchronous operation, ensuring efficient execution of long-running tasks.</div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>
