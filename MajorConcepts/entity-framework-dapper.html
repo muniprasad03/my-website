@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entity Framework and Dapper ORM Theory with Examples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #007BFF;
+        }
+        h2 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+        }
+        .code {
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            padding: 10px;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+        }
+        .question {
+            font-weight: bold;
+            color: #007BFF;
+        }
+        .answer {
+            margin-top: 5px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Entity Framework and Dapper ORM Theory with Examples</h1>
+
+    <h2>Entity Framework</h2>
+    <p>Entity Framework (EF) is an Object-Relational Mapper (ORM) that enables developers to work with a database using .NET objects. EF simplifies database interactions by abstracting the complexities of SQL queries and allowing developers to interact with a database through LINQ queries and entities. EF supports different approaches such as code-first, database-first, and model-first.</p>
+
+    <h3>Key Features of Entity Framework</h3>
+    <ul>
+        <li>Abstraction of database interactions using object-oriented methods.</li>
+        <li>Supports LINQ for querying data.</li>
+        <li>Automatically handles data conversion between objects and database tables.</li>
+        <li>Supports migrations for schema updates.</li>
+        <li>Code-first, Database-first, and Model-first approaches.</li>
+    </ul>
+
+    <h3>Entity Framework Example</h3>
+    <p>Below is an example of using Entity Framework to create a simple model and perform CRUD (Create, Read, Update, Delete) operations.</p>
+
+    <div class="code">
+        <h4>Model Class (Entity)</h4>
+        <pre>
+public class Product
+{
+    public int ProductId { get; set; }
+    public string Name { get; set; }
+    public decimal Price { get; set; }
+}
+        </pre>
+
+        <h4>DbContext Class</h4>
+        <pre>
+using System.Data.Entity;
+
+public class AppDbContext : DbContext
+{
+    public DbSet&lt;Product&gt; Products { get; set; }
+}
+        </pre>
+
+        <h4>Example of CRUD Operations</h4>
+        <pre>
+using (var context = new AppDbContext())
+{
+    // Create
+    var product = new Product { Name = "Laptop", Price = 1000 };
+    context.Products.Add(product);
+    context.SaveChanges();
+
+    // Read
+    var retrievedProduct = context.Products.FirstOrDefault(p => p.ProductId == product.ProductId);
+    Console.WriteLine(retrievedProduct.Name);
+
+    // Update
+    retrievedProduct.Price = 1200;
+    context.SaveChanges();
+
+    // Delete
+    context.Products.Remove(retrievedProduct);
+    context.SaveChanges();
+}
+        </pre>
+    </div>
+
+    <h2>Dapper ORM</h2>
+    <p>Dapper is a lightweight and fast Object-Relational Mapping (ORM) tool for .NET. Unlike Entity Framework, Dapper is not a full-fledged ORM but a micro-ORM that focuses on performance. Dapper allows developers to map query results directly to objects, providing faster performance for scenarios that don't require the full capabilities of EF.</p>
+
+    <h3>Key Features of Dapper</h3>
+    <ul>
+        <li>Fast performance due to minimal overhead.</li>
+        <li>Simple to use and less complex than Entity Framework.</li>
+        <li>Allows direct SQL queries with parameterized queries to avoid SQL injection.</li>
+        <li>Does not track changes or provide migrations like Entity Framework.</li>
+        <li>Works well with stored procedures and raw SQL.</li>
+    </ul>
+
+    <h3>Dapper Example</h3>
+    <p>Below is an example of using Dapper to interact with a database using SQL queries.</p>
+
+    <div class="code">
+        <h4>Example of Using Dapper</h4>
+        <pre>
+using Dapper;
+using System.Data.SqlClient;
+using System.Linq;
+
+public class ProductService
+{
+    private readonly string _connectionString = "your_connection_string_here";
+
+    public Product GetProduct(int productId)
+    {
+        using (var connection = new SqlConnection(_connectionString))
+        {
+            connection.Open();
+            return connection.Query&lt;Product&gt;(
+                "SELECT * FROM Products WHERE ProductId = @Id", new { Id = productId }).FirstOrDefault();
+        }
+    }
+
+    public void CreateProduct(Product product)
+    {
+        using (var connection = new SqlConnection(_connectionString))
+        {
+            connection.Open();
+            var sql = "INSERT INTO Products (Name, Price) VALUES (@Name, @Price)";
+            connection.Execute(sql, new { product.Name, product.Price });
+        }
+    }
+
+    public void UpdateProduct(Product product)
+    {
+        using (var connection = new SqlConnection(_connectionString))
+        {
+            connection.Open();
+            var sql = "UPDATE Products SET Name = @Name, Price = @Price WHERE ProductId = @Id";
+            connection.Execute(sql, new { product.Name, product.Price, product.ProductId });
+        }
+    }
+
+    public void DeleteProduct(int productId)
+    {
+        using (var connection = new SqlConnection(_connectionString))
+        {
+            connection.Open();
+            var sql = "DELETE FROM Products WHERE ProductId = @Id";
+            connection.Execute(sql, new { Id = productId });
+        }
+    }
+}
+        </pre>
+    </div>
+
+    <h3>Comparison Between Entity Framework and Dapper</h3>
+    <p>Below is a comparison of the key differences between Entity Framework and Dapper:</p>
+
+    <table border="1" cellpadding="5" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Feature</th>
+                <th>Entity Framework</th>
+                <th>Dapper</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Type</td>
+                <td>Full ORM</td>
+                <td>Micro ORM</td>
+            </tr>
+            <tr>
+                <td>Performance</td>
+                <td>Slower (due to tracking and change management)</td>
+                <td>Faster (minimal overhead)</td>
+            </tr>
+            <tr>
+                <td>Complexity</td>
+                <td>More complex (supports migrations, change tracking)</td>
+                <td>Less complex (simple query execution)</td>
+            </tr>
+            <tr>
+                <td>Change Tracking</td>
+                <td>Automatic (tracks entity changes)</td>
+                <td>Manual (requires explicit queries)</td>
+            </tr>
+            <tr>
+                <td>SQL Support</td>
+                <td>Generates SQL automatically (LINQ)</td>
+                <td>Direct SQL (you write SQL queries)</td>
+            </tr>
+            <tr>
+                <td>Database Migrations</td>
+                <td>Supports automatic migrations</td>
+                <td>No built-in support for migrations</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

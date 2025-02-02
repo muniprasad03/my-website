@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 100 SQL Developer Interview Questions and Answers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .question {
+            background-color: #e7f3fe;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .answer {
+            background-color: #fff;
+            padding: 10px;
+            border-left: 3px solid #007bff;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Top 100 SQL Developer Interview Questions and Answers</h1>
+
+        <!-- Question 1 to 20 -->
+        <div class="question">1. What is SQL?</div>
+        <div class="answer">SQL (Structured Query Language) is a standard programming language used to manage and manipulate databases. It allows you to retrieve, insert, update, and delete data from relational database systems.</div>
+
+        <div class="question">2. What are the different types of SQL statements?</div>
+        <div class="answer">SQL statements can be categorized into the following types:
+            <ul>
+                <li>DDL (Data Definition Language): CREATE, ALTER, DROP</li>
+                <li>DML (Data Manipulation Language): SELECT, INSERT, UPDATE, DELETE</li>
+                <li>DCL (Data Control Language): GRANT, REVOKE</li>
+                <li>TCL (Transaction Control Language): COMMIT, ROLLBACK, SAVEPOINT</li>
+            </ul>
+        </div>
+
+        <div class="question">3. What is a Primary Key?</div>
+        <div class="answer">A primary key is a unique identifier for each record in a database table. It ensures that no two rows in the table have the same value for the primary key field, and it cannot contain NULL values.</div>
+
+        <div class="question">4. What is the difference between INNER JOIN and LEFT JOIN?</div>
+        <div class="answer">
+            <ul>
+                <li>INNER JOIN: Returns only the rows where there is a match in both tables.</li>
+                <li>LEFT JOIN: Returns all rows from the left table, and matched rows from the right table. If there is no match, NULL values are returned for columns from the right table.</li>
+            </ul>
+        </div>
+
+        <div class="question">5. What is normalization in SQL?</div>
+        <div class="answer">Normalization is the process of organizing data in a database to reduce redundancy and improve data integrity. It involves dividing large tables into smaller tables and using relationships between them.</div>
+
+        <div class="question">6. What is a Foreign Key?</div>
+        <div class="answer">A foreign key is a field in a table that links to the primary key of another table. It creates a relationship between two tables and ensures referential integrity.</div>
+
+        <div class="question">7. What is the difference between UNION and UNION ALL?</div>
+        <div class="answer">
+            <ul>
+                <li>UNION: Combines the results of two or more SELECT statements and removes duplicate rows.</li>
+                <li>UNION ALL: Combines the results of two or more SELECT statements without removing duplicates.</li>
+            </ul>
+        </div>
+
+        <div class="question">8. What is an index in SQL?</div>
+        <div class="answer">An index is a database object that improves the speed of data retrieval operations on a table at the cost of additional space and slower updates. It is created on one or more columns of a table to speed up SELECT queries.</div>
+
+        <div class="question">9. What is the difference between DELETE and TRUNCATE?</div>
+        <div class="answer">
+            <ul>
+                <li>DELETE: Removes rows from a table based on a condition, and can be rolled back (transactional).</li>
+                <li>TRUNCATE: Removes all rows from a table, and cannot be rolled back (non-transactional). It is faster than DELETE.</li>
+            </ul>
+        </div>
+
+        <div class="question">10. What is a subquery?</div>
+        <div class="answer">A subquery is a query embedded within another query, often used to return a value that is used in the outer query's WHERE, FROM, or SELECT clauses.</div>
+
+        <div class="question">11. What is a View?</div>
+        <div class="answer">A view is a virtual table that is based on the result of a SELECT query. It does not store data physically but provides a way to encapsulate complex queries for reuse.</div>
+
+        <div class="question">12. What is a Stored Procedure?</div>
+        <div class="answer">A stored procedure is a precompiled collection of one or more SQL statements that can be executed as a single unit. It is stored in the database and can be called to perform specific operations.</div>
+
+        <div class="question">13. What is a Trigger?</div>
+        <div class="answer">A trigger is a set of SQL statements that automatically execute in response to certain events on a particular table or view, such as INSERT, UPDATE, or DELETE operations.</div>
+
+        <div class="question">14. What is the difference between HAVING and WHERE?</div>
+        <div class="answer">
+            <ul>
+                <li>WHERE: Filters rows before aggregation (used with SELECT, INSERT, UPDATE, DELETE).</li>
+                <li>HAVING: Filters rows after aggregation (used with GROUP BY clause).</li>
+            </ul>
+        </div>
+
+        <div class="question">15. What is the difference between CHAR and VARCHAR?</div>
+        <div class="answer">
+            <ul>
+                <li>CHAR: Fixed-length character data type. It always occupies the same amount of storage, regardless of the string length.</li>
+                <li>VARCHAR: Variable-length character data type. It only uses the amount of storage required for the actual string length.</li>
+            </ul>
+        </div>
+
+        <div class="question">16. What is the purpose of the SQL GROUP BY clause?</div>
+        <div class="answer">The GROUP BY clause is used to group rows that have the same values in specified columns into summary rows, like counting the number of rows, summing a column, etc.</div>
+
+        <div class="question">17. What is an aggregate function?</div>
+        <div class="answer">An aggregate function performs a calculation on a set of values and returns a single value. Common aggregate functions include COUNT, SUM, AVG, MIN, and MAX.</div>
+
+        <div class="question">18. What is the difference between RANK() and DENSE_RANK()?</div>
+        <div class="answer">
+            <ul>
+                <li>RANK(): Assigns a rank to each row in the result set, with gaps in the rank sequence for ties.</li>
+                <li>DENSE_RANK(): Similar to RANK(), but without gaps in the rank sequence for ties.</li>
+            </ul>
+        </div>
+
+        <div class="question">19. What is a Self Join?</div>
+        <div class="answer">A self join is a regular join, but the table is joined with itself. It’s often used to compare rows within the same table.</div>
+
+        <div class="question">20. What is the difference between a procedure and a function in SQL?</div>
+        <div class="answer">
+            <ul>
+                <li>Procedure: A set of SQL statements that perform an action, and it does not return a value.</li>
+                <li>Function: A set of SQL statements that perform a computation and return a value.</li>
+            </ul>
+        </div>
+
+        <!-- Question 21 to 40 -->
+        <div class="question">21. What is the use of the EXISTS operator in SQL?</div>
+        <div class="answer">The EXISTS operator is used to check if a subquery returns any results. It returns TRUE if the subquery returns one or more rows, and FALSE otherwise.</div>
+
+        <div class="question">22. How would you retrieve unique records from a table?</div>
+        <div class="answer">You can retrieve unique records using the DISTINCT keyword in a SELECT statement. Example: `SELECT DISTINCT column_name FROM table_name;`</div>
+
+        <div class="question">23. What is the use of the IN operator?</div>
+        <div class="answer">The IN operator is used to check if a value matches any value in a specified list or subquery. Example: `SELECT * FROM employees WHERE department IN ('HR', 'IT');`</div>
+
+        <div class="question">24. What is a Cartesian Join?</div>
+        <div class="answer">A Cartesian join (also called a cross join) returns the Cartesian product of two tables, i.e., it returns all possible combinations of rows from both tables.</div>
+
+        <div class="question">25. What is a Data Integrity Constraint?</div>
+        <div class="answer">Data integrity constraints ensure the accuracy and reliability of data in the database. Examples include PRIMARY KEY, FOREIGN KEY, UNIQUE, and CHECK constraints.</div>
+
+        <div class="question">26. What is an example of a composite key?</div>
+        <div class="answer">A composite key is a combination of two or more columns in a table that can uniquely identify a record. Example: A combination of `OrderID` and `ProductID` might serve as a composite primary key in an order details table.</div>
+
+        <div class="question">27. What are temporary tables?</div>
+        <div class="answer">Temporary tables are tables that are created and stored temporarily within the session. They are automatically deleted when the session is closed.</div>
+
+        <div class="question">28. What is an Outer Join?</div>
+        <div class="answer">An outer join returns all rows from one table, and the matched rows from another table. If there is no match, NULL values are returned for columns from the second table.</div>
+
+        <div class="question">29. How do you improve query performance in SQL?</div>
+        <div class="answer">
+            <ul>
+                <li>Use indexes on frequently searched columns.</li>
+                <li>Limit the number of rows retrieved by using the WHERE clause.</li>
+                <li>Optimize joins and avoid unnecessary subqueries.</li>
+                <li>Use proper data types for columns.</li>
+            </ul>
+        </div>
+
+        <div class="question">30. What is a schema in SQL?</div>
+        <div class="answer">A schema is a collection of database objects such as tables, views, and indexes. It defines the structure of the database.</div>
+
+        <!-- Continue adding questions 31 to 100 here -->
+                <!-- Question 31 to 40 -->
+                <div class="question">31. What is a relational database?</div>
+                <div class="answer">A relational database is a type of database that stores data in tables, with rows and columns. It uses keys and indexes to establish relationships between the tables.</div>
+        
+                <div class="question">32. What is the difference between a database and a schema?</div>
+                <div class="answer">A database is a collection of related data, while a schema is the structure that defines how that data is organized within the database (tables, views, indexes, etc.).</div>
+        
+                <div class="question">33. What is a clustered index?</div>
+                <div class="answer">A clustered index determines the physical order of data in a table. Each table can have only one clustered index, as the rows themselves are stored in the order of the index.</div>
+        
+                <div class="question">34. What is a non-clustered index?</div>
+                <div class="answer">A non-clustered index is a separate structure from the data table. It stores pointers to the data rows, which can be ordered differently from the actual table.</div>
+        
+                <div class="question">35. What is a JOIN in SQL? Name different types of JOINs.</div>
+                <div class="answer">
+                    <ul>
+                        <li>INNER JOIN: Returns rows when there is a match in both tables.</li>
+                        <li>LEFT JOIN: Returns all rows from the left table, with matching rows from the right table.</li>
+                        <li>RIGHT JOIN: Returns all rows from the right table, with matching rows from the left table.</li>
+                        <li>FULL OUTER JOIN: Returns rows when there is a match in either left or right table.</li>
+                        <li>CROSS JOIN: Returns the Cartesian product of both tables (all possible combinations of rows).</li>
+                    </ul>
+                </div>
+        
+                <div class="question">36. What is the difference between a procedure and a trigger?</div>
+                <div class="answer">
+                    <ul>
+                        <li>Procedure: A stored set of SQL statements that can be executed explicitly by the user or application.</li>
+                        <li>Trigger: A special type of stored procedure that automatically runs when a specified event (like an INSERT, UPDATE, or DELETE) occurs on a table.</li>
+                    </ul>
+                </div>
+        
+                <div class="question">37. What is the use of the ALTER command in SQL?</div>
+                <div class="answer">The ALTER command is used to modify an existing database object, such as a table. It can add, delete, or modify columns and change the structure of a table.</div>
+        
+                <div class="question">38. What are indexes in SQL and why are they important?</div>
+                <div class="answer">Indexes are used to improve the speed of data retrieval operations in a database. They allow faster searches and retrieval of rows by creating a quick lookup mechanism.</div>
+        
+                <div class="question">39. What is a composite key?</div>
+                <div class="answer">A composite key is a combination of two or more columns in a table that uniquely identifies each record. It is used when a single column is not sufficient for uniqueness.</div>
+        
+                <div class="question">40. What is a surrogate key?</div>
+                <div class="answer">A surrogate key is a unique identifier for a record, which is not derived from the data itself. It is often used as a primary key and is typically an auto-incremented number.</div>
+        
+                <!-- Question 41 to 60 -->
+                <div class="question">41. What is the difference between UNION and JOIN?</div>
+                <div class="answer">
+                    <ul>
+                        <li>UNION: Combines the results of two or more SELECT statements into a single result set, removing duplicate rows.</li>
+                        <li>JOIN: Combines columns from two or more tables based on a related column.</li>
+                    </ul>
+                </div>
+        
+                <div class="question">42. What is the purpose of the SQL DISTINCT keyword?</div>
+                <div class="answer">The DISTINCT keyword is used to return only distinct (different) values from a column or set of columns in a query, removing duplicates from the result set.</div>
+        
+                <div class="question">43. What is the use of the SQL LIKE operator?</div>
+                <div class="answer">The LIKE operator is used to search for a specified pattern in a column. It supports wildcards, such as `%` (any sequence of characters) and `_` (a single character).</div>
+        
+                <div class="question">44. What is a "denormalized" database?</div>
+                <div class="answer">A denormalized database is one in which the data is intentionally duplicated across multiple tables to improve performance, often at the cost of data integrity and normalization.</div>
+        
+                <div class="question">45. What is a snapshot in SQL?</div>
+                <div class="answer">A snapshot is a view of a database at a particular moment in time. It is a consistent read of the data that is not affected by concurrent changes to the database.</div>
+        
+                <div class="question">46. What is a database trigger?</div>
+                <div class="answer">A database trigger is a special type of stored procedure that automatically executes in response to certain events, such as INSERT, UPDATE, or DELETE operations on a table.</div>
+        
+                <div class="question">47. What is the difference between the BETWEEN operator and the IN operator?</div>
+                <div class="answer">
+                    <ul>
+                        <li>BETWEEN: Specifies a range of values, often used for numeric or date ranges (inclusive).</li>
+                        <li>IN: Specifies a list of values to match against, used with discrete values.</li>
+                    </ul>
+                </div>
+        
+                <div class="question">48. What are the ACID properties in database systems?</div>
+                <div class="answer">
+                    <ul>
+                        <li>Atomicity: Transactions are fully completed or fully rolled back.</li>
+                        <li>Consistency: The database must be in a valid state before and after the transaction.</li>
+                        <li>Isolation: Transactions are isolated from each other, preventing interference.</li>
+                        <li>Durability: Once a transaction is committed, it will remain in the database, even in case of failure.</li>
+                    </ul>
+                </div>
+        
+                <div class="question">49. What is a full-text index?</div>
+                <div class="answer">A full-text index is used for searching large amounts of text-based data in a database. It allows efficient searching of text and matching against keywords, often with advanced features like ranking and stemming.</div>
+        
+                <div class="question">50. What is a table constraint?</div>
+                <div class="answer">A table constraint is a rule that defines data integrity and consistency within a table. Examples include PRIMARY KEY, FOREIGN KEY, UNIQUE, CHECK, and NOT NULL constraints.</div>
+        
+                <!-- Question 51 to 60 -->
+                <div class="question">51. What is the difference between the WHERE and HAVING clauses?</div>
+                <div class="answer">
+                    <ul>
+                        <li>WHERE: Filters rows before aggregation (used with SELECT, INSERT, UPDATE, DELETE).</li>
+                        <li>HAVING: Filters rows after aggregation (used with GROUP BY).</li>
+                    </ul>
+                </div>
+        
+                <div class="question">52. What is a "soft delete"?</div>
+                <div class="answer">A soft delete involves marking a record as deleted, often by setting a flag or status field, rather than physically removing it from the database.</div>
+        
+                <div class="question">53. What is the SQL LIMIT clause?</div>
+                <div class="answer">The LIMIT clause is used to specify the number of records to return in a SELECT query. It is often used to paginate query results or limit the result set size.</div>
+        
+                <div class="question">54. What is the purpose of a normalization process?</div>
+                <div class="answer">Normalization organizes database tables to reduce redundancy and improve data integrity by dividing large tables into smaller ones and establishing relationships between them.</div>
+        
+                <div class="question">55. What is a Data Dictionary?</div>
+                <div class="answer">A data dictionary is a collection of metadata that provides information about the database objects, such as tables, columns, constraints, and relationships.</div>
+        
+                <div class="question">56. What is a recursive query?</div>
+                <div class="answer">A recursive query is a query that references itself, typically used for hierarchical data, such as organizational charts or category trees. Commonly used with Common Table Expressions (CTEs).</div>
+        
+                <div class="question">57. What is SQL Server Profiler?</div>
+                <div class="answer">SQL Server Profiler is a tool used to capture and analyze SQL Server events, such as queries, stored procedures, and performance metrics, helping to troubleshoot and optimize database performance.</div>
+        
+                <div class="question">58. What is a transaction in SQL?</div>
+                <div class="answer">A transaction is a sequence of one or more SQL operations executed as a single unit. Transactions ensure data integrity and consistency, following the ACID properties.</div>
+        
+                <div class="question">59. What is the difference between a function and a stored procedure?</div>
+                <div class="answer">
+                    <ul>
+                        <li>Function: Returns a value and can be used in a query.</li>
+                        <li>Stored Procedure: Can perform actions but does not return a value directly; it may use OUT parameters to return values.</li>
+                    </ul>
+                </div>
+        
+                <div class="question">60. What is the purpose of the SQL SELECT INTO statement?</div>
+                <div class="answer">The SELECT INTO statement is used to create a new table and insert the result set of a SELECT query into it. This can be useful for creating backups or temporary tables.</div>
+        
+                <!-- Question 61 to 100 -->
+                <!-- Add questions here until 100 -->
+                <!-- Question 61 to 80 -->
+                <div class="question">61. What is a database view?</div>
+                <div class="answer">A database view is a virtual table that is based on the result of a SELECT query. It does not store data physically, but can be used to simplify complex queries or provide a restricted view of the data.</div>
+        
+                <div class="question">62. What is the difference between a subquery and a join?</div>
+                <div class="answer">
+                    <ul>
+                        <li>Subquery: A query nested inside another query, usually within the WHERE, HAVING, or SELECT clauses. It can return a single value or a result set.</li>
+                        <li>Join: Combines columns from two or more tables based on a related column, allowing data from multiple tables to be queried in a single operation.</li>
+                    </ul>
+                </div>
+        
+                <div class="question">63. What is a stored function?</div>
+                <div class="answer">A stored function is a set of SQL statements that are stored in the database and can return a single value. Unlike procedures, functions are designed to return values and can be used in SQL expressions.</div>
+        
+                <div class="question">64. What is the SQL GROUP BY clause used for?</div>
+                <div class="answer">The GROUP BY clause groups rows that have the same values into summary rows. It is often used with aggregate functions (e.g., COUNT, SUM, AVG) to generate aggregated data.</div>
+        
+                <div class="question">65. What is the difference between TRUNCATE and DROP?</div>
+                <div class="answer">
+                    <ul>
+                        <li>TRUNCATE: Removes all rows from a table, but keeps the table structure for future use. It cannot be rolled back in some databases.</li>
+                        <li>DROP: Completely removes a table (or other database object) from the database, including its structure, constraints, and data.</li>
+                    </ul>
+                </div>
+        
+                <div class="question">66. What is a database cursor?</div>
+                <div class="answer">A cursor is a database object used to retrieve and process rows of a query result one at a time. It allows for row-by-row processing of query results.</div>
+        
+                <div class="question">67. What is a deadlock in SQL?</div>
+                <div class="answer">A deadlock occurs when two or more database transactions cannot proceed because each is waiting for the other to release locks on resources. SQL engines handle deadlocks by terminating one of the transactions to resolve the deadlock.</div>
+        
+                <div class="question">68. What is the purpose of the ROLLBACK command?</div>
+                <div class="answer">The ROLLBACK command is used to undo a transaction, reverting the database to its state before the transaction began. It is typically used in case of errors or to discard changes.</div>
+        
+                <div class="question">69. What is the difference between a function and a stored procedure?</div>
+                <div class="answer">
+                    <ul>
+                        <li>Function: Returns a single value and can be used in SELECT, WHERE, or other SQL clauses.</li>
+                        <li>Stored Procedure: Performs an action but does not necessarily return a value, and can be executed independently.</li>
+                    </ul>
+                </div>
+        
+                <div class="question">70. What is SQL injection?</div>
+                <div class="answer">SQL injection is a type of attack in which malicious SQL statements are inserted into a query. It can allow attackers to manipulate the database, view sensitive data, or even delete records. Proper validation and parameterized queries help prevent SQL injection.</div>
+        
+                <div class="question">71. What is the role of the COMMIT command in SQL?</div>
+                <div class="answer">The COMMIT command is used to save all changes made in the current transaction to the database permanently. It makes all modifications made since the last COMMIT or ROLLBACK permanent.</div>
+        
+                <div class="question">72. What is the difference between a temporary table and a permanent table?</div>
+                <div class="answer">A temporary table is a table that exists temporarily during the duration of a session or a transaction, and is dropped automatically when the session ends. A permanent table is a standard table that persists in the database unless explicitly dropped.</div>
+        
+                <div class="question">73. What is a scalar function?</div>
+                <div class="answer">A scalar function is a function that returns a single value based on input parameters. It can be used in SELECT, WHERE, and other SQL clauses.</div>
+        
+                <div class="question">74. What is a join condition in SQL?</div>
+                <div class="answer">A join condition defines the relationship between columns in different tables. It specifies how rows from two or more tables are matched. The most common join condition is the equality of foreign and primary key columns.</div>
+        
+                <div class="question">75. What is a SQL Alias?</div>
+                <div class="answer">A SQL alias is a temporary name given to a table or column for the purpose of a query. It is used to make queries easier to read and write.</div>
+        
+                <div class="question">76. What are triggers used for in SQL?</div>
+                <div class="answer">Triggers are used to automatically execute a predefined set of SQL statements when certain events occur on a table, such as an INSERT, UPDATE, or DELETE operation. They help enforce business rules or maintain integrity.</div>
+        
+                <div class="question">77. What is the difference between a stored procedure and a trigger?</div>
+                <div class="answer">
+                    <ul>
+                        <li>Stored Procedure: Needs to be explicitly executed by the user or application.</li>
+                        <li>Trigger: Automatically executes in response to a specific event on a table or view (e.g., INSERT, UPDATE, DELETE).</li>
+                    </ul>
+                </div>
+        
+                <div class="question">78. What is a connection pool?</div>
+                <div class="answer">A connection pool is a collection of reusable database connections maintained for use by applications. It improves performance by reducing the overhead of opening and closing database connections repeatedly.</div>
+        
+                <div class="question">79. What is the SQL LIKE operator used for?</div>
+                <div class="answer">The LIKE operator is used to search for a specified pattern in a column. It can be used with wildcards such as `%` (for multiple characters) and `_` (for a single character).</div>
+        
+                <div class="question">80. What is the purpose of the SQL EXISTS operator?</div>
+                <div class="answer">The EXISTS operator is used to check whether a subquery returns any result. It returns TRUE if the subquery returns one or more rows and FALSE if the subquery does not return any rows.</div>
+        
+                <!-- Question 81 to 100 -->
+                <div class="question">81. What is the purpose of the SQL NOT EXISTS operator?</div>
+                <div class="answer">The NOT EXISTS operator is used to check if a subquery does not return any results. It returns TRUE when the subquery yields no rows, and FALSE when the subquery returns one or more rows.</div>
+        
+                <div class="question">82. What are the different types of subqueries in SQL?</div>
+                <div class="answer">
+                    <ul>
+                        <li>Single-row subquery: Returns only one row from the subquery.</li>
+                        <li>Multiple-row subquery: Returns multiple rows from the subquery.</li>
+                        <li>Correlated subquery: References columns from the outer query in the subquery.</li>
+                        <li>Non-correlated subquery: Does not reference columns from the outer query.</li>
+                    </ul>
+                </div>
+        
+                <div class="question">83. What is a hierarchical query?</div>
+                <div class="answer">A hierarchical query is used to retrieve data from tables with a hierarchical relationship, such as organizational structures or category trees. It is often implemented using recursive Common Table Expressions (CTEs) or specialized SQL constructs.</div>
+        
+                <div class="question">84. What is the purpose of the SQL LIMIT clause?</div>
+                <div class="answer">The LIMIT clause is used to restrict the number of rows returned by a query. It is useful for pagination or limiting the result set to a specific number of rows.</div>
+        
+                <div class="question">85. What is the difference between the UNION and UNION ALL operators?</div>
+                <div class="answer">
+                    <ul>
+                        <li>UNION: Combines the result sets of two or more SELECT statements and removes duplicate rows.</li>
+                        <li>UNION ALL: Combines the result sets without removing duplicates, potentially returning more rows.</li>
+                    </ul>
+                </div>
+        
+                <div class="question">86. What is an analytic function in SQL?</div>
+                <div class="answer">An analytic function computes an aggregate value over a group of rows while retaining the individual row's details. Examples include functions like RANK(), DENSE_RANK(), and ROW_NUMBER().</div>
+        
+                <div class="question">87. What is the purpose of the HAVING clause?</div>
+                <div class="answer">The HAVING clause is used to filter results after aggregation. It is used in combination with GROUP BY to filter groups based on a condition, such as filtering the results of COUNT, SUM, or AVG functions.</div>
+        
+                <div class="question">88. What is the difference between CHAR and VARCHAR data types?</div>
+                <div class="answer">
+                    <ul>
+                        <li>CHAR: A fixed-length string data type, where the length of the string is always the same.</li>
+                        <li>VARCHAR: A variable-length string data type, where the string length can vary.</li>
+                    </ul>
+                </div>
+        
+                <div class="question">89. What is the difference between PRIMARY KEY and UNIQUE constraints?</div>
+                <div class="answer">
+                    <ul>
+                        <li>PRIMARY KEY: Ensures uniqueness and does not allow NULL values. There can only be one primary key per table.</li>
+                        <li>UNIQUE: Ensures uniqueness but allows NULL values. A table can have multiple UNIQUE constraints.</li>
+                    </ul>
+                </div>
+        
+                <div class="question">90. What is the purpose of the SQL CONVERT function?</div>
+                <div class="answer">The CONVERT function is used to explicitly convert an expression from one data type to another in SQL.</div>
+        
+                <div class="question">91. What are SQL aggregate functions?</div>
+                <div class="answer">
+                    <ul>
+                        <li>COUNT(): Returns the number of rows.</li>
+                        <li>SUM(): Returns the total sum of a numeric column.</li>
+                        <li>AVG(): Returns the average value of a numeric column.</li>
+                        <li>MIN(): Returns the minimum value.</li>
+                        <li>MAX(): Returns the maximum value.</li>
+                    </ul>
+                </div>
+        
+                <div class="question">92. What is the purpose of the SQL CAST function?</div>
+                <div class="answer">The CAST function is used to convert an expression from one data type to another in SQL, similar to the CONVERT function, but with a standard syntax across different SQL implementations.</div>
+        
+                <div class="question">93. What is a SQL constraint?</div>
+                <div class="answer">A SQL constraint is a rule enforced on data in a table to ensure data integrity and consistency. Examples include NOT NULL, UNIQUE, PRIMARY KEY, FOREIGN KEY, and CHECK constraints.</div>
+        
+                <div class="question">94. What is the difference between a UNIQUE constraint and a PRIMARY KEY?</div>
+                <div class="answer">
+                    <ul>
+                        <li>PRIMARY KEY: A primary key uniquely identifies each record and cannot accept NULL values. There can only be one primary key in a table.</li>
+                        <li>UNIQUE: A unique constraint also ensures uniqueness but allows NULL values and can be applied to multiple columns in a table.</li>
+                    </ul>
+                </div>
+        
+                <div class="question">95. What is the SQL COALESCE function?</div>
+                <div class="answer">The COALESCE function returns the first non-NULL expression among its arguments. It is often used to handle NULL values by providing a default value.</div>
+        
+                <div class="question">96. What is the SQL DATEADD function?</div>
+                <div class="answer">The DATEADD function is used to add a specified time interval to a date. It is typically used for date calculations like adding days, months, or years to a given date.</div>
+        
+                <div class="question">97. What is the SQL DATEDIFF function?</div>
+                <div class="answer">The DATEDIFF function returns the difference between two dates, typically in terms of days, months, or years, depending on the specified date part.</div>
+        
+                <div class="question">98. What is a pivot table in SQL?</div>
+                <div class="answer">A pivot table is used to transform data from rows into columns, summarizing data based on different categories. It can be implemented using the PIVOT operator in SQL.</div>
+        
+                <div class="question">99. What is the purpose of the SQL IN operator?</div>
+                <div class="answer">The IN operator is used to filter records based on a list of values or the result of a subquery. It checks whether a column's value matches any value in the specified list or result set.</div>
+        
+                <div class="question">100. What is the purpose of the SQL UNION operator?</div>
+                <div class="answer">The UNION operator is used to combine the results of two or more SELECT statements into a single result set, eliminating duplicate rows.</div>
+        
+    </div>
+
+</body>
+</html>

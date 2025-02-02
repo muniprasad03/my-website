@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dependency Injection Interview Questions - .NET</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #007BFF;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+        }
+        .question {
+            font-weight: bold;
+            color: #007BFF;
+        }
+        .answer {
+            margin-top: 5px;
+            color: #333;
+        }
+        .question, .answer {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Top 50 Interview Questions and Answers on Dependency Injection in .NET</h1>
+    <ul>
+        <li>
+            <div class="question">1. What is Dependency Injection (DI)?</div>
+            <div class="answer">Dependency Injection is a design pattern used to implement Inversion of Control (IoC). It allows a class to receive its dependencies from an external source rather than creating them internally.</div>
+        </li>
+        <li>
+            <div class="question">2. Why is Dependency Injection important?</div>
+            <div class="answer">Dependency Injection improves testability, maintainability, and flexibility of code by decoupling classes from their dependencies. It also simplifies code by reducing the need for hardcoded dependencies.</div>
+        </li>
+        <li>
+            <div class="question">3. What are the main types of Dependency Injection?</div>
+            <div class="answer">The three main types of Dependency Injection are: Constructor Injection, Property Injection, and Method Injection.</div>
+        </li>
+        <li>
+            <div class="question">4. What is Constructor Injection?</div>
+            <div class="answer">Constructor Injection involves passing dependencies to a class via its constructor. This ensures that the class has all the required dependencies when it is created.</div>
+        </li>
+        <li>
+            <div class="question">5. What is Property Injection?</div>
+            <div class="answer">Property Injection involves setting dependencies via public properties of a class. It is less common and generally used for optional dependencies.</div>
+        </li>
+        <li>
+            <div class="question">6. What is Method Injection?</div>
+            <div class="answer">Method Injection involves passing dependencies as parameters to methods when they are called. This approach is typically used when dependencies are needed only during method execution.</div>
+        </li>
+        <li>
+            <div class="question">7. What is Inversion of Control (IoC)?</div>
+            <div class="answer">Inversion of Control is a design principle where the control of object creation and management is transferred to a container or framework. DI is a form of IoC, as it allows objects to receive their dependencies externally.</div>
+        </li>
+        <li>
+            <div class="question">8. What is the difference between DI and IoC?</div>
+            <div class="answer">Inversion of Control (IoC) refers to the general principle of inverting the flow of control, while Dependency Injection (DI) is a specific technique for achieving IoC, focusing on injecting dependencies into classes.</div>
+        </li>
+        <li>
+            <div class="question">9. How does Dependency Injection work in .NET Core?</div>
+            <div class="answer">In .NET Core, DI is built into the framework. The built-in IoC container can be configured in the `Startup.cs` file where you register services and their lifetimes. Services are then injected into controllers, middlewares, or constructors as needed.</div>
+        </li>
+        <li>
+            <div class="question">10. What is the difference between "Transient", "Scoped", and "Singleton" lifetimes in DI?</div>
+            <div class="answer">In DI, "Transient" creates a new instance of a service every time it is requested. "Scoped" creates one instance per request/operation. "Singleton" creates a single instance for the lifetime of the application.</div>
+        </li>
+        <li>
+            <div class="question">11. When should you use Singleton lifetime?</div>
+            <div class="answer">Use Singleton for services that do not maintain state between requests or that should be shared throughout the application (e.g., logging, caching, database connections).</div>
+        </li>
+        <li>
+            <div class="question">12. When should you use Scoped lifetime?</div>
+            <div class="answer">Use Scoped for services that are tied to a specific request or operation and need to be disposed of when the operation completes, such as in web requests or database contexts.</div>
+        </li>
+        <li>
+            <div class="question">13. When should you use Transient lifetime?</div>
+            <div class="answer">Use Transient for lightweight, stateless services that are created and used within a single method or operation. They should not be shared between requests or operations.</div>
+        </li>
+        <li>
+            <div class="question">14. How do you register services in .NET Core DI container?</div>
+            <div class="answer">In .NET Core, services are registered in the `ConfigureServices` method of the `Startup.cs` file using methods like `AddTransient`, `AddScoped`, or `AddSingleton` to specify their lifetime.</div>
+        </li>
+        <li>
+            <div class="question">15. What are the benefits of using Dependency Injection?</div>
+            <div class="answer">Dependency Injection provides benefits such as improved testability, reduced tight coupling, better code maintainability, easier configuration management, and increased flexibility in swapping out components.</div>
+        </li>
+        <li>
+            <div class="question">16. How does DI improve testability?</div>
+            <div class="answer">DI improves testability by allowing dependencies to be easily replaced with mock or stub implementations, which is particularly useful in unit testing where you need to isolate components.</div>
+        </li>
+        <li>
+            <div class="question">17. How do you inject dependencies into a controller in ASP.NET Core?</div>
+            <div class="answer">Dependencies are injected into a controller via the constructor. The DI container resolves and injects the necessary services automatically when the controller is instantiated.</div>
+        </li>
+        <li>
+            <div class="question">18. What is the role of the IServiceProvider in DI?</div>
+            <div class="answer">IServiceProvider is the interface used by the DI container to resolve and return instances of services. It is responsible for retrieving services that are registered in the DI container.</div>
+        </li>
+        <li>
+            <div class="question">19. Can you implement your own DI container in .NET?</div>
+            <div class="answer">Yes, it is possible to implement your own DI container, although .NET Core provides a built-in one. Custom containers can be used to implement advanced functionality or optimizations based on specific application needs.</div>
+        </li>
+        <li>
+            <div class="question">20. What is a Service Locator and how does it differ from Dependency Injection?</div>
+            <div class="answer">A Service Locator is a design pattern that provides a way to locate services at runtime. It differs from DI because it introduces tight coupling between components, whereas DI promotes loose coupling by injecting dependencies from external sources.</div>
+        </li>
+        <li>
+            <div class="question">21. What is the "Constructor Injection" pattern in DI?</div>
+            <div class="answer">Constructor Injection is a DI pattern where dependencies are provided through the class constructor. It ensures that the object is always created with all required dependencies.</div>
+        </li>
+        <li>
+            <div class="question">22. How can you avoid circular dependencies in DI?</div>
+            <div class="answer">Circular dependencies can be avoided by restructuring code to break the cycle. For example, introducing interfaces or creating separate services to manage different aspects of the problem can help eliminate circular references.</div>
+        </li>
+        <li>
+            <div class="question">23. What is a "Lazy" service in DI?</div>
+            <div class="answer">A "Lazy" service defers the creation of an object until it is actually needed. In .NET Core, the `Lazy<T>` class can be used to implement lazy loading of services in DI.</div>
+        </li>
+        <li>
+            <div class="question">24. What is the "AddTransient" method used for in .NET Core DI?</div>
+            <div class="answer">The `AddTransient` method is used to register services with a transient lifetime, meaning a new instance of the service is created every time it is requested.</div>
+        </li>
+        <li>
+            <div class="question">25. What is the "AddScoped" method used for in .NET Core DI?</div>
+            <div class="answer">The `AddScoped` method registers services with a scoped lifetime, meaning a new instance is created per request or operation, but the same instance is used throughout the request.</div>
+        </li>
+        <li>
+            <div class="question">26. What is the "AddSingleton" method used for in .NET Core DI?</div>
+            <div class="answer">The `AddSingleton` method registers services with a singleton lifetime, meaning a single instance of the service is created and shared across the entire application lifecycle.</div>
+        </li>
+        <li>
+            <div class="question">27. How can you resolve a dependency manually in .NET Core?</div>
+            <div class="answer">You can resolve a dependency manually using the `IServiceProvider` by calling the `GetService` method, or `GetRequiredService` if the service is mandatory.</div>
+        </li>
+        <li>
+            <div class="question">28. Can services in DI container be resolved dynamically at runtime?</div>
+            <div class="answer">Yes, services in the DI container can be resolved dynamically at runtime using reflection or by using factory methods that create instances on demand.</div>
+        </li>
+        <li>
+            <div class="question">29. What is the purpose of `IServiceCollection`?</div>
+            <div class="answer">`IServiceCollection` is used to register services with the DI container in .NET Core. It is where you define what services are available for injection in your application.</div>
+        </li>
+        <li>
+            <div class="question">30. How do you configure DI in an ASP.NET Core application?</div>
+            <div class="answer">In an ASP.NET Core application, you configure DI in the `Startup.cs` file by adding services to the `ConfigureServices` method using the `IServiceCollection`.</div>
+        </li>
+        <li>
+            <div class="question">31. How can you handle exceptions with DI?</div>
+            <div class="answer">Exceptions can be handled in DI by using custom middleware to catch exceptions or by handling them in specific services. DI itself doesn't directly handle exceptions.</div>
+        </li>
+        <li>
+            <div class="question">32. What is a Factory Pattern in DI?</div>
+            <div class="answer">A Factory Pattern in DI involves creating a class or method that returns an instance of a service, often used when the service creation requires more complex logic than can be handled by DI alone.</div>
+        </li>
+        <li>
+            <div class="question">33. Can DI be used with non-ASP.NET Core applications?</div>
+            <div class="answer">Yes, DI can be used in non-ASP.NET Core applications. It is a general design pattern that can be implemented in various types of applications like console apps, desktop apps, etc.</div>
+        </li>
+        <li>
+            <div class="question">34. How can you use DI in Azure Functions?</div>
+            <div class="answer">In Azure Functions, you can use DI by configuring the `Startup.cs` file and using the `AddSingleton`, `AddScoped`, and `AddTransient` methods to register dependencies that will be injected into function classes.</div>
+        </li>
+        <li>
+            <div class="question">35. What is the difference between DI and Service Locator?</div>
+            <div class="answer">DI injects dependencies directly into objects, making the dependencies explicit, while Service Locator allows for fetching services at runtime via a central class, which can lead to hidden dependencies and tighter coupling.</div>
+        </li>
+        <li>
+            <div class="question">36. How do you resolve a service in an MVC Controller in .NET Core?</div>
+            <div class="answer">In .NET Core MVC controllers, dependencies are resolved through constructor injection. The framework automatically injects the required services into the controller constructor.</div>
+        </li>
+        <li>
+            <div class="question">37. Can you register a class and interface in DI in one line?</div>
+            <div class="answer">Yes, you can register a class and its interface using the `AddTransient`, `AddScoped`, or `AddSingleton` methods, like so: `services.AddScoped<IService, Service>();`.</div>
+        </li>
+        <li>
+            <div class="question">38. How can you configure DI in a .NET Framework application?</div>
+            <div class="answer">In a .NET Framework application, DI can be configured using third-party DI containers such as Unity, Autofac, or Ninject, which need to be integrated manually into the application.</div>
+        </li>
+        <li>
+            <div class="question">39. What is the difference between a DI container and a DI framework?</div>
+            <div class="answer">A DI container is a specific implementation of Dependency Injection, while a DI framework includes both the container and additional features such as advanced configuration and integration options.</div>
+        </li>
+        <li>
+            <div class="question">40. Can you inject DI services into static classes?</div>
+            <div class="answer">No, you cannot inject DI services into static classes because static classes do not support instance-based dependency injection. Static classes do not have constructors for DI to resolve dependencies.</div>
+        </li>
+        <li>
+            <div class="question">41. What is `IServiceScope`?</div>
+            <div class="answer">`IServiceScope` represents a scope within which services can be resolved in DI, typically used for managing services that have a scoped lifetime.</div>
+        </li>
+        <li>
+            <div class="question">42. Can you use DI with SignalR?</div>
+            <div class="answer">Yes, you can use DI with SignalR in ASP.NET Core by injecting dependencies into hubs through the constructor, similar to how it works with controllers.</div>
+        </li>
+        <li>
+            <div class="question">43. What is a decorator pattern in DI?</div>
+            <div class="answer">The decorator pattern involves wrapping a service to enhance or modify its behavior without changing the original service class. In DI, this pattern can be implemented by creating a decorator class and registering it with the container.</div>
+        </li>
+        <li>
+            <div class="question">44. How does DI help in reducing tight coupling?</div>
+            <div class="answer">DI helps reduce tight coupling by allowing components to depend on abstractions (e.g., interfaces or base classes) instead of concrete implementations. This allows for easier replacement of dependencies.</div>
+        </li>
+        <li>
+            <div class="question">45. Can you use DI in a .NET Console Application?</div>
+            <div class="answer">Yes, DI can be used in .NET Console Applications by using the Microsoft.Extensions.DependencyInjection package to configure and resolve dependencies.</div>
+        </li>
+        <li>
+            <div class="question">46. What is the role of `IServiceProvider` in resolving services?</div>
+            <div class="answer">`IServiceProvider` is responsible for providing instances of registered services. It resolves services by looking them up in the DI container and ensuring that the appropriate lifetime is respected.</div>
+        </li>
+        <li>
+            <div class="question">47. How can you register a factory function for a service in DI?</div>
+            <div class="answer">You can register a factory function using the `AddTransient`, `AddScoped`, or `AddSingleton` methods by passing a factory delegate that provides the instance when requested.</div>
+        </li>
+        <li>
+            <div class="question">48. What is an example of DI used in a web API project?</div>
+            <div class="answer">In a web API project, you can inject a service like a `ILogger` or `IRepository` into controllers, where the DI container provides the instance of the service when the controller is created.</div>
+        </li>
+        <li>
+            <div class="question">49. Can DI be used with Middleware in .NET?</div>
+            <div class="answer">Yes, DI can be used with middleware in .NET Core by adding the necessary services in `ConfigureServices` and then injecting them into the middleware constructor.</div>
+        </li>
+        <li>
+            <div class="question">50. How can you test classes using DI?</div>
+            <div class="answer">You can test classes using DI by creating mock services or stubs for the injected dependencies. You can use frameworks like Moq to create mocks and inject them into the class under test.</div>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>
