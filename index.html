@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Interview Questions Home Page</title>
     <style>
         body {
@@ -12,88 +12,117 @@
             padding: 0;
             background-color: #f4f4f4;
         }
+
         .header {
-            background-color: #007BFF;
+            background: linear-gradient(90deg, #0062E6, #33AEFF);
             color: white;
-            padding: 10px 0;
+            padding: 30px 0;
             text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
         }
-        .header nav {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        .header nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .header nav a:hover {
-            text-decoration: underline;
-        }
+
+            .header h1 {
+                margin: 0;
+                font-size: 2.2em;
+                letter-spacing: 1px;
+            }
+
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 20px auto;
             background: #fff;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        h1 {
+
+        h1, h2 {
             text-align: center;
             color: #333;
         }
+
         ul {
             list-style-type: none;
             padding: 0;
         }
+
         li {
             margin-bottom: 10px;
         }
+
         a {
             text-decoration: none;
             color: #007BFF;
             font-weight: bold;
         }
-        a:hover {
-            text-decoration: underline;
-        }
+
+            a:hover {
+                text-decoration: underline;
+            }
     </style>
 </head>
 <body>
     <header class="header">
         <h1>Interview Questions Home Page</h1>
-        <nav>
-            
-        </nav>
     </header>
+
     <div class="container">
+        <h2>C# Topics</h2>
         <ul>
             <li><a href="cSharp.html">C#</a></li>
             <li><a href="oops.html">C# OOPS</a></li>
-            <li><a href="interview-questions.html">Coding Theory</a></li>
-            <li><a href="aspnet-mvc-interview-questions.html">MVC</a></li>
-            <li><a href="DotnetCore.html">Core</a></li>
-            <li><a href="webapi.html">WebApi</a></li>
-            <li><a href="sql.html">SQL</a></li>
-            <li><a href="angular.html">Angular</a></li>
-            <li><a href="EF-LINQ-Dapper.html">Entity Framework</a></li>
-            <li><a href="CYIENT.html">Cyient Interview Questions</a></li>
             <li><a href="coding.html">C# Coding Interview Questions</a></li>
-            <li><a href="DataStuctures.html">Data Structures Questions</a></li>
-            <li><a href="oops-prinicples.html">OOP Principles</a></li>
-            <li><a href="action-filters.html">Filters in MVC</a></li>
-            <li><a href="nodejs.html">Node.js</a></li>
-            <li><a href="sql_interview_questions.html">sql developers</a></li>
             <li><a href="./MajorConcepts/majorConcepts.html">C# Major Concepts</a></li>
-            <li><a href="./MajorConcepts/solidPriniples.html">Solid Principles</a></li>
+            <li><a href="./MajorConcepts/solidPrinciples.html">SOLID Principles</a></li>
             <li><a href="./MajorConcepts/dependencyInjection.html">Dependency Injection</a></li>
-            <li><a href="./MajorConcepts/multiTrhreading.html">Multi Trhreading</a></li>
-            <li><a href="./MajorConcepts/entity-framework-dapper.html">Entity framework vs Dapper</a></li>
-            <li><a href="./Videos/csharpVideos1.html">C# Videos-part1</a></li>
-            <li><a href="./Videos/csharpVideos2.html">C# Videos-part2</a></li>
-            <li><a href="./Videos/mvcVideos.html">mvc Videos-part1</a></li>
-            <li><a href="https://muniprasadch.blogspot.com/2025/02/c-interview-questions-and-answers.html">C# inter Blogger</a></li>
+            <li><a href="./MajorConcepts/multiThreading.html">Multithreading</a></li>
+            <li><a href="oops-principles.html">OOP Principles</a></li>
+            <li><a href="Top_100_CSharp_Interview_Questions_and_Answers.txt">C# Top 100 Q/A</a></li>
+        </ul>
+
+        <h2>ASP.NET & Web Development</h2>
+        <ul>
+            <li><a href="aspnet-mvc-interview-questions.html">MVC</a></li>
+            <li><a href="webapi.html">Web API</a></li>
+            <li><a href="action-filters.html">Filters in MVC</a></li>
+            <li><a href="DotnetCore.html">.NET Core</a></li>
+            <li><a href="nodejs.html">Node.js</a></li>
+            <li><a href="angular.html">Angular</a></li>
+        </ul>
+
+        <h2>Data Access</h2>
+        <ul>
+            <li><a href="EF-LINQ-Dapper.html">Entity Framework</a></li>
+            <li><a href="./MajorConcepts/entity-framework-dapper.html">Entity Framework vs Dapper</a></li>
+        </ul>
+
+        <h2>Database</h2>
+        <ul>
+            <li><a href="sql.html">SQL</a></li>
+            <li><a href="sql_interview_questions.html">SQL Developers</a></li>
+        </ul>
+
+        <h2>Computer Science & Theory</h2>
+        <ul>
+            <li><a href="interview-questions.html">Coding Theory</a></li>
+            <li><a href="DataStructures.html">Data Structures Questions</a></li>
+        </ul>
+
+        <h2>Company Specific</h2>
+        <ul>
+            <li><a href="CYIENT.html">Cyient Interview Questions</a></li>
+        </ul>
+
+        <h2>Video Resources</h2>
+        <ul>
+            <li><a href="./Videos/csharpVideos1.html">C# Videos - Part 1</a></li>
+            <li><a href="./Videos/csharpVideos2.html">C# Videos - Part 2</a></li>
+            <li><a href="./Videos/mvcVideos.html">MVC Videos - Part 1</a></li>
+        </ul>
+
+        <h2>External Resources</h2>
+        <ul>
+            <li><a href="https://muniprasadch.blogspot.com/2025/02/c-interview-questions-and-answers.html" target="_blank">C# Interview Blogger</a></li>
         </ul>
     </div>
 </body>

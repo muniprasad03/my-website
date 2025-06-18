@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Top 100 Entity Framework Interview Questions and Answers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .qa {
+            background: #fff;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .question {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .answer {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Top 100 Entity Framework Interview Questions and Answers</h1>
+
+    <div class="qa">
+        <div class="question">1. What is Entity Framework?</div>
+        <div class="answer">Entity Framework (EF) is an open-source object-relational mapping (ORM) framework for .NET applications. It enables developers to work with databases using .NET objects, eliminating the need for most of the data-access code.</div>
+    </div>
+
+    <div class="qa">
+        <div class="question">2. What are the advantages of using Entity Framework?</div>
+        <div class="answer">
+            - Eliminates the need for most of the data-access code<br>
+            - Supports LINQ queries<br>
+            - Offers change tracking and lazy loading<br>
+            - Reduces development time
+        </div>
+    </div>
+
+    <div class="qa">
+        <div class="question">3. What are the different approaches in Entity Framework?</div>
+        <div class="answer">
+            - Database First<br>
+            - Model First<br>
+            - Code First
+        </div>
+    </div>
+    <div class="qa">
+        <div class="question">4. What is Code First approach?</div>
+        <div class="answer">In Code First, the database is created from the code. You define your model classes first, and then EF generates the database schema based on those classes.</div>
+    </div>
+
+    <div class="qa">
+        <div class="question">5. What is Database First approach?</div>
+        <div class="answer">In Database First, you start with an existing database, and EF generates entity classes and the DbContext based on the database schema.</div>
+    </div>
+
+    <div class="qa">
+        <div class="question">6. What is Model First approach?</div>
+        <div class="answer">In Model First, you design your data model visually using the EF Designer, and then EF generates both the database schema and the code from the model.</div>
+    </div>
+
+    <div class="qa">
+        <div class="question">7. What is DbContext in Entity Framework?</div>
+        <div class="answer">DbContext is the primary class in EF that manages the database connection and is used to retrieve and save data. It represents a session with the database.</div>
+    </div>
+
+    <div class="qa">
+        <div class="question">8. What is the difference between DbContext and ObjectContext?</div>
+        <div class="answer">DbContext is a wrapper around ObjectContext introduced in EF 4.1 to simplify coding. It provides a more streamlined API and is recommended for most modern applications. ObjectContext is more powerful but more complex and typically used in advanced scenarios.</div>
+    </div>
+    <!-- Add more Q&A items similarly up to 100 -->
+
+
+    <div class="qa">
+        <div class="question">9. What is a DbSet in Entity Framework?</div>
+        <div class="answer">A DbSet represents a collection of entities of a specific type that can be queried from the database and updated.</div>
+    </div>
+
+    <div class="qa">
+        <div class="question">10. How does EF handle relationships?</div>
+        <div class="answer">EF handles relationships using navigation properties, foreign keys, and configurations through Data Annotations or Fluent API.</div>
+    </div>
+
+    <div class="qa">
+        <div class="question">11. What is Lazy Loading?</div>
+        <div class="answer">Lazy Loading means related data is automatically loaded from the database when it is accessed through a navigation property.</div>
+    </div>
+
+    <div class="qa">
+        <div class="question">12. What is Eager Loading?</div>
+        <div class="answer">Eager Loading is the process of loading related entities as part of the initial query using the Include method.</div>
+    </div>
+
+    <div class="qa">
+        <div class="question">13. What is Explicit Loading?</div>
+        <div class="answer">Explicit Loading is when you manually load related entities using the Load method on a navigation property.</div>
+    </div>
+
+    <div class="qa">
+        <div class="question">14. What are navigation properties?</div>
+        <div class="answer">Navigation properties in EF represent relationships between entities, like foreign keys in a relational database.</div>
+    </div>
+
+    <div class="qa">
+        <div class="question">15. How can you configure relationships in EF?</div>
+        <div class="answer">Relationships can be configured using Data Annotations or Fluent API to specify multiplicity and foreign key constraints.</div>
+    </div>
+
+    <div class="qa">
+        <div class="question">16. What is the Fluent API in Entity Framework?</div>
+        <div class="answer">Fluent API provides a way to configure entity classes using method chaining instead of attributes.</div>
+    </div>
+
+    <div class="qa">
+        <div class="question">17. What is LINQ to Entities?</div>
+        <div class="answer">LINQ to Entities is a query language that allows you to write strongly typed queries against the Entity Framework context.</div>
+    </div>
+
+
+    <div class="qa">
+        <div class="question">18. What is the difference between LINQ to Entities and LINQ to SQL?</div>
+        <div class="answer">LINQ to SQL works only with SQL Server and uses a different provider, while LINQ to Entities works with multiple databases via Entity Framework.</div>
+    </div>
+
+    <div class="qa">
+        <div class="question">19. How do you update an entity in EF?</div>
+        <div class="answer">Retrieve the entity, make changes, and then call SaveChanges() on the DbContext.</div>
+    </div>
+
+    <div class="qa">
+        <div class="question">20. What is the role of SaveChanges() in EF?</div>
+        <div class="answer">SaveChanges() commits all changes made in the context to the database.</div>
+    </div>
+
+    <div class="qa">
+        <div class="question">21. How do you track changes in EF?</div>
+        <div class="answer">EF tracks changes using its Change Tracker, which monitors entity states such as Added, Modified, Deleted.</div>
+    </div>
+
+    <div class="qa">
+        <div class="question">22. What is Change Tracking?</div>
+        <div class="answer">Change tracking is a feature where EF keeps track of changes made to entities so that the correct update statements are sent to the database.</div>
+    </div>
+
+    <div class="qa">
+        <div class="question">23. How to disable tracking in EF?</div>
+        <div class="answer">Use AsNoTracking() for read-only queries to improve performance.</div>
+    </div>
+
+    <div class="qa">
+        <div class="question">24. What is Migration in Entity Framework?</div>
+        <div class="answer">Migrations allow you to incrementally change the database schema over time as your model changes.</div>
+    </div>
+
+    <div class="qa">
+        <div class="question">25. What command is used to add a migration?</div>
+        <div class="answer">Use the command: `Add-Migration MigrationName` in the Package Manager Console.</div>
+    </div>
+
+    <div class="qa">
+        <div class="question">26. What is the use of Update-Database command?</div>
+        <div class="answer">It applies pending migrations to the database.</div>
+    </div>
+
+    <!-- Add more questions in the same format -->
+    <div class="qa">
+        <div class="question">27. What is the difference between Add-Migration and Update-Database?</div>
+        <div class="answer">Add-Migration creates a migration file based on changes made to the model, while Update-Database applies migrations to the database.</div>
+    </div>
+
+    <div class="qa">
+        <div class="question">28. How do you handle concurrency conflicts in Entity Framework?</div>
+        <div class="answer">Concurrency conflicts are handled by using optimistic concurrency, where the EF checks for conflicting changes before saving data. You can implement it using timestamps or version columns in the database.</div>
+    </div>
+
+    <div class="qa">
+        <div class="question">29. What is a composite key in Entity Framework?</div>
+        <div class="answer">A composite key is a primary key made up of more than one column in a table. You can configure composite keys using the Fluent API.</div>
+    </div>
+
+    <div class="qa">
+        <div class="question">30. How do you configure a one-to-many relationship in EF?</div>
+        <div class="answer">In EF, you can configure a one-to-many relationship by using navigation properties and foreign keys, either using Data Annotations or Fluent API.</div>
+    </div>
+
+    <div class="qa">
+        <div class="question">31. What is a many-to-many relationship in Entity Framework?</div>
+        <div class="answer">A many-to-many relationship is a relationship where multiple records in one table are related to multiple records in another table. In EF, it is configured with a join table that stores the associations.</div>
+    </div>
+
+    <div class="qa">
+        <div class="question">32. What is a stored procedure in EF, and how do you execute it?</div>
+        <div class="answer">A stored procedure is a precompiled SQL query that can be executed by the database. In EF, you can execute it using `DbContext.Database.SqlQuery` or `DbContext.Database.ExecuteSqlCommand`.</div>
+    </div>
+
+    <div class="qa">
+        <div class="question">33. What is the difference between `First()` and `FirstOrDefault()`?</div>
+        <div class="answer">`First()` throws an exception if no element is found, whereas `FirstOrDefault()` returns `null` when no elements match the query.</div>
+    </div>
+
+    <div class="qa">
+        <div class="question">34. What is the `AsNoTracking()` method used for?</div>
+        <div class="answer">`AsNoTracking()` is used to query data without tracking changes in the context, which improves performance for read-only queries.</div>
+    </div>
+
+    <div class="qa">
+        <div class="question">35. How do you perform batch updates in Entity Framework?</div>
+        <div class="answer">EF does not provide built-in batch updates, but you can update entities in bulk by modifying them in memory and then calling `SaveChanges()` for all entities.</div>
+    </div>
+
+    <div class="qa">
+        <div class="question">36. What is Lazy Loading in EF?</div>
+        <div class="answer">Lazy Loading automatically loads related entities when they are accessed for the first time. It is enabled by default in EF.</div>
+    </div>
+
+    <div class="qa">
+        <div class="question">37. How do you prevent Lazy Loading in EF?</div>
+        <div class="answer">You can disable Lazy Loading by setting `LazyLoadingEnabled` to `false` in the `DbContext` configuration or by using `AsNoTracking()` for read-only queries.</div>
+    </div>
+
+</body>
+</html>

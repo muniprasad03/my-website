@@ -1,0 +1,338 @@
+
+Top 100 C# Interview Questions and Answers
+
+---
+Section: Basics of C#
+
+1. What is C#?
+C# is a modern, object-oriented programming language developed by Microsoft as part of its .NET initiative.
+
+2. What are value types and reference types?
+Value types store data directly (e.g., int, float), while reference types store a reference to the memory location (e.g., class, string).
+
+3. What is the difference between == and .Equals()?
+== checks for reference equality for reference types and value equality for value types. .Equals() can be overridden for custom comparisons.
+
+4. What is the difference between ref and out?
+ref requires a variable to be initialized before being passed; out does not.
+
+5. What is boxing and unboxing?
+Boxing is converting a value type to an object. Unboxing extracts the value type from the object.
+
+---
+Section: Control Structures & Data Types
+
+6. What is the difference between foreach and for loops?
+foreach is easier for collections; for gives index-based access.
+
+7. What is the use of switch statement?
+Used to simplify multiple conditional branches.
+
+8. What are nullable types?
+Value types that can also be null using the ? syntax (e.g., int?).
+
+9. Difference between const, readonly, and static?
+const is compile-time constant, readonly is runtime constant, static belongs to the type not instance.
+
+10. What is a tuple?
+A data structure to group multiple values in a single object.
+
+---
+Section: Object-Oriented Programming
+
+11. What are the four pillars of OOP?
+Encapsulation, Inheritance, Polymorphism, and Abstraction.
+
+12. What is method overloading and overriding?
+Overloading is same method name with different parameters; overriding replaces a base method in derived class.
+
+13. What is an interface?
+A contract with method signatures but no implementation.
+
+14. Difference between abstract class and interface?
+Abstract classes can have implementations; interfaces can't (before C# 8.0).
+
+15. What is a sealed class?
+A class that cannot be inherited.
+
+16. What is the base class in C# from which all classes are derived?
+System.Object.
+
+17. What is the difference between public, private, protected, and internal?
+These are access modifiers that control the visibility of class members.
+
+18. What is a constructor?
+A special method called when an object is instantiated.
+
+19. What is a destructor?
+A method that is automatically invoked when an object is destroyed.
+
+20. What is static constructor?
+A constructor used to initialize static members of the class.
+
+---
+Section: Advanced Features
+
+21. What are generics in C#?
+Allow you to define a class/method with a placeholder for the data type.
+
+22. What is a delegate?
+A type-safe function pointer.
+
+23. What is an event?
+A wrapper around delegates, used for publisher-subscriber pattern.
+
+24. What is a lambda expression?
+A concise way to write anonymous methods using the => syntax.
+
+25. What is anonymous method?
+A method without a name used inline, often assigned to a delegate.
+
+26. What is an extension method?
+A static method that can be called on an instance as if it were an instance method.
+
+27. What is an indexer?
+Allows objects to be indexed like arrays.
+
+28. What is operator overloading?
+Enables redefinition of operators for user-defined types.
+
+29. What is nullable value type?
+A value type that can hold null value using `?`, e.g., int?.
+
+30. What is a partial class?
+A class split across multiple files.
+
+---
+Section: Collections and LINQ
+
+31. What is IEnumerable?
+A base interface for all non-generic collections.
+
+32. What is ICollection?
+Provides size, enumeration, and synchronization methods for collections.
+
+33. What is IList?
+Allows random access and insertion.
+
+34. Difference between List and Array?
+List is dynamic and has built-in methods; array is fixed size.
+
+35. What is Dictionary?
+Stores key-value pairs, like a hash map.
+
+36. What is HashSet?
+A collection that contains no duplicate elements.
+
+37. What is LINQ?
+Language Integrated Query to query collections and databases.
+
+38. What is the difference between Select and SelectMany?
+Select projects each element, SelectMany flattens nested collections.
+
+39. What is deferred execution in LINQ?
+Query is executed only when you iterate over it.
+
+40. What is immediate execution?
+Forces query to execute immediately using methods like ToList(), ToArray().
+
+---
+Section: Exception Handling
+
+41. What is exception handling?
+Managing runtime errors using try-catch-finally blocks.
+
+42. What is the base class for all exceptions?
+System.Exception.
+
+43. What is finally block?
+A block that executes regardless of whether an exception occurred.
+
+44. Difference between throw and throw ex?
+throw preserves stack trace; throw ex resets it.
+
+45. What is custom exception?
+User-defined exception inherited from System.Exception.
+
+46. What is try-catch?
+Code that might throw exceptions is placed in try, and errors are handled in catch.
+
+47. What is inner exception?
+An exception inside another exception, giving more context.
+
+48. What is StackOverflowException?
+Occurs when the stack overflows, usually due to recursion.
+
+49. What is OutOfMemoryException?
+Thrown when system runs out of memory.
+
+50. What is NullReferenceException?
+Accessing a member on a null object.
+
+---
+Section: Multithreading
+
+51. What is multithreading?
+Executing multiple threads simultaneously.
+
+52. What is Thread in C#?
+A class that represents a thread of execution.
+
+53. What is Task in C#?
+Represents asynchronous operation.
+
+54. What is async and await?
+Used to simplify asynchronous programming.
+
+55. What is deadlock?
+When two or more threads wait indefinitely for each other.
+
+56. What is race condition?
+Two threads access shared data at the same time leading to inconsistent result.
+
+57. What is lock statement?
+Ensures that a block of code runs only by one thread at a time.
+
+58. What is Monitor?
+Provides a mechanism that synchronizes access to objects.
+
+59. What is thread pool?
+A pool of worker threads managed by .NET.
+
+60. What is CancellationToken?
+Allows cooperative cancellation of tasks.
+
+---
+Section: File Handling & Serialization
+
+61. How do you read a file?
+Using File.ReadAllText or StreamReader.
+
+62. How do you write a file?
+Using File.WriteAllText or StreamWriter.
+
+63. What is serialization?
+Converting object to byte stream for storage/transfer.
+
+64. What is deserialization?
+Reversing serialization to recreate object.
+
+65. What is JSON serialization?
+Serializing data in JSON format using Newtonsoft.Json or System.Text.Json.
+
+66. What is XML serialization?
+Converts object to XML format.
+
+67. What is binary serialization?
+Serializes to binary format.
+
+68. What is the use of FileStream?
+Used for reading/writing bytes to a file.
+
+69. What is memory stream?
+A stream whose backing store is memory.
+
+70. What is path class?
+Provides methods for working with file and directory paths.
+
+---
+Section: Entity Framework & Data Access
+
+71. What is ORM?
+Object Relational Mapping - bridges between C# objects and databases.
+
+72. What is Entity Framework?
+Microsoft's ORM framework for .NET.
+
+73. What is DbContext?
+Primary class responsible for interacting with the database.
+
+74. What is Code First?
+You define classes and EF creates database.
+
+75. What is Database First?
+Database is created first and classes are generated.
+
+76. What is migration?
+Version control for database schema.
+
+77. What is Lazy Loading?
+Loads related data when accessed.
+
+78. What is Eager Loading?
+Loads all related data at once.
+
+79. What is LINQ to Entities?
+Using LINQ queries with EF models.
+
+80. What is navigation property?
+Used in EF to navigate relationships.
+
+---
+Section: ASP.NET & Web Technologies
+
+81. What is MVC?
+Model-View-Controller, separates concerns in web applications.
+
+82. What is routing?
+Maps URL to controller actions.
+
+83. What is Razor?
+Markup syntax for embedding server code in views.
+
+84. What is Middleware?
+Components in ASP.NET Core pipeline.
+
+85. What is Dependency Injection?
+Injecting dependencies into a class.
+
+86. What is Web API?
+Framework to build HTTP services.
+
+87. Difference between GET and POST?
+GET is used to retrieve data; POST submits data.
+
+88. What is session?
+Stores user data across requests.
+
+89. What is cookie?
+Stores data on client side.
+
+90. What is SignalR?
+Library for real-time communication.
+
+---
+Section: Miscellaneous
+
+91. What is reflection?
+Inspecting metadata about types at runtime.
+
+92. What is dynamic keyword?
+Used to bypass compile-time type checking.
+
+93. What is nameof?
+Returns the name of a variable, type, or member.
+
+94. What is GC.Collect?
+Forces garbage collection.
+
+95. What is AppDomain?
+Isolated environment for executing applications.
+
+96. What is the use of attributes?
+Used to add metadata to code.
+
+97. What is IDisposable?
+Interface to release unmanaged resources.
+
+98. What is finalize?
+Cleanup code before object is reclaimed by GC.
+
+99. What is unsafe code?
+Allows pointer usage.
+
+100. What is benchmarking?
+Measuring performance of code.
+
+---
+End of Top 100 C# Interview Questions.
